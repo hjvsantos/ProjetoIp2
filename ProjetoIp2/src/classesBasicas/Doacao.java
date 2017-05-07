@@ -1,5 +1,5 @@
 package classesBasicas;
 
-public class Doação {
+public class Doacao {
       int quantidade;
 }
