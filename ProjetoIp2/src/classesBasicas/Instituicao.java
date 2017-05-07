@@ -1,5 +1,5 @@
 package classesBasicas;
 
-public class Instituição {
+public class Instituicao {
 
 }
