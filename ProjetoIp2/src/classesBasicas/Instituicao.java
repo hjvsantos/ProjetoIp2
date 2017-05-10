@@ -1,7 +1,7 @@
 package classesBasicas;
 
 public class Instituicao {
-	
+
 	public String nome;
 	public String cnpj;
 	public String cidade;
@@ -68,7 +68,10 @@ public class Instituicao {
 		this.donativos = donativos;
 	}
 	
-		
+	public String toString() {
+		return "Instituicao [nome=" + nome + ", cnpj=" + cnpj + ", cidade=" + cidade + ", estado=" + estado
+				+ ", numeroConta=" + numeroConta + ", donativos=" + donativos + "]";
+	}	
 		
 	
 }

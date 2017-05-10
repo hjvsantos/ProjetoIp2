@@ -1,36 +1,18 @@
 package classesBasicas;
 
-public class DoadorPessoa {
+public class DoadorPessoa extends Doador{
 	
-	public String nome;
 	public int idade;
 	public String cpf;
 	public double rg;
-	public String cidade;
-	public String estado;
-	private double numeroCartao;
-	private double codigoCartao;
 
-	public DoadorPessoa(String nome, int idade, String cpf, double rg,
-			String cidade, String estado, double numeroCartao,
-			double codigoCartao) {
+	public DoadorPessoa(String nome, int idade, String cpf, double rg, String cidade, String estado, double numeroCartao,
+			double codigoCartao){
 		
-		this.nome = nome;
+		super(nome, cidade,estado, numeroCartao, codigoCartao);
 		this.idade = idade;
 		this.cpf = cpf;
 		this.rg = rg;
-		this.cidade = cidade;
-		this.estado = estado;
-		this.numeroCartao = numeroCartao;
-		this.codigoCartao = codigoCartao;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 
 	public int getIdade() {
@@ -57,39 +39,8 @@ public class DoadorPessoa {
 		this.rg = rg;
 	}
 
-	public String getCidade() {
-		return cidade;
+	public String toString() {
+		return "DoadorPessoa [idade=" + idade + ", cpf=" + cpf + ", rg=" + rg + "]";
 	}
-
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
-
-	public String getEstado() {
-		return estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
-	public double getNumeroCartao() {
-		return numeroCartao;
-	}
-
-	public void setNumeroCartao(double numeroCartao) {
-		this.numeroCartao = numeroCartao;
-	}
-
-	public double getCodigoCartao() {
-		return codigoCartao;
-	}
-
-	public void setCodigoCartao(double codigoCartao) {
-		this.codigoCartao = codigoCartao;
-	}
-	
-	
-	
 		
 }

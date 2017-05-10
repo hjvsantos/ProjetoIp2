@@ -67,6 +67,12 @@ public class Doacao {
 	public void setDoacaoDinheiro(int doacaoDinheiro) {
 		this.doacaoDinheiro = doacaoDinheiro;
 	}
+
+	public String toString() {
+		return "Doacao [beneficiado=" + beneficiado + ", empresadoadora=" + empresadoadora + ", doador=" + doador
+				+ ", quantidade=" + quantidade + ", produto=" + produto + ", doacaoDinheiro=" + doacaoDinheiro + "]";
+	}
+	
 	
 	
 	
