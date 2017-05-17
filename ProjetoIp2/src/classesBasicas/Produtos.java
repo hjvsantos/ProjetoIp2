@@ -2,14 +2,24 @@ package classesBasicas;
 
 public class Produtos {
 	
+	public String codigo;
 	public String tipo;
 	public int quantidade;
 	public int validade;
 	
-	public Produtos(String tipo, int quantidade, int validade) {
+	public Produtos(String codigo, String tipo, int quantidade, int validade) {
 		this.tipo = tipo;
 		this.quantidade = quantidade;
 		this.validade = validade;
+		this.codigo = codigo;
+	}
+	
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+	
+	public String getCodigo() {
+		return codigo;
 	}
 	
 	public String getTipo() {
@@ -37,7 +47,7 @@ public class Produtos {
 	}
 	
 	public String toString() {
-		return "Produtos [tipo=" + tipo + ", quantidade=" + quantidade + ", validade=" + validade + "]";
+		return "Produtos [codigo = " + codigo + "tipo=" + tipo + ", quantidade=" + quantidade + ", validade=" + validade + "]";
 	}
 	
 	
