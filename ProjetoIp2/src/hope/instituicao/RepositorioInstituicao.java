@@ -47,7 +47,28 @@ public class RepositorioInstituicao {
 		return true;
 	}
 	
+	//Buscar Instituição
+	
+	public Instituicao buscar(String cnpj){
+		int i = 0;
+		boolean achou = false;
+		while ((!achou) && (i < this.qntInstituicoes)){
+			if(cnpj.equals(this.instituicoesArray[i].getCnpj())){
+				achou = true;
+			}
+			else {
+				i = i + 1;
+			}
+		}
+		Instituicao resultado = null;
+		if(i != this.qntInstituicoes){
+			resultado = this.instituicoesArray[i];
+		}
+		return resultado;
+	}
 	
 	
+	
+
 	
 }
