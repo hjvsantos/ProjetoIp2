@@ -1,5 +1,5 @@
 package hope.doador;
-
+//teste
 public class DoadorPessoa extends Doador{
 	
 	public int idade;

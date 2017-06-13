@@ -1,5 +1,5 @@
 package hope.doador;
-
+//teste
 public class DoadorEmpresa extends Doador{
 	
 	public int anoFundacao;

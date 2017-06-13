@@ -1,5 +1,5 @@
 package hope.produtos;
-
+//teste
 public class Produtos {
 	
 	public String tipo;
