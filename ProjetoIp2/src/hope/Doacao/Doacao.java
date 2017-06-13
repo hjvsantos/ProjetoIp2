@@ -1,7 +1,5 @@
 package hope.Doacao;
 
-//testando o git
-
 import hope.Doador.DoadorEmpresa;
 import hope.Doador.DoadorPessoa;
 import hope.instituicao.Instituicao;

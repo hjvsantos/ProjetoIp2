@@ -1,5 +1,5 @@
 package hope.produtos;
-//testando o git
+
 public class Produtos {
 	
 	public String tipo;
