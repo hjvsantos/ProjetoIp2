@@ -1,4 +1,6 @@
-package classesBasicas;
+package hope.instituicao;
+
+import hope.produtos.Produtos;
 
 public class Instituicao {
 

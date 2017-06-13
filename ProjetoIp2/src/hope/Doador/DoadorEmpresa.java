@@ -1,4 +1,4 @@
-package classesBasicas;
+package hope.Doador;
 
 public class DoadorEmpresa extends Doador{
 	

@@ -1,4 +1,9 @@
-package classesBasicas;
+package hope.Doacao;
+
+import hope.Doador.DoadorEmpresa;
+import hope.Doador.DoadorPessoa;
+import hope.instituicao.Instituicao;
+import hope.produtos.Produtos;
 
 public class Doacao {
     Instituicao beneficiado;
