@@ -1,4 +1,4 @@
-package hope.Doacao;
+package doacao;
 
 import hope.Doador.DoadorEmpresa;
 import hope.Doador.DoadorPessoa;

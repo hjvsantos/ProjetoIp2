@@ -1,4 +1,4 @@
-package hope.Doacao;
+package doacao;
 
 public class RepositorioDoacao {
 
