@@ -6,10 +6,10 @@ public class DoadorPessoa extends Doador{
 	public String cpf;
 	public double rg;
 
-	public DoadorPessoa(String nome, int idade, String cpf, double rg, String cidade, String estado, double numeroCartao,
+	public DoadorPessoa(String nome, int codigoDoador, int idade, String cpf, double rg, int type,  String cidade, String estado, double numeroCartao,
 			double codigoCartao){
 		
-		super(nome, cidade,estado, numeroCartao, codigoCartao);
+		super(nome, cidade,estado, numeroCartao, codigoCartao, type, codigoDoador);
 		this.idade = idade;
 		this.cpf = cpf;
 		this.rg = rg;

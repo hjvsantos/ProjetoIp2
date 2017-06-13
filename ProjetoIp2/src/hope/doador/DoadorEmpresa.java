@@ -5,10 +5,10 @@ public class DoadorEmpresa extends Doador{
 	public int anoFundacao;
 	public String cnpj;
 	
-	public DoadorEmpresa(String nome, int anoFundacao, String cnpj, String cidade, String estado, double numeroCartao,
+	public DoadorEmpresa(String nome, int anoFundacao, String cnpj,int type, int codigoDoador, String cidade, String estado, double numeroCartao,
 			double codigoCartao){
 		
-		super(nome, cidade,estado, numeroCartao, codigoCartao);
+		super(nome, cidade,estado, numeroCartao, codigoCartao, type, codigoDoador);
 		this.anoFundacao = anoFundacao;
 		this.cnpj = cnpj;	
 	}
