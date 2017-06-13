@@ -1,5 +1,5 @@
 package hope.Doador;
-
+//testando o git
 public class DoadorEmpresa extends Doador{
 	
 	public int anoFundacao;
