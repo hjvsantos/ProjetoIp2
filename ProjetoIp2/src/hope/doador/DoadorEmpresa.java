@@ -1,4 +1,4 @@
-package hope.Doador;
+package hope.doador;
 
 public class DoadorEmpresa extends Doador{
 	
