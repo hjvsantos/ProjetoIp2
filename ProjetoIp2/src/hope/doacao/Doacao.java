@@ -1,7 +1,7 @@
-package doacao;
+package hope.doacao;
 
-import hope.Doador.DoadorEmpresa;
-import hope.Doador.DoadorPessoa;
+import hope.doador.DoadorEmpresa;
+import hope.doador.DoadorPessoa;
 import hope.instituicao.Instituicao;
 import hope.produtos.Produtos;
 
