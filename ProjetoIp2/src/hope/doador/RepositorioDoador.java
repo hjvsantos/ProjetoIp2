@@ -1,7 +1,5 @@
 package hope.doador;
 
-import hope.instituicao.Instituicao;
-
 public class RepositorioDoador {
 
 	private Doador[] doadorArray;
@@ -56,7 +54,7 @@ public class RepositorioDoador {
 				resultado = this.doadorArray[t];
 			}
 			return resultado;
-		}
+	}
 	
 	public boolean atualizarDoador(Doador novoDoador){
 		for(int i = 0; i < quantDoador; i++){

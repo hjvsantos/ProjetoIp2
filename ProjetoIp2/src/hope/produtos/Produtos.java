@@ -2,16 +2,46 @@ package hope.produtos;
 //teste
 public class Produtos {
 	
-	public String tipo;
-	public int quantidade;
-	public int validade;
+	private String tipo;
+	private int quantidade;
+	private int validade;
+	private String nome;
+	private int codigo;
 	
-	public Produtos(String tipo, int quantidade, int validade) {
+	public Produtos(String tipo, int quantidade, int validade, String nome, int codigo) {
 		this.tipo = tipo;
 		this.quantidade = quantidade;
 		this.validade = validade;
+		this.nome = nome;
+		this.codigo = codigo;
 	}
 	
+	
+	
+	public String getNome() {
+		return nome;
+	}
+
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+
+
 	public String getTipo() {
 		return tipo;
 	}
