@@ -93,14 +93,29 @@ public class RepositorioInstituicao {
 	}
 	
 	//Atualizar Instituicao
+	public boolean atualizarInstituicao(Instituicao novaInsti){
+		for(int i = 0; i < qntInstituicoes; i++){
+			if(instituicoesArray[i].getCnpj().equals(novaInsti.getCnpj())){
+				instituicoesArray[i] = novaInsti;
+				return true;
+			}
+		}
+		return false;
+	}
 	
+	//Listar Instituições
+	public String listarInstituicoes(){
+		String listaFinal = "";
+		for(int i = 0; i < qntInstituicoes; i++){
+			listaFinal += "\n Informacoes das instituicoes:\n Nome: " + instituicoesArray[i].getNome() + "\n CNPJ: " 
+		+ instituicoesArray[i].getCnpj() + "\n Cidade: " + instituicoesArray[i].getCidade() + "\n Estado: " + instituicoesArray[i].getEstado()
+		+ "\n Numero da conta: " + instituicoesArray[i].getNumeroConta() + "\n Donativos: " + instituicoesArray[i].getDonativos() + ")\n";
+		}
+		return listaFinal;
+	}
 	
-	
-	
-	
-	
-		
-	
+	//Solicitar Produtos
+	//TODO
 
 	
 }
