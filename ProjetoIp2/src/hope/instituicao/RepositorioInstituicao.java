@@ -67,7 +67,39 @@ public class RepositorioInstituicao {
 		return resultado;
 	}
 	
+	// Remover Instituição
+	public boolean removerInstituicao(String cnpj){
+		int i = 0;
+		boolean achou = false;
+		while((!achou) && (i < this.qntInstituicoes)){
+			if(cnpj.equals(this.instituicoesArray[i].getCnpj())){
+				achou = true;
+			}
+			else{
+				i = i + 1;
+			}
+		}
+		if(i != this.qntInstituicoes){
+			this.instituicoesArray[i] = this.instituicoesArray[this.qntInstituicoes - 1];
+			this.instituicoesArray[this.qntInstituicoes - 1] = null;
+			this.qntInstituicoes = this.qntInstituicoes -1;
+			System.out.println("Instituicao: " + cnpj + "removida!");
+			return true;
+		}
+		else {
+			System.out.println("Instituicao nao encontrada!");
+			return false;
+		}
+	}
 	
+	//Atualizar Instituicao
+	
+	
+	
+	
+	
+	
+		
 	
 
 	
