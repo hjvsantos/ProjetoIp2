@@ -4,22 +4,24 @@ import hope.produtos.Produtos;
 
 public class Instituicao {
 
-	public String nome;
-	public String cnpj;
-	public String cidade;
-	public String estado;
+	private String nome;
+	private String cnpj;
+	private String cidade;
+	private String estado;
 	private double numeroConta;
-	public Produtos donativos;
+	//public Produtos donativos;
+	//ver a necessidade de discriminar os donativos em instituicao! Não tentei isso na aplicação
+	
 	
 	public Instituicao(String nome, String cnpj, String cidade, String estado,
-			double numeroConta, Produtos donativos) {
+			double numeroConta) {
 		super();
 		this.nome = nome;
 		this.cnpj = cnpj;
 		this.cidade = cidade;
 		this.estado = estado;
 		this.numeroConta = numeroConta;
-		this.donativos = donativos;
+	//	this.donativos = donativos;
 	}
 
 	public String getNome() {
@@ -62,17 +64,17 @@ public class Instituicao {
 		this.numeroConta = numeroConta;
 	}
 
-	public Produtos getDonativos() {
+/*	public Produtos getDonativos() {
 		return donativos;
 	}
 
 	public void setDonativos(Produtos donativos) {
 		this.donativos = donativos;
 	}
-	
+*/	
 	public String toString() {
 		return "Instituicao [nome=" + nome + ", cnpj=" + cnpj + ", cidade=" + cidade + ", estado=" + estado
-				+ ", numeroConta=" + numeroConta + ", donativos=" + donativos + "]";
+				+ ", numeroConta=" + numeroConta + "]";
 	}	
 		
 	

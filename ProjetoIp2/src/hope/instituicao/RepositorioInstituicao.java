@@ -109,7 +109,7 @@ public class RepositorioInstituicao {
 		for(int i = 0; i < qntInstituicoes; i++){
 			listaFinal += "\n Informacoes das instituicoes:\n Nome: " + instituicoesArray[i].getNome() + "\n CNPJ: " 
 		+ instituicoesArray[i].getCnpj() + "\n Cidade: " + instituicoesArray[i].getCidade() + "\n Estado: " + instituicoesArray[i].getEstado()
-		+ "\n Numero da conta: " + instituicoesArray[i].getNumeroConta() + "\n Donativos: " + instituicoesArray[i].getDonativos() + ")\n";
+		+ "\n Numero da conta: " + instituicoesArray[i].getNumeroConta() + "\n Donativos: " + ")\n";
 		}
 		return listaFinal;
 	}
