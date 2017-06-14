@@ -1,9 +1,5 @@
 package hope.doacao;
 
-import hope.doador.Doador;
-
-
-
 public class RepositorioDoacao {
 
 	private Doacao[] doacaoArray;
@@ -23,7 +19,7 @@ public class RepositorioDoacao {
 		return quantDoacao;
 	}
 	
-	public boolean cadastrar(Doacao doacao){
+	public boolean cadastrarDoacao(Doacao doacao){
 		if(doacao.equals(null)){
 			return false;
 		}else{
@@ -43,7 +39,7 @@ public class RepositorioDoacao {
 		return true;
 	}
 	
-	public Doacao buscar(int codigo){
+	public Doacao buscarDoacao(int codigo){
 		 int t = 0;
 		 boolean find = false;
 		 while ((!find) && (t < this.quantDoacao)){
