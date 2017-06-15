@@ -1,6 +1,6 @@
 package hope.doacao;
 
-public class RepositorioDoacao {
+public class RepositorioDoacao implements IRepositorioDoacao {
 
 	private Doacao[] doacaoArray;
 	private int quantDoacao = 0;
