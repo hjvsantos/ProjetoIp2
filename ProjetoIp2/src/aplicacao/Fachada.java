@@ -13,7 +13,7 @@ public class Fachada {
 	
 	IRepositorioDoador repDoador = new RepositorioDoador(null, 100);
 	IRepositorioInstituicao repInstituicao = new RepositorioInstituicao(null, 100);
-	IRepositorioDoacao repDoacao = (IRepositorioDoacao) new RepositorioDoacao (null, 100);
+	IRepositorioDoacao repDoacao = new RepositorioDoacao (null, 100);
 	
 	//Metodos da classe Doador:
 	public boolean cadastrar(Doador doador){
