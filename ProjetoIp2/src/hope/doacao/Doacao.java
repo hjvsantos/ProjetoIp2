@@ -5,19 +5,19 @@ import java.util.Arrays;
 import hope.doador.DoadorEmpresa;
 import hope.doador.DoadorPessoa;
 import hope.instituicao.Instituicao;
-import hope.produtos.Produtos;
+import hope.produto.Produto;
 
 public class Doacao {
     Instituicao beneficiado;
     DoadorEmpresa empresadoadora;
     DoadorPessoa doador;
 	int quantidade;
-	Produtos[] produto;
+	Produto[] produto;
 	int doacaoDinheiro;
 	int codigo;
 	
 	public Doacao(Instituicao beneficiado, DoadorEmpresa empresadoadora,
-			DoadorPessoa doador, int quantidade, Produtos produto,
+			DoadorPessoa doador, int quantidade, Produto produto,
 			int doacaoDinheiro, int codigo) {
 		
 		this.beneficiado = beneficiado;
@@ -25,7 +25,7 @@ public class Doacao {
 		this.doador = doador;
 		this.codigo = codigo;
 		this.quantidade = quantidade;
-		this.produto = new Produtos[100];
+		this.produto = new Produto[100];
 		this.doacaoDinheiro = doacaoDinheiro;
 	}
 	
@@ -76,11 +76,11 @@ public class Doacao {
 	}
 
 
-	public Produtos[] getProduto() {
+	public Produto[] getProduto() {
 		return produto;
 	}
 
-	public void setProduto(Produtos[] produto) {
+	public void setProduto(Produto[] produto) {
 		this.produto = produto;
 	}
 

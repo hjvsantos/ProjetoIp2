@@ -1,18 +1,18 @@
-package hope.produtos;
+package hope.produto;
 
 
 
-public class RepositorioProdutos {
-	private Produtos[] produtoArray;
+public class RepositorioProduto implements IRepositorioProduto{
+	private Produto[] produtoArray;
 	private int quantProduto = 0;
 	
-	public RepositorioProdutos(Produtos[] produto, int quantProduto) {
+	public RepositorioProduto(Produto[] produto, int quantProduto) {
 		super();
-		this.produtoArray = new Produtos[100];
+		this.produtoArray = new Produto[100];
 		this.quantProduto = quantProduto;
 	}
 
-	public Produtos[] getProdutoArray() {
+	public Produto[] getProdutoArray() {
 		return produtoArray;
 	}
 
@@ -20,7 +20,7 @@ public class RepositorioProdutos {
 		return quantProduto;
 	}
 	
-	public boolean cadastrar(Produtos produto){
+	public boolean cadastrar(Produto produto){
 		if(produto.equals(null)){
 			return false;
 		}else{
@@ -40,7 +40,7 @@ public class RepositorioProdutos {
 		return true;
 	}
 	
-	public boolean atualizarProduto(Produtos produto){
+	public boolean atualizarProduto(Produto produto){
 		for(int i = 0; i < quantProduto; i++){
 			if(produtoArray[i].getCodigo() == produto.getCodigo()){
 				produtoArray[i] = produto;
@@ -50,7 +50,7 @@ public class RepositorioProdutos {
 		return false;
 	}
 	
-	public Produtos buscar(int codigo){
+	public Produto buscar(int codigo){
 		 int t = 0;
 		 boolean find = false;
 		 while ((!find) && (t < this.quantProduto)){
@@ -60,7 +60,7 @@ public class RepositorioProdutos {
 					t++;
 				}
 		 }
-				Produtos resultado = null;
+				Produto resultado = null;
 				if(t != this.quantProduto){
 					resultado = this.produtoArray[t];
 				}
@@ -86,7 +86,7 @@ public class RepositorioProdutos {
 			return true;
 		}
 		else {
-			System.out.println("Doador não encontrado");
+			System.out.println("Doador nï¿½o encontrado");
 			return false;
 		}
 	}

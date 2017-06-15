@@ -1,6 +1,6 @@
 package hope.doador;
 
-public class RepositorioDoador {
+public class RepositorioDoador implements IRepositorioDoador {
 
 	private Doador[] doadorArray;
 	private int quantDoador = 0;
@@ -85,7 +85,7 @@ public class RepositorioDoador {
 			return true;
 		}
 		else {
-			System.out.println("Doador não encontrado");
+			System.out.println("Doador nï¿½o encontrado");
 			return false;
 		}
 	}

@@ -1,6 +1,6 @@
-package hope.produtos;
-//teste
-public class Produtos {
+package hope.produto;
+
+public class Produto {
 	
 	private String tipo;
 	private int quantidade;
@@ -8,7 +8,7 @@ public class Produtos {
 	private String nome;
 	private int codigo;
 	
-	public Produtos(String tipo, int quantidade, int validade, String nome, int codigo) {
+	public Produto(String tipo, int quantidade, int validade, String nome, int codigo) {
 		this.tipo = tipo;
 		this.quantidade = quantidade;
 		this.validade = validade;

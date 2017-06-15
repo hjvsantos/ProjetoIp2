@@ -2,7 +2,7 @@ package hope.instituicao;
 
 import java.util.Scanner;
 
-public class RepositorioInstituicao {
+public class RepositorioInstituicao implements IRepositorioInstituicao{
 	
 	private Instituicao[] instituicoesArray;
 	private int qntInstituicoes;

@@ -1,6 +1,6 @@
 package hope.instituicao;
 
-import hope.produtos.Produtos;
+import hope.produto.Produto;
 
 public class Instituicao {
 
