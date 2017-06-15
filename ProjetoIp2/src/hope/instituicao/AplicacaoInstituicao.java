@@ -56,7 +56,11 @@ public class AplicacaoInstituicao {
 					scanner.nextLine();
 					}while (numConta < 0 || numConta > 99999);
 				
-					Instituicao instituicao = new Instituicao(nome, cnpj, cidade, estado, numConta);
+					System.out.println("Informe o codigo da Instituicao: ");
+					String codInstituicao = scanner.nextLine();
+					scanner.nextLine();
+					
+					Instituicao instituicao = new Instituicao(nome, cnpj, cidade, estado, numConta, codInstituicao);
 					meuRep.cadastrar(instituicao);
 					break;				
 			}
@@ -95,7 +99,10 @@ public class AplicacaoInstituicao {
 					System.out.println("Digite o numero da conta da instituicao a ser alterado: ");
 					double novaConta = scanner.nextDouble();
 					
-					Instituicao novaInstituicao = new Instituicao(cnpjAlterado, novoNome, novaCidade, novoEstado, novaConta);
+					System.out.println("Digite o codigo da instituicao a ser alterado: ");
+					String novoCod = scanner.nextLine();
+					
+					Instituicao novaInstituicao = new Instituicao(cnpjAlterado, novoNome, novaCidade, novoEstado, novaConta, novoCod);
 					
 					meuRep.atualizarInstituicao(novaInstituicao);
 					System.out.println(meuRep.atualizarInstituicao(novaInstituicao));

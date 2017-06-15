@@ -1,6 +1,6 @@
 package hope.instituicao;
 
-import hope.produtos.Produtos;
+import hope.produto.Produto;
 
 public class Instituicao {
 
@@ -9,19 +9,29 @@ public class Instituicao {
 	private String cidade;
 	private String estado;
 	private double numeroConta;
+	private String codInstituicao;
 	//public Produtos donativos;
 	//ver a necessidade de discriminar os donativos em instituicao! Não tentei isso na aplicação
 	
 	
 	public Instituicao(String nome, String cnpj, String cidade, String estado,
-			double numeroConta) {
+			double numeroConta, String codInstituicao ) {
 		super();
 		this.nome = nome;
 		this.cnpj = cnpj;
 		this.cidade = cidade;
 		this.estado = estado;
 		this.numeroConta = numeroConta;
+		this.codInstituicao = codInstituicao;
 	//	this.donativos = donativos;
+	}
+
+	public String getCodInstituicao() {
+		return codInstituicao;
+	}
+
+	public void setCodInstituicao(String codInstituicao) {
+		this.codInstituicao = codInstituicao;
 	}
 
 	public String getNome() {

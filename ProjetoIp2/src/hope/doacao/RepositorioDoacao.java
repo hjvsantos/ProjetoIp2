@@ -11,7 +11,7 @@ public class RepositorioDoacao {
 		this.quantDoacao = quantDoacao;
 	}
 
-	public Doacao[] getDoacaoArray() {
+	public Doacao[] getDoacaoArray(int codigo) {
 		return doacaoArray;
 	}
 
@@ -95,7 +95,7 @@ public class RepositorioDoacao {
 		String listaFinal = "";
 		for(int f = 0; f < quantDoacao; f++){
 			listaFinal += "\n Informacoes das doações:\n Doador: " + doacaoArray[f].getDoador()+ "\n Beneficiado: " 
-		+ doacaoArray[f].getBeneficiado()+ "\n Doação: " + doacaoArray[f].getProduto();}
+		+ doacaoArray[f].getCodInstituicao() + "\n Doação: " + doacaoArray[f].getCodigo();}
 		return listaFinal;
 	}
 	
