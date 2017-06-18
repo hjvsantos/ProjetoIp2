@@ -94,8 +94,13 @@ public class RepositorioDoacao implements IRepositorioDoacao {
 	public String listarDoacoes(){
 		String listaFinal = "";
 		for(int f = 0; f < quantDoacao; f++){
+<<<<<<< HEAD
 			listaFinal += "\n Informacoes das doaÃ§Ãµes:\n Doador: " + doacaoArray[f].getDoador()+ "\n Beneficiado: " 
 		+ doacaoArray[f].getCodInstituicao() + "\n DoaÃ§Ã£o: " + doacaoArray[f].getCodigo();}
+=======
+			listaFinal += "\n Informacoes das doações:\n Doador: " + doacaoArray[f].getDoador()+ "\n Beneficiado: " 
+		+ doacaoArray[f].getCodInstituicao() + "\n Doação: " + doacaoArray[f].getCodigo();}
+>>>>>>> branch 'master' of https://github.com/hjvsantos/ProjetoIp2.git
 		return listaFinal;
 	}
 	

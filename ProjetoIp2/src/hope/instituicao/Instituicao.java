@@ -34,6 +34,14 @@ public class Instituicao {
 		this.codInstituicao = codInstituicao;
 	}
 
+	public String getCodInstituicao() {
+		return codInstituicao;
+	}
+
+	public void setCodInstituicao(String codInstituicao) {
+		this.codInstituicao = codInstituicao;
+	}
+
 	public String getNome() {
 		return nome;
 	}
