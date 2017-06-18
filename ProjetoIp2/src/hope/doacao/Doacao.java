@@ -8,24 +8,24 @@ import hope.instituicao.Instituicao;
 import hope.produto.Produto;
 
 public class Doacao {
-    Instituicao beneficiado;
-    DoadorEmpresa empresadoadora;
-    DoadorPessoa doador;
-	int quantidade;
-	Produto[] produto;
-	int doacaoDinheiro;
-	int codigo;
+    private String codInstituicao;
+    private DoadorEmpresa empresadoadora;
+    private DoadorPessoa doador;
+	private int quantidade;
+	//Produto[] produto;
+	private double doacaoDinheiro;
+	private int codigo;
 	
-	public Doacao(Instituicao beneficiado, DoadorEmpresa empresadoadora,
-			DoadorPessoa doador, int quantidade, Produto produto,
-			int doacaoDinheiro, int codigo) {
+	public Doacao(String codInstituicao, DoadorEmpresa empresadoadora,
+			DoadorPessoa doador, int quantidade,
+			double doacaoDinheiro, int codigo) {
 		
-		this.beneficiado = beneficiado;
+		this.codInstituicao = codInstituicao;
 		this.empresadoadora = empresadoadora;
 		this.doador = doador;
 		this.codigo = codigo;
 		this.quantidade = quantidade;
-		this.produto = new Produto[100];
+		//this.produto = new Produto[100];
 		this.doacaoDinheiro = doacaoDinheiro;
 	}
 	
@@ -41,15 +41,17 @@ public class Doacao {
 		this.codigo = codigo;
 	}
 
-
-
-	public Instituicao getBeneficiado() {
-		return beneficiado;
+	public String getCodInstituicao() {
+		return codInstituicao;
 	}
 
-	public void setBeneficiado(Instituicao beneficiado) {
-		this.beneficiado = beneficiado;
+
+
+	public void setCodInstituicao(String codInstituicao) {
+		this.codInstituicao = codInstituicao;
 	}
+
+
 
 	public DoadorEmpresa getEmpresadoadora() {
 		return empresadoadora;
@@ -76,19 +78,19 @@ public class Doacao {
 	}
 
 
-	public Produto[] getProduto() {
+	/*public Produto[] getProduto() {
 		return produto;
 	}
 
 	public void setProduto(Produto[] produto) {
 		this.produto = produto;
-	}
+	}*/
 
-	public int getDoacaoDinheiro() {
+	public double getDoacaoDinheiro() {
 		return doacaoDinheiro;
 	}
 
-	public void setDoacaoDinheiro(int doacaoDinheiro) {
+	public void setDoacaoDinheiro(double doacaoDinheiro) {
 		this.doacaoDinheiro = doacaoDinheiro;
 	}
 
@@ -96,10 +98,9 @@ public class Doacao {
 
 	@Override
 	public String toString() {
-		return "Doacao [beneficiado=" + beneficiado + ", empresadoadora="
+		return "Doacao [beneficiado=" + codInstituicao + ", empresadoadora="
 				+ empresadoadora + ", doador=" + doador + ", quantidade="
-				+ quantidade + ", produto=" + Arrays.toString(produto)
-				+ ", doacaoDinheiro=" + doacaoDinheiro + ", codigo=" + codigo
+				+ quantidade + ", doacaoDinheiro=" + doacaoDinheiro + ", codigo=" + codigo
 				+ "]";
 	}
 

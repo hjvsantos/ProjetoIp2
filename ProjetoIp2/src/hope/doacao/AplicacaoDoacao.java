@@ -1,7 +1,7 @@
 package hope.doacao;
 import java.util.Scanner;
 import hope.instituicao.Instituicao;
-import hope.produtos.Produtos;
+import hope.produto.Produto;
 import hope.doador.Doador;
 import hope.doador.DoadorEmpresa;
 import hope.doador.DoadorPessoa;
@@ -16,82 +16,92 @@ public class AplicacaoDoacao {
 		Scanner leitura = new Scanner(System.in);
 		int option = 0;
 		
-		System.out.println("**** DOA��ES **** \n");
+		System.out.println("**** DOAÇÕES **** \n");
 		
 		do {
 			
-			System.out.println("Escolha a op��o desejada: \n 1- Cadastrar doa��o \n 2- Pesquisar doa��o\n 3- Alterar doa��o\n 4- Excluir doa��o\n 5- Listar doa��es\n 6- SAIR\n ");
+			System.out.println("Escolha a opção desejada: \n 1- Cadastrar doação \n 2- Pesquisar doação\n 3- Alterar doação\n 4- Excluir doação\n 5- Listar doações\n 6- SAIR\n ");
 			option = leitura.nextInt();
 			leitura.nextLine();
 			int cod;
-			DoadorEmpresa empresadoadora;
-			DoadorPessoa doador;
+			DoadorEmpresa empresadoadora = null;
+			DoadorPessoa doador = null;
 			Instituicao instituicao;
 			switch(option) {
 				case 1:
-					//CHECAR COMO � A ENTRADA PARA O TIPO INSTITUI��O
-					  	/*System.out.println("Informe o cnpj da Institui��o que ser� beneficiada: \n");
-					  	Instituicao beneficiada = leitura.nextLine();
-					  	instituicao = beneficiada;
-					  	*/
-					
-					
-					  	System.out.println("Informe o seu CPF/CNPJ: \n");
-					  	String id = leitura.nextLine();
-					  	if(id.equals(empresadoadora)) {
-					  		 empresadoadora.cnpj = id;
+					System.out.println("Informe o seu CPF/CNPJ: \n");
+				  	String id = leitura.nextLine();
+				  		do{
+				  		System.out.println(" Digite uma identificação válida: \n");
+				  		id = leitura.nextLine();
+				  		} while (id == null);
+				  		
+				  		if(id.equals(empresadoadora.cnpj)) {
+				  			empresadoadora.cnpj = id;
+				  		}
+				  		else if (id.equals(doador.cpf))
+				  		{
+				  			doador.cpf = id;
+				  		}
+				  		
+				  		System.out.println("Informe o codigo da Instituição que será beneficiada: \n");
+					  	String codInstituicao = leitura.nextLine();
+					  	while (codInstituicao == null) {
+					  		System.out.println("Informe uma identificação válida: \n");
+					  		codInstituicao = leitura.nextLine();
 					  	}
-					  	else
-					  	{
-					  	     doador.cpf = id;
-					  	}
-					  	
-					  	System.out.println("Informe a quantidade de doa��es que voc� far� hoje: ");
+				  	
+					  	System.out.println("Informe a quantidade de doações que você fará hoje: ");
 					  	int quantidade = leitura.nextInt();
+					  	leitura.nextLine();
 					  	
-					  	System.out.println("Informe os produtos que fazem parte desta doa��o: \n");
-					  	Produto prod = leitura;
 					  	
-					  	System.out.println();
-					  	Doacao donativo = new Doacao(beneficiada,empresadoadora,
-								doador, quantidade, Produtos produto,
-								int doacaoDinheiro, int codigo);
+					  	//System.out.println("Informe os produtos que fazem parte desta doação: \n");
+					  	
+					  	
+					  	System.out.println("Informe a quantia em dinheiro a ser doada: \n");
+					  	int doacaoDinheiro = leitura.nextInt();
+					  	
+					  	System.out.println("Informe um código para esta doação: \n");
+					  	int codigo = leitura.nextInt();
+					  	
+					  	Doacao donativo = new Doacao(codInstituicao, empresadoadora,
+								doador, quantidade,
+								doacaoDinheiro, codigo);
+					  	
 					  	repoDoacao.cadastrarDoacao(donativo);
 					  	
 					  	break;
 					  	
 				case 2:
 					  
-					  	System.out.println("Informe o codigo da doacao que voce deseja pesquisar: \n");
+					  	System.out.println("Informe o codigo da doação que você deseja pesquisar: \n");
 					  	cod = leitura.nextInt();
 					  	leitura.nextLine();
 					  	System.out.println(repoDoacao.buscarDoacao(cod));
 					  
 				case 3:
 					  
-						System.out.println("Informe o codigo da doacao a ser alterada: \n");
+						System.out.println("Informe o codigo da doação a ser alterada: \n");
 						cod = leitura.nextInt();
 						leitura.nextLine();
 						
-					    System.out.println("Digite o CNPJ da instituicao que deseja alterar: ");
-						String cnpj = leitura.nextLine();
+					    System.out.println(repoDoacao.getDoacaoArray(cod));
+						
+					    System.out.println("Digite o codigo da instituicao que deseja alterar: ");
+						codInstituicao = leitura.nextLine();
 						leitura.nextLine();
 						
-						System.out.println("Digite o nome da instituicao a ser alterado: ");
-						String novoNome = leitura.nextLine();
+						System.out.println("Digite o CPF do novo doador: ");
+						String nomeDoador = leitura.nextLine();
 						
-						System.out.println("Digite a cidade da instituicao a ser alterada: ");
-						String novaCidade = leitura.nextLine();
+						System.out.println("Informe a nova quantidade de doações: ");
+						int novaQtd = leitura.nextInt();
 						
-						System.out.println("Digite o estado da instituicao a ser alterado: ");
-						String novoEstado = leitura.nextLine();
+						System.out.println("Informe a nova quantia em dinheiro: ");
+						double novaDoacaoDinheiro = leitura.nextDouble();
 						
-						System.out.println("Digite o numero da conta da instituicao a ser alterado: ");
-						double novaConta = leitura.nextDouble();
-						
-						Doacao donativo = new Doacao(beneficiado, DoadorEmpresa empresadoadora,
-								DoadorPessoa doador, int quantidade, Produtos produto,
-								int doacaoDinheiro, cod);
+						Doacao novaDoacao = new Doacao(codInstituicao, empresadoadora, doador, novaQtd, novaDoacaoDinheiro, cod);
 						
 						repoDoacao.atualizarDoacao(novaDoacao);
 						System.out.println(repoDoacao.atualizarDoacao(novaDoacao));
@@ -99,7 +109,7 @@ public class AplicacaoDoacao {
 						
 				case 4:
 						
-						System.out.println("Informe o codigo da doacao que voce deseja remover: ");
+						System.out.println("Informe o código da doação que você deseja remover: ");
 						cod = leitura.nextInt();
 						System.out.println(repoDoacao.removerDoacao(cod));
 						break;
@@ -109,13 +119,15 @@ public class AplicacaoDoacao {
 						break;
 				case 6:
 					
-						System.out.println("Voce saiu!");
+						System.out.println("Você saiu!");
 						break;
 						
 				default:
 					
-						System.out.println("Voce escolheu uma opcaoo invalida!");
+						System.out.println("Você escolheu uma opção inválida!");
 			}
+			
+			
 			
 			
 		}while (option != 6);

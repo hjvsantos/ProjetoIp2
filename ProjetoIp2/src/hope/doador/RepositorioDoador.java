@@ -98,6 +98,5 @@ public class RepositorioDoador implements IRepositorioDoador {
 		return listaFinal;
 	}
 }
-	
 
 

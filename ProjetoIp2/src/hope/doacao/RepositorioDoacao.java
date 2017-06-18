@@ -1,6 +1,6 @@
 package hope.doacao;
 
-public class RepositorioDoacao {
+public class RepositorioDoacao implements IRepositorioDoacao {
 
 	private Doacao[] doacaoArray;
 	private int quantDoacao = 0;
@@ -11,7 +11,7 @@ public class RepositorioDoacao {
 		this.quantDoacao = quantDoacao;
 	}
 
-	public Doacao[] getDoacaoArray() {
+	public Doacao[] getDoacaoArray(int codigo) {
 		return doacaoArray;
 	}
 
@@ -81,11 +81,11 @@ public class RepositorioDoacao {
 			this.doacaoArray[i] = this.doacaoArray[this.quantDoacao - 1];
 			this.doacaoArray[this.quantDoacao - 1] = null;
 			this.quantDoacao = this.quantDoacao -1;
-			System.out.println("DoaÁ„o: " + codigo + "removida!");
+			System.out.println("Doa√ß√£o: " + codigo + "removida!");
 			return true;
 		}
 		else {
-			System.out.println("Doador n„o encontrado");
+			System.out.println("Doador n√£o encontrado");
 			return false;
 		}
 		
@@ -94,8 +94,8 @@ public class RepositorioDoacao {
 	public String listarDoacoes(){
 		String listaFinal = "";
 		for(int f = 0; f < quantDoacao; f++){
-			listaFinal += "\n Informacoes das doaÁıes:\n Doador: " + doacaoArray[f].getDoador()+ "\n Beneficiado: " 
-		+ doacaoArray[f].getBeneficiado()+ "\n DoaÁ„o: " + doacaoArray[f].getProduto();}
+			listaFinal += "\n Informacoes das doa√ß√µes:\n Doador: " + doacaoArray[f].getDoador()+ "\n Beneficiado: " 
+		+ doacaoArray[f].getCodInstituicao() + "\n Doa√ß√£o: " + doacaoArray[f].getCodigo();}
 		return listaFinal;
 	}
 	

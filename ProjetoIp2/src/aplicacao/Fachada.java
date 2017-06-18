@@ -1,5 +1,7 @@
 package aplicacao;
-
+import hope.doacao.RepositorioDoacao;
+import hope.doacao.IRepositorioDoacao;
+import hope.doacao.Doacao;
 import hope.doador.Doador;
 import hope.doador.IRepositorioDoador;
 import hope.doador.RepositorioDoador;
@@ -11,6 +13,7 @@ public class Fachada {
 	
 	IRepositorioDoador repDoador = new RepositorioDoador(null, 100);
 	IRepositorioInstituicao repInstituicao = new RepositorioInstituicao(null, 100);
+	IRepositorioDoacao repDoacao = new RepositorioDoacao (null, 100);
 	
 	//Metodos da classe Doador:
 	public boolean cadastrar(Doador doador){
@@ -53,6 +56,27 @@ public class Fachada {
 	public String listarInstituicoes(){
 		return repInstituicao.listarInstituicoes();
 	}
+
+	 //Metodos da Classe Doação 
 	
+	public boolean cadastrarDoacao(Doacao doacao) {
+		return repDoacao.cadastrarDoacao(doacao);
+	}
+
+	public Doacao buscarDoacao(int codigoDoacao) {
+		return repDoacao.buscarDoacao(codigoDoacao);
+	}
+
+	public boolean atualizarDoacao(Doacao novaDoacao) {
+		return repDoacao.atualizarDoacao(novaDoacao);
+	}
+
+	public boolean removerDoacao(int codigoDoacao) {
+		return repDoacao.removerDoacao(codigoDoacao);
+	}
+
+	public String listarDoacoes() {
+		return repDoacao.listarDoacoes();
+	}
 
 }

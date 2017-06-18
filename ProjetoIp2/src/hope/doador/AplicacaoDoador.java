@@ -30,7 +30,7 @@ public static void main(String[] args) {
 					System.out.println("Informe o CPF ou CNPJ do Doador: ");
 					String id = entrada.nextLine();
 					while(id.equals(null)){
-						System.out.println("Digite uma identificação valida: ");
+						System.out.println("Digite uma identificaÃ§Ã£o valida: ");
 						id = entrada.nextLine();
 						entrada.nextLine();
 				
@@ -62,7 +62,7 @@ public static void main(String[] args) {
 					System.out.println("Informe o codigo do cartao:");
 					int codCar = entrada.nextInt();
 					while(codCar == 0){
-						System.out.println("O codigo é invalido");
+						System.out.println("O codigo Ã© invalido");
 					}
 					
 					Random random  = new Random();
