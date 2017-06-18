@@ -1,5 +1,5 @@
 package hope.instituicao;
-
+//teste
 import hope.produto.Produto;
 
 public class Instituicao {
