@@ -56,35 +56,6 @@ public class Fachada {
 	public String listarInstituicoes(){
 		return repInstituicao.listarInstituicoes();
 	}
-<<<<<<< HEAD
-=======
-
-	 //Metodos da Classe DoaÁ„o 
-	
-	public boolean cadastrarDoacao(Doacao doacao) {
-		return repDoacao.cadastrarDoacao(doacao);
-	}
-
-	public Doacao buscarDoacao(int codigoDoacao) {
-		return repDoacao.buscarDoacao(codigoDoacao);
-	}
-
-	public boolean atualizarDoacao(Doacao novaDoacao) {
-		return repDoacao.atualizarDoacao(novaDoacao);
-	}
-
-	public boolean removerDoacao(int codigoDoacao) {
-		return repDoacao.removerDoacao(codigoDoacao);
-	}
-
-	public String listarDoacoes() {
-		return repDoacao.listarDoacoes();
-	}
-	
-	
-	
-	
->>>>>>> branch 'master' of https://github.com/hjvsantos/ProjetoIp2.git
 
 	 //Metodos da Classe Doa√ß√£o 
 	

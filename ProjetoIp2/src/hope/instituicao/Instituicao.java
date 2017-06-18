@@ -1,5 +1,5 @@
 package hope.instituicao;
-//teste
+
 import hope.produto.Produto;
 
 public class Instituicao {
@@ -24,14 +24,6 @@ public class Instituicao {
 		this.numeroConta = numeroConta;
 		this.codInstituicao = codInstituicao;
 	//	this.donativos = donativos;
-	}
-
-	public String getCodInstituicao() {
-		return codInstituicao;
-	}
-
-	public void setCodInstituicao(String codInstituicao) {
-		this.codInstituicao = codInstituicao;
 	}
 
 	public String getCodInstituicao() {
