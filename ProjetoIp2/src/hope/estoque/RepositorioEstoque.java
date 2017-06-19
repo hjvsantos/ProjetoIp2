@@ -1,6 +1,6 @@
 package hope.estoque;
 
-public class RepositorioEstoque {
+public class RepositorioEstoque implements IRepositorioEstoque{
 
 		private Estoque[] estoqueArray;
 		private int tamanho = 0;
@@ -38,7 +38,7 @@ public class RepositorioEstoque {
 			return true;
 		}
 		
-		public boolean atualizarProduto(Estoque estoque){
+		public boolean atualizar(Estoque estoque){
 			for(int i = 0; i < tamanho; i++){
 				if(estoqueArray[i].getCodigo() == estoque.getCodigo()){
 					estoqueArray[i] = estoque;
@@ -48,7 +48,7 @@ public class RepositorioEstoque {
 			return false;
 		}
 		
-		public Estoque buscar(int codigo){
+		public Estoque buscarEstoque(int codigo){
 			 int t = 0;
 			 boolean find = false;
 			 while ((!find) && (t < this.tamanho)){
@@ -89,7 +89,7 @@ public class RepositorioEstoque {
 			}
 		}
 		
-		public String listarProdutos(){
+		public String listarEstoque(){
 			//TODO 
 			return null;
 			

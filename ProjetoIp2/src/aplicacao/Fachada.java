@@ -5,6 +5,9 @@ import hope.doacao.Doacao;
 import hope.doador.Doador;
 import hope.doador.IRepositorioDoador;
 import hope.doador.RepositorioDoador;
+import hope.estoque.Estoque;
+import hope.estoque.IRepositorioEstoque;
+import hope.estoque.RepositorioEstoque;
 import hope.instituicao.IRepositorioInstituicao;
 import hope.instituicao.Instituicao;
 import hope.instituicao.RepositorioInstituicao;
@@ -14,6 +17,7 @@ public class Fachada {
 	IRepositorioDoador repDoador = new RepositorioDoador(null, 100);
 	IRepositorioInstituicao repInstituicao = new RepositorioInstituicao(null, 100);
 	IRepositorioDoacao repDoacao = new RepositorioDoacao (null, 100);
+	IRepositorioEstoque repEstoque = new RepositorioEstoque(null, 100);
 	
 	//Metodos da classe Doador:
 	public boolean cadastrar(Doador doador){
@@ -77,6 +81,28 @@ public class Fachada {
 
 	public String listarDoacoes() {
 		return repDoacao.listarDoacoes();
+	}
+	
+	//Metodos da Classe Estoque
+	
+	public boolean inserir(Estoque estoque){
+		return repEstoque.inserir(estoque);
+	}
+	
+	public boolean atualizar(Estoque estoque){
+		return repEstoque.atualizar(estoque);
+	}
+	
+	public Estoque buscarEstoque(int codigo){
+		return repEstoque.buscarEstoque(codigo);
+	}
+	
+	public boolean remover(int codigo){
+		return repEstoque.remover(codigo);
+	}
+	
+	public String listarEstoque(){
+		return repEstoque.listarEstoque();
 	}
 
 }
