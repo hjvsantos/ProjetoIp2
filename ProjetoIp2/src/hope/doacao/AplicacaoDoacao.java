@@ -5,6 +5,7 @@ import hope.produto.Produto;
 import hope.doador.Doador;
 import hope.doador.DoadorEmpresa;
 import hope.doador.DoadorPessoa;
+import hope.categoria.*;
 
 public class AplicacaoDoacao {
 

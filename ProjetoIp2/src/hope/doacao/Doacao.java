@@ -19,7 +19,11 @@ public class Doacao {
 	private double doacaoDinheiro;
 	private int codigo;
 	
-	public Doacao(Categoria caregoria, String codInstituicao, DoadorEmpresa empresadoadora,
+	public Doacao(Categoria categoria){
+		this.categoria = categoria;
+	}
+	
+	public Doacao(String codInstituicao, DoadorEmpresa empresadoadora,
 			DoadorPessoa doador, int quantidade,
 			double doacaoDinheiro, int codigo) {
 		

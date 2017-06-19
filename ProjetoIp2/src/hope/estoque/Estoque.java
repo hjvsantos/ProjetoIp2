@@ -8,12 +8,14 @@ public class Estoque {
 	private String tipoProduto;
 	private boolean disponivel;
 	private int quantidade;
+	private int codigo;
 	
-	public Estoque (Categoria categoria, String tipoProduto, boolean disponivel, int quantidade) {
+	public Estoque (Categoria categoria, String tipoProduto, boolean disponivel, int quantidade, int codigo) {
 		this.categoria = categoria;
 		this.tipoProduto = tipoProduto;
 		this.disponivel = disponivel;
 		this.quantidade = quantidade;
+		this.codigo = codigo;
 	}
 
 	public Categoria getCategoria() {
@@ -46,6 +48,14 @@ public class Estoque {
 
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
+	}
+	
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 
 	public String toString() {
