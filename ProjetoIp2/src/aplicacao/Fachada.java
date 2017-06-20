@@ -95,12 +95,12 @@ public class Fachada {
 	
 	
 	//Metodos da classe Instituicao
-	public boolean cadastrar(Instituicao insti){
-		return repInstituicao.cadastrar(insti);
+	public boolean cadastrarI(Instituicao insti){
+		return repInstituicao.cadastrarI(insti);
 	}
 	
-	public Instituicao buscar(String cnpj){
-		return repInstituicao.buscar(cnpj);
+	public Instituicao buscarI(String cnpj){
+		return repInstituicao.buscarI(cnpj);
 	}
 	
 	public boolean removerInstituicao(String cnpj){
