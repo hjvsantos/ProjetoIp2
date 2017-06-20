@@ -45,25 +45,25 @@ public class AplicacaoDoacao {
 				  			doador.cpf = id;
 				  		}
 				  		
-				  		System.out.println("Informe o codigo da Instituição que será beneficiada: \n");
+				  		System.out.println("Informe o codigo da Instituicao que sera beneficiada: \n");
 					  	String codInstituicao = leitura.nextLine();
 					  	while (codInstituicao == null) {
-					  		System.out.println("Informe uma identificação válida: \n");
+					  		System.out.println("Informe uma identificacao valida: \n");
 					  		codInstituicao = leitura.nextLine();
 					  	}
 				  	
-					  	System.out.println("Informe a quantidade de doações que você fará hoje: ");
+					  	System.out.println("Informe a quantidade de doacoes que voce fara hoje: ");
 					  	int quantidade = leitura.nextInt();
 					  	leitura.nextLine();
 					  	
 					  	
-					  	//System.out.println("Informe os produtos que fazem parte desta doação: \n");
+					  	//System.out.println("Informe os produtos que fazem parte desta doacao: \n");
 					  	
 					  	
 					  	System.out.println("Informe a quantia em dinheiro a ser doada: \n");
 					  	int doacaoDinheiro = leitura.nextInt();
 					  	
-					  	System.out.println("Informe um código para esta doação: \n");
+					  	System.out.println("Informe um código para esta doacao: \n");
 					  	int codigo = leitura.nextInt();
 					  	
 					  	Doacao donativo = new Doacao(codInstituicao, empresadoadora,
