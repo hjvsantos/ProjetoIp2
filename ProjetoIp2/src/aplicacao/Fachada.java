@@ -5,6 +5,9 @@ import hope.doacao.Doacao;
 import hope.doador.Doador;
 import hope.doador.IRepositorioDoador;
 import hope.doador.RepositorioDoador;
+import hope.financeiro.Financeiro;
+import hope.financeiro.IRepositorioFinanceiro;
+import hope.financeiro.RepositorioFinanceiro;
 import hope.instituicao.IRepositorioInstituicao;
 import hope.instituicao.Instituicao;
 import hope.instituicao.RepositorioInstituicao;
@@ -30,7 +33,7 @@ public class Fachada {
 	IRepositorioDiversos repDiversos = new RepositorioDiversos(100, null);
 	IRepositorioHigiene repHigiene = new RepositorioHigiene(null, 100);
 	IRepositorioVestimenta repVestimenta = new RepositorioVestimenta(null, 100);
-	
+	IRepositorioFinanceiro repFinanceiro = new RepositorioFinanceiro(null, 100);
 	
 	public static Fachada instance;
 	
@@ -191,6 +194,28 @@ public class Fachada {
 	
 	public String listar(){
 		return repVestimenta.listar();
+	}
+	
+	//Metodos da Classe Financeiro
+	
+	public boolean cadastrar(Financeiro doacaoDinheiro){
+		return repFinanceiro.cadastrar(doacaoDinheiro);
+	}
+	
+	public boolean atualizar(Financeiro doacaoDinheiro){
+		return repFinanceiro.atualizar(doacaoDinheiro);
+	}
+	
+	public Financeiro buscarDoadorDinhehiro(String codDoador){
+		return repFinanceiro.buscarDoadorDinhehiro(codDoador);
+	}
+	
+	public boolean removerDoacaoDinheiro(String codOperacao){
+		return repFinanceiro.removerDoacaoDinheiro(codOperacao);
+	}
+	
+	public String listarDoadoresFinanceiros(){
+		return repFinanceiro.listarDoadoresFinanceiros();
 	}
 
 }

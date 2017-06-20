@@ -1,6 +1,6 @@
 package hope.financeiro;
 
-public class RepositorioFinanceiro {
+public class RepositorioFinanceiro implements IRepositorioFinanceiro{
 	
 	private Financeiro[] financeiroArray;
 	private int quantDoacoesDinheiro = 0;
@@ -65,7 +65,7 @@ public class RepositorioFinanceiro {
 				return resultado;
 		}
 	
-	public boolean removerDoadorDinheiro(String codOperacao){
+	public boolean removerDoacaoDinheiro(String codOperacao){
 		int i = 0;
 		boolean find = false;
 		while((!find) && (i < this.quantDoacoesDinheiro)){
@@ -89,7 +89,7 @@ public class RepositorioFinanceiro {
 		}
 	}
 	
-	public String listarAlimentos(){
+	public String listarDoadoresFinanceiros(){
 		String listaFinal = "";
 		for(int i = 0; i < quantDoacoesDinheiro; i++){
 			listaFinal += "\n Informacoes da Doacao financeira:\n Conta de origem: " + financeiroArray[i].getContaOrigem() 
