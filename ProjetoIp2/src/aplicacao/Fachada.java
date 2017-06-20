@@ -2,9 +2,12 @@ package aplicacao;
 import hope.doacao.RepositorioDoacao;
 import hope.doacao.IRepositorioDoacao;
 import hope.doacao.Doacao;
-import hope.doador.Doador;
-import hope.doador.IRepositorioDoador;
-import hope.doador.RepositorioDoador;
+import hope.doador.DoadorEmpresa;
+import hope.doador.DoadorPessoa;
+import hope.doador.IRepositorioDoadorEmpresa;
+import hope.doador.IRepositorioDoadorPessoa;
+import hope.doador.RepositorioDoadorEmpresa;
+import hope.doador.RepositorioDoadorPessoa;
 import hope.financeiro.Financeiro;
 import hope.financeiro.IRepositorioFinanceiro;
 import hope.financeiro.RepositorioFinanceiro;
@@ -26,7 +29,8 @@ import hope.produto.Vestimenta;
 
 public class Fachada {
 	
-	IRepositorioDoador repDoador = new RepositorioDoador(null, 100);
+	IRepositorioDoadorPessoa repDoadorP = new RepositorioDoadorPessoa(null, 100);
+	IRepositorioDoadorEmpresa repDoadorE = new RepositorioDoadorEmpresa(null, 100);
 	IRepositorioInstituicao repInstituicao = new RepositorioInstituicao(null, 100);
 	IRepositorioDoacao repDoacao = new RepositorioDoacao (null, 100);
 	IRepositorioAlimento repAlimento = new RepositorioAlimento(null, 100);
@@ -44,26 +48,51 @@ public class Fachada {
 		return instance;
 	}
 	
-	//Metodos da classe Doador:
-	public boolean cadastrar(Doador doador){
-		return repDoador.cadastrar(doador);
+	//Metodos da classe DoadorPessoa:
+	public boolean cadastrarP(DoadorPessoa doadorPessoa){
+		return repDoadorP.cadastrarP(doadorPessoa);
 	}
 	
-	public Doador buscar(int codigoDoador){
-		return repDoador.buscar(codigoDoador);
+	public DoadorPessoa buscarP(String cpf){
+		return repDoadorP.buscarP(cpf);
 	}
 	
-	public boolean atualizarDoador(Doador novoDoador){
-		return repDoador.atualizarDoador(novoDoador);
+	public boolean atualizarDoadorP(DoadorPessoa novoDoadorP){
+		return repDoadorP.atualizarDoadorP(novoDoadorP);
 	}
 	
-	public boolean removerDoador(int codigoDoador){
-		return repDoador.removerDoador(codigoDoador);
+	public boolean removerDoadorP(String cpf){
+		return repDoadorP.removerDoadorP(cpf);
 	}
 	
-	public String listarDoadores(){
-		return repDoador.listarDoadores();
+	public String listarDoadoresP(){
+		return repDoadorP.listarDoadoresP();
+		
 	}
+	
+	//Metodos da Classe DoadorEmpresa
+	
+	public boolean cadastrarE(DoadorEmpresa doadorEmpresa){
+		return repDoadorE.cadastrarE(doadorEmpresa);
+	}
+	
+	public DoadorEmpresa buscarE(String cnpj){
+		return repDoadorE.buscarE(cnpj);
+	}
+	
+	public boolean atualizarDoadorE(DoadorEmpresa novoDoadorE){
+		return repDoadorE.atualizarDoadorE(novoDoadorE);
+	}
+	
+	public boolean removerDoadorE(String cnpj){
+		return repDoadorE.removerDoadorE(cnpj);
+	}
+	
+	public String listarDoadoresE(){
+		return repDoadorE.listarDoadoresE();
+	}
+	
+	
 	
 	//Metodos da classe Instituicao
 	public boolean cadastrar(Instituicao insti){
