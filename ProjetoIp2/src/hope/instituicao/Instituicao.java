@@ -1,5 +1,7 @@
 package hope.instituicao;
 
+import java.util.Random;
+
 import hope.produto.Produto;
 
 public class Instituicao {
@@ -9,28 +11,28 @@ public class Instituicao {
 	private String cidade;
 	private String estado;
 	private double numeroConta;
-	private String codInstituicao;
+	private Random codInstituicao;
 	//public Produtos donativos;
 	//ver a necessidade de discriminar os donativos em instituicao! Não tentei isso na aplicação
 	
 	
 	public Instituicao(String nome, String cnpj, String cidade, String estado,
-			double numeroConta, String codInstituicao ) {
+			double numeroConta, Random nAleatorio ) {
 		super();
 		this.nome = nome;
 		this.cnpj = cnpj;
 		this.cidade = cidade;
 		this.estado = estado;
 		this.numeroConta = numeroConta;
-		this.codInstituicao = codInstituicao;
+		this.codInstituicao = nAleatorio;
 	//	this.donativos = donativos;
 	}
 
-	public String getCodInstituicao() {
+	public Random getCodInstituicao() {
 		return codInstituicao;
 	}
 
-	public void setCodInstituicao(String codInstituicao) {
+	public void setCodInstituicao(Random codInstituicao) {
 		this.codInstituicao = codInstituicao;
 	}
 
