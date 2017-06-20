@@ -15,6 +15,15 @@ public class Fachada {
 	IRepositorioInstituicao repInstituicao = new RepositorioInstituicao(null, 100);
 	IRepositorioDoacao repDoacao = new RepositorioDoacao (null, 100);
 	
+	public static Fachada instance;
+	
+	public static Fachada getInstance() {
+		if(instance == null) {
+			instance = new Fachada();
+		}
+		return instance;
+	}
+	
 	//Metodos da classe Doador:
 	public boolean cadastrar(Doador doador){
 		return repDoador.cadastrar(doador);
