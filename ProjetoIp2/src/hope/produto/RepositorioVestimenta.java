@@ -1,6 +1,6 @@
 package hope.produto;
 
-public class RepositorioVestimenta {
+public class RepositorioVestimenta implements IRepositorioVestimenta{
 
 	private Vestimenta[] roupas;
 	private int quantidadeRoupas;
@@ -48,7 +48,7 @@ public class RepositorioVestimenta {
 		return false;
 	}
 	
-	public Vestimenta buscar(int codigo){
+	public Vestimenta buscarVest(int codigo){
 		 int v = 0;
 		 boolean find = false;
 		 while ((!find) && (v < this.quantidadeRoupas)){

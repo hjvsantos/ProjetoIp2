@@ -6,7 +6,7 @@ public interface IRepositorioHigiene {
 	
 	public boolean atualizarHigiene(Higiene higiene);
 	
-	public Higiene buscar(int codigo);
+	public Higiene buscarHig(int codigo);
 	
 	public boolean removerHigiene(int codigo);
 	

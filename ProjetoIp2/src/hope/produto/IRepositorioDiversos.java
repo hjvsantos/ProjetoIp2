@@ -2,14 +2,14 @@ package hope.produto;
 
 public interface IRepositorioDiversos {
 	
-	public boolean cadastrar(Diversos div);
+	public boolean cadastrarDiv(Diversos div);
 	
-	public boolean atualizar(Diversos div);
+	public boolean atualizarDiv(Diversos div);
 	
-	public Diversos buscar(int codigo);
+	public Diversos buscarDiv(int codigo);
 	
-	public boolean remover(int codigo);
+	public boolean removerDiv(int codigo);
 	
-	public String listar();
+	public String listarDiv();
 	
 }

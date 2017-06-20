@@ -1,6 +1,6 @@
 package hope.produto;
 
-public class RepositorioAlimento {
+public class RepositorioAlimento implements IRepositorioAlimento{
 	private Alimento[] alimentoArray;
 	private int quantAlimento = 0;
 	
@@ -48,7 +48,7 @@ public class RepositorioAlimento {
 		return false;
 	}
 	
-	public Alimento buscar(int codigo){
+	public Alimento buscarAlimento(int codigo){
 		 int t = 0;
 		 boolean find = false;
 		 while ((!find) && (t < this.quantAlimento)){

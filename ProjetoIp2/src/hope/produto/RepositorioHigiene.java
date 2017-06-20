@@ -1,6 +1,6 @@
 package hope.produto;
 
-public class RepositorioHigiene {
+public class RepositorioHigiene implements IRepositorioHigiene{
 	private Higiene[] higieneArray;
 	private int quantHigiene = 0;
 	
@@ -48,7 +48,7 @@ public class RepositorioHigiene {
 		return false;
 	}
 	
-	public Higiene buscar(int codigo){
+	public Higiene buscarHig(int codigo){
 		 int t = 0;
 		 boolean find = false;
 		 while ((!find) && (t < this.quantHigiene)){
@@ -92,7 +92,7 @@ public class RepositorioHigiene {
 	public String listarHigiene(){
 		String listaFinal = "";
 		for(int i = 0; i < quantHigiene; i++){
-			listaFinal += "\n Informacoes dos Alimentos:\n Nome: " + higieneArray[i].getNome() + "\n Codigo do Produto: " + higieneArray[i].getCodigo() + "\n Tipo: " + higieneArray[i].getTipo() + "\n Quantidade: " + higieneArray[i].getQuantidade() + "\n Descrição:" + higieneArray[i].getDescricao();}
+			listaFinal += "\n Informacoes dos Alimentos:\n Nome: " + higieneArray[i].getNome() + "\n Codigo do Produto: " + higieneArray[i].getCodigo() + "\n Tipo: " + higieneArray[i].getTipo() + "\n Quantidade: " + higieneArray[i].getQuantidade() + "\n Descriï¿½ï¿½o:" + higieneArray[i].getDescricao();}
 		return listaFinal;
 	}
 	

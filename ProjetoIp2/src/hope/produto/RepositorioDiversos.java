@@ -1,6 +1,6 @@
 package hope.produto;
 
-public class RepositorioDiversos {
+public class RepositorioDiversos implements IRepositorioDiversos {
 
 	private int quantidade;
 	private Diversos[] diversosArray;
@@ -18,7 +18,7 @@ public class RepositorioDiversos {
 		return diversosArray;
 	}
 	
-	public boolean cadastrar(Diversos variedade){
+	public boolean cadastrarDiv(Diversos variedade){
 		if(variedade.equals(null)){
 			return false;
 		}else{
@@ -38,7 +38,7 @@ public class RepositorioDiversos {
 		return true;
 	}
 	
-	public boolean atualizar(Diversos variedade ){
+	public boolean atualizarDiv(Diversos variedade ){
 		for(int i = 0; i < quantidade; i++){
 			if(diversosArray[i].getCodigo() == variedade.getCodigo()){
 				diversosArray[i] = variedade;
@@ -48,7 +48,7 @@ public class RepositorioDiversos {
 		return false;
 	}
 	
-	public Diversos buscar(int codigo){
+	public Diversos buscarDiv(int codigo){
 		 int d = 0;
 		 boolean find = false;
 		 while ((!find) && (d < this.quantidade)){
@@ -65,7 +65,7 @@ public class RepositorioDiversos {
 				return resultado;
 		}
 	
-	public boolean remover(int codigo){
+	public boolean removerDiv(int codigo){
 		int i = 0;
 		boolean find = false;
 		while((!find) && (i < this.quantidade)){
@@ -89,7 +89,7 @@ public class RepositorioDiversos {
 		}
 	}
 	
-	public String listar(){
+	public String listarDiv(){
 		String listaFinal = "";
 		for(int i = 0; i < quantidade; i++){
 			listaFinal += "\n Informacoes dos doadores:\n Nome: " + diversosArray[i].getNome() + "\n Codigo do Produto: " + diversosArray[i].getCodigo() + "\n Tipo: " + diversosArray[i].getTipo() + "\n Quantidade: " + diversosArray[i].getQuantidade();}
