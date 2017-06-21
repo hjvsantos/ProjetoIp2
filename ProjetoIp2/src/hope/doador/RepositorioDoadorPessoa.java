@@ -95,7 +95,7 @@ public class RepositorioDoadorPessoa implements IRepositorioDoadorPessoa{
 		for(int i = 0; i < quantDoadorP; i++){
 			listaFinal += "\n Informacoes dos doadores:\n Nome: " + doadorPArray[i].getNome() + "\n Cidade: " 
 		+ doadorPArray[i].getCidade() + "\n CPF do Doador: " + doadorPArray[i].getCpf() + "\n Tipo: " 
-		+ doadorPArray[i].getType() + "\n Idade do doador: " + doadorPArray[i].getIdade();}
+		+ doadorPArray[i].getTipo() + "\n Idade do doador: " + doadorPArray[i].getIdade();}
 		return listaFinal;
 	}
 
