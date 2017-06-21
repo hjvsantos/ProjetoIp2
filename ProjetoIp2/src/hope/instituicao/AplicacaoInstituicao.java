@@ -67,7 +67,7 @@ public class AplicacaoInstituicao {
 					
 					
 					Instituicao instituicao = new Instituicao(nome, cnpj, cidade, estado, numConta, codInstituicao);
-					meuRep.cadastrar(instituicao);
+					meuRep.cadastrarI(instituicao);
 					break;				
 			}
 		
@@ -76,7 +76,7 @@ public class AplicacaoInstituicao {
 					String cnpjNovo  = scanner.nextLine();
 					scanner.nextLine();
 				
-					System.out.println(meuRep.buscar(cnpjNovo));
+					System.out.println(meuRep.buscarI(cnpjNovo));
 					break;
 					
 				
