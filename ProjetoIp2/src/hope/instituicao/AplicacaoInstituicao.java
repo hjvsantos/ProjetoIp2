@@ -31,6 +31,7 @@ public class AplicacaoInstituicao {
 						System.out.println("Digite um cnpj valido: ");
 						cnpj = scanner.nextLine();
 						scanner.nextLine();
+					}
 				
 					System.out.println("Informe o nome da instituicao: ");
 					String nome = scanner.nextLine();
@@ -50,17 +51,12 @@ public class AplicacaoInstituicao {
 					while(estado.equals(null)){
 						System.out.println("Digite um nome de estado valido: ");
 						estado = scanner.nextLine();
-					}
-					do{
+					}do{
 					System.out.println("Informe o numero da conta bancaria (de cinco digitos): ");
 					numConta = scanner.nextDouble();
 					scanner.nextLine();
 					}while (numConta < 0 || numConta > 99999);
 				
-					//System.out.println("Informe o codigo da Instituicao: ");
-					//Random codInstituicao = scanner.nextLine();
-					//scanner.nextLine();
-					
 					Random random = new Random();
 					int codInstituicao = random.nextInt(100);
 					
@@ -69,7 +65,7 @@ public class AplicacaoInstituicao {
 					Instituicao instituicao = new Instituicao(nome, cnpj, cidade, estado, numConta, codInstituicao);
 					meuRep.cadastrarI(instituicao);
 					break;				
-			}
+			
 		
 			case 2:
 					System.out.println("Digite o CNPJ da instituicao:");
@@ -127,7 +123,6 @@ public class AplicacaoInstituicao {
 			}
 		
 		} while(opcao != 6);
-		
+		}
 	}
 		
-}
