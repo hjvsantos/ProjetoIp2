@@ -70,7 +70,6 @@ public class AplicacaoInstituicao {
 			case 2:
 					System.out.println("Digite o CNPJ da instituicao:");
 					String cnpjNovo  = scanner.nextLine();
-					scanner.nextLine();
 				
 					System.out.println(meuRep.buscarI(cnpjNovo));
 					break;
@@ -87,7 +86,6 @@ public class AplicacaoInstituicao {
 			case 4:
 					System.out.println("Digite o CNPJ da instituicao que deseja alterar: ");
 					String cnpjAlterado = scanner.nextLine();
-					scanner.nextLine();
 					
 					System.out.println("Digite o nome da instituicao a ser alterado: ");
 					String novoNome = scanner.nextLine();
