@@ -14,7 +14,7 @@ public class AplicacaoInstituicao {
 		Scanner scanner = new Scanner(System.in);
 		int opcao = 0;
 		
-		System.out.println("Menu de Instituicoes!!! \n");
+		System.out.println("\t Menu \n");
 		
 		do{
 			System.out.println("Escolha uma das opcoes a seguir:\n 1)Cadastrar instituicao.\n 2)Buscar instituicao.\n 3)Remover instituicao.\n" +
