@@ -122,7 +122,7 @@ public class AplicacaoInstituicao {
 					break;
 				
 			case 6:
-					System.out.println("Voce saiu! :) ");
+					System.out.println("Voce saiu");
 					return;
 				
 				default:

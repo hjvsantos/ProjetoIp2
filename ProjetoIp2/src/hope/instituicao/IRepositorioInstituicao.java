@@ -12,6 +12,8 @@ public interface IRepositorioInstituicao {
 	
 	public boolean consultarExistencia(int codInstituicao);
 	
+	public int retornarPosicao(int cod);
+	
 	public String listarInstituicoes();
 
 }

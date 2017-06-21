@@ -114,6 +114,14 @@ public class Fachada {
 	public String listarInstituicoes(){
 		return repInstituicao.listarInstituicoes();
 	}
+	
+	public boolean consultarExistencia(int codInstituicao){
+		return repInstituicao.consultarExistencia(codInstituicao);
+	}
+	
+	public int retornarPosicao(int cod){
+		return repInstituicao.retornarPosicao(cod);
+	}
 
 	 //Metodos da Classe Doação 
 	
