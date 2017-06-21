@@ -95,7 +95,7 @@ public class RepositorioDoadorEmpresa implements IRepositorioDoadorEmpresa{
 		for(int i = 0; i < quantDoadorE; i++){
 			listaFinal += "\n Informacoes dos doadores:\n Nome: " + doadorEArray[i].getNome() + "\n Cidade: " 
 		+ doadorEArray[i].getCidade() + "\n CNPJ do Doador: " + doadorEArray[i].getCnpj() + "\n Tipo: " 
-		+ doadorEArray[i].getType() + "\n Ano de fundacao: " + doadorEArray[i].getAnoFundacao();}
+		+ doadorEArray[i].getTipo() + "\n Ano de fundacao: " + doadorEArray[i].getAnoFundacao();}
 		return listaFinal;
 	}
 
