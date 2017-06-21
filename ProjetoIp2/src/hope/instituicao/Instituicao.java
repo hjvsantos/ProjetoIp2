@@ -11,28 +11,28 @@ public class Instituicao {
 	private String cidade;
 	private String estado;
 	private double numeroConta;
-	private Random codInstituicao;
+	private int codInstituicao;
 	//public Produtos donativos;
 	//ver a necessidade de discriminar os donativos em instituicao! Não tentei isso na aplicação
 	
 	
 	public Instituicao(String nome, String cnpj, String cidade, String estado,
-			double numeroConta, Random nAleatorio ) {
+			double numeroConta, int codInstituicao ) {
 		super();
 		this.nome = nome;
 		this.cnpj = cnpj;
 		this.cidade = cidade;
 		this.estado = estado;
 		this.numeroConta = numeroConta;
-		this.codInstituicao = nAleatorio;
+		this.codInstituicao = codInstituicao;
 	//	this.donativos = donativos;
 	}
 
-	public Random getCodInstituicao() {
+	public int getCodInstituicao() {
 		return codInstituicao;
 	}
 
-	public void setCodInstituicao(Random codInstituicao) {
+	public void setCodInstituicao(int codInstituicao) {
 		this.codInstituicao = codInstituicao;
 	}
 

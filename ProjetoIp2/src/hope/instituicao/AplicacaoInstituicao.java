@@ -1,5 +1,6 @@
 package hope.instituicao;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class AplicacaoInstituicao {
@@ -27,7 +28,7 @@ public class AplicacaoInstituicao {
 					System.out.println("Informe o CNPJ da instituicao: ");
 					String cnpj = scanner.nextLine();
 					while(cnpj.equals(null)){
-						System.out.println("Digite um nome valido: ");
+						System.out.println("Digite um cnpj valido: ");
 						cnpj = scanner.nextLine();
 						scanner.nextLine();
 				
@@ -56,9 +57,14 @@ public class AplicacaoInstituicao {
 					scanner.nextLine();
 					}while (numConta < 0 || numConta > 99999);
 				
-					System.out.println("Informe o codigo da Instituicao: ");
-					String codInstituicao = scanner.nextLine();
-					scanner.nextLine();
+					//System.out.println("Informe o codigo da Instituicao: ");
+					//Random codInstituicao = scanner.nextLine();
+					//scanner.nextLine();
+					
+					Random random = new Random();
+					int codInstituicao = random.nextInt(100);
+					
+					
 					
 					Instituicao instituicao = new Instituicao(nome, cnpj, cidade, estado, numConta, codInstituicao);
 					meuRep.cadastrar(instituicao);
@@ -100,7 +106,7 @@ public class AplicacaoInstituicao {
 					double novaConta = scanner.nextDouble();
 					
 					System.out.println("Digite o codigo da instituicao a ser alterado: ");
-					String novoCod = scanner.nextLine();
+					int novoCod = scanner.nextInt();
 					
 					Instituicao novaInstituicao = new Instituicao(cnpjAlterado, novoNome, novaCidade, novoEstado, novaConta, novoCod);
 					
