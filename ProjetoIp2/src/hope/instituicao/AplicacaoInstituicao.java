@@ -64,6 +64,7 @@ public class AplicacaoInstituicao {
 					
 					Instituicao instituicao = new Instituicao(nome, cnpj, cidade, estado, numConta, codInstituicao);
 					meuRep.cadastrarI(instituicao);
+					System.out.println(instituicao.toString()+"\n\tInstituição cadastrada!\n");
 					break;				
 			
 		
@@ -78,35 +79,43 @@ public class AplicacaoInstituicao {
 			case 3:
 					System.out.println("Digite o CNPJ da instituicao que deseja remover: ");
 					String cnpjRemover = scanner.nextLine();
-					scanner.nextLine();
 					
 					System.out.println(meuRep.removerInstituicao(cnpjRemover));
 					break;
 				
 			case 4:
-					System.out.println("Digite o CNPJ da instituicao que deseja alterar: ");
-					String cnpjAlterado = scanner.nextLine();
+				
+					System.out.println("Digite o codigo da instituicao que deseja alterar: ");
+					int codI = scanner.nextInt();
+					if(meuRep.consultarExistencia(codI)==false){
+						System.out.println("Instituição não existente");
+						break;
+					}
+					
+					Instituicao novaInstituicao = new Instituicao();
+					novaInstituicao.setCodInstituicao(codI);
+					novaInstituicao.setCnpj(meuRep.getInstituicoes()[meuRep.retornarPosicao(codI)].getCnpj());
+					
 					
 					System.out.println("Digite o nome da instituicao a ser alterado: ");
-					String novoNome = scanner.nextLine();
+					String novoNome = scanner.next();
+					meuRep.getInstituicoes()[meuRep.retornarPosicao(codI)].setNome(novoNome);
 					
 					System.out.println("Digite a cidade da instituicao a ser alterada: ");
-					String novaCidade = scanner.nextLine();
+					String novaCidade = scanner.next();
+					meuRep.getInstituicoes()[meuRep.retornarPosicao(codI)].setCidade(novaCidade);
 					
 					System.out.println("Digite o estado da instituicao a ser alterado: ");
-					String novoEstado = scanner.nextLine();
+					String novoEstado = scanner.next();
+					meuRep.getInstituicoes()[meuRep.retornarPosicao(codI)].setEstado(novoEstado);
 					
 					System.out.println("Digite o numero da conta da instituicao a ser alterado: ");
 					double novaConta = scanner.nextDouble();
+					meuRep.getInstituicoes()[meuRep.retornarPosicao(codI)].setNumeroConta(novaConta);
 					
-					System.out.println("Digite o codigo da instituicao a ser alterado: ");
-					int novoCod = scanner.nextInt();
+					System.out.println(meuRep.getInstituicoes()[meuRep.retornarPosicao(codI)].toString()+"\n");
 					
-					Instituicao novaInstituicao = new Instituicao(cnpjAlterado, novoNome, novaCidade, novoEstado, novaConta, novoCod);
-					
-					meuRep.atualizarInstituicao(novaInstituicao);
-					System.out.println(meuRep.atualizarInstituicao(novaInstituicao));
-					break;	
+					break;
 				
 			case 5:
 					System.out.println(meuRep.listarInstituicoes());

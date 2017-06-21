@@ -27,6 +27,10 @@ public class Instituicao {
 		this.codInstituicao = codInstituicao;
 	//	this.donativos = donativos;
 	}
+	
+	public Instituicao(){
+		
+	}
 
 	public int getCodInstituicao() {
 		return codInstituicao;
@@ -85,8 +89,8 @@ public class Instituicao {
 	}
 */	
 	public String toString() {
-		return "Instituicao [nome=" + nome + ", cnpj=" + cnpj + ", cidade=" + cidade + ", estado=" + estado
-				+ ", numeroConta=" + numeroConta + "]";
+		return "Instituicao" + "\n Nome=" + nome + "\n CNPJ=" + cnpj + "\n Cidade=" + cidade + "\n Estado=" + estado
+				+ "\n Número da conta=" + numeroConta + "\n Código:"+ codInstituicao;
 	}	
 		
 	

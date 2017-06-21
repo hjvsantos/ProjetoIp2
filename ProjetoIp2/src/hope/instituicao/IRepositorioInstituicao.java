@@ -10,6 +10,8 @@ public interface IRepositorioInstituicao {
 	
 	public boolean atualizarInstituicao(Instituicao novaInsti);
 	
+	public boolean consultarExistencia(int codInstituicao);
+	
 	public String listarInstituicoes();
 
 }
