@@ -2,9 +2,9 @@ package hope.instituicao;
 
 public interface IRepositorioInstituicao {
 	
-	public boolean cadastrar(Instituicao insti);
+	public boolean cadastrarI(Instituicao insti);
 	
-	public Instituicao buscar(String cnpj);
+	public Instituicao buscarI(String cnpj);
 	
 	public boolean removerInstituicao(String cnpj);
 	

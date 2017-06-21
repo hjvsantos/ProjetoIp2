@@ -26,7 +26,7 @@ public class RepositorioInstituicao implements IRepositorioInstituicao{
 	//CRUD
 	
 	//Cadastrar Instituição
-	public boolean cadastrar(Instituicao insti){
+	public boolean cadastrarI(Instituicao insti){
 		if(insti.equals(null)){
 			return false;
 		}
@@ -49,7 +49,7 @@ public class RepositorioInstituicao implements IRepositorioInstituicao{
 	
 	//Buscar Instituição
 	
-	public Instituicao buscar(String cnpj){
+	public Instituicao buscarI(String cnpj){
 		int i = 0;
 		boolean achou = false;
 		while ((!achou) && (i < this.qntInstituicoes)){
