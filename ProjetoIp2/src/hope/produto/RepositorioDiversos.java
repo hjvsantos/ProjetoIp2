@@ -89,6 +89,28 @@ public class RepositorioDiversos implements IRepositorioDiversos {
 		}
 	}
 	
+	public boolean consultarExistenciaD(int codigoProduto) {
+		for (int i = 0; i < quantidade; i++) {
+			if (codigoProduto == this.diversosArray[i].getCodigoProduto()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public int retornarPosicaoD(int codigoProduto) {
+		int pos = 0;
+		for (int i = 0; i < quantidade; i++) {
+			if (codigoProduto == diversosArray[i].getCodigoProduto()) {
+				return pos;
+			} else {
+				pos++;
+
+			}
+		}
+		return pos;
+	}
+	
 	public String listarDiv(){
 		String listaFinal = "";
 		for(int i = 0; i < quantidade; i++){
