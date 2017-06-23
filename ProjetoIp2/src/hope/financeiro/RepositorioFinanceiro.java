@@ -65,11 +65,11 @@ public class RepositorioFinanceiro implements IRepositorioFinanceiro{
 				return resultado;
 		}
 	
-	public boolean removerDoacaoDinheiro(String codOperacao){
+	public boolean removerDoacaoDinheiro(int codOperacao){
 		int i = 0;
 		boolean find = false;
 		while((!find) && (i < this.quantDoacoesDinheiro)){
-			if(codOperacao.equals(this.financeiroArray[i].getCodOperacao())){
+			if(codOperacao == this.financeiroArray[i].getCodOperacao()){
 				find = true;
 			}
 			else{
@@ -89,7 +89,31 @@ public class RepositorioFinanceiro implements IRepositorioFinanceiro{
 		}
 	}
 	
-	public String listarDoadoresFinanceiros(){
+	
+	
+	public boolean consultarExistenciaF(int codOperacao) {
+		for (int i = 0; i < getQuantDoacoesDinheiro(); i++) {
+			if (codOperacao == this.financeiroArray[i].getCodOperacao()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public int retornarPosicaoF(int cod) {
+		int pos = 0;
+		for (int i = 0; i < getQuantDoacoesDinheiro(); i++) {
+			if (cod == financeiroArray[i].getCodOperacao()) {
+				return pos;
+			} else {
+				pos++;
+
+			}
+		}
+		return pos;
+	}
+	
+	public String listarDoacoesFinanceiras(){
 		String listaFinal = "";
 		for(int i = 0; i < quantDoacoesDinheiro; i++){
 			listaFinal += "\n Informacoes da Doacao financeira:\n Conta de origem: " + financeiroArray[i].getContaOrigem() 

@@ -247,12 +247,20 @@ public class Fachada {
 		return repFinanceiro.buscarDoadorDinhehiro(codDoador);
 	}
 	
-	public boolean removerDoacaoDinheiro(String codOperacao){
+	public boolean removerDoacaoDinheiro(int codOperacao){
 		return repFinanceiro.removerDoacaoDinheiro(codOperacao);
 	}
 	
+	public boolean consultarExistenciaF(int codOperacao){
+		return repFinanceiro.consultarExistenciaF(codOperacao);
+	}
+	
+	public int retornarPosicaoF(int cod){
+		return repFinanceiro.retornarPosicaoF(cod);
+	}
+	
 	public String listarDoadoresFinanceiros(){
-		return repFinanceiro.listarDoadoresFinanceiros();
+		return repFinanceiro.listarDoacoesFinanceiras();
 	}
 
 }

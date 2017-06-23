@@ -8,7 +8,11 @@ public interface IRepositorioFinanceiro {
 	
 	public Financeiro buscarDoadorDinhehiro(String codDoador);
 	
-	public boolean removerDoacaoDinheiro(String codOperacao);
+	public boolean removerDoacaoDinheiro(int codOperacao);
 	
-	public String listarDoadoresFinanceiros();
+	public boolean consultarExistenciaF(int codOperacao);
+	
+	public int retornarPosicaoF(int cod);
+	
+	public String listarDoacoesFinanceiras();
 }

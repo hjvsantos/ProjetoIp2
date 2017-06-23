@@ -2,14 +2,22 @@ package hope.financeiro;
 
 public class Financeiro {
 	
-	private String contaOrigem;
-	private String contaDestino;
+	private double contaOrigem;
+	private double contaDestino;
 	private int valor;
-	private String codOperacao;
+	private int codOperacao;
 	private String codDoador;
 	private String codReceptor;
 	
-	public Financeiro(String contaOrigem, String contaDestino, int valor, String codOperacao, String codDoador,
+	public Financeiro(double contaOrigem, double contaDestino, int valor, int codOperacao){
+		
+	}
+	
+	public Financeiro(){
+		
+	}
+	
+	public Financeiro(double contaOrigem, double contaDestino, int valor, int codOperacao, String codDoador,
 			String codReceptor) {
 		this.contaOrigem = contaOrigem;
 		this.contaDestino = contaDestino;
@@ -19,19 +27,19 @@ public class Financeiro {
 		this.codReceptor = codReceptor;
 	}
 
-	public String getContaOrigem() {
+	public double getContaOrigem() {
 		return contaOrigem;
 	}
 
-	public void setContaOrigem(String contaOrigem) {
+	public void setContaOrigem(double contaOrigem) {
 		this.contaOrigem = contaOrigem;
 	}
 
-	public String getContaDestino() {
+	public double getContaDestino() {
 		return contaDestino;
 	}
 
-	public void setContaDestino(String contaDestino) {
+	public void setContaDestino(double contaDestino) {
 		this.contaDestino = contaDestino;
 	}
 
@@ -43,11 +51,11 @@ public class Financeiro {
 		this.valor = valor;
 	}
 
-	public String getCodOperacao() {
+	public int getCodOperacao() {
 		return codOperacao;
 	}
 
-	public void setCodOperacao(String codOperacao) {
+	public void setCodOperacao(int codOperacao) {
 		this.codOperacao = codOperacao;
 	}
 
