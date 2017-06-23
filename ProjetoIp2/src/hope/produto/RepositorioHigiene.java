@@ -89,6 +89,28 @@ public class RepositorioHigiene implements IRepositorioHigiene{
 		}
 	}
 	
+	public boolean consultarExistenciaH(int codigoProduto) {
+		for (int i = 0; i < quantHigiene; i++) {
+			if (codigoProduto == this.higieneArray[i].getCodigoProduto()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public int retornarPosicaoH(int codigoProduto) {
+		int pos = 0;
+		for (int i = 0; i < quantHigiene; i++) {
+			if (codigoProduto == higieneArray[i].getCodigoProduto()) {
+				return pos;
+			} else {
+				pos++;
+
+			}
+		}
+		return pos;
+	}
+	
 	public String listarHigiene(){
 		String listaFinal = "";
 		for(int i = 0; i < quantHigiene; i++){
