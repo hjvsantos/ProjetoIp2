@@ -229,6 +229,14 @@ public class Fachada {
 		return repVestimenta.remover(codigo);
 	}
 	
+	public boolean consultarExistenciaV(int codigo){
+		return repVestimenta.consultarExistenciaV(codigo);
+	}
+	
+	public int retornarPosicaoV(int codigo){
+		return repVestimenta.retornarPosicaoV(codigo);
+	}
+	
 	public String listar(){
 		return repVestimenta.listar();
 	}

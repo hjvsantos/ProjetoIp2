@@ -23,7 +23,7 @@ public class RepositorioHigiene implements IRepositorioHigiene{
 			return false;
 		}else{
 			for(int i = 0; i < this.quantHigiene; i++){
-				if(higiene.getCodigo() == higieneArray[i].getCodigo()){
+				if(higiene.getCodigoProduto() == higieneArray[i].getCodigoProduto()){
 					return false;
 				}
 			}
@@ -40,7 +40,7 @@ public class RepositorioHigiene implements IRepositorioHigiene{
 	
 	public boolean atualizarHigiene(Higiene higiene){
 		for(int i = 0; i < quantHigiene; i++){
-			if(higieneArray[i].getCodigo() == higiene.getCodigo()){
+			if(higieneArray[i].getCodigoProduto() == higiene.getCodigoProduto()){
 				higieneArray[i] = higiene;
 				return true;
 			}
@@ -52,7 +52,7 @@ public class RepositorioHigiene implements IRepositorioHigiene{
 		 int t = 0;
 		 boolean find = false;
 		 while ((!find) && (t < this.quantHigiene)){
-				if(codigo == this.higieneArray[t].getCodigo()){
+				if(codigo == this.higieneArray[t].getCodigoProduto()){
 					find = true;
 				}else {
 					t++;
@@ -69,7 +69,7 @@ public class RepositorioHigiene implements IRepositorioHigiene{
 		int i = 0;
 		boolean find = false;
 		while((!find) && (i < this.quantHigiene)){
-			if(codigo == this.higieneArray[i].getCodigo()){
+			if(codigo == this.higieneArray[i].getCodigoProduto()){
 				find = true;
 			}
 			else{
@@ -92,7 +92,9 @@ public class RepositorioHigiene implements IRepositorioHigiene{
 	public String listarHigiene(){
 		String listaFinal = "";
 		for(int i = 0; i < quantHigiene; i++){
-			listaFinal += "\n Informacoes dos Alimentos:\n Nome: " + higieneArray[i].getNome() + "\n Codigo do Produto: " + higieneArray[i].getCodigo() + "\n Tipo: " + higieneArray[i].getTipo() + "\n Quantidade: " + higieneArray[i].getQuantidade() + "\n Descri��o:" + higieneArray[i].getDescricao();}
+			listaFinal += "\n Informacoes dos Alimentos:\n Nome: " + higieneArray[i].getNome() + "\n Codigo do Produto: " 
+		+ higieneArray[i].getCodigoProduto() + "\n Tipo: " + higieneArray[i].getTipo() + "\n Quantidade: " + higieneArray[i].getQuantidade() 
+		+ "\n Descri��o:" + higieneArray[i].getDescricao();}
 		return listaFinal;
 	}
 	

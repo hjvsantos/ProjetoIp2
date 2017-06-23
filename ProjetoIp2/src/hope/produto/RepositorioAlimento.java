@@ -23,7 +23,7 @@ public class RepositorioAlimento implements IRepositorioAlimento{
 			return false;
 		}else{
 			for(int i = 0; i < this.quantAlimento; i++){
-				if(alimento.getCodigo() == alimentoArray[i].getCodigo()){
+				if(alimento.getCodigoProduto() == alimentoArray[i].getCodigoProduto()){
 					return false;
 				}
 			}
@@ -40,7 +40,7 @@ public class RepositorioAlimento implements IRepositorioAlimento{
 	
 	public boolean atualizarAlimento(Alimento alimento){
 		for(int i = 0; i < quantAlimento; i++){
-			if(alimentoArray[i].getCodigo() == alimento.getCodigo()){
+			if(alimentoArray[i].getCodigoProduto() == alimento.getCodigoProduto()){
 				alimentoArray[i] = alimento;
 				return true;
 			}
@@ -52,7 +52,7 @@ public class RepositorioAlimento implements IRepositorioAlimento{
 		 int t = 0;
 		 boolean find = false;
 		 while ((!find) && (t < this.quantAlimento)){
-				if(codigo == this.alimentoArray[t].getCodigo()){
+				if(codigo == this.alimentoArray[t].getCodigoProduto()){
 					find = true;
 				}else {
 					t++;
@@ -69,7 +69,7 @@ public class RepositorioAlimento implements IRepositorioAlimento{
 		int i = 0;
 		boolean find = false;
 		while((!find) && (i < this.quantAlimento)){
-			if(codigo == this.alimentoArray[i].getCodigo()){
+			if(codigo == this.alimentoArray[i].getCodigoProduto()){
 				find = true;
 			}
 			else{
@@ -89,10 +89,34 @@ public class RepositorioAlimento implements IRepositorioAlimento{
 		}
 	}
 	
+	public boolean consultarExistenciaA(int codigoProduto) {
+		for (int i = 0; i < quantAlimento; i++) {
+			if (codigoProduto == this.alimentoArray[i].getCodigoProduto()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public int retornarPosicaoA(int codigoProduto) {
+		int pos = 0;
+		for (int i = 0; i < quantAlimento; i++) {
+			if (codigoProduto == alimentoArray[i].getCodigoProduto()) {
+				return pos;
+			} else {
+				pos++;
+
+			}
+		}
+		return pos;
+	}
+	
 	public String listarAlimentos(){
 		String listaFinal = "";
 		for(int i = 0; i < quantAlimento; i++){
-			listaFinal += "\n Informacoes dos Alimentos:\n Nome: " + alimentoArray[i].getNome() + "\n Codigo do Produto: " + alimentoArray[i].getCodigo() + "\n Tipo: " + alimentoArray[i].getTipo() + "\n Quantidade: " + alimentoArray[i].getQuantidade() + "\n Validade: " + alimentoArray[i].getValidade();}
+			listaFinal += "\n Informacoes dos Alimentos:\n Nome: " + alimentoArray[i].getNome() + "\n Codigo do Produto: " 
+		+ alimentoArray[i].getCodigoProduto() + "\n Tipo: " + alimentoArray[i].getTipo() + "\n Quantidade: " 
+					+ alimentoArray[i].getQuantidade() + "\n Validade: " + alimentoArray[i].getValidade();}
 		return listaFinal;
 	}
 }

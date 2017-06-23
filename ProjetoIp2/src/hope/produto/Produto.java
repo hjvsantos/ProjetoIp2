@@ -5,13 +5,13 @@ public class Produto {
 	private String tipo;
 	private int quantidade;
 	private String nome;
-	private int codigo;
+	private int codigoProduto;
 	
-	public Produto(String tipo, int quantidade, String nome, int codigo) {
+	public Produto(String tipo, int quantidade, String nome, int codigoProduto) {
 		this.tipo = tipo;
 		this.quantidade = quantidade;
 		this.nome = nome;
-		this.codigo = codigo;
+		this.codigoProduto = codigoProduto;
 	}
 	
 	public String getNome() {
@@ -22,12 +22,12 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	public int getCodigo() {
-		return codigo;
+	public int getCodigoProduto() {
+		return codigoProduto;
 	}
 
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setCodigoProduto(int codigo) {
+		this.codigoProduto = codigo;
 	}
 
 	public String getTipo() {

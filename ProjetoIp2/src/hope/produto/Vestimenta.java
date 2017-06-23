@@ -6,8 +6,8 @@ public class Vestimenta extends Produto {
 	 private String cor;
 	 private String genero;
 	 
-	public Vestimenta(String tipo, int quantidade, String nome, int codigo, String tamanho, String cor, String genero) {
-		super(tipo, quantidade, nome, codigo);
+	public Vestimenta(String tipo, int quantidade, String nome, int codigoProduto, String tamanho, String cor, String genero) {
+		super(tipo, quantidade, nome, codigoProduto);
 		this.tamanho = tamanho;
 		this.cor = cor;
 		this.genero = genero;

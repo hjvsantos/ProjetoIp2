@@ -23,7 +23,7 @@ public class RepositorioVestimenta implements IRepositorioVestimenta{
 			return false;
 		}else{
 			for(int i = 0; i < this.quantidadeRoupas; i++){
-				if(doacoes.getCodigo() == roupas[i].getCodigo()){
+				if(doacoes.getCodigoProduto() == roupas[i].getCodigoProduto()){
 					return false;
 				}
 			}
@@ -40,7 +40,7 @@ public class RepositorioVestimenta implements IRepositorioVestimenta{
 	
 	public boolean atualizar(Vestimenta doacoes ){
 		for(int i = 0; i < quantidadeRoupas; i++){
-			if(roupas[i].getCodigo() == doacoes.getCodigo()){
+			if(roupas[i].getCodigoProduto() == doacoes.getCodigoProduto()){
 				roupas[i] = doacoes;
 				return true;
 			}
@@ -52,7 +52,7 @@ public class RepositorioVestimenta implements IRepositorioVestimenta{
 		 int v = 0;
 		 boolean find = false;
 		 while ((!find) && (v < this.quantidadeRoupas)){
-				if(codigo == this.roupas[v].getCodigo()){
+				if(codigo == this.roupas[v].getCodigoProduto()){
 					find = true;
 				}else {
 					v++;
@@ -69,7 +69,7 @@ public class RepositorioVestimenta implements IRepositorioVestimenta{
 		int i = 0;
 		boolean find = false;
 		while((!find) && (i < this.quantidadeRoupas)){
-			if(codigo == this.roupas[i].getCodigo()){
+			if(codigo == this.roupas[i].getCodigoProduto()){
 				find = true;
 			}
 			else{
@@ -89,10 +89,32 @@ public class RepositorioVestimenta implements IRepositorioVestimenta{
 		}
 	}
 	
+	public boolean consultarExistenciaV(int codigo) {
+		for (int i = 0; i < quantidadeRoupas; i++) {
+			if (codigo == this.roupas[i].getCodigoProduto()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public int retornarPosicaoV(int codigo) {
+		int pos = 0;
+		for (int i = 0; i < quantidadeRoupas; i++) {
+			if (codigo == roupas[i].getCodigoProduto()) {
+				return pos;
+			} else {
+				pos++;
+
+			}
+		}
+		return pos;
+	}
+	
 	public String listar(){
 		String listaFinal = "";
 		for(int i = 0; i < quantidadeRoupas; i++){
-			listaFinal += "\n Informacoes dos doadores:\n Nome: " + roupas[i].getNome() + "\n Codigo do Produto: " + roupas[i].getCodigo() + "\n Tipo: " + roupas[i].getTipo() + "\n Quantidade: " + roupas[i].getQuantidade();}
+			listaFinal += "\n Informacoes dos doadores:\n Nome: " + roupas[i].getNome() + "\n Codigo do Produto: " + roupas[i].getCodigoProduto() + "\n Tipo: " + roupas[i].getTipo() + "\n Quantidade: " + roupas[i].getQuantidade();}
 		return listaFinal;
 	}	
 }

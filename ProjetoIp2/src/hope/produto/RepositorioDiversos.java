@@ -23,7 +23,7 @@ public class RepositorioDiversos implements IRepositorioDiversos {
 			return false;
 		}else{
 			for(int i = 0; i < this.quantidade; i++){
-				if(variedade.getCodigo() == diversosArray[i].getCodigo()){
+				if(variedade.getCodigoProduto() == diversosArray[i].getCodigoProduto()){
 					return false;
 				}
 			}
@@ -40,7 +40,7 @@ public class RepositorioDiversos implements IRepositorioDiversos {
 	
 	public boolean atualizarDiv(Diversos variedade ){
 		for(int i = 0; i < quantidade; i++){
-			if(diversosArray[i].getCodigo() == variedade.getCodigo()){
+			if(diversosArray[i].getCodigoProduto() == variedade.getCodigoProduto()){
 				diversosArray[i] = variedade;
 				return true;
 			}
@@ -52,7 +52,7 @@ public class RepositorioDiversos implements IRepositorioDiversos {
 		 int d = 0;
 		 boolean find = false;
 		 while ((!find) && (d < this.quantidade)){
-				if(codigo == this.diversosArray[d].getCodigo()){
+				if(codigo == this.diversosArray[d].getCodigoProduto()){
 					find = true;
 				}else {
 					d++;
@@ -69,7 +69,7 @@ public class RepositorioDiversos implements IRepositorioDiversos {
 		int i = 0;
 		boolean find = false;
 		while((!find) && (i < this.quantidade)){
-			if(codigo == this.diversosArray[i].getCodigo()){
+			if(codigo == this.diversosArray[i].getCodigoProduto()){
 				find = true;
 			}
 			else{
@@ -92,7 +92,9 @@ public class RepositorioDiversos implements IRepositorioDiversos {
 	public String listarDiv(){
 		String listaFinal = "";
 		for(int i = 0; i < quantidade; i++){
-			listaFinal += "\n Informacoes dos doadores:\n Nome: " + diversosArray[i].getNome() + "\n Codigo do Produto: " + diversosArray[i].getCodigo() + "\n Tipo: " + diversosArray[i].getTipo() + "\n Quantidade: " + diversosArray[i].getQuantidade();}
+			listaFinal += "\n Informacoes dos doadores:\n Nome: " + diversosArray[i].getNome() + "\n Codigo do Produto: " 
+		+ diversosArray[i].getCodigoProduto() + "\n Tipo: " + diversosArray[i].getTipo() + "\n Quantidade: " 
+					+ diversosArray[i].getQuantidade();}
 		return listaFinal;
 	}	
 }
