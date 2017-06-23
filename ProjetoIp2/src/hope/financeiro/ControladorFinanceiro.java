@@ -94,7 +94,7 @@ public class ControladorFinanceiro {
 		return;
 	}
 	
-	public void listarInstituicao() {
+	public void listarDoacoesFinanceiras() {
 		System.out.println(repositorioF.listarDoacoesFinanceiras());
 		return;
 	}
