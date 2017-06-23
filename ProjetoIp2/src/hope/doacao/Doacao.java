@@ -23,6 +23,10 @@ public class Doacao {
 		this.categoria = categoria;
 	}
 	
+	public Doacao(){
+		
+	}
+	
 	public Doacao(String codInstituicao, DoadorEmpresa empresadoadora,
 			DoadorPessoa doador, int quantidade,
 			double doacaoDinheiro, int codigo) {

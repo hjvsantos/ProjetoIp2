@@ -39,6 +39,15 @@ public class RepositorioDoacao implements IRepositorioDoacao {
 		return true;
 	}
 	
+	public boolean consultarExistencia(int codo) {
+		for (int i = 0; i < quantDoacao; i++) {
+			if (codo == this.doacaoArray[i].getCodigo()) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public Doacao buscarDoacao(int codigo){
 		 int t = 0;
 		 boolean find = false;
