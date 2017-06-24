@@ -10,7 +10,7 @@ public class Doador {
 	private int tipo;
 	private int codigoDoador;
 	
-	public Doador(String nome, String cidade, String estado, double numeroCartao, double codigoCartao, int tipo, int codigoDoador) {
+	public Doador(String nome, String cidade, String estado, double numeroCartao, double codigoCartao, int codigoDoador, int tipo) {
 		super();
 		this.nome = nome;
 		this.cidade = cidade;
@@ -24,16 +24,8 @@ public class Doador {
 	
 	
 	public int getCodigoDoador() {
-		return codigoDoador;
+	return codigoDoador;
 	}
-
-
-
-	public void setCodigoDoador(int codigoDoador) {
-		this.codigoDoador = codigoDoador;
-	}
-
-
 
 	public int getTipo() {
 		return tipo;

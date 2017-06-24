@@ -5,14 +5,19 @@ public class DoadorPessoa extends Doador{
 	public int idade;
 	public String cpf;
 	public double rg;
-
-	public DoadorPessoa(String nome, int codigoDoador, int idade, String cpf, double rg, int type,  String cidade, String estado, double numeroCartao,
-			double codigoCartao){
+	public int codDoador;
+	public DoadorPessoa(String nome, int idade, String cpf, double rg, String cidade, String estado, double numeroCartao,
+			int codigoCartao, int codDoador, int tipo){
 		
-		super(nome, cidade,estado, numeroCartao, codigoCartao, type, codigoDoador);
+		super(nome, cidade,estado, numeroCartao, codigoCartao, tipo,codDoador);
 		this.idade = idade;
 		this.cpf = cpf;
 		this.rg = rg;
+		this.codDoador = codDoador;
+	}
+
+	public int getCodDoador() {
+		return codDoador;
 	}
 
 	public int getIdade() {
