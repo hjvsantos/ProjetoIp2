@@ -1,16 +1,18 @@
 package hope.produto;
 
+import java.util.ArrayList;
+
 public class RepositorioVestimenta implements IRepositorioVestimenta{
 
-	private Vestimenta[] roupas;
+	ArrayList<Vestimenta> roupas = new ArrayList<Vestimenta>();
 	private int quantidadeRoupas;
 	
 	public RepositorioVestimenta(Vestimenta[] roupas, int quantidadeRoupas) {
-		this.roupas = roupas;
+		this.roupas =  new ArrayList<Vestimenta>();
 		this.quantidadeRoupas = quantidadeRoupas;
 	}
 
-	public Vestimenta[] getRoupas() {
+	public ArrayList<Vestimenta> getRoupas() {
 		return roupas;
 	}
 
@@ -23,25 +25,24 @@ public class RepositorioVestimenta implements IRepositorioVestimenta{
 			return false;
 		}else{
 			for(int i = 0; i < this.quantidadeRoupas; i++){
-				if(doacoes.getCodigoProduto() == roupas[i].getCodigoProduto()){
+				if(doacoes.getCodigoProduto() == roupas.get(i).getCodigoProduto()){
 					return false;
 				}
 			}
-			if(quantidadeRoupas < roupas.length -1){
-				roupas[quantidadeRoupas] = doacoes;
+			if(quantidadeRoupas < roupas.size() -1){
+				roupas.add(doacoes);
 				quantidadeRoupas = quantidadeRoupas +1;
 				return true;
 			}
 		}
-		this.roupas[this.quantidadeRoupas] = doacoes;
-		this.quantidadeRoupas = this.quantidadeRoupas +1;
+		
 		return true;
 	}
 	
 	public boolean atualizar(Vestimenta doacoes ){
 		for(int i = 0; i < quantidadeRoupas; i++){
-			if(roupas[i].getCodigoProduto() == doacoes.getCodigoProduto()){
-				roupas[i] = doacoes;
+			if(roupas.get(i).getCodigoProduto() == doacoes.getCodigoProduto()){
+				roupas.set(i, doacoes);
 				return true;
 			}
 		}
@@ -52,7 +53,7 @@ public class RepositorioVestimenta implements IRepositorioVestimenta{
 		 int v = 0;
 		 boolean find = false;
 		 while ((!find) && (v < this.quantidadeRoupas)){
-				if(codigo == this.roupas[v].getCodigoProduto()){
+				if(codigo == roupas.get(v).getCodigoProduto()){
 					find = true;
 				}else {
 					v++;
@@ -60,7 +61,7 @@ public class RepositorioVestimenta implements IRepositorioVestimenta{
 		 }
 		 		Vestimenta resultado = null;
 				if(v != this.quantidadeRoupas){
-					resultado = this.roupas[v];
+					resultado =roupas.get(v);
 				}
 				return resultado;
 		}
@@ -69,7 +70,7 @@ public class RepositorioVestimenta implements IRepositorioVestimenta{
 		int i = 0;
 		boolean find = false;
 		while((!find) && (i < this.quantidadeRoupas)){
-			if(codigo == this.roupas[i].getCodigoProduto()){
+			if(codigo == roupas.get(i).getCodigoProduto()){
 				find = true;
 			}
 			else{
@@ -77,8 +78,8 @@ public class RepositorioVestimenta implements IRepositorioVestimenta{
 			}
 		}
 		if(i != this.quantidadeRoupas){
-			this.roupas[i] = this.roupas[this.quantidadeRoupas - 1];
-			this.roupas[this.quantidadeRoupas - 1] = null;
+			roupas.set((this.quantidadeRoupas - 1), roupas.get(i));
+			roupas.remove(this.quantidadeRoupas - 1);
 			this.quantidadeRoupas = this.quantidadeRoupas -1;
 			System.out.println("Produto: " + codigo + "removido!");
 			return true;
@@ -91,7 +92,7 @@ public class RepositorioVestimenta implements IRepositorioVestimenta{
 	
 	public boolean consultarExistenciaV(int codigo) {
 		for (int i = 0; i < quantidadeRoupas; i++) {
-			if (codigo == this.roupas[i].getCodigoProduto()) {
+			if (codigo == roupas.get(i).getCodigoProduto()) {
 				return true;
 			}
 		}
@@ -101,7 +102,7 @@ public class RepositorioVestimenta implements IRepositorioVestimenta{
 	public int retornarPosicaoV(int codigo) {
 		int pos = 0;
 		for (int i = 0; i < quantidadeRoupas; i++) {
-			if (codigo == roupas[i].getCodigoProduto()) {
+			if (codigo == roupas.get(i).getCodigoProduto()) {
 				return pos;
 			} else {
 				pos++;
@@ -114,7 +115,7 @@ public class RepositorioVestimenta implements IRepositorioVestimenta{
 	public String listar(){
 		String listaFinal = "";
 		for(int i = 0; i < quantidadeRoupas; i++){
-			listaFinal += "\n Informacoes dos doadores:\n Nome: " + roupas[i].getNome() + "\n Codigo do Produto: " + roupas[i].getCodigoProduto() + "\n Tipo: " + roupas[i].getTipo() + "\n Quantidade: " + roupas[i].getQuantidade();}
+			listaFinal += "\n Informacoes dos doadores:\n Nome: " + roupas.get(i).getNome() + "\n Codigo do Produto: " + roupas.get(i).getCodigoProduto() + "\n Tipo: " + roupas.get(i).getTipo() + "\n Quantidade: " + roupas.get(i).getQuantidade();}
 		return listaFinal;
 	}	
 }

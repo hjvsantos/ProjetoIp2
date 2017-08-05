@@ -83,23 +83,23 @@ private RepositorioAlimento repositorioA;
 			//Esse construtor aqui ta dando erro! Aí coloquei essa sugestão de eclipse
 			Vestimenta novaVestimenta = new Vestimenta(null, codigoProduto, null, codigoProduto, null, null, null);
 			novaVestimenta.setCodigoProduto(codigoProduto);
-			novaVestimenta.setCodigoProduto(repositorioA.getAlimentoArray()[repositorioA.retornarPosicaoA(codigoProduto)].getCodigoProduto());
+			novaVestimenta.setCodigoProduto(repositorioA.alimentoArray.get(repositorioA.retornarPosicaoA(codigoProduto)).getCodigoProduto());
 			
 			System.out.println("Digite o tipo do produto a ser alterado: ");
 			String novoTipo = leitura.next();
-			repositorioA.getAlimentoArray()[repositorioA.retornarPosicaoA(codigoProduto)].setTipo(novoTipo);
+			repositorioA.alimentoArray.get(repositorioA.retornarPosicaoA(codigoProduto)).setTipo(novoTipo);
 			
 			System.out.println("Digite o nome do produto a ser alterado: ");
 			String novoNome = leitura.next();
-			repositorioA.getAlimentoArray()[repositorioA.retornarPosicaoA(codigoProduto)].setNome(novoNome);
+			repositorioA.alimentoArray.get(repositorioA.retornarPosicaoA(codigoProduto)).setNome(novoNome);
 			
 			System.out.println("Digite a quantidade do produto a ser alterado: ");
 			int novaQuantidade = leitura.nextInt();
-			repositorioA.getAlimentoArray()[repositorioA.retornarPosicaoA(codigoProduto)].setQuantidade(novaQuantidade);
+			repositorioA.alimentoArray.get(repositorioA.retornarPosicaoA(codigoProduto)).setQuantidade(novaQuantidade);
 		
 			System.out.println("Digite a validade do produto a ser alterado: ");
 			int novaValidade = leitura.nextInt();
-			repositorioA.getAlimentoArray()[repositorioA.retornarPosicaoA(codigoProduto)].setValidade(novaValidade);
+			repositorioA.alimentoArray.get(repositorioA.retornarPosicaoA(codigoProduto)).setValidade(novaValidade);
 			
 			return;
 		}

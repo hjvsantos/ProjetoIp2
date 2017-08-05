@@ -82,23 +82,23 @@ public class ControladorHigiene {
 			//Esse construtor aqui ta dando erro! Aí coloquei essa sugestão de eclipse
 			Higiene novoProdHigiene = new Higiene(null, codigoProduto, null, codigoProduto, null);
 			novoProdHigiene.setCodigoProduto(codigoProduto);
-			novoProdHigiene.setCodigoProduto(repositorioH.getHigieneArray()[repositorioH.retornarPosicaoH(codigoProduto)].getCodigoProduto());
+			novoProdHigiene.setCodigoProduto(repositorioH.higieneArray.get(repositorioH.retornarPosicaoH(codigoProduto)).getCodigoProduto());
 			
 			System.out.println("Digite o tipo do produto a ser alterado: ");
 			String novoTipo = leitura.next();
-			repositorioH.getHigieneArray()[repositorioH.retornarPosicaoH(codigoProduto)].setTipo(novoTipo);
+			repositorioH.higieneArray.get(repositorioH.retornarPosicaoH(codigoProduto)).setTipo(novoTipo);
 			
 			System.out.println("Digite o nome do produto a ser alterado: ");
 			String novoNome = leitura.next();
-			repositorioH.getHigieneArray()[repositorioH.retornarPosicaoH(codigoProduto)].setNome(novoNome);
+			repositorioH.higieneArray.get(repositorioH.retornarPosicaoH(codigoProduto)).setNome(novoNome);
 			
 			System.out.println("Digite a quantidade do produto a ser alterado: ");
 			int novaQuantidade = leitura.nextInt();
-			repositorioH.getHigieneArray()[repositorioH.retornarPosicaoH(codigoProduto)].setQuantidade(novaQuantidade);
+			repositorioH.higieneArray.get(repositorioH.retornarPosicaoH(codigoProduto)).setQuantidade(novaQuantidade);
 		
 			System.out.println("Digite a validade do produto a ser alterado: ");
 			String novaDescricao = leitura.nextLine();
-			repositorioH.getHigieneArray()[repositorioH.retornarPosicaoH(codigoProduto)].setDescricao(novaDescricao);
+			repositorioH.higieneArray.get(repositorioH.retornarPosicaoH(codigoProduto)).setDescricao(novaDescricao);
 			
 			return;
 		}

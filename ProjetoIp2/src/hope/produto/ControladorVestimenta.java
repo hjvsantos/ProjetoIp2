@@ -98,31 +98,31 @@ public class ControladorVestimenta {
 			//Esse construtor aqui ta dando erro! Aí coloquei essa sugestão de eclipse
 			Vestimenta novaVestimenta = new Vestimenta(null, codigoProduto, null, codigoProduto, null, null, null);
 			novaVestimenta.setCodigoProduto(codigoProduto);
-			novaVestimenta.setCodigoProduto(repositorioV.getRoupas()[repositorioV.retornarPosicaoV(codigoProduto)].getCodigoProduto());
+			novaVestimenta.setCodigoProduto(repositorioV.roupas.get(repositorioV.retornarPosicaoV(codigoProduto)).getCodigoProduto());
 			
 			System.out.println("Digite o tipo do produto a ser alterado: ");
 			String novoTipo = leitura.next();
-			repositorioV.getRoupas()[repositorioV.retornarPosicaoV(codigoProduto)].setTipo(novoTipo);
+			repositorioV.roupas.get(repositorioV.retornarPosicaoV(codigoProduto)).setTipo(novoTipo);
 			
 			System.out.println("Digite o nome do produto a ser alterado: ");
 			String novoNome = leitura.next();
-			repositorioV.getRoupas()[repositorioV.retornarPosicaoV(codigoProduto)].setNome(novoNome);
+			repositorioV.roupas.get(repositorioV.retornarPosicaoV(codigoProduto)).setNome(novoNome);
 			
 			System.out.println("Digite a quantidade do produto a ser alterado: ");
 			int novaQuantidade = leitura.nextInt();
-			repositorioV.getRoupas()[repositorioV.retornarPosicaoV(codigoProduto)].setQuantidade(novaQuantidade);
+			repositorioV.roupas.get(repositorioV.retornarPosicaoV(codigoProduto)).setQuantidade(novaQuantidade);
 		
 			System.out.println("Digite o tamanho do produto a ser alterado: ");
 			String novoTamanho = leitura.next();
-			repositorioV.getRoupas()[repositorioV.retornarPosicaoV(codigoProduto)].setTamanho(novoTamanho);
+			repositorioV.roupas.get(repositorioV.retornarPosicaoV(codigoProduto)).setTamanho(novoTamanho);
 			
 			System.out.println("Digite a cor do produto a ser alterado: ");
 			String novaCor = leitura.next();
-			repositorioV.getRoupas()[repositorioV.retornarPosicaoV(codigoProduto)].setCor(novaCor);
+			repositorioV.roupas.get(repositorioV.retornarPosicaoV(codigoProduto)).setCor(novaCor);
 			
 			System.out.println("Digite o genero do produto a ser alterado: ");
 			String novoGenero = leitura.next();
-			repositorioV.getRoupas()[repositorioV.retornarPosicaoV(codigoProduto)].setGenero(novoGenero);
+			repositorioV.roupas.get(repositorioV.retornarPosicaoV(codigoProduto)).setGenero(novoGenero);
 		
 			return;
 		}

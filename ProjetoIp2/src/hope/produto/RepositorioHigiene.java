@@ -1,16 +1,18 @@
 package hope.produto;
 
+import java.util.ArrayList;
+
 public class RepositorioHigiene implements IRepositorioHigiene{
-	private Higiene[] higieneArray;
+	ArrayList<Higiene> higieneArray = new ArrayList<Higiene> ();
 	private int quantHigiene = 0;
 	
 	public RepositorioHigiene(Higiene[] higieneArray, int quantHigiene) {
 		super();
-		this.higieneArray = new Higiene[100];
+		this.higieneArray = new ArrayList<Higiene> ();
 		this.quantHigiene = quantHigiene;
 	}
 	
-	public Higiene[] getHigieneArray() {
+	public ArrayList<Higiene> getHigieneArray() {
 		return higieneArray;
 	}
 
@@ -23,25 +25,23 @@ public class RepositorioHigiene implements IRepositorioHigiene{
 			return false;
 		}else{
 			for(int i = 0; i < this.quantHigiene; i++){
-				if(higiene.getCodigoProduto() == higieneArray[i].getCodigoProduto()){
+				if(higiene.getCodigoProduto() == higieneArray.get(i).getCodigoProduto()){
 					return false;
 				}
 			}
-			if(quantHigiene < higieneArray.length -1){
-				higieneArray[quantHigiene] = higiene;
+			if(quantHigiene < higieneArray.size()-1){
+				higieneArray.add(higiene);
 				quantHigiene = quantHigiene +1;
 				return true;
 			}
 		}
-		this.higieneArray[this.quantHigiene] = higiene;
-		this.quantHigiene= this.quantHigiene +1;
 		return true;
 	}	
 	
 	public boolean atualizarHigiene(Higiene higiene){
 		for(int i = 0; i < quantHigiene; i++){
-			if(higieneArray[i].getCodigoProduto() == higiene.getCodigoProduto()){
-				higieneArray[i] = higiene;
+			if(higieneArray.get(i).getCodigoProduto() == higiene.getCodigoProduto()){
+				higieneArray.set(i, higiene);
 				return true;
 			}
 		}
@@ -52,7 +52,7 @@ public class RepositorioHigiene implements IRepositorioHigiene{
 		 int t = 0;
 		 boolean find = false;
 		 while ((!find) && (t < this.quantHigiene)){
-				if(codigo == this.higieneArray[t].getCodigoProduto()){
+				if(codigo == higieneArray.get(t).getCodigoProduto()){
 					find = true;
 				}else {
 					t++;
@@ -60,7 +60,7 @@ public class RepositorioHigiene implements IRepositorioHigiene{
 		 }
 				Higiene resultado = null;
 				if(t != this.quantHigiene){
-					resultado = this.higieneArray[t];
+					resultado = higieneArray.get(t);
 				}
 				return resultado;
 		}
@@ -69,7 +69,7 @@ public class RepositorioHigiene implements IRepositorioHigiene{
 		int i = 0;
 		boolean find = false;
 		while((!find) && (i < this.quantHigiene)){
-			if(codigo == this.higieneArray[i].getCodigoProduto()){
+			if(codigo == higieneArray.get(i).getCodigoProduto()){
 				find = true;
 			}
 			else{
@@ -77,8 +77,9 @@ public class RepositorioHigiene implements IRepositorioHigiene{
 			}
 		}
 		if(i != this.quantHigiene){
-			this.higieneArray[i] = this.higieneArray[this.quantHigiene - 1];
-			this.higieneArray[this.quantHigiene - 1] = null;
+			
+			higieneArray.set((this.quantHigiene - 1), higieneArray.get(i));
+			higieneArray.remove(this.quantHigiene - 1);
 			this.quantHigiene = this.quantHigiene -1;
 			System.out.println("Produto de higiene: " + codigo + "removido!");
 			return true;
@@ -91,7 +92,7 @@ public class RepositorioHigiene implements IRepositorioHigiene{
 	
 	public boolean consultarExistenciaH(int codigoProduto) {
 		for (int i = 0; i < quantHigiene; i++) {
-			if (codigoProduto == this.higieneArray[i].getCodigoProduto()) {
+			if (codigoProduto == higieneArray.get(i).getCodigoProduto()) {
 				return true;
 			}
 		}
@@ -101,7 +102,7 @@ public class RepositorioHigiene implements IRepositorioHigiene{
 	public int retornarPosicaoH(int codigoProduto) {
 		int pos = 0;
 		for (int i = 0; i < quantHigiene; i++) {
-			if (codigoProduto == higieneArray[i].getCodigoProduto()) {
+			if (codigoProduto == higieneArray.get(i).getCodigoProduto()) {
 				return pos;
 			} else {
 				pos++;
@@ -114,9 +115,9 @@ public class RepositorioHigiene implements IRepositorioHigiene{
 	public String listarHigiene(){
 		String listaFinal = "";
 		for(int i = 0; i < quantHigiene; i++){
-			listaFinal += "\n Informacoes dos Alimentos:\n Nome: " + higieneArray[i].getNome() + "\n Codigo do Produto: " 
-		+ higieneArray[i].getCodigoProduto() + "\n Tipo: " + higieneArray[i].getTipo() + "\n Quantidade: " + higieneArray[i].getQuantidade() 
-		+ "\n Descri��o:" + higieneArray[i].getDescricao();}
+			listaFinal += "\n Informacoes dos Alimentos:\n Nome: " + higieneArray.get(i).getNome() + "\n Codigo do Produto: " 
+		+ higieneArray.get(i).getCodigoProduto() + "\n Tipo: " + higieneArray.get(i).getTipo() + "\n Quantidade: " + higieneArray.get(i).getQuantidade() 
+		+ "\n Descri��o:" + higieneArray.get(i).getDescricao();}
 		return listaFinal;
 	}
 	
