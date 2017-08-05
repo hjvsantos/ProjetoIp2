@@ -1,17 +1,19 @@
 package hope.doacao;
 
+import java.util.ArrayList;
+
 public class RepositorioDoacao implements IRepositorioDoacao {
 
-	private Doacao[] doacaoArray;
+	private ArrayList<Doacao> doacaoArray = new ArrayList<Doacao>();
 	private int quantDoacao = 0;
 	
 	public RepositorioDoacao(Doacao[] doacaoArray, int quantDoacao) {
 		super();
-		this.doacaoArray = new Doacao[100];
+		this.doacaoArray = new ArrayList<Doacao>();
 		this.quantDoacao = quantDoacao;
 	}
 
-	public Doacao[] getDoacaoArray(int codigo) {
+	public ArrayList<Doacao> getDoacaoArray(int codigo) {
 		return doacaoArray;
 	}
 
@@ -24,24 +26,24 @@ public class RepositorioDoacao implements IRepositorioDoacao {
 			return false;
 		}else{
 			for(int i = 0; i < this.quantDoacao; i++){
-				if(doacao.getCodigo() == doacaoArray[i].getCodigo()){
+				if(doacao.getCodigo() == doacaoArray.get(i).getCodigo()){
 					return false;
 				}
 			}
-			if(quantDoacao < doacaoArray.length -1){
-				doacaoArray[quantDoacao] = doacao;
+			if(quantDoacao < doacaoArray.size() -1){
+				doacaoArray.add(doacao);
 				quantDoacao = quantDoacao +1;
 				return true;
 			}
 		}
-		this.doacaoArray[this.quantDoacao] = doacao;
+		doacaoArray.add(doacao);
 		this.quantDoacao = this.quantDoacao +1;
 		return true;
 	}
 	
 	public boolean consultarExistencia(int codo) {
 		for (int i = 0; i < quantDoacao; i++) {
-			if (codo == this.doacaoArray[i].getCodigo()) {
+			if (codo == doacaoArray.get(i).getCodigo()) {
 				return true;
 			}
 		}
@@ -52,7 +54,7 @@ public class RepositorioDoacao implements IRepositorioDoacao {
 		 int t = 0;
 		 boolean find = false;
 		 while ((!find) && (t < this.quantDoacao)){
-				if(codigo == this.doacaoArray[t].getCodigo()){
+				if(codigo == doacaoArray.get(t).getCodigo()){
 					find = true;
 				}else {
 					t++;
@@ -60,15 +62,15 @@ public class RepositorioDoacao implements IRepositorioDoacao {
 		 }
 				Doacao resultado = null;
 				if(t != this.quantDoacao){
-					resultado = this.doacaoArray[t];
+					resultado = doacaoArray.get(t);
 				}
 				return resultado;
 		}	
 	
 	public boolean atualizarDoacao(Doacao novaDoacao){
 		for(int i = 0; i < quantDoacao; i++){
-			if(doacaoArray[i].getCodigo() == novaDoacao.getCodigo()){
-				doacaoArray[i] = novaDoacao;
+			if(doacaoArray.get(i).getCodigo() == novaDoacao.getCodigo()){
+				doacaoArray.set(i, novaDoacao);
 				return true;
 			}
 		}
@@ -79,7 +81,7 @@ public class RepositorioDoacao implements IRepositorioDoacao {
 		int i = 0;
 		boolean find = false;
 		while((!find) && (i < this.quantDoacao)){
-			if(codigo == this.doacaoArray[i].getCodigo()){
+			if(codigo == doacaoArray.get(i).getCodigo()){
 				find = true;
 			}
 			else{
@@ -87,8 +89,8 @@ public class RepositorioDoacao implements IRepositorioDoacao {
 			}
 		}
 		if(i != this.quantDoacao){
-			this.doacaoArray[i] = this.doacaoArray[this.quantDoacao - 1];
-			this.doacaoArray[this.quantDoacao - 1] = null;
+			doacaoArray.set((this.quantDoacao - 1), doacaoArray.get(i));
+			doacaoArray.remove(this.quantDoacao - 1);
 			this.quantDoacao = this.quantDoacao -1;
 			System.out.println("Doação: " + codigo + "removida!");
 			return true;
@@ -103,8 +105,8 @@ public class RepositorioDoacao implements IRepositorioDoacao {
 	public String listarDoacoes(){
 		String listaFinal = "";
 		for(int f = 0; f < quantDoacao; f++){
-			listaFinal += "\n Informacoes das doações:\n Doador: " + doacaoArray[f].getDoador()+ "\n Beneficiado: " 
-		+ doacaoArray[f].getCodInstituicao() + "\n Doação: " + doacaoArray[f].getCodigo();}
+			listaFinal += "\n Informacoes das doações:\n Doador: " + doacaoArray.get(f).getDoador()+ "\n Beneficiado: " 
+		+ doacaoArray.get(f).getCodInstituicao() + "\n Doação: " + doacaoArray.get(f).getCodigo();}
 		return listaFinal;
 	}
 	
