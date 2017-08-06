@@ -1,120 +1,64 @@
 package hope.instituicao;
 
-import java.util.Random;
-import java.util.Scanner;
+import hope.excecao.*;
+
+import java.util.ArrayList;
 
 public class ControladorInstituicao {
 
-	private RepositorioInstituicao repositorio;
+	private RepositorioInstituicao repositorioInsti;
+	private static ControladorInstituicao instance;
 	
 	public ControladorInstituicao() {
-		this.repositorio = new RepositorioInstituicao(null, 100);
+		this.repositorioInsti = RepositorioInstituicao.getInstance();
 	}
 	
-	Scanner leitura = new Scanner(System.in);
-	
-	public void cadastrarInstituicao () {
-		System.out.println("Informe o CNPJ da instituicao: ");
-		String cnpj = leitura.nextLine();
-		while(cnpj.equals(null)){
-			System.out.println("Digite um cnpj valido: ");
-			cnpj = leitura.nextLine();
-			leitura.nextLine();
+	public static ControladorInstituicao getInstance(){
+		if(instance == null){
+			instance = new ControladorInstituicao();
 		}
+		return instance;
+	}
 	
-		System.out.println("Informe o nome da instituicao: ");
-		String nome = leitura.nextLine();
-		while(nome.equals(null)){
-			System.out.println("Digite um nome valido: ");
-			nome = leitura.nextLine();
-			leitura.nextLine();
+	private boolean existe(int codInstituicao){
+		ArrayList<Instituicao> resultado = this.repositorioInsti.listar();
+		for(Instituicao teste : resultado){
+			if(teste.getCodInstituicao() == codInstituicao){
+				return true;
+			}
 		}
-		System.out.println("Informe a cidade da instituicao: ");
-		String cidade = leitura.nextLine();
-		while(cidade.equals(null)){
-			System.out.println("Digite um nome de cidade valido: ");
-			cidade = leitura.nextLine();
-		}		
-		System.out.println("Informe o estado da instituicao: ");
-		String estado = leitura.nextLine();
-		while(estado.equals(null)){
-			System.out.println("Digite um nome de estado valido: ");
-			estado = leitura.nextLine();
-		}
-		double numConta;
-		
-		do{
-		System.out.println("Informe o numero da conta bancaria (de cinco digitos): ");
-		numConta = leitura.nextDouble();
-		leitura.nextLine();
-		}while (numConta < 0 || numConta > 99999);
-	
-		Random random = new Random();
-		int codInstituicao = random.nextInt(100);
-		
-		
-		
-		Instituicao instituicao = new Instituicao(nome, cnpj, cidade, estado, numConta, codInstituicao);
-		repositorio.cadastrarI(instituicao);
-		System.out.println(instituicao.toString()+"\n\tInstituição cadastrada!\n");
-		return;		
+		return false;
 	}
 	
-	public void buscarInstituição() {
-		System.out.println("Digite o codigo da instituicao:");
-		int codigoNovo  = leitura.nextInt();
-	
-		System.out.println(repositorio.buscarI(codigoNovo));
-		return;
-	}
-	
-	public void removerInstituicao() {
-		System.out.println("Digite o codigo da instituicao que deseja remover: ");
-		int codigoRemover = leitura.nextInt();
-		
-		System.out.println(repositorio.removerInstituicao(codigoRemover));
-		return;
-	}
-	
-	public void atualizarInstituicao() {
-		System.out.println("Digite o codigo da instituicao que deseja alterar: ");
-		int codI = leitura.nextInt();
-		if(repositorio.consultarExistencia(codI)==false){
-			System.out.println("Instituição não existente");
-			return;
+	public void cadastrarI(Instituicao insti) throws ErroDeNegocioExcecao{
+		if(insti != null && !this.existe(insti.getCodInstituicao())){
+			this.repositorioInsti.cadastrarI(insti);
+		} else{
+			//Podemos fazer outros throws aqui, validando o pq que n cadastrou
+			throw new ErroDeNegocioExcecao("Instituicao nao cadastrada!");
 		}
 	}
-		
-		/*
-		Instituicao novaInstituicao = new Instituicao();
-		novaInstituicao.setCodInstituicao(codI);
-		novaInstituicao.setCnpj(repositorio.getInstituicoes()[repositorio.retornarPosicao(codI)].getCnpj());
-		
-		
-		System.out.println("Digite o nome da instituicao a ser alterado: ");
-		String novoNome = leitura.next();
-		repositorio.getInstituicoes()[repositorio.retornarPosicao(codI)].setNome(novoNome);
-		
-		System.out.println("Digite a cidade da instituicao a ser alterada: ");
-		String novaCidade = leitura.next();
-		repositorio.getInstituicoes()[repositorio.retornarPosicao(codI)].setCidade(novaCidade);
-		
-		System.out.println("Digite o estado da instituicao a ser alterado: ");
-		String novoEstado = leitura.next();
-		repositorio.getInstituicoes()[repositorio.retornarPosicao(codI)].setEstado(novoEstado);
-		
-		System.out.println("Digite o numero da conta da instituicao a ser alterado: ");
-		double novaConta = leitura.nextDouble();
-		repositorio.getInstituicoes()[repositorio.retornarPosicao(codI)].setNumeroConta(novaConta);
-		
-		System.out.println(repositorio.getInstituicoes()[repositorio.retornarPosicao(codI)].toString()+"\n");
-		
-		return;
-	}
-	*/
 	
-	public void listarInstituicao() {
-		System.out.println(repositorio.listarInstituicoes());
-		return;
+	public void atualizarInstituicao(Instituicao novaInsti) throws ErroDeNegocioExcecao{
+		if(novaInsti != null && this.existe(novaInsti.getCodInstituicao())){
+			this.repositorioInsti.atualizarInstituicao(novaInsti);
+		} else{
+			throw new ErroDeNegocioExcecao("Instituição não encontrada!");
+		}
 	}
+	
+	public Instituicao buscarI(int codInstituicao) throws ErroDeNegocioExcecao{
+		Instituicao result = this.repositorioInsti.buscarI(codInstituicao);
+		return result;
+	}
+	
+	public void removerI(int codInstituicao) throws ErroDeNegocioExcecao{
+		Instituicao insti = this.repositorioInsti.buscarI(codInstituicao);
+		if(insti != null){
+			this.repositorioInsti.removerI(codInstituicao);
+		} else{
+			throw new ErroDeNegocioExcecao("Instituicao não existe!");
+		}
+	}
+	
 }
