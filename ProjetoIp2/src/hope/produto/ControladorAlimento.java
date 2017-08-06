@@ -1,112 +1,57 @@
 package hope.produto;
 
+import hope.excecao.ErroDeNegocioExcecao;
+
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class ControladorAlimento {
 	
 private RepositorioAlimento repositorioA;
+private static ControladorAlimento instance;
 	
 	public ControladorAlimento() {
-		this.repositorioA = new RepositorioAlimento(null, 100);
-	}
-	Scanner leitura = new Scanner(System.in);
-	
-	public void cadastrar() {
-		System.out.println("Informe o tipo do produto: ");
-		String tipo = leitura.nextLine();
-		while(tipo.equals(null)){
-			System.out.println("Digite um tipo valido: ");
-			tipo = leitura.nextLine();
-			leitura.nextLine();
-		}
-		
-		System.out.println("Informe o nome do produto: ");
-		String nome = leitura.nextLine();
-		while(nome.equals(null)){
-			System.out.println("Digite um nome valido: ");
-			nome = leitura.nextLine();
-			leitura.nextLine();
-		}
-		
-		System.out.println("Informe a quantidade do produto: ");
-		int quantidade = leitura.nextInt();
-		while(quantidade <= 0){
-			System.out.println("Digite uma quantidade valida: ");
-			nome = leitura.nextLine();
-			leitura.nextLine();
-		}
-		
-		System.out.println("Informe a data de validade do produto: ");
-		int validade = leitura.nextInt();
-		//Ajustar isso aqui depois pro formato de data
-		while(validade == 0){
-			System.out.println("Digite uma data valida: ");
-			validade = leitura.nextInt();
-			leitura.nextInt();
-		}
-		
-		Random random = new Random();
-		int codigoProduto = random.nextInt(100);
-		
-		Alimento alimento = new Alimento(tipo, quantidade, nome, codigoProduto, validade);
-		repositorioA.cadastrar(alimento);
-		System.out.println(alimento.toString()+"\n\tDoacao de alimento cadastrada!\n");
-		return;		
-		
-		}
-	
-		public void buscarAlimento() {
-			System.out.println("Digite o codigo do produto:");
-			int codigoProduto  = leitura.nextInt();
-	
-			System.out.println(repositorioA.buscarAlimento(codigoProduto));
-			return;
+		this.repositorioA = RepositorioAlimento.getInstance();
 	}
 	
-		public void removerAlimento() {
-			System.out.println("Digite o codigo do produto que deseja remover: ");
-			int codigoProduto = leitura.nextInt();
-		
-			System.out.println(repositorioA.removerAlimento(codigoProduto));
-			return;
+	public static ControladorAlimento getInstance(){
+		if(instance == null){
+			instance = new ControladorAlimento();
+		}
+		return instance;
 	}
-		
-		public void atualizar() {
-			System.out.println("Digite o codigo do produto que deseja alterar: ");
-			int codigoProduto = leitura.nextInt();
-			if(repositorioA.consultarExistenciaA(codigoProduto) == false){
-				System.out.println("O produto não existente!");
-				return;
+	
+	private boolean existe(int codProduto){
+		ArrayList<Alimento> resultado = this.repositorioA.listar();
+		for(Alimento a : resultado){
+			if(a.getCodigoProduto() == codProduto){
+				return true;
 			}
-			
-			//Esse construtor aqui ta dando erro! Aí coloquei essa sugestão de eclipse
-			Vestimenta novaVestimenta = new Vestimenta(null, codigoProduto, null, codigoProduto, null, null, null);
-			novaVestimenta.setCodigoProduto(codigoProduto);
-			novaVestimenta.setCodigoProduto(repositorioA.alimentoArray.get(repositorioA.retornarPosicaoA(codigoProduto)).getCodigoProduto());
-			
-			System.out.println("Digite o tipo do produto a ser alterado: ");
-			String novoTipo = leitura.next();
-			repositorioA.alimentoArray.get(repositorioA.retornarPosicaoA(codigoProduto)).setTipo(novoTipo);
-			
-			System.out.println("Digite o nome do produto a ser alterado: ");
-			String novoNome = leitura.next();
-			repositorioA.alimentoArray.get(repositorioA.retornarPosicaoA(codigoProduto)).setNome(novoNome);
-			
-			System.out.println("Digite a quantidade do produto a ser alterado: ");
-			int novaQuantidade = leitura.nextInt();
-			repositorioA.alimentoArray.get(repositorioA.retornarPosicaoA(codigoProduto)).setQuantidade(novaQuantidade);
-		
-			System.out.println("Digite a validade do produto a ser alterado: ");
-			int novaValidade = leitura.nextInt();
-			repositorioA.alimentoArray.get(repositorioA.retornarPosicaoA(codigoProduto)).setValidade(novaValidade);
-			
-			return;
 		}
-		
-		public void listarAlimentos() {
-			System.out.println(repositorioA.listarAlimentos());
-			return;
+		return false;
+	}
+	
+	
+	public void cadastrarH(Alimento alimento) throws ErroDeNegocioExcecao{
+		if(alimento != null && !this.existe(alimento.getCodigoProduto())){
+			this.repositorioA.cadastrarA(alimento);
+		} else{
+			throw new ErroDeNegocioExcecao("Alimento cadastrado com sucesso");
 		}
+	}
+	public Alimento buscarA(int codProduto) throws ErroDeNegocioExcecao{
+		Alimento result = this.repositorioA.buscarAlimento(codProduto);
+		return result;
+	}
+	
+	public void removerA(int codProduto) throws ErroDeNegocioExcecao{
+		Alimento a = this.repositorioA.buscarAlimento(codProduto);
+		if(a != null){
+			this.repositorioA.removerAlimento(codProduto);
+		} else{
+			throw new ErroDeNegocioExcecao("Alimento inexistente");
+		}
+	}
 
 }

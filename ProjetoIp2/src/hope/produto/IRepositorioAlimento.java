@@ -1,14 +1,14 @@
 package hope.produto;
 
+import java.util.ArrayList;
+
 public interface IRepositorioAlimento {
 	
-	public boolean cadastrar(Alimento alimento);
+	public boolean cadastrarA(Alimento alimento);
+		
+	public Alimento buscarAlimento(int codProduto);
 	
-	public boolean atualizarAlimento(Alimento alimento);
+	public boolean removerAlimento(int codProduto);
 	
-	public Alimento buscarAlimento(int codigo);
-	
-	public boolean removerAlimento(int codigo);
-	
-	public String listarAlimentos();
+	public ArrayList<Alimento> listar();
 }

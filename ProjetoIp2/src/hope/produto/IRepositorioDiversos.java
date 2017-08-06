@@ -1,15 +1,17 @@
 package hope.produto;
 
+import java.util.ArrayList;
+
 public interface IRepositorioDiversos {
 	
-	public boolean cadastrarDiv(Diversos div);
+	public boolean cadastrarD(Diversos div);
 	
-	public boolean atualizarDiv(Diversos div);
+	public boolean atualizarDiversos(Diversos diversos);
 	
-	public Diversos buscarDiv(int codigo);
+	public Diversos buscarDiversos(int codProduto);
 	
-	public boolean removerDiv(int codigo);
+	public boolean removerDiversos(int codProduto);
 	
-	public String listarDiv();
+	public ArrayList<Diversos> listar();
 	
 }

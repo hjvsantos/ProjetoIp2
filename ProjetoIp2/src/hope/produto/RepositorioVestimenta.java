@@ -1,122 +1,137 @@
 package hope.produto;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class RepositorioVestimenta implements IRepositorioVestimenta{
+public class RepositorioVestimenta implements IRepositorioVestimenta, Serializable{
 
 	ArrayList<Vestimenta> roupas = new ArrayList<Vestimenta>();
-	private int quantidadeRoupas;
+	public static final String NOME_DO_ARQ = "vestimenta.dat";
+	public static RepositorioVestimenta instancia;
 	
-	public RepositorioVestimenta(Vestimenta[] roupas, int quantidadeRoupas) {
+	public RepositorioVestimenta() {
 		this.roupas =  new ArrayList<Vestimenta>();
-		this.quantidadeRoupas = quantidadeRoupas;
+	}
+	
+public static RepositorioVestimenta getInstance(){
+		
+		if(instancia == null){
+			try{
+				instancia = lerDoArquivo();
+			} catch (IOException e){
+				e.printStackTrace();
+			}
+		}
+		return instancia;
 	}
 
 	public ArrayList<Vestimenta> getRoupas() {
 		return roupas;
 	}
 
-	public int getQuantidadeRoupas() {
-		return quantidadeRoupas;
+	private void setHigieneArray(ArrayList<Vestimenta> roupas) {
+		this.roupas = roupas;
 	}
 	
-	public boolean cadastrar(Vestimenta doacoes){
-		if(doacoes.equals(null)){
-			return false;
-		}else{
-			for(int i = 0; i < this.quantidadeRoupas; i++){
-				if(doacoes.getCodigoProduto() == roupas.get(i).getCodigoProduto()){
-					return false;
-				}
-			}
-			if(quantidadeRoupas < roupas.size() -1){
-				roupas.add(doacoes);
-				quantidadeRoupas = quantidadeRoupas +1;
-				return true;
-			}
-		}
+public static RepositorioVestimenta lerDoArquivo() throws IOException{
 		
-		return true;
-	}
-	
-	public boolean atualizar(Vestimenta doacoes ){
-		for(int i = 0; i < quantidadeRoupas; i++){
-			if(roupas.get(i).getCodigoProduto() == doacoes.getCodigoProduto()){
-				roupas.set(i, doacoes);
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	public Vestimenta buscarVest(int codigo){
-		 int v = 0;
-		 boolean find = false;
-		 while ((!find) && (v < this.quantidadeRoupas)){
-				if(codigo == roupas.get(v).getCodigoProduto()){
-					find = true;
-				}else {
-					v++;
+		RepositorioVestimenta instanciaLocal = null;
+		File entrada = new File(NOME_DO_ARQ);
+		FileInputStream fis = null;
+		ObjectInputStream ois = null;
+		
+		try {
+			fis = new FileInputStream(entrada);
+			ois = new ObjectInputStream(fis);
+			Object obj = ois.readObject();
+			instanciaLocal = (RepositorioVestimenta) obj;
+		} catch (Exception e) {
+			instanciaLocal = new RepositorioVestimenta();
+		} finally {
+			if (ois != null) {
+				try {
+					ois.close();
+				} catch (IOException e) {
 				}
-		 }
-		 		Vestimenta resultado = null;
-				if(v != this.quantidadeRoupas){
-					resultado =roupas.get(v);
-				}
-				return resultado;
+			}
 		}
+		return instanciaLocal;
+	}
+
+public void salvarArquivo(){
+	if (instancia == null){
+		return;
+	}
+	File saida = new File(NOME_DO_ARQ);
+	FileOutputStream fos = null;
+	ObjectOutputStream oos = null;
 	
-	public boolean remover(int codigo){
-		int i = 0;
-		boolean find = false;
-		while((!find) && (i < this.quantidadeRoupas)){
-			if(codigo == roupas.get(i).getCodigoProduto()){
-				find = true;
-			}
-			else{
-				i++;
+	try {
+		fos = new FileOutputStream(saida);
+		oos = new ObjectOutputStream(fos);
+		oos.writeObject(instancia);
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		if (oos != null) {
+			try {
+				oos.close();
+			} catch (IOException e) {
 			}
 		}
-		if(i != this.quantidadeRoupas){
-			roupas.set((this.quantidadeRoupas - 1), roupas.get(i));
-			roupas.remove(this.quantidadeRoupas - 1);
-			this.quantidadeRoupas = this.quantidadeRoupas -1;
-			System.out.println("Produto: " + codigo + "removido!");
+	}
+}
+	
+public boolean cadastrar(Vestimenta vestimenta){
+	this.roupas.add(vestimenta);
+	salvarArquivo();
+	return true;
+}	
+	
+public boolean atualizarVestimenta(Vestimenta vestimenta){
+	int count = 0;
+	for(Vestimenta v : this.roupas){
+		
+		if(v.getCodigoProduto() == roupas.get(count).getCodigoProduto()){
+			this.roupas.set(count, vestimenta);
+			salvarArquivo();
 			return true;
 		}
-		else {
-			System.out.println("Doador nao encontrado");
-			return false;
-		}
+		count++;
 	}
+	return false;
+}
 	
-	public boolean consultarExistenciaV(int codigo) {
-		for (int i = 0; i < quantidadeRoupas; i++) {
-			if (codigo == roupas.get(i).getCodigoProduto()) {
-				return true;
-			}
+public Vestimenta buscar(int codProduto){
+	for(Vestimenta v : this.roupas){
+		if(v.getCodigoProduto() == codProduto){
+			return v;
 		}
-		return false;
 	}
-
-	public int retornarPosicaoV(int codigo) {
-		int pos = 0;
-		for (int i = 0; i < quantidadeRoupas; i++) {
-			if (codigo == roupas.get(i).getCodigoProduto()) {
-				return pos;
-			} else {
-				pos++;
-
-			}
-		}
-		return pos;
-	}
+	return null;
+}	
 	
-	public String listar(){
-		String listaFinal = "";
-		for(int i = 0; i < quantidadeRoupas; i++){
-			listaFinal += "\n Informacoes dos doadores:\n Nome: " + roupas.get(i).getNome() + "\n Codigo do Produto: " + roupas.get(i).getCodigoProduto() + "\n Tipo: " + roupas.get(i).getTipo() + "\n Quantidade: " + roupas.get(i).getQuantidade();}
-		return listaFinal;
-	}	
+public boolean remover(int codProduto){
+	int count = 0;
+	for(Vestimenta v : this.roupas){
+		if(v.getCodigoProduto() == codProduto){
+			this.roupas.remove(v);
+			salvarArquivo();
+			return true;
+		}
+		count++;
+	}
+	return false;
+}
+	
+public ArrayList<Vestimenta> listar(){
+	return this.roupas;
+}	
 }
 

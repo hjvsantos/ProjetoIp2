@@ -1,14 +1,18 @@
 package hope.produto;
 
+import hope.instituicao.Instituicao;
+
+import java.util.ArrayList;
+
 public interface IRepositorioHigiene {
 	
-	public boolean cadastrar(Higiene higiene);
+	public boolean cadastrarH(Higiene higiene);
 	
 	public boolean atualizarHigiene(Higiene higiene);
 	
-	public Higiene buscarHig(int codigo);
+	public Higiene buscarHigiene(int codProduto);
 	
-	public boolean removerHigiene(int codigo);
+	public boolean removerHigiene(int codProduto);
 	
-	public String listarHigiene();
+	public ArrayList<Higiene> listar();
 }

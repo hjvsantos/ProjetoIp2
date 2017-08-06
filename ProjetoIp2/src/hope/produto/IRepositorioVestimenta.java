@@ -1,18 +1,16 @@
 package hope.produto;
 
+import java.util.ArrayList;
+
 public interface IRepositorioVestimenta {
 
 	public boolean cadastrar(Vestimenta roupa);
 	
-	public boolean atualizar(Vestimenta roupa);
+	public boolean atualizarVestimenta(Vestimenta roupa);
 	
-	public Vestimenta buscarVest(int codigo);
+	public Vestimenta buscar(int codProduto);
 	
-	public boolean remover(int codigo);
+	public boolean remover(int codProduto);
 	
-	public boolean consultarExistenciaV(int codigo);
-	
-	public int retornarPosicaoV(int codigo);
-	
-	public String listar();
+	public ArrayList<Vestimenta> listar();
 }
