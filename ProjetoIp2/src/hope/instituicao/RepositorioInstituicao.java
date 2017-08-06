@@ -1,140 +1,143 @@
 package hope.instituicao;
 
 import java.util.ArrayList;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
 
-public class RepositorioInstituicao implements IRepositorioInstituicao {
+public class RepositorioInstituicao implements IRepositorioInstituicao, Serializable {
 
-	private ArrayList<Instituicao> instituicoesArray = new ArrayList<Instituicao>();
-	private int qntInstituicoes;
+	public static final String NOME_DO_ARQ = "instituicao.dat";
+	private ArrayList<Instituicao> instituicoesArray;
+	public static RepositorioInstituicao instancia;
 
-	// Construtor
-	public RepositorioInstituicao(Instituicao[] instituicoesArray, int qntInstituicoes) {
-		this.instituicoesArray = new ArrayList<Instituicao>();
-		this.qntInstituicoes = qntInstituicoes;
+	private RepositorioInstituicao(){
+		this.instituicoesArray = new ArrayList<>();
 	}
-
-	// GET & SET
-	public ArrayList<Instituicao> getInstituicoesArray(int codInstituicao) {
+	
+	public static RepositorioInstituicao getInstance(){
+		
+		if(instancia == null){
+			try{
+				instancia = lerDoArquivo();
+			} catch (IOException e){
+				e.printStackTrace();
+			}
+		}
+		return instancia;
+	}
+	
+	private ArrayList<Instituicao> getInstituicoesArray() {
 		return instituicoesArray;
 	}
 
-	public int getQntInstituicoes() {
-		return qntInstituicoes;
+	private void setInstituicoesArray(ArrayList<Instituicao> instituicoesArray) {
+		this.instituicoesArray = instituicoesArray;
 	}
 
-	// CRUD
-
-	// Cadastrar Instituição
-	public boolean cadastrarI(Instituicao insti) {
-		if (insti.equals(null)) {
-			return false;
-		} else {
-			for (int i = 0; i < this.qntInstituicoes; i++) {
-				if (insti.getCnpj() == instituicoesArray.get(i).getCnpj()) {
-					return false;
+	public static RepositorioInstituicao lerDoArquivo() throws IOException{
+		
+		RepositorioInstituicao instanciaLocal = null;
+		File entrada = new File(NOME_DO_ARQ);
+		FileInputStream fis = null;
+		ObjectInputStream ois = null;
+		
+		try {
+			fis = new FileInputStream(entrada);
+			ois = new ObjectInputStream(fis);
+			Object obj = ois.readObject();
+			instanciaLocal = (RepositorioInstituicao) obj;
+		} catch (Exception e) {
+			instanciaLocal = new RepositorioInstituicao();
+		} finally {
+			if (ois != null) {
+				try {
+					ois.close();
+				} catch (IOException e) {
+					/* Silence exception */
 				}
 			}
-			if (qntInstituicoes < instituicoesArray.size() - 1) {
-				instituicoesArray.add(insti);
-				qntInstituicoes = qntInstituicoes + 1;
-				return true;
+		}
+		return instanciaLocal;
+	}
+	
+	public void salvarArquivo(){
+		if (instancia == null){
+			return;
+		}
+		File saida = new File(NOME_DO_ARQ);
+		FileOutputStream fos = null;
+		ObjectOutputStream oos = null;
+		
+		try {
+			fos = new FileOutputStream(saida);
+			oos = new ObjectOutputStream(fos);
+			oos.writeObject(instancia);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (oos != null) {
+				try {
+					oos.close();
+				} catch (IOException e) {
+					/* Silent */}
 			}
 		}
-		instituicoesArray.add(insti);
-		this.qntInstituicoes = this.qntInstituicoes + 1;
+	}
+	
+	@Override
+	public boolean cadastrarI(Instituicao insti){
+		this.instituicoesArray.add(insti);
+		salvarArquivo();
 		return true;
 	}
-
-	// Buscar Instituição
-
-	public Instituicao buscarI(int codInstituicao) {
-		int i = 0;
-		boolean achou = false;
-		while ((!achou) && (i < this.qntInstituicoes)) {
-			if (codInstituicao == this.instituicoesArray.get(i).getCodInstituicao()) {
-				achou = true;
-			} else {
-				i = i + 1;
-			}
-		}
-		Instituicao resultado = null;
-		if (i != this.qntInstituicoes) {
-			resultado = this.instituicoesArray.get(i);
-		}
-		return resultado;
-	}
-
-	// Remover Instituição
-	public boolean removerInstituicao(int codInstituicao) {
-		int i = 0;
-		boolean achou = false;
-		while ((!achou) && (i < this.qntInstituicoes)) {
-			if (codInstituicao == this.instituicoesArray.get(i).getCodInstituicao()) {
-				achou = true;
-			} else {
-				i = i + 1;
-			}
-		}
-		if (i != this.qntInstituicoes) {
-			this.instituicoesArray.set((qntInstituicoes -1), instituicoesArray.get(i));
-			this.instituicoesArray.remove(this.qntInstituicoes -1);
-			this.qntInstituicoes = this.qntInstituicoes - 1;
-			System.out.println("Instituicao: " + codInstituicao + "removida!");
-			return true;
-		} else {
-			System.out.println("Instituicao nao encontrada!");
-			return false;
-		}
-	}
-
-	public boolean consultarExistencia(int codInstituicao) {
-		for (int i = 0; i < qntInstituicoes; i++) {
-			if (codInstituicao == this.instituicoesArray.get(i).getCodInstituicao()) {
+	
+	@Override
+	public boolean atualizarInstituicao(Instituicao novaInsti){
+		int count = 0;
+		for(Instituicao i : this.instituicoesArray){
+			
+			if(i.getCodInstituicao() == novaInsti.getCodInstituicao()){
+				this.instituicoesArray.set(count, novaInsti);
+				salvarArquivo();
 				return true;
 			}
+			count++;
 		}
 		return false;
 	}
-
-	public int retornarPosicao(int codInstituicao) {
-		int pos = 0;
-		for (int i = 0; i < qntInstituicoes; i++) {
-			if (codInstituicao == instituicoesArray.get(i).getCodInstituicao()) {
-				return pos;
-			} else {
-				pos++;
-
+	
+	@Override
+	public Instituicao buscarI(int codInstituicao){
+		for(Instituicao i : this.instituicoesArray){
+			if(i.getCodInstituicao() == codInstituicao){
+				return i;
 			}
 		}
-		return pos;
+		return null;
 	}
-
-	// Atualizar Instituicao
-	public boolean atualizarInstituicao(Instituicao novaInsti) {
-		for (int i = 0; i < qntInstituicoes; i++) {
-			if (instituicoesArray.get(i).getCodInstituicao() == novaInsti.getCodInstituicao()) {
-				instituicoesArray.set(i, novaInsti);
+	
+	@Override
+	public ArrayList<Instituicao> listar(){
+		return this.instituicoesArray;
+	}
+	
+	@Override
+	public boolean removerI(int codInstituicao){
+		int count = 0;
+		for(Instituicao i : this.instituicoesArray){
+			if(i.getCodInstituicao() == codInstituicao){
+				this.instituicoesArray.remove(i);
+				salvarArquivo();
 				return true;
 			}
+			count++;
 		}
 		return false;
 	}
-
-	// Listar Instituições
-	public String listarInstituicoes() {
-		String listaFinal = "";
-		for (int i = 0; i < qntInstituicoes; i++) {
-			listaFinal += "\n Informacoes das instituicoes:\n Nome: "
-					+ instituicoesArray.get(i).getNome() + "\n CNPJ: "
-					+ instituicoesArray.get(i).getCnpj() + "\n Cidade: "
-					+ instituicoesArray.get(i).getCidade() + "\n Estado: "
-					+ instituicoesArray.get(i).getEstado() + "\n Numero da conta: "
-					+ instituicoesArray.get(i).getNumeroConta()
-					+ "\n Codigo da Instituição:"
-					+ instituicoesArray.get(i).getCodInstituicao()
-					+ "\n Donativos: " + "\n";
-		}
-		return listaFinal;
-	}
-
 }

@@ -1,19 +1,16 @@
 package hope.instituicao;
+import java.util.ArrayList;
 
 public interface IRepositorioInstituicao {
 	
 	public boolean cadastrarI(Instituicao insti);
 	
-	public Instituicao buscarI(int codInstituicao);
-	
-	public boolean removerInstituicao(int codInstituicao);
-	
 	public boolean atualizarInstituicao(Instituicao novaInsti);
 	
-	public boolean consultarExistencia(int codInstituicao);
+	public Instituicao buscarI(int codInstituicao);
 	
-	public int retornarPosicao(int codInstituicao);
+	public ArrayList<Instituicao> listar();
 	
-	public String listarInstituicoes();
-
+	public boolean removerI(int codInstituicao);
+	
 }
