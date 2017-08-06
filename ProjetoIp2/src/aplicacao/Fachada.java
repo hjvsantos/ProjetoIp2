@@ -99,12 +99,12 @@ public class Fachada {
 		return repInstituicao.cadastrarI(insti);
 	}
 	
-	public Instituicao buscarI(String cnpj){
-		return repInstituicao.buscarI(cnpj);
+	public Instituicao buscarI(int codInstituicao){
+		return repInstituicao.buscarI(codInstituicao);
 	}
 	
-	public boolean removerInstituicao(String cnpj){
-		return repInstituicao.removerInstituicao(cnpj);
+	public boolean removerInstituicao(int codInstituicao){
+		return repInstituicao.removerInstituicao(codInstituicao);
 	}
 	
 	public boolean atualizarInstituicao(Instituicao novaInsti){
@@ -119,8 +119,8 @@ public class Fachada {
 		return repInstituicao.consultarExistencia(codInstituicao);
 	}
 	
-	public int retornarPosicao(int cod){
-		return repInstituicao.retornarPosicao(cod);
+	public int retornarPosicao(int codInstituicao){
+		return repInstituicao.retornarPosicao(codInstituicao);
 	}
 
 	 //Metodos da Classe Doação 

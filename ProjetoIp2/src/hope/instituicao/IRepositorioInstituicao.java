@@ -4,15 +4,15 @@ public interface IRepositorioInstituicao {
 	
 	public boolean cadastrarI(Instituicao insti);
 	
-	public Instituicao buscarI(String cnpj);
+	public Instituicao buscarI(int codInstituicao);
 	
-	public boolean removerInstituicao(String cnpj);
+	public boolean removerInstituicao(int codInstituicao);
 	
 	public boolean atualizarInstituicao(Instituicao novaInsti);
 	
 	public boolean consultarExistencia(int codInstituicao);
 	
-	public int retornarPosicao(int cod);
+	public int retornarPosicao(int codInstituicao);
 	
 	public String listarInstituicoes();
 

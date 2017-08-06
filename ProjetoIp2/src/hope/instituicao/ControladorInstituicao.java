@@ -12,6 +12,7 @@ public class ControladorInstituicao {
 	}
 	
 	Scanner leitura = new Scanner(System.in);
+	
 	public void cadastrarInstituicao () {
 		System.out.println("Informe o CNPJ da instituicao: ");
 		String cnpj = leitura.nextLine();
@@ -60,18 +61,18 @@ public class ControladorInstituicao {
 	}
 	
 	public void buscarInstituição() {
-		System.out.println("Digite o CNPJ da instituicao:");
-		String cnpjNovo  = leitura.nextLine();
+		System.out.println("Digite o codigo da instituicao:");
+		int codigoNovo  = leitura.nextInt();
 	
-		System.out.println(repositorio.buscarI(cnpjNovo));
+		System.out.println(repositorio.buscarI(codigoNovo));
 		return;
 	}
 	
 	public void removerInstituicao() {
-		System.out.println("Digite o CNPJ da instituicao que deseja remover: ");
-		String cnpjRemover = leitura.nextLine();
+		System.out.println("Digite o codigo da instituicao que deseja remover: ");
+		int codigoRemover = leitura.nextInt();
 		
-		System.out.println(repositorio.removerInstituicao(cnpjRemover));
+		System.out.println(repositorio.removerInstituicao(codigoRemover));
 		return;
 	}
 	
@@ -82,7 +83,9 @@ public class ControladorInstituicao {
 			System.out.println("Instituição não existente");
 			return;
 		}
+	}
 		
+		/*
 		Instituicao novaInstituicao = new Instituicao();
 		novaInstituicao.setCodInstituicao(codI);
 		novaInstituicao.setCnpj(repositorio.getInstituicoes()[repositorio.retornarPosicao(codI)].getCnpj());
@@ -108,6 +111,7 @@ public class ControladorInstituicao {
 		
 		return;
 	}
+	*/
 	
 	public void listarInstituicao() {
 		System.out.println(repositorio.listarInstituicoes());
