@@ -1,113 +1,130 @@
 package hope.doacao;
 
+import hope.produto.Higiene;
+import hope.produto.RepositorioHigiene;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class RepositorioDoacao implements IRepositorioDoacao {
+public class RepositorioDoacao implements IRepositorioDoacao, Serializable {
 
-	private ArrayList<Doacao> doacaoArray = new ArrayList<Doacao>();
-	private int quantDoacao = 0;
+	public static final String NOME_DO_ARQ = "doacao.dat";
+	ArrayList<Doacao> doacaoArray = new ArrayList<Doacao> ();
+	public static RepositorioDoacao instancia;
 	
-	public RepositorioDoacao(Doacao[] doacaoArray, int quantDoacao) {
-		super();
-		this.doacaoArray = new ArrayList<Doacao>();
-		this.quantDoacao = quantDoacao;
+	public RepositorioDoacao() {
+		this.doacaoArray = new ArrayList<Doacao> ();
 	}
-
-	public ArrayList<Doacao> getDoacaoArray(int codigo) {
+	
+public static RepositorioDoacao getInstance(){
+		
+		if(instancia == null){
+			try{
+				instancia = lerDoArquivo();
+			} catch (IOException e){
+				e.printStackTrace();
+			}
+		}
+		return instancia;
+	}
+	
+	public ArrayList<Doacao> getDoacaoArray() {
 		return doacaoArray;
 	}
 
-	public int getQuantDoacao() {
-		return quantDoacao;
+	private void setDoacaoArray(ArrayList<Doacao> doacaoArray) {
+		this.doacaoArray = doacaoArray;
 	}
 	
-	public boolean cadastrarDoacao(Doacao doacao){
-		if(doacao.equals(null)){
-			return false;
-		}else{
-			for(int i = 0; i < this.quantDoacao; i++){
-				if(doacao.getCodigo() == doacaoArray.get(i).getCodigo()){
-					return false;
+public static RepositorioDoacao lerDoArquivo() throws IOException{
+		
+		RepositorioDoacao instanciaLocal = null;
+		File entrada = new File(NOME_DO_ARQ);
+		FileInputStream fis = null;
+		ObjectInputStream ois = null;
+		
+		try {
+			fis = new FileInputStream(entrada);
+			ois = new ObjectInputStream(fis);
+			Object obj = ois.readObject();
+			instanciaLocal = (RepositorioDoacao) obj;
+		} catch (Exception e) {
+			instanciaLocal = new RepositorioDoacao();
+		} finally {
+			if (ois != null) {
+				try {
+					ois.close();
+				} catch (IOException e) {
+					/* Silence exception */
 				}
 			}
-			if(quantDoacao < doacaoArray.size() -1){
-				doacaoArray.add(doacao);
-				quantDoacao = quantDoacao +1;
-				return true;
-			}
 		}
-		doacaoArray.add(doacao);
-		this.quantDoacao = this.quantDoacao +1;
-		return true;
+		return instanciaLocal;
 	}
+
 	
-	public boolean consultarExistencia(int codo) {
-		for (int i = 0; i < quantDoacao; i++) {
-			if (codo == doacaoArray.get(i).getCodigo()) {
-				return true;
-			}
-		}
-		return false;
+public void salvarArquivo(){
+	if (instancia == null){
+		return;
 	}
+	File saida = new File(NOME_DO_ARQ);
+	FileOutputStream fos = null;
+	ObjectOutputStream oos = null;
 	
-	public Doacao buscarDoacao(int codigo){
-		 int t = 0;
-		 boolean find = false;
-		 while ((!find) && (t < this.quantDoacao)){
-				if(codigo == doacaoArray.get(t).getCodigo()){
-					find = true;
-				}else {
-					t++;
-				}
-		 }
-				Doacao resultado = null;
-				if(t != this.quantDoacao){
-					resultado = doacaoArray.get(t);
-				}
-				return resultado;
-		}	
-	
-	public boolean atualizarDoacao(Doacao novaDoacao){
-		for(int i = 0; i < quantDoacao; i++){
-			if(doacaoArray.get(i).getCodigo() == novaDoacao.getCodigo()){
-				doacaoArray.set(i, novaDoacao);
-				return true;
-			}
+	try {
+		fos = new FileOutputStream(saida);
+		oos = new ObjectOutputStream(fos);
+		oos.writeObject(instancia);
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		if (oos != null) {
+			try {
+				oos.close();
+			} catch (IOException e) {
+				/* Silent */}
 		}
-		return false;
 	}
+}
+
+public boolean cadastrarDoacao(Doacao doacao){
+	this.doacaoArray.add(doacao);
+	salvarArquivo();
+	return true;
+}	
 	
-	public boolean removerDoacao(int codigo){
-		int i = 0;
-		boolean find = false;
-		while((!find) && (i < this.quantDoacao)){
-			if(codigo == doacaoArray.get(i).getCodigo()){
-				find = true;
-			}
-			else{
-				i++;
-			}
+	
+public Doacao buscarDoacao(int codProduto){
+	for(Doacao d : this.doacaoArray){
+		if(d.getCodigo() == codProduto){
+			return d;
 		}
-		if(i != this.quantDoacao){
-			doacaoArray.set((this.quantDoacao - 1), doacaoArray.get(i));
-			doacaoArray.remove(this.quantDoacao - 1);
-			this.quantDoacao = this.quantDoacao -1;
-			System.out.println("Doação: " + codigo + "removida!");
+	}
+	return null;
+}	
+
+public boolean removerDoacao(int codProduto){
+	int count = 0;
+	for(Doacao d : this.doacaoArray){
+		if(d.getCodigo() == codProduto){
+			this.doacaoArray.remove(d);
+			salvarArquivo();
 			return true;
 		}
-		else {
-			System.out.println("Doador não encontrado");
-			return false;
-		}
-		
+		count++;
 	}
-	
-	public String listarDoacoes(){
-		String listaFinal = "";
-		for(int f = 0; f < quantDoacao; f++){
-			listaFinal += "\n Informacoes das doações:\n Doador: " + doacaoArray.get(f).getDoador()+ "\n Beneficiado: " 
-		+ doacaoArray.get(f).getCodInstituicao() + "\n Doação: " + doacaoArray.get(f).getCodigo();}
-		return listaFinal;
-	}
+	return false;
+}
+
+public ArrayList<Doacao> listar(){
+	return this.doacaoArray;
+}
+
 	
 }

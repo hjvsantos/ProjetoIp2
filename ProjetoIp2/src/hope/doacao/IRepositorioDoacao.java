@@ -1,15 +1,16 @@
 package hope.doacao;
 
+import java.util.ArrayList;
+
 public interface IRepositorioDoacao {
 
 	public boolean cadastrarDoacao(Doacao doacao);
 	
-	public Doacao buscarDoacao(int codigoDoacao);
+	public Doacao buscarDoacao(int codProduto);
 	
-	public boolean atualizarDoacao(Doacao novaDoacao);
 	
-	public boolean removerDoacao(int codigoDoacao);
+	public boolean removerDoacao(int codProduto);
 	
-	public String listarDoacoes();
+	public ArrayList<Doacao> listar();
 }
 

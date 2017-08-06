@@ -1,51 +1,63 @@
 package hope.doacao;
 
 import hope.categoria.Categoria;
+import hope.excecao.ErroDeNegocioExcecao;
 import hope.instituicao.Instituicao;
+import hope.produto.ControladorHigiene;
+import hope.produto.Higiene;
+import hope.produto.RepositorioHigiene;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class ControladorDoacao {
 
-private RepositorioDoacao repositorio;
-
-public ControladorDoacao(RepositorioDoacao repositorio) {
-	this.repositorio = repositorio;
-}
+	private RepositorioDoacao repositorioD;
+	private static ControladorDoacao instance;
 	
-Scanner leitura = new Scanner(System.in);
-
-public void cadastrarDoacao() {
-		System.out.println("Informe a categoria da doação:");
-		String categoria = leitura.next();
-		System.out.println("Informe a quantidade:");
-		int quantidade = leitura.nextInt();
-		Random random = new Random();
-		int codDoacao = random.nextInt(100);
-		
-		Doacao doacao = new Doacao(categoria, null, null, 0, 0, codDoacao);
+	public ControladorDoacao() {
+		this.repositorioD = RepositorioDoacao.getInstance();
 	}
 	
-public void buscarDoacao() {
-	System.out.println("Digite o codigo da doação:");
-	int codigo  = leitura.nextInt();
-
-	System.out.println(repositorio.buscarDoacao(codigo));
-	return;
-}
-
-public void removerDoacao() {
-	System.out.println("Digite o codigo da doação: ");
-	int codigo  = leitura.nextInt();
+	public static ControladorDoacao getInstance(){
+		if(instance == null){
+			instance = new ControladorDoacao();
+		}
+		return instance;
+	}
 	
-	System.out.println(repositorio.removerDoacao(codigo));
-	return;
-}
-
-public void listarDoacao() {
-	System.out.println(repositorio.listarDoacoes());
-	return;
-}
+	private boolean existe(int codProduto){
+		ArrayList<Doacao> resultado = this.repositorioD.listar();
+		for(Doacao d : resultado){
+			if(d.getCodigo() == codProduto){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void cadastrarD(Doacao doacao) throws ErroDeNegocioExcecao{
+		if(doacao != null && !this.existe(doacao.getCodigo())){
+			this.repositorioD.cadastrarDoacao(doacao);
+		} else{
+			throw new ErroDeNegocioExcecao("Doação cadastrado com sucesso");
+		}
+	}
+	
+	
+	public Doacao buscarD(int codProduto) throws ErroDeNegocioExcecao{
+		Doacao result = this.repositorioD.buscarDoacao(codProduto);
+		return result;
+	}
+	
+	public void removerD(int codProduto) throws ErroDeNegocioExcecao{
+		Doacao d = this.repositorioD.buscarDoacao(codProduto);
+		if(d != null){
+			this.repositorioD.removerDoacao(codProduto);
+		} else{
+			throw new ErroDeNegocioExcecao("Doação inexistente");
+		}
+	}
 
 }
