@@ -72,7 +72,10 @@ public class ControladorFinanceiro {
 			System.out.println("Codigo invalido!");
 			return;
 		}
+	}
 		
+	//TODO
+		/*
 		Financeiro novoFinanceiro = new Financeiro();
 		novoFinanceiro.setCodOperacao(codF);
 		novoFinanceiro.setCodOperacao(repositorioF.getFinanceiroArray()[repositorioF.retornarPosicaoF(codF)]);
@@ -93,6 +96,7 @@ public class ControladorFinanceiro {
 		
 		return;
 	}
+	*/
 	
 	public void listarDoacoesFinanceiras() {
 		System.out.println(repositorioF.listarDoacoesFinanceiras());

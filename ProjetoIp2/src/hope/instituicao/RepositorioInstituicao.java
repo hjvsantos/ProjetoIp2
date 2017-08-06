@@ -8,8 +8,7 @@ public class RepositorioInstituicao implements IRepositorioInstituicao {
 	private int qntInstituicoes;
 
 	// Construtor
-	public RepositorioInstituicao(Instituicao[] instituicoesArray,
-			int qntInstituicoes) {
+	public RepositorioInstituicao(Instituicao[] instituicoesArray, int qntInstituicoes) {
 		this.instituicoesArray = new ArrayList<Instituicao>();
 		this.qntInstituicoes = qntInstituicoes;
 	}
