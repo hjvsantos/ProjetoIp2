@@ -1,10 +1,9 @@
 package hope.instituicao;
 
-import java.util.Random;
+import java.io.Serializable;
 
-import hope.produto.Produto;
 
-public class Instituicao {
+public class Instituicao implements Serializable {
 
 	private String nome;
 	private String cnpj;
@@ -12,20 +11,16 @@ public class Instituicao {
 	private String estado;
 	private double numeroConta;
 	private int codInstituicao;
-	//public Produtos donativos;
-	//ver a necessidade de discriminar os donativos em instituicao! Não tentei isso na aplicação
-	
 	
 	public Instituicao(String nome, String cnpj, String cidade, String estado,
-			double numeroConta, int codInstituicao ) {
-		super();
-		this.nome = nome;
-		this.cnpj = cnpj;
-		this.cidade = cidade;
-		this.estado = estado;
-		this.numeroConta = numeroConta;
-		this.codInstituicao = codInstituicao;
-	//	this.donativos = donativos;
+			double numeroConta, int codInstituicao) {
+		
+		this.setNome(nome);
+		this.setCnpj(cnpj);
+		this.setCidade(cidade);
+		this.setEstado(estado);
+		this.setNumeroConta(numeroConta);
+		this.setCodInstituicao(codInstituicao);
 	}
 	
 	public Instituicao(){
@@ -80,17 +75,23 @@ public class Instituicao {
 		this.numeroConta = numeroConta;
 	}
 
-/*	public Produtos getDonativos() {
-		return donativos;
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean igual = false;
+		if(((Instituicao) obj).getCodInstituicao() == (this.codInstituicao)){
+			igual = true;
+		}
+		return igual;
 	}
 
-	public void setDonativos(Produtos donativos) {
-		this.donativos = donativos;
-	}
-*/	
 	public String toString() {
-		return "Instituicao" + "\n Nome=" + nome + "\n CNPJ=" + cnpj + "\n Cidade=" + cidade + "\n Estado=" + estado
-				+ "\n Número da conta=" + numeroConta + "\n Código:"+ codInstituicao;
+		return "Instituicao" + "\n Nome =" + nome 
+				+ "\n CNPJ =" + cnpj 
+				+ "\n Cidade =" + cidade 
+				+ "\n Estado =" + estado
+				+ "\n Número da conta =" + numeroConta 
+				+ "\n Código ="+ codInstituicao;
 	}	
 		
 	
