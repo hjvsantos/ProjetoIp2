@@ -1,18 +1,15 @@
 package hope.financeiro;
+import java.util.ArrayList;
 
 public interface IRepositorioFinanceiro {
 
 	public boolean cadastrar(Financeiro doacaoDinheiro);
 	
-	public boolean atualizar(Financeiro doacaoDinheiro);
+	public boolean atualizarF(Financeiro novaDoacao);
 	
-	public Financeiro buscarDoadorDinhehiro(String codDoador);
+	public Financeiro buscarDoacaoFinanceira(int codOperacao);
 	
 	public boolean removerDoacaoDinheiro(int codOperacao);
 	
-	public boolean consultarExistenciaF(int codOperacao);
-	
-	public int retornarPosicaoF(int cod);
-	
-	public String listarDoacoesFinanceiras();
+	public ArrayList<Financeiro> listarDoacoesFinanceiras();
 }

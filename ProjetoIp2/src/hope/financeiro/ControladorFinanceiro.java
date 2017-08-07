@@ -1,106 +1,63 @@
 package hope.financeiro;
-import java.util.Random;
-import java.util.Scanner;
-
-import hope.instituicao.Instituicao;
+import hope.excecao.*;
+import java.util.ArrayList;
 
 public class ControladorFinanceiro {
 	
 	private RepositorioFinanceiro repositorioF;
+	private static ControladorFinanceiro instance;
 	
 	public ControladorFinanceiro() {
-		this.repositorioF = new RepositorioFinanceiro(null, 100);
+		this.repositorioF = RepositorioFinanceiro.getInstance();
 	}
-	Scanner leitura = new Scanner(System.in);
 	
-	public void cadastrar(Financeiro doacaoDinheiro){
-		
-		System.out.println("Informe o valor que deseja doar: ");
-		int valor = leitura.nextInt();
-		while(valor <= 0){
-			System.out.println("Digite um valor valido: ");
-			valor = leitura.nextInt();
-			leitura.nextInt();
+	public static ControladorFinanceiro getInstance(){
+		if(instance == null){
+			instance = new ControladorFinanceiro();
 		}
-		
-		double contaOrigem;
-		do{
-			System.out.println("Informe o numero da conta bancaria do doador (5 digitos): ");
-			contaOrigem = leitura.nextDouble();
-			leitura.nextLine();
-		}while (contaOrigem < 0 || contaOrigem > 99999);
-		
-		double contaDestino;
-		do{
-			System.out.println("Informe o numero da conta bancaria da instituicao beneficiada (5 digitos): ");
-			contaDestino = leitura.nextDouble();
-			leitura.nextLine();
-		}while (contaDestino < 0 || contaDestino > 99999);
-		
-		//quero gerar o cod de operacao para relacionar as duas contas envolvidas!
-		Random random = new Random();
-		int codOperacao = random.nextInt(100);
-		
-		Financeiro financeiro = new Financeiro(contaOrigem, contaDestino, valor, codOperacao);
-		repositorioF.cadastrar(financeiro);
-		System.out.println(financeiro.toString()+"\n\tDoacao financeira cadastrada!\n");
-		return;	
-		
+		return instance;
 	}
 	
-	//Esse codDoador vai ser o random gerado quando for cadastrado o doador... adaptar quando tiver essa aplicacao pronta!!!
-	public void buscarDoadorDinheiro() {
-		System.out.println("Doador, digite seu codigo:");
-		String codDoador  = leitura.nextLine();
-	
-		System.out.println(repositorioF.buscarDoadorDinhehiro(codDoador));
-		return;
+	private boolean existe(int codOperacao){
+		ArrayList<Financeiro> resultado = this.repositorioF.listarDoacoesFinanceiras();
+		for(Financeiro teste : resultado){
+			if(teste.getCodOperacao() == codOperacao){
+				return true;
+			}
+		}
+		return false;
 	}
 	
-	public void removerDoacaoDinheiro() {
-		System.out.println("Digite o codigo de operacao da doacao que deseja remover: ");
-		int codOperacaoRemover = leitura.nextInt();
-		
-		System.out.println(repositorioF.removerDoacaoDinheiro(codOperacaoRemover));
-		return;
-	}
-	
-	public void atualizar(){
-		System.out.println("Digite o codigo da operacao que deseja alterar: ");
-		int codF = leitura.nextInt();
-		if(repositorioF.consultarExistenciaF(codF)==false){
-			System.out.println("Codigo invalido!");
-			return;
+	public void cadastrar(Financeiro doacaoDinheiro)throws ErroDeNegocioExcecao{
+		if(doacaoDinheiro != null && !this.existe(doacaoDinheiro.getCodOperacao())){
+			this.repositorioF.cadastrar(doacaoDinheiro);
+		} else{
+			//Podemos fazer outros throws aqui, validando o pq que n realizou
+			throw new ErroDeNegocioExcecao("Doação nao realizada!");
 		}
 	}
 		
-	//TODO
-		/*
-		Financeiro novoFinanceiro = new Financeiro();
-		novoFinanceiro.setCodOperacao(codF);
-		novoFinanceiro.setCodOperacao(repositorioF.getFinanceiroArray()[repositorioF.retornarPosicaoF(codF)]);
+		public void atualizarF(Financeiro novaDoacao) throws ErroDeNegocioExcecao{
+			if(novaDoacao != null && this.existe(novaDoacao.getCodOperacao())){
+				this.repositorioF.atualizarF(novaDoacao);
+			} else{
+				throw new ErroDeNegocioExcecao("Instituição não encontrada!");
+			}
+		}
 		
-		System.out.println("Digite o numero da conta do doador a ser alterado: ");
-		int novaContaOrigem = leitura.nextInt();
-		repositorioF.getFinanceiroArray()[repositorioF.retornarPosicaoF(codF)].setContaOrigem(novaContaOrigem);
+		public Financeiro buscarDoacaoFinanceira(int codOperacao) throws ErroDeNegocioExcecao{
+			Financeiro result = this.repositorioF.buscarDoacaoFinanceira(codOperacao);
+			return result;
+		}
 		
-		System.out.println("Digite o numero da conta da instituicao a ser alterado: ");
-		int novaContaDestino = leitura.nextInt();
-		repositorioF.getFinanceiroArray()[repositorioF.retornarPosicaoF(codF)].setContaOrigem(novaContaDestino);
-		
-		System.out.println("Digite o valor da doacao a ser alterado: ");
-		int novaValor = leitura.nextInt();
-		repositorioF.getFinanceiroArray()[repositorioF.retornarPosicaoF(codF)].setContaOrigem(novaValor);
-		
-		System.out.println(repositorioF.getFinanceiroArray()[repositorioF.retornarPosicaoF(codF)].toString()+"\n");
-		
-		return;
-	}
-	*/
-	
-	public void listarDoacoesFinanceiras() {
-		System.out.println(repositorioF.listarDoacoesFinanceiras());
-		return;
-	}
-
+		public void removerDoacaoFinanceira(int codOperacao) throws ErroDeNegocioExcecao{
+			Financeiro fina = this.repositorioF.buscarDoacaoFinanceira(codOperacao);
+			if(fina != null){
+				this.repositorioF.removerDoacaoDinheiro(codOperacao);
+			} else{
+				throw new ErroDeNegocioExcecao("Codigo de operação financeira não existe!");
+			}
+		}
 }
+
+

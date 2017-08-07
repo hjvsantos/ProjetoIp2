@@ -2,126 +2,138 @@ package hope.financeiro;
 
 import java.util.ArrayList;
 
-public class RepositorioFinanceiro implements IRepositorioFinanceiro{
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+public class RepositorioFinanceiro implements IRepositorioFinanceiro, Serializable{
 	
-	private ArrayList<Financeiro> financeiroArray = new ArrayList<Financeiro>();
-	private int quantDoacoesDinheiro;
+	ArrayList<Financeiro> financeiroArray = new ArrayList<Financeiro>();
+	public static final String NOME_DO_ARQ = "financeiro.dat";
+	public static RepositorioFinanceiro instancia;
 	
-	public RepositorioFinanceiro(Financeiro[] financeiroArray, int quantDoacoesDinheiro) {
+	public RepositorioFinanceiro(){
 		this.financeiroArray = new ArrayList<Financeiro>();
-		this.quantDoacoesDinheiro = quantDoacoesDinheiro;
 	}
-	
-	public ArrayList<Financeiro> getFinanceiroArray() {
+
+	public ArrayList<Financeiro> getFinanceiroArray(){
 		return financeiroArray;
 	}
-
-	public int getQuantDoacoesDinheiro() {
-		return quantDoacoesDinheiro;
+	
+	private void setFinanceiroArray(ArrayList<Financeiro> financeiroArray){
+		this.financeiroArray = financeiroArray;
 	}
-
-	public boolean cadastrar(Financeiro doacaoDinheiro){
-		if(doacaoDinheiro.equals(null)){
-			return false;
-		}else{
-			for(int i = 0; i < this.quantDoacoesDinheiro; i++){
-				if(doacaoDinheiro.getCodDoador() == financeiroArray.get(i).getCodDoador()){
-					return false;
-				}
-			}
-			if(quantDoacoesDinheiro < financeiroArray.size() -1){
-				financeiroArray.add(doacaoDinheiro);
-				quantDoacoesDinheiro = quantDoacoesDinheiro +1;
-				return true;
+	
+public static RepositorioFinanceiro getInstance(){
+		
+		if(instancia == null){
+			try{
+				instancia = lerDoArquivo();
+			} catch (IOException e){
+				e.printStackTrace();
 			}
 		}
-		financeiroArray.add(doacaoDinheiro);
-		this.quantDoacoesDinheiro = this.quantDoacoesDinheiro +1;
+		return instancia;
+	}
+
+public static RepositorioFinanceiro lerDoArquivo() throws IOException{
+	
+	RepositorioFinanceiro instanciaLocal = null;
+	File entrada = new File(NOME_DO_ARQ);
+	FileInputStream fis = null;
+	ObjectInputStream ois = null;
+	
+	try {
+		fis = new FileInputStream(entrada);
+		ois = new ObjectInputStream(fis);
+		Object obj = ois.readObject();
+		instanciaLocal = (RepositorioFinanceiro) obj;
+	} catch (Exception e) {
+		instanciaLocal = new RepositorioFinanceiro();
+	} finally {
+		if (ois != null) {
+			try {
+				ois.close();
+			} catch (IOException e) {
+			}
+		}
+	}
+	return instanciaLocal;
+}	
+
+public void salvarArquivo(){
+	if (instancia == null){
+		return;
+	}
+	File saida = new File(NOME_DO_ARQ);
+	FileOutputStream fos = null;
+	ObjectOutputStream oos = null;
+	
+	try {
+		fos = new FileOutputStream(saida);
+		oos = new ObjectOutputStream(fos);
+		oos.writeObject(instancia);
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		if (oos != null) {
+			try {
+				oos.close();
+			} catch (IOException e) {
+				}
+		}
+	}
+}
+
+	public boolean cadastrar(Financeiro doacaoDinheiro){
+		this.financeiroArray.add(doacaoDinheiro);
+		salvarArquivo();
 		return true;
 	}
 	
-	public boolean atualizar(Financeiro doacaoDinheiro){
-		for(int i = 0; i < quantDoacoesDinheiro; i++){
-			if(financeiroArray.get(i).getCodDoador() == doacaoDinheiro.getCodDoador()){
-				financeiroArray.set(i, doacaoDinheiro);
+	public boolean atualizarF(Financeiro novaDoacao){
+		int count = 0;
+		for(Financeiro f : this.financeiroArray){
+			
+			if(f.getCodOperacao() == novaDoacao.getCodOperacao()){
+				this.financeiroArray.set(count, novaDoacao);
+				salvarArquivo();
 				return true;
 			}
+			count++;
 		}
 		return false;
 	}
 	
-	public Financeiro buscarDoadorDinhehiro(String codDoador){
-		 int t = 0;
-		 boolean find = false;
-		 while ((!find) && (t < this.quantDoacoesDinheiro)){
-				if(codDoador.equals(this.financeiroArray.get(t).getCodDoador())){
-					find = true;
-				}else {
-					t++;
-				}
-		 }
-				Financeiro resultado = null;
-				if(t != this.quantDoacoesDinheiro){
-					resultado = this.financeiroArray.get(t);
-				}
-				return resultado;
+	public Financeiro buscarDoacaoFinanceira(int codOperacao){
+		for(Financeiro f : this.financeiroArray){
+			if(f.getCodOperacao() == codOperacao){
+				return f;
+			}
 		}
+		return null;
+	}
 	
 	public boolean removerDoacaoDinheiro(int codOperacao){
-		int i = 0;
-		boolean find = false;
-		while((!find) && (i < this.quantDoacoesDinheiro)){
-			if(codOperacao == this.financeiroArray.get(i).getCodOperacao()){
-				find = true;
-			}
-			else{
-				i++;
-			}
-		}
-		if(i != this.quantDoacoesDinheiro){
-			this.financeiroArray.set((quantDoacoesDinheiro - 1), financeiroArray.get(i));
-			this.financeiroArray.remove(this.quantDoacoesDinheiro - 1);
-			this.quantDoacoesDinheiro = this.quantDoacoesDinheiro -1;
-			System.out.println("Doação financeira: " + codOperacao + "removida!");
-			return true;
-		}
-		else {
-			System.out.println("Doação financeira nao encontrada!");
-			return false;
-		}
-	}
-	
-	
-	
-	public boolean consultarExistenciaF(int codOperacao) {
-		for (int i = 0; i < getQuantDoacoesDinheiro(); i++) {
-			if (codOperacao == this.financeiroArray.get(i).getCodOperacao()) {
+		int count = 0;
+		for(Financeiro f : this.financeiroArray){
+			if(f.getCodOperacao() == codOperacao){
+				this.financeiroArray.remove(f);
+				salvarArquivo();
 				return true;
 			}
+			count++;
 		}
 		return false;
 	}
-
-	public int retornarPosicaoF(int cod) {
-		int pos = 0;
-		for (int i = 0; i < getQuantDoacoesDinheiro(); i++) {
-			if (cod == financeiroArray.get(i).getCodOperacao()) {
-				return pos;
-			} else {
-				pos++;
-
-			}
-		}
-		return pos;
-	}
 	
-	public String listarDoacoesFinanceiras(){
-		String listaFinal = "";
-		for(int i = 0; i < quantDoacoesDinheiro; i++){
-			listaFinal += "\n Informacoes da Doacao financeira:\n Conta de origem: " + financeiroArray.get(i).getContaOrigem() 
-					+ "\n Conta de destino: " + financeiroArray.get(i).getContaDestino() + "\n Codigo da operacao: " 
-					+ financeiroArray.get(i).getCodOperacao() + "\n Valor da doacao: " + financeiroArray.get(i).getValor();}
-		return listaFinal;
-	}
+	
+	public ArrayList<Financeiro> listarDoacoesFinanceiras(){
+		return this.financeiroArray;
 
+	}
 }
