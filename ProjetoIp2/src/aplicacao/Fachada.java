@@ -1,4 +1,6 @@
 package aplicacao;
+import java.util.ArrayList;
+
 import hope.doacao.RepositorioDoacao;
 import hope.doacao.IRepositorioDoacao;
 import hope.doacao.Doacao;
@@ -31,12 +33,12 @@ public class Fachada {
 	
 	IRepositorioDoadorPessoa repDoadorP = new RepositorioDoadorPessoa(null, 100);
 	IRepositorioDoadorEmpresa repDoadorE = new RepositorioDoadorEmpresa(null, 100);
-	IRepositorioInstituicao repInstituicao = new RepositorioInstituicao(null, 100);
-	IRepositorioDoacao repDoacao = new RepositorioDoacao (null, 100);
-	IRepositorioAlimento repAlimento = new RepositorioAlimento(null, 100);
-	IRepositorioDiversos repDiversos = new RepositorioDiversos(100, null);
-	IRepositorioHigiene repHigiene = new RepositorioHigiene(null, 100);
-	IRepositorioVestimenta repVestimenta = new RepositorioVestimenta(null, 100);
+	IRepositorioInstituicao repInstituicao = new RepositorioInstituicao();
+	IRepositorioDoacao repDoacao = new RepositorioDoacao ();
+	IRepositorioAlimento repAlimento = new RepositorioAlimento();
+	IRepositorioDiversos repDiversos = new RepositorioDiversos();
+	IRepositorioHigiene repHigiene = new RepositorioHigiene();
+	IRepositorioVestimenta repVestimenta = new RepositorioVestimenta();
 	IRepositorioFinanceiro repFinanceiro = new RepositorioFinanceiro(null, 100);
 	
 	public static Fachada instance;
@@ -104,24 +106,18 @@ public class Fachada {
 	}
 	
 	public boolean removerInstituicao(int codInstituicao){
-		return repInstituicao.removerInstituicao(codInstituicao);
+		return repInstituicao.removerI(codInstituicao);
 	}
 	
 	public boolean atualizarInstituicao(Instituicao novaInsti){
 		return repInstituicao.atualizarInstituicao(novaInsti);
 	}
 	
-	public String listarInstituicoes(){
-		return repInstituicao.listarInstituicoes();
+	public ArrayList<Instituicao> listarInstituicoes(){
+		return repInstituicao.listar();
 	}
 	
-	public boolean consultarExistencia(int codInstituicao){
-		return repInstituicao.consultarExistencia(codInstituicao);
-	}
 	
-	public int retornarPosicao(int codInstituicao){
-		return repInstituicao.retornarPosicao(codInstituicao);
-	}
 
 	 //Metodos da Classe Doação 
 	
