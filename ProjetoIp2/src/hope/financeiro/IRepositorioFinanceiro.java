@@ -1,6 +1,6 @@
 package hope.financeiro;
 import java.util.ArrayList;
-
+//teste
 public interface IRepositorioFinanceiro {
 
 	public boolean cadastrar(Financeiro doacaoDinheiro);
