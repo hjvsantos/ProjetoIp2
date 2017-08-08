@@ -88,13 +88,13 @@ public void salvarArquivo(){
 	}
 }
 	
-public boolean cadastrar(Vestimenta vestimenta){
+public boolean cadastrarV(Vestimenta vestimenta){
 	this.roupas.add(vestimenta);
 	salvarArquivo();
 	return true;
 }	
 	
-public boolean atualizarVestimenta(Vestimenta vestimenta){
+public boolean atualizarV(Vestimenta vestimenta){
 	int count = 0;
 	for(Vestimenta v : this.roupas){
 		
@@ -108,7 +108,7 @@ public boolean atualizarVestimenta(Vestimenta vestimenta){
 	return false;
 }
 	
-public Vestimenta buscar(int codProduto){
+public Vestimenta buscarV(int codProduto){
 	for(Vestimenta v : this.roupas){
 		if(v.getCodigoProduto() == codProduto){
 			return v;
@@ -117,7 +117,7 @@ public Vestimenta buscar(int codProduto){
 	return null;
 }	
 	
-public boolean remover(int codProduto){
+public boolean removerV(int codProduto){
 	int count = 0;
 	for(Vestimenta v : this.roupas){
 		if(v.getCodigoProduto() == codProduto){

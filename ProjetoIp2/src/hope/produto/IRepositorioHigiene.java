@@ -14,5 +14,5 @@ public interface IRepositorioHigiene {
 	
 	public boolean removerHigiene(int codProduto);
 	
-	public ArrayList<Higiene> listar();
+	public ArrayList<Higiene> listarHigiene();
 }

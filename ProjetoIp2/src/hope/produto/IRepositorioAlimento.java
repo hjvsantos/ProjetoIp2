@@ -10,5 +10,5 @@ public interface IRepositorioAlimento {
 	
 	public boolean removerAlimento(int codProduto);
 	
-	public ArrayList<Alimento> listar();
+	public ArrayList<Alimento> listarAlimentos();
 }

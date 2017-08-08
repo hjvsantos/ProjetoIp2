@@ -135,7 +135,7 @@ public boolean removerHigiene(int codProduto){
 	return false;
 }
 
-public ArrayList<Higiene> listar(){
+public ArrayList<Higiene> listarHigiene(){
 	return this.higieneArray;
 }
 

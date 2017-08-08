@@ -12,6 +12,6 @@ public interface IRepositorioDiversos {
 	
 	public boolean removerDiversos(int codProduto);
 	
-	public ArrayList<Diversos> listar();
+	public ArrayList<Diversos> listarDiversos();
 	
 }

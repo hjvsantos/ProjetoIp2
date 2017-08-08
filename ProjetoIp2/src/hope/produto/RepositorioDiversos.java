@@ -132,7 +132,7 @@ public boolean removerDiversos(int codProduto){
 	return false;
 }
 
-public ArrayList<Diversos> listar(){
+public ArrayList<Diversos> listarDiversos(){
 	return this.diversosArray;
 }
 }

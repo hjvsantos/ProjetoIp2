@@ -25,7 +25,7 @@ public class ControladorHigiene {
 	}
 	
 	private boolean existe(int codProduto){
-		ArrayList<Higiene> resultado = this.repositorioH.listar();
+		ArrayList<Higiene> resultado = this.repositorioH.listarHigiene();
 		for(Higiene h : resultado){
 			if(h.getCodigoProduto() == codProduto){
 				return true;

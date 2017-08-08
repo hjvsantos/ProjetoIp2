@@ -23,7 +23,7 @@ private static ControladorAlimento instance;
 	}
 	
 	private boolean existe(int codProduto){
-		ArrayList<Alimento> resultado = this.repositorioA.listar();
+		ArrayList<Alimento> resultado = this.repositorioA.listarAlimentos();
 		for(Alimento a : resultado){
 			if(a.getCodigoProduto() == codProduto){
 				return true;

@@ -16,7 +16,7 @@ public class RepositorioInstituicao implements IRepositorioInstituicao, Serializ
 	private ArrayList<Instituicao> instituicoesArray;
 	public static RepositorioInstituicao instancia;
 
-	private RepositorioInstituicao(){
+	public RepositorioInstituicao(){
 		this.instituicoesArray = new ArrayList<>();
 	}
 	
@@ -123,7 +123,7 @@ public class RepositorioInstituicao implements IRepositorioInstituicao, Serializ
 	}
 	
 	@Override
-	public ArrayList<Instituicao> listar(){
+	public ArrayList<Instituicao> listarInstituicoes(){
 		return this.instituicoesArray;
 	}
 	

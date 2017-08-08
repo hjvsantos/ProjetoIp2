@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public interface IRepositorioVestimenta {
 
-	public boolean cadastrar(Vestimenta roupa);
+	public boolean cadastrarV(Vestimenta roupa);
 	
-	public boolean atualizarVestimenta(Vestimenta roupa);
+	public boolean atualizarV(Vestimenta roupa);
 	
-	public Vestimenta buscar(int codProduto);
+	public Vestimenta buscarV(int codProduto);
 	
-	public boolean remover(int codProduto);
+	public boolean removerV(int codProduto);
 	
 	public ArrayList<Vestimenta> listar();
 }

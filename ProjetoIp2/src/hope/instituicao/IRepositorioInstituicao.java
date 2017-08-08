@@ -9,7 +9,7 @@ public interface IRepositorioInstituicao {
 	
 	public Instituicao buscarI(int codInstituicao);
 	
-	public ArrayList<Instituicao> listar();
+	public ArrayList<Instituicao> listarInstituicoes();
 	
 	public boolean removerI(int codInstituicao);
 	

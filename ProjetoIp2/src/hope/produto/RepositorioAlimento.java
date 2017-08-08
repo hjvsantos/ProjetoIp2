@@ -117,7 +117,7 @@ public boolean removerAlimento(int codProduto){
 	return false;
 }
 	
-public ArrayList<Alimento> listar(){
+public ArrayList<Alimento> listarAlimentos(){
 	return this.alimentoArray;
 }
 

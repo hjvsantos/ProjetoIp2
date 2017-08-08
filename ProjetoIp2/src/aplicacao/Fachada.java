@@ -39,7 +39,7 @@ public class Fachada {
 	IRepositorioDiversos repDiversos = new RepositorioDiversos();
 	IRepositorioHigiene repHigiene = new RepositorioHigiene();
 	IRepositorioVestimenta repVestimenta = new RepositorioVestimenta();
-	IRepositorioFinanceiro repFinanceiro = new RepositorioFinanceiro(null, 100);
+	IRepositorioFinanceiro repFinanceiro = new RepositorioFinanceiro();
 	
 	public static Fachada instance;
 	
@@ -105,7 +105,7 @@ public class Fachada {
 		return repInstituicao.buscarI(codInstituicao);
 	}
 	
-	public boolean removerInstituicao(int codInstituicao){
+	public boolean removerI(int codInstituicao){
 		return repInstituicao.removerI(codInstituicao);
 	}
 	
@@ -114,7 +114,7 @@ public class Fachada {
 	}
 	
 	public ArrayList<Instituicao> listarInstituicoes(){
-		return repInstituicao.listar();
+		return repInstituicao.listarInstituicoes();
 	}
 	
 	
@@ -143,97 +143,85 @@ public class Fachada {
 	
 	//Metodos da Classe Alimento
 	
-	public boolean cadastrar(Alimento alimento){
-		return repAlimento.cadastrar(alimento);
+	public boolean cadastrarA(Alimento alimento){
+		return repAlimento.cadastrarA(alimento);
 	}
 	
-	public boolean atualizarAlimento(Alimento alimento){
-		return repAlimento.atualizarAlimento(alimento);
+	public Alimento buscarAlimento(int codProduto){
+		return repAlimento.buscarAlimento(codProduto);
 	}
 	
-	public Alimento buscarAlimento(int codigo){
-		return repAlimento.buscarAlimento(codigo);
+	public boolean removerAlimento(int codProduto){
+		return repAlimento.removerAlimento(codProduto);
 	}
 	
-	public boolean removerAlimento(int codigo){
-		return repAlimento.removerAlimento(codigo);
-	}
-	
-	public String listarAlimentos(){
+	public ArrayList<Alimento> listarAlimentos(){
 		return repAlimento.listarAlimentos();
 	}
 	
 	//Metodos da Classe Diversos
 	
-	public boolean cadastrarDiv(Diversos div){
-		return repDiversos.cadastrarDiv(div);
+	public boolean cadastrarD(Diversos div){
+		return repDiversos.cadastrarD(div);
 	}
 	
-	public boolean atualizarDiv(Diversos div){
-		return repDiversos.atualizarDiv(div);
+	public boolean atualizarDiversos(Diversos div){
+		return repDiversos.atualizarDiversos(div);
 	}
 	
-	public Diversos buscarDiv(int codigo){
-		return repDiversos.buscarDiv(codigo);
+	public Diversos buscarDiversos(int codProduto){
+		return repDiversos.buscarDiversos(codProduto);
 	}
 	
-	public boolean removerDiv(int codigo){
-		return repDiversos.removerDiv(codigo);
+	public boolean removerDiversos(int codProduto){
+		return repDiversos.removerDiversos(codProduto);
 	}
 	
-	public String listarDiv(){
-		return repDiversos.listarDiv();
+	public ArrayList<Diversos> listarDiversos(){
+		return repDiversos.listarDiversos();
 	}
 	
 	//Metodos da Classe Higiene
 	
-	public boolean cadastrar(Higiene higiene){
-		return repHigiene.cadastrar(higiene);
+	public boolean cadastrarH(Higiene higiene){
+		return repHigiene.cadastrarH(higiene);
 	}
 	
 	public boolean atualizarHigiene(Higiene higiene){
 		return repHigiene.atualizarHigiene(higiene);
 	}
 	
-	public Higiene buscarHig(int codigo){
-		return repHigiene.buscarHig(codigo);
+	public Higiene buscarHigiene(int codProduto){
+		return repHigiene.buscarHigiene(codProduto);
 	}
 	
-	public boolean removerHigiene(int codigo){
-		return repHigiene.removerHigiene(codigo);
+	public boolean removerHigiene(int codProduto){
+		return repHigiene.removerHigiene(codProduto);
 	}
 	
-	public String listarHigiene(){
+	public ArrayList<Higiene> listarHigiene(){
 		return repHigiene.listarHigiene();
 	}
 	
 	//Metodos da Classe Vestimenta
 	
-	public boolean cadastrar(Vestimenta roupa){
-		return repVestimenta.cadastrar(roupa);
+	public boolean cadastrarV(Vestimenta roupa){
+		return repVestimenta.cadastrarV(roupa);
 	}
 	
-	public boolean atualizar(Vestimenta roupa){
-		return repVestimenta.atualizar(roupa);
+	public boolean atualizarV(Vestimenta roupa){
+		return repVestimenta.atualizarV(roupa);
 	}
 	
-	public Vestimenta buscarVest(int codigo){
-		return repVestimenta.buscarVest(codigo);
+	public Vestimenta buscarV(int codProduto){
+		return repVestimenta.buscarV(codProduto);
 	}
 	
-	public boolean remover(int codigo){
-		return repVestimenta.remover(codigo);
+	public boolean removerV(int codProduto){
+		return repVestimenta.removerV(codProduto);
 	}
 	
-	public boolean consultarExistenciaV(int codigo){
-		return repVestimenta.consultarExistenciaV(codigo);
-	}
-	
-	public int retornarPosicaoV(int codigo){
-		return repVestimenta.retornarPosicaoV(codigo);
-	}
-	
-	public String listar(){
+	public ArrayList<Vestimenta> listar(){
 		return repVestimenta.listar();
 	}
 	
@@ -243,27 +231,19 @@ public class Fachada {
 		return repFinanceiro.cadastrar(doacaoDinheiro);
 	}
 	
-	public boolean atualizar(Financeiro doacaoDinheiro){
-		return repFinanceiro.atualizar(doacaoDinheiro);
+	public boolean atualizarF(Financeiro novaDoacao){
+		return repFinanceiro.atualizarF(novaDoacao);
 	}
 	
-	public Financeiro buscarDoadorDinhehiro(String codDoador){
-		return repFinanceiro.buscarDoadorDinhehiro(codDoador);
+	public Financeiro buscarDoacaoFinanceira(int codOperacao){
+		return repFinanceiro.buscarDoacaoFinanceira(codOperacao);
 	}
 	
 	public boolean removerDoacaoDinheiro(int codOperacao){
 		return repFinanceiro.removerDoacaoDinheiro(codOperacao);
 	}
 	
-	public boolean consultarExistenciaF(int codOperacao){
-		return repFinanceiro.consultarExistenciaF(codOperacao);
-	}
-	
-	public int retornarPosicaoF(int cod){
-		return repFinanceiro.retornarPosicaoF(cod);
-	}
-	
-	public String listarDoadoresFinanceiros(){
+	public ArrayList<Financeiro> listarDoacoesFinanceiras(){
 		return repFinanceiro.listarDoacoesFinanceiras();
 	}
 

@@ -23,7 +23,7 @@ public static ControladorDiversos getInstance(){
 }
 
 private boolean existe(int codProduto){
-	ArrayList<Diversos> resultado = this.repositorioD.listar();
+	ArrayList<Diversos> resultado = this.repositorioD.listarDiversos();
 	for(Diversos d : resultado){
 		if(d.getCodigoProduto() == codProduto){
 			return true;

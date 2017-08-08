@@ -34,7 +34,7 @@ public class ControladorVestimenta {
 	
 	public void cadastrarV(Vestimenta vestimenta) throws ErroDeNegocioExcecao{
 		if(vestimenta != null && !this.existe(vestimenta.getCodigoProduto())){
-			this.repositorioV.cadastrar(vestimenta);
+			this.repositorioV.cadastrarV(vestimenta);
 		} else{
 			throw new ErroDeNegocioExcecao("Vestimenta cadastrada com sucesso");
 		}
@@ -42,21 +42,21 @@ public class ControladorVestimenta {
 	
 	public void atualizarVestimenta(Vestimenta vestimenta) throws ErroDeNegocioExcecao{
 		if(vestimenta != null && !this.existe(vestimenta.getCodigoProduto())){
-			this.repositorioV.atualizarVestimenta(vestimenta);
+			this.repositorioV.atualizarV(vestimenta);
 		} else{
 			throw new ErroDeNegocioExcecao("Vestimenta não localizado");
 		}
 	}
 	
 	public Vestimenta buscarV(int codProduto) throws ErroDeNegocioExcecao{
-		Vestimenta result = this.repositorioV.buscar(codProduto);
+		Vestimenta result = this.repositorioV.buscarV(codProduto);
 		return result;
 	}
 	
 	public void remover(int codProduto) throws ErroDeNegocioExcecao{
-		Vestimenta v = this.repositorioV.buscar(codProduto);
+		Vestimenta v = this.repositorioV.buscarV(codProduto);
 		if(v != null){
-			this.repositorioV.remover(codProduto);
+			this.repositorioV.removerV(codProduto);
 		} else{
 			throw new ErroDeNegocioExcecao("Alimento não existente");
 		}
