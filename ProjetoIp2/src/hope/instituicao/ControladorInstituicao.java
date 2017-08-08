@@ -21,7 +21,7 @@ public class ControladorInstituicao {
 	}
 	
 	private boolean existe(int codInstituicao){
-		ArrayList<Instituicao> resultado = this.repositorioInsti.listar();
+		ArrayList<Instituicao> resultado = this.repositorioInsti.listarInstituicoes();
 		for(Instituicao teste : resultado){
 			if(teste.getCodInstituicao() == codInstituicao){
 				return true;
