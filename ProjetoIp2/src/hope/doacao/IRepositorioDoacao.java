@@ -8,9 +8,8 @@ public interface IRepositorioDoacao {
 	
 	public Doacao buscarDoacao(int codProduto);
 	
-	
 	public boolean removerDoacao(int codProduto);
 	
-	public ArrayList<Doacao> listar();
+	public ArrayList<Doacao> listarDoacoes();
 }
 

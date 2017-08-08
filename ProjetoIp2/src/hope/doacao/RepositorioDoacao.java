@@ -122,7 +122,7 @@ public boolean removerDoacao(int codProduto){
 	return false;
 }
 
-public ArrayList<Doacao> listar(){
+public ArrayList<Doacao> listarDoacoes(){
 	return this.doacaoArray;
 }
 

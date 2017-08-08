@@ -28,7 +28,7 @@ public class ControladorDoacao {
 	}
 	
 	private boolean existe(int codProduto){
-		ArrayList<Doacao> resultado = this.repositorioD.listar();
+		ArrayList<Doacao> resultado = this.repositorioD.listarDoacoes();
 		for(Doacao d : resultado){
 			if(d.getCodigo() == codProduto){
 				return true;

@@ -129,15 +129,11 @@ public class Fachada {
 		return repDoacao.buscarDoacao(codigoDoacao);
 	}
 
-	public boolean atualizarDoacao(Doacao novaDoacao) {
-		return repDoacao.atualizarDoacao(novaDoacao);
-	}
-
 	public boolean removerDoacao(int codigoDoacao) {
 		return repDoacao.removerDoacao(codigoDoacao);
 	}
 
-	public String listarDoacoes() {
+	public ArrayList<Doacao> listarDoacoes() {
 		return repDoacao.listarDoacoes();
 	}
 	
