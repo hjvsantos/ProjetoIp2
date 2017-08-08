@@ -1,102 +1,121 @@
 package hope.doador;
 
-public class RepositorioDoadorEmpresa implements IRepositorioDoadorEmpresa{
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class RepositorioDoadorEmpresa implements IRepositorioDoadorEmpresa, Serializable {
 	
-	private DoadorEmpresa[] doadorEArray;
-	private int quantDoadorE = 0;
+	public static final String NOME_DO_ARQ = "empresadoadora.dat";
+	ArrayList<DoadorEmpresa> arrayDoadorEmpresa = new ArrayList<DoadorEmpresa> ();
+	public static RepositorioDoadorEmpresa instancia;
 	
-	public RepositorioDoadorEmpresa(DoadorEmpresa[] doadorEArray, int quantDoadorE) {
+public static RepositorioDoadorEmpresa getInstance(){
 		
-		this.doadorEArray = new DoadorEmpresa[100];
-		this.quantDoadorE = quantDoadorE;
-	}
-
-	public DoadorEmpresa[] getDoadorEArray() {
-		return doadorEArray;
-	}
-
-	public int getQuantDoadorE() {
-		return quantDoadorE;
+		if(instancia == null){
+			try{
+				instancia = lerDoArquivo();
+			} catch (IOException e){
+				e.printStackTrace();
+			}
+		}
+		return instancia;
 	}
 	
-	public boolean cadastrarE(DoadorEmpresa doadorEmpresa){
-		if(doadorEmpresa.equals(null)){
-			return false;
-		}else{
-			for(int i = 0; i < this.quantDoadorE; i++){
-				if(doadorEmpresa.getCnpj().equals(doadorEArray[i].getCnpj())){
-					return false;
+	public ArrayList<DoadorEmpresa> getArrayDoadorEmpresa() {
+		return arrayDoadorEmpresa;
+	}
+	public void setArrayDoadorEmpresa(ArrayList<DoadorEmpresa> arrayDoadorEmpresa) {
+		this.arrayDoadorEmpresa = arrayDoadorEmpresa;
+	}
+	
+public static RepositorioDoadorEmpresa lerDoArquivo() throws IOException{
+		
+		RepositorioDoadorEmpresa instanciaLocal = null;
+		File entrada = new File(NOME_DO_ARQ);
+		FileInputStream fis = null;
+		ObjectInputStream ois = null;
+		
+		try {
+			fis = new FileInputStream(entrada);
+			ois = new ObjectInputStream(fis);
+			Object obj = ois.readObject();
+			instanciaLocal = (RepositorioDoadorEmpresa) obj;
+		} catch (Exception e) {
+			instanciaLocal = new RepositorioDoadorEmpresa();
+		} finally {
+			if (ois != null) {
+				try {
+					ois.close();
+				} catch (IOException e) {
+					/* Silence exception */
 				}
 			}
-			if(quantDoadorE < doadorEArray.length -1){
-				doadorEArray[quantDoadorE] = doadorEmpresa;
-				quantDoadorE = quantDoadorE +1;
-				return true;
-			}
 		}
-		this.doadorEArray[this.quantDoadorE] = doadorEmpresa;
-		this.quantDoadorE = this.quantDoadorE +1;
-		return true;
+		return instanciaLocal;
 	}
-	
-	public DoadorEmpresa buscarE(String cnpj){
-	 int t = 0;
-	 boolean find = false;
-	 while ((!find) && (t < this.quantDoadorE)){
-			if(cnpj.equals(this.doadorEArray[t].getCnpj())){
-				find = true;
-			}else {
-				t++;
-			}
-	 }
-			DoadorEmpresa resultado = null;
-			if(t != this.quantDoadorE){
-				resultado = this.doadorEArray[t];
-			}
-			return resultado;
+
+public void salvarArquivo(){
+	if (instancia == null){
+		return;
 	}
+	File saida = new File(NOME_DO_ARQ);
+	FileOutputStream fos = null;
+	ObjectOutputStream oos = null;
 	
-	public boolean atualizarDoadorE(DoadorEmpresa novoDoadorE){
-		for(int i = 0; i < quantDoadorE; i++){
-			if(doadorEArray[i].getCnpj().equals(novoDoadorE.getCnpj())){
-				doadorEArray[i] = novoDoadorE;
-				return true;
-			}
+	try {
+		fos = new FileOutputStream(saida);
+		oos = new ObjectOutputStream(fos);
+		oos.writeObject(instancia);
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		if (oos != null) {
+			try {
+				oos.close();
+			} catch (IOException e) {
+				/* Silent */}
 		}
-		return false;
 	}
+}
+
+public boolean cadastrarDoadorEmpresa(DoadorEmpresa doador){
+	this.arrayDoadorEmpresa.add(doador);
+	salvarArquivo();
+	return true;
+}	
 	
-	public boolean removerDoadorE(String cnpj){
-		int i = 0;
-		boolean find = false;
-		while((!find) && (i < this.quantDoadorE)){
-			if(cnpj.equals(this.doadorEArray[i].getCnpj())){
-				find = true;
-			}
-			else{
-				i++;
-			}
+	
+public DoadorEmpresa buscarDoadorEmpresa(int codigo){
+	for(DoadorEmpresa d : this.arrayDoadorEmpresa){
+		if(d.getCodigoDoador() == codigo){
+			return d;
 		}
-		if(i != this.quantDoadorE){
-			this.doadorEArray[i] = this.doadorEArray[this.quantDoadorE - 1];
-			this.doadorEArray[this.quantDoadorE - 1] = null;
-			this.quantDoadorE = this.quantDoadorE -1;
-			System.out.println("Doador: " + cnpj + "removida!");
+	}
+	return null;
+}	
+
+public boolean removerDoadorEmpresa(int codigo){
+	int count = 0;
+	for(DoadorEmpresa d : this.arrayDoadorEmpresa){
+		if(d.getCodigoDoador() == codigo){
+			this.arrayDoadorEmpresa.remove(d);
+			salvarArquivo();
 			return true;
 		}
-		else {
-			System.out.println("Doador n�o encontrado");
-			return false;
-		}
+		count++;
 	}
-	
-	public String listarDoadoresE(){
-		String listaFinal = "";
-		for(int i = 0; i < quantDoadorE; i++){
-			listaFinal += "\n Informacoes dos doadores:\n Nome: " + doadorEArray[i].getNome() + "\n Cidade: " 
-		+ doadorEArray[i].getCidade() + "\n CNPJ do Doador: " + doadorEArray[i].getCnpj() + "\n Tipo: " 
-		+ doadorEArray[i].getTipo() + "\n Ano de fundacao: " + doadorEArray[i].getAnoFundacao();}
-		return listaFinal;
-	}
+	return false;
+}
+
+public ArrayList<DoadorEmpresa> listar(){
+	return this.arrayDoadorEmpresa;
+}
+
 
 }

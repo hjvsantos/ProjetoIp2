@@ -1,102 +1,120 @@
 package hope.doador;
 
-public class RepositorioDoadorPessoa implements IRepositorioDoadorPessoa{
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class RepositorioDoadorPessoa implements IRepositorioDoadorPessoa, Serializable{
 	
-	private DoadorPessoa[] doadorPArray;
-	private int quantDoadorP = 0;
+	public static final String NOME_DO_ARQ = "doadorPessoa.dat";
+	ArrayList<DoadorPessoa> arrayDoadorPessoa = new ArrayList<DoadorPessoa>(); 
+	public static RepositorioDoadorPessoa instancia;
 	
-	public RepositorioDoadorPessoa(DoadorPessoa[] doadorPArray, int quantDoadorP) {
+	public ArrayList<DoadorPessoa> getArrayDoadorPessoa() {
+		return arrayDoadorPessoa;
+	}
+
+	public void setArrayDoadorPessoa(ArrayList<DoadorPessoa> arrayDoadorPessoa) {
+		this.arrayDoadorPessoa = arrayDoadorPessoa;
+	}
+	
+	public static RepositorioDoadorPessoa getInstance(){
 		
-		this.doadorPArray = new DoadorPessoa[100];
-		this.quantDoadorP = quantDoadorP;
-	}
-
-	public DoadorPessoa[] getDoadorPArray() {
-		return doadorPArray;
-	}
-
-	public int getQuantDoadorP() {
-		return quantDoadorP;
-	}
-	
-	public boolean cadastrarP(DoadorPessoa doadorPessoa){
-		if(doadorPessoa.equals(null)){
-			return false;
-		}else{
-			for(int i = 0; i < this.quantDoadorP; i++){
-				if(doadorPessoa.getCpf().equals(doadorPArray[i].getCpf())){
-					return false;
-				}
-			}
-			if(quantDoadorP < doadorPArray.length -1){
-				doadorPArray[quantDoadorP] = doadorPessoa;
-				quantDoadorP = quantDoadorP +1;
-				return true;
+		if(instancia == null){
+			try{
+				instancia = lerDoArquivo();
+			} catch (IOException e){
+				e.printStackTrace();
 			}
 		}
-		this.doadorPArray[this.quantDoadorP] = doadorPessoa;
-		this.quantDoadorP = this.quantDoadorP +1;
-		return true;
+		return instancia;
+	}
+
+	public static RepositorioDoadorPessoa lerDoArquivo() throws IOException{
+		
+		RepositorioDoadorPessoa instanciaLocal = null;
+		File entrada = new File(NOME_DO_ARQ);
+		FileInputStream fis = null;
+		ObjectInputStream ois = null;
+		
+		try {
+			fis = new FileInputStream(entrada);
+			ois = new ObjectInputStream(fis);
+			Object obj = ois.readObject();
+			instanciaLocal = (RepositorioDoadorPessoa) obj;
+		} catch (Exception e) {
+			instanciaLocal = new RepositorioDoadorPessoa();
+		} finally {
+			if (ois != null) {
+				try {
+					ois.close();
+				} catch (IOException e) {
+					/* Silence exception */
+				}
+			}
+		}
+		return instanciaLocal;
+	}
+
+	public void salvarArquivo(){
+		if (instancia == null){
+			return;
+		}
+		File saida = new File(NOME_DO_ARQ);
+		FileOutputStream fos = null;
+		ObjectOutputStream oos = null;
+		
+		try {
+			fos = new FileOutputStream(saida);
+			oos = new ObjectOutputStream(fos);
+			oos.writeObject(instancia);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (oos != null) {
+				try {
+					oos.close();
+				} catch (IOException e) {
+					/* Silent */}
+			}
+		}
 	}
 	
-	public DoadorPessoa buscarP(String cpf){
-	 int t = 0;
-	 boolean find = false;
-	 while ((!find) && (t < this.quantDoadorP)){
-			if(cpf.equals(this.doadorPArray[t].getCpf())){
-				find = true;
-			}else {
-				t++;
+	public boolean cadastrarDoadorPessoa (DoadorPessoa doador) {
+	    this.arrayDoadorPessoa.add(doador);
+	    salvarArquivo();
+	    return true;
+	}
+
+	public DoadorPessoa buscarDoadorPessoa (int codigo) {
+		for(DoadorPessoa d : this.arrayDoadorPessoa){
+			if(d.getCodigoDoador() == codigo){
+				return d;
 			}
-	 }
-			DoadorPessoa resultado = null;
-			if(t != this.quantDoadorP){
-				resultado = this.doadorPArray[t];
-			}
-			return resultado;
+		}
+		return null;	
+
 	}
 	
-	public boolean atualizarDoadorP(DoadorPessoa novoDoadorP){
-		for(int i = 0; i < quantDoadorP; i++){
-			if(doadorPArray[i].getCpf().equals(novoDoadorP.getCpf())){
-				doadorPArray[i] = novoDoadorP;
+	public boolean removerDoadorPessoa(int codigo){
+		int count = 0;
+		for(DoadorPessoa d : this.arrayDoadorPessoa){
+			if(d.getCodigoDoador() == codigo){
+				this.arrayDoadorPessoa.remove(d);
+				salvarArquivo();
 				return true;
 			}
+			count++;
 		}
 		return false;
 	}
 	
-	public boolean removerDoadorP(String cpf){
-		int i = 0;
-		boolean find = false;
-		while((!find) && (i < this.quantDoadorP)){
-			if(cpf.equals(this.doadorPArray[i].getCpf())){
-				find = true;
-			}
-			else{
-				i++;
-			}
-		}
-		if(i != this.quantDoadorP){
-			this.doadorPArray[i] = this.doadorPArray[this.quantDoadorP - 1];
-			this.doadorPArray[this.quantDoadorP - 1] = null;
-			this.quantDoadorP = this.quantDoadorP -1;
-			System.out.println("Doador: " + cpf + "removida!");
-			return true;
-		}
-		else {
-			System.out.println("Doador n�o encontrado");
-			return false;
-		}
+	public ArrayList<DoadorPessoa> listar(){
+		return this.arrayDoadorPessoa;
 	}
-	
-	public String listarDoadoresP(){
-		String listaFinal = "";
-		for(int i = 0; i < quantDoadorP; i++){
-			listaFinal += "\n Informacoes dos doadores:\n Nome: " + doadorPArray[i].getNome() + "\n Cidade: " 
-		+ doadorPArray[i].getCidade() + "\n CPF do Doador: " + doadorPArray[i].getCpf() + "\n Tipo: " 
-		+ doadorPArray[i].getTipo() + "\n Idade do doador: " + doadorPArray[i].getIdade();}
-		return listaFinal;
-	}
-
 }

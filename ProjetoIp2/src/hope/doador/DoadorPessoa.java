@@ -1,5 +1,7 @@
 package hope.doador;
 
+import java.util.Arrays;
+
 public class DoadorPessoa extends Doador{
 	
 	public int idade;

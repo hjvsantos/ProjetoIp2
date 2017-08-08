@@ -31,8 +31,8 @@ import hope.produto.Vestimenta;
 
 public class Fachada {
 	
-	IRepositorioDoadorPessoa repDoadorP = new RepositorioDoadorPessoa(null, 100);
-	IRepositorioDoadorEmpresa repDoadorE = new RepositorioDoadorEmpresa(null, 100);
+	IRepositorioDoadorPessoa repDoadorP = new RepositorioDoadorPessoa();
+	IRepositorioDoadorEmpresa repDoadorE = new RepositorioDoadorEmpresa();
 	IRepositorioInstituicao repInstituicao = new RepositorioInstituicao();
 	IRepositorioDoacao repDoacao = new RepositorioDoacao ();
 	IRepositorioAlimento repAlimento = new RepositorioAlimento();
@@ -51,47 +51,47 @@ public class Fachada {
 	}
 	
 	//Metodos da classe DoadorPessoa:
-	public boolean cadastrarP(DoadorPessoa doadorPessoa){
-		return repDoadorP.cadastrarP(doadorPessoa);
+	public boolean cadastrarDoadorPessoa(DoadorPessoa doadorPessoa){
+		return repDoadorP.cadastrarDoadorPessoa(doadorPessoa);
 	}
 	
-	public DoadorPessoa buscarP(String cpf){
-		return repDoadorP.buscarP(cpf);
+	public DoadorPessoa buscarDoadorPessoa(int codigo){
+		return repDoadorP.buscarDoadorPessoa(codigo);
 	}
 	
-	public boolean atualizarDoadorP(DoadorPessoa novoDoadorP){
-		return repDoadorP.atualizarDoadorP(novoDoadorP);
+	public boolean atualizarDoadorPessoa(DoadorPessoa novoDoadorP){
+		//return repDoadorP.atualizarDoadorPessoa(novoDoadorP); //TO DO
 	}
 	
-	public boolean removerDoadorP(String cpf){
-		return repDoadorP.removerDoadorP(cpf);
+	public boolean removerDoadorPessoa(int codigo){
+		return repDoadorP.removerDoadorPessoa(codigo);
 	}
 	
-	public String listarDoadoresP(){
-		return repDoadorP.listarDoadoresP();
+	public ArrayList<DoadorPessoa> listarDoadoresPessoa(){
+		return repDoadorP.listar();
 		
 	}
 	
 	//Metodos da Classe DoadorEmpresa
 	
-	public boolean cadastrarE(DoadorEmpresa doadorEmpresa){
-		return repDoadorE.cadastrarE(doadorEmpresa);
+	public boolean cadastrarDoadorEmpresa(DoadorEmpresa doadorEmpresa){
+		return repDoadorE.cadastrarDoadorEmpresa(doadorEmpresa);
 	}
 	
-	public DoadorEmpresa buscarE(String cnpj){
-		return repDoadorE.buscarE(cnpj);
+	public DoadorEmpresa buscarDoadorEmpresa(int codigo){
+		return repDoadorE.buscarDoadorEmpresa(codigo);
 	}
 	
-	public boolean atualizarDoadorE(DoadorEmpresa novoDoadorE){
-		return repDoadorE.atualizarDoadorE(novoDoadorE);
+	public boolean atualizarDoadorEmpresa(DoadorEmpresa novoDoadorE){
+		//return repDoadorE.atualizarDoadorEmpresa(novoDoadorE); //TO DO
 	}
 	
-	public boolean removerDoadorE(String cnpj){
-		return repDoadorE.removerDoadorE(cnpj);
+	public boolean removerDoadorEmpresa(int codigo){
+		return repDoadorE.removerDoadorEmpresa(codigo);
 	}
 	
-	public String listarDoadoresE(){
-		return repDoadorE.listarDoadoresE();
+	public ArrayList<DoadorEmpresa> listarDoadoresE(){
+		return repDoadorE.listar();
 	}
 	
 	

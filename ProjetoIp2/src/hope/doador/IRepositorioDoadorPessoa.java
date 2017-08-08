@@ -1,15 +1,16 @@
 package hope.doador;
 
+import java.util.ArrayList;
+
 public interface IRepositorioDoadorPessoa {
 	
-	public boolean cadastrarP(DoadorPessoa doadorPessoa);
+	public boolean cadastrarDoadorPessoa(DoadorPessoa doadorPessoa);
 	
-	public DoadorPessoa buscarP(String cpf);
+	public DoadorPessoa buscarDoadorPessoa(int codigo);
 	
-	public boolean atualizarDoadorP(DoadorPessoa novoDoadorP);
 	
-	public boolean removerDoadorP(String cpf);
+	public boolean removerDoadorPessoa(int codigo);
 	
-	public String listarDoadoresP();
+	public ArrayList<DoadorPessoa> listar();
 
 }
