@@ -59,8 +59,8 @@ public class Fachada {
 		return repDoadorP.buscarDoadorPessoa(codigo);
 	}
 	
-	public boolean atualizarDoadorPessoa(DoadorPessoa novoDoadorP){
-		//return repDoadorP.atualizarDoadorPessoa(novoDoadorP); //TO DO
+	public boolean atualizarDoadorPessoa(DoadorPessoa novoDoador){
+		return repDoadorP.atualizarDoadorPessoa(novoDoador);
 	}
 	
 	public boolean removerDoadorPessoa(int codigo){
@@ -82,8 +82,8 @@ public class Fachada {
 		return repDoadorE.buscarDoadorEmpresa(codigo);
 	}
 	
-	public boolean atualizarDoadorEmpresa(DoadorEmpresa novoDoadorE){
-		//return repDoadorE.atualizarDoadorEmpresa(novoDoadorE); //TO DO
+	public boolean atualizarDoadorEmpresa(DoadorEmpresa novoDoador){
+		return repDoadorE.atualizarDoadorEmpresa(novoDoador); //TO DO
 	}
 	
 	public boolean removerDoadorEmpresa(int codigo){
@@ -242,5 +242,5 @@ public class Fachada {
 	public ArrayList<Financeiro> listarDoacoesFinanceiras(){
 		return repFinanceiro.listarDoacoesFinanceiras();
 	}
-
+	
 }
