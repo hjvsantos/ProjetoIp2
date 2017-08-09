@@ -1,5 +1,5 @@
 package hope.doador;
-
+//Commitando!
 import java.util.ArrayList;
 
 public interface IRepositorioDoadorEmpresa {
@@ -8,6 +8,7 @@ public interface IRepositorioDoadorEmpresa {
 	
 	public DoadorEmpresa buscarDoadorEmpresa(int codigo);
 	
+	public boolean atualizarDoadorEmpresa(DoadorEmpresa novoDoador);
 	
 	public boolean removerDoadorEmpresa(int codigo);
 	

@@ -9,6 +9,8 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import hope.instituicao.Instituicao;
+
 public class RepositorioDoadorEmpresa implements IRepositorioDoadorEmpresa, Serializable {
 	
 	public static final String NOME_DO_ARQ = "empresadoadora.dat";
@@ -99,6 +101,20 @@ public DoadorEmpresa buscarDoadorEmpresa(int codigo){
 	}
 	return null;
 }	
+
+public boolean atualizarDoadorEmpresa(DoadorEmpresa novoDoador){
+	int count = 0;
+	for(DoadorEmpresa i : this.arrayDoadorEmpresa){
+		
+		if(i.getCodigoDoador() == novoDoador.getCodigoDoador()){
+			this.arrayDoadorEmpresa.set(count, novoDoador);
+			salvarArquivo();
+			return true;
+		}
+		count++;
+	}
+	return false;
+}
 
 public boolean removerDoadorEmpresa(int codigo){
 	int count = 0;

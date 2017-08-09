@@ -1,8 +1,9 @@
 package hope.doador;
-
+//Commitando!
 import java.util.ArrayList;
 
 import hope.excecao.ErroDeNegocioExcecao;
+import hope.instituicao.Instituicao;
 
 public class ControladorDoadorEmpresa {
 
@@ -37,6 +38,14 @@ public class ControladorDoadorEmpresa {
 	public DoadorEmpresa buscarDoadorEmpresa(int codigo) throws ErroDeNegocioExcecao{
 		DoadorEmpresa resultado = this.repositorioDE.buscarDoadorEmpresa(codigo);
 		return resultado;
+	}
+	
+	public void atualizarDoadorEmpresa(DoadorEmpresa novoDoador) throws ErroDeNegocioExcecao{
+		if(novoDoador != null && this.existe(novoDoador.getCodigoDoador())){
+			this.repositorioDE.atualizarDoadorEmpresa(novoDoador);
+		} else{
+			throw new ErroDeNegocioExcecao("Empresa/Instituicao Doadora não encontrada!");
+		}
 	}
 	
 	public void removerDoadorEmpresa(int codigo) throws ErroDeNegocioExcecao{
