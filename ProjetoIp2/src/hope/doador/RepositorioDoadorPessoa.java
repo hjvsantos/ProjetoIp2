@@ -101,6 +101,20 @@ public class RepositorioDoadorPessoa implements IRepositorioDoadorPessoa, Serial
 
 	}
 	
+	public boolean atualizarDoadorPessoa(DoadorPessoa novoDoador){
+		int count = 0;
+		for(DoadorPessoa i : this.arrayDoadorPessoa){
+			
+			if(i.getCodigoDoador() == novoDoador.getCodigoDoador()){
+				this.arrayDoadorPessoa.set(count, novoDoador);
+				salvarArquivo();
+				return true;
+			}
+			count++;
+		}
+		return false;
+	}
+	
 	public boolean removerDoadorPessoa(int codigo){
 		int count = 0;
 		for(DoadorPessoa d : this.arrayDoadorPessoa){

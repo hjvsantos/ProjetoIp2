@@ -8,6 +8,7 @@ public interface IRepositorioDoadorPessoa {
 	
 	public DoadorPessoa buscarDoadorPessoa(int codigo);
 	
+	public boolean atualizarDoadorPessoa(DoadorPessoa novoDoador);
 	
 	public boolean removerDoadorPessoa(int codigo);
 	

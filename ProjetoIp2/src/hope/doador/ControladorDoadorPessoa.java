@@ -47,6 +47,14 @@ public class ControladorDoadorPessoa {
 		return resultado;
 	}
 	
+	public void atualizarDoadorPessoa(DoadorPessoa novoDoador) throws ErroDeNegocioExcecao{
+		if(novoDoador != null && this.existe(novoDoador.getCodigoDoador())){
+			this.repositorioDoador.atualizarDoadorPessoa(novoDoador);
+		} else{
+			throw new ErroDeNegocioExcecao("Doador não encontrada!");
+		}
+	}
+	
 	public void removerD(int codigo) throws ErroDeNegocioExcecao{
 		Doador d = this.repositorioDoador.buscarDoadorPessoa(codigo);
 		if(d != null){
