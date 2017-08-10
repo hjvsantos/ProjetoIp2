@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFDEAD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="893.0" style="-fx-background-color: #FFDEAD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="237.0" layoutY="226.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Entrar" />
-      <Button layoutX="286.0" layoutY="269.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cadastrar" />
-      <Button layoutX="334.0" layoutY="226.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Sair" />
-      <Label layoutX="136.0" layoutY="124.0" text="CPF/CNPJ:" />
-      <Label layoutX="136.0" layoutY="163.0" text="Senha:" />
-      <PasswordField layoutX="219.0" layoutY="159.0" prefHeight="25.0" prefWidth="231.0" />
-      <TextField layoutX="219.0" layoutY="120.0" prefHeight="25.0" prefWidth="231.0" />
+      <ImageView fitHeight="600.0" fitWidth="978.0" pickOnBounds="true" preserveRatio="true" opacity="0.59">
+         <image>
+            <Image url="@imagens/donations.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="259.0" layoutY="137.0" prefHeight="240.0" prefWidth="405.0" style="-fx-background-color: #C0C0C0;">
+         <children>
+            <Button layoutX="157.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Entrar" />
+            <Button layoutX="157.0" layoutY="206.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cadastrar" />
+            <PasswordField layoutX="88.0" layoutY="114.0" prefHeight="25.0" prefWidth="263.0" />
+            <Label layoutX="29.0" layoutY="119.0" text="Senha:" />
+            <Label layoutX="28.0" layoutY="56.0" text="CPF/CNPJ:" />
+            <TextField layoutX="88.0" layoutY="52.0" prefHeight="25.0" prefWidth="263.0" />
+         </children>
+      </Pane>
+      <Button layoutX="794.0" layoutY="561.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Sair" />
    </children>
 </AnchorPane>
