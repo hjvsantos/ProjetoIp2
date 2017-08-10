@@ -53,12 +53,16 @@ public Diversos buscarD(int codProduto) throws ErroDeNegocioExcecao{
 	return result;
 }
 
-public void removerD(int codProduto) throws ErroDeNegocioExcecao{
+public void removerDiversos(int codProduto) throws ErroDeNegocioExcecao{
 	Diversos d = this.repositorioD.buscarDiversos(codProduto);
 	if(d != null){
 		this.repositorioD.removerDiversos(codProduto);
 	} else{
 		throw new ErroDeNegocioExcecao("Produto inexistente");
 	}
+}
+
+public ArrayList<Diversos> listarDiversos() throws ErroDeNegocioExcecao{
+	return this.repositorioD.listarDiversos();
 }
 }

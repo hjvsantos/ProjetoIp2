@@ -183,46 +183,46 @@ public class Fachada {
 	
 	//Metodos da Classe Diversos
 	
-	public boolean cadastrarD(Diversos div){
-		return repDiversos.cadastrarD(div);
+	public void cadastrarD(Diversos div) throws ErroDeNegocioExcecao{
+		this.diversos.cadastrarD(div);
 	}
 	
-	public boolean atualizarDiversos(Diversos div){
-		return repDiversos.atualizarDiversos(div);
+	public void atualizarDiversos(Diversos div) throws ErroDeNegocioExcecao{
+		this.diversos.atualizarDiversos(div);
 	}
 	
-	public Diversos buscarDiversos(int codProduto){
-		return repDiversos.buscarDiversos(codProduto);
+	public Diversos buscarD(int codProduto) throws ErroDeNegocioExcecao{
+		return diversos.buscarD(codProduto);
 	}
 	
-	public boolean removerDiversos(int codProduto){
-		return repDiversos.removerDiversos(codProduto);
+	public void removerDiversos(int codProduto) throws ErroDeNegocioExcecao{
+		this.diversos.removerDiversos(codProduto);
 	}
 	
-	public ArrayList<Diversos> listarDiversos(){
-		return repDiversos.listarDiversos();
+	public ArrayList<Diversos> listarDiversos() throws ErroDeNegocioExcecao{
+		return diversos.listarDiversos();
 	}
 	
 	//Metodos da Classe Higiene
 	
-	public boolean cadastrarH(Higiene higiene){
-		return repHigiene.cadastrarH(higiene);
+	public void cadastrarH(Higiene higiene) throws ErroDeNegocioExcecao{
+		this.higiene.cadastrarH(higiene);
 	}
 	
-	public boolean atualizarHigiene(Higiene higiene){
-		return repHigiene.atualizarHigiene(higiene);
+	public void atualizarHigiene(Higiene higiene) throws ErroDeNegocioExcecao{
+		this.higiene.atualizarHigiene(higiene);
 	}
 	
-	public Higiene buscarHigiene(int codProduto){
-		return repHigiene.buscarHigiene(codProduto);
+	public Higiene buscarH(int codProduto) throws ErroDeNegocioExcecao{
+		return higiene.buscarH(codProduto);
 	}
 	
-	public boolean removerHigiene(int codProduto){
-		return repHigiene.removerHigiene(codProduto);
+	public void removerH(int codProduto) throws ErroDeNegocioExcecao{
+		this.higiene.removerH(codProduto);
 	}
 	
-	public ArrayList<Higiene> listarHigiene(){
-		return repHigiene.listarHigiene();
+	public ArrayList<Higiene> listarHigiene() throws ErroDeNegocioExcecao{
+		return higiene.listarHigiene();
 	}
 	
 	//Metodos da Classe Vestimenta

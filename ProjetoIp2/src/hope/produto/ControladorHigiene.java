@@ -64,4 +64,7 @@ public class ControladorHigiene {
 		}
 	}
 
+	public ArrayList<Higiene> listarHigiene() throws ErroDeNegocioExcecao{
+		return this.repositorioH.listarHigiene();
+	}
 }
