@@ -12,5 +12,5 @@ public interface IRepositorioVestimenta {
 	
 	public boolean removerV(int codProduto);
 	
-	public ArrayList<Vestimenta> listar();
+	public ArrayList<Vestimenta> listarRoupas();
 }

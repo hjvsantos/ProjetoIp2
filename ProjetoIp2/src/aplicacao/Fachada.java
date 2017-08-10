@@ -3,20 +3,31 @@ import java.util.ArrayList;
 
 import hope.doacao.RepositorioDoacao;
 import hope.doacao.IRepositorioDoacao;
+import hope.administrador.ControladorAdm;
+import hope.doacao.ControladorDoacao;
 import hope.doacao.Doacao;
+import hope.doador.ControladorDoadorEmpresa;
+import hope.doador.ControladorDoadorPessoa;
 import hope.doador.DoadorEmpresa;
 import hope.doador.DoadorPessoa;
 import hope.doador.IRepositorioDoadorEmpresa;
 import hope.doador.IRepositorioDoadorPessoa;
 import hope.doador.RepositorioDoadorEmpresa;
 import hope.doador.RepositorioDoadorPessoa;
+import hope.excecao.ErroDeNegocioExcecao;
+import hope.financeiro.ControladorFinanceiro;
 import hope.financeiro.Financeiro;
 import hope.financeiro.IRepositorioFinanceiro;
 import hope.financeiro.RepositorioFinanceiro;
+import hope.instituicao.ControladorInstituicao;
 import hope.instituicao.IRepositorioInstituicao;
 import hope.instituicao.Instituicao;
 import hope.instituicao.RepositorioInstituicao;
 import hope.produto.Alimento;
+import hope.produto.ControladorAlimento;
+import hope.produto.ControladorDiversos;
+import hope.produto.ControladorHigiene;
+import hope.produto.ControladorVestimenta;
 import hope.produto.Diversos;
 import hope.produto.Higiene;
 import hope.produto.IRepositorioAlimento;
@@ -31,17 +42,30 @@ import hope.produto.Vestimenta;
 
 public class Fachada {
 	
-	IRepositorioDoadorPessoa repDoadorP = new RepositorioDoadorPessoa();
-	IRepositorioDoadorEmpresa repDoadorE = new RepositorioDoadorEmpresa();
-	IRepositorioInstituicao repInstituicao = new RepositorioInstituicao();
-	IRepositorioDoacao repDoacao = new RepositorioDoacao ();
-	IRepositorioAlimento repAlimento = new RepositorioAlimento();
-	IRepositorioDiversos repDiversos = new RepositorioDiversos();
-	IRepositorioHigiene repHigiene = new RepositorioHigiene();
-	IRepositorioVestimenta repVestimenta = new RepositorioVestimenta();
-	IRepositorioFinanceiro repFinanceiro = new RepositorioFinanceiro();
+	private static Fachada instance;
+	private ControladorAdm administrador;
+	private ControladorDoadorEmpresa doadorEmpresa;
+	private ControladorDoadorPessoa doadorPessoa;
+	private ControladorInstituicao instituicao;
+	private ControladorDoacao doacao;
+	private ControladorAlimento alimento;
+	private ControladorDiversos diversos;
+	private ControladorHigiene higiene;
+	private ControladorVestimenta vestimenta;
+	private ControladorFinanceiro financeiro;
 	
-	public static Fachada instance;
+	private Fachada(){
+		this.administrador = ControladorAdm.getInstance();
+		this.doadorEmpresa = ControladorDoadorEmpresa.getInstance();
+		this.doadorPessoa = ControladorDoadorPessoa.getInstance();
+		this.instituicao = ControladorInstituicao.getInstance();
+		this.doacao = ControladorDoacao.getInstance();
+		this.alimento = ControladorAlimento.getInstance();
+		this.diversos = ControladorDiversos.getInstance();
+		this.higiene = ControladorHigiene.getInstance();
+		this.vestimenta = ControladorVestimenta.getInstance();
+		this.financeiro = ControladorFinanceiro.getInstance();
+	}
 	
 	public static Fachada getInstance() {
 		if(instance == null) {
@@ -51,26 +75,28 @@ public class Fachada {
 	}
 	
 	//Metodos da classe DoadorPessoa:
-	public boolean cadastrarDoadorPessoa(DoadorPessoa doadorPessoa){
-		return repDoadorP.cadastrarDoadorPessoa(doadorPessoa);
+	public void cadastrarDoador(DoadorPessoa doador) throws ErroDeNegocioExcecao{
+		this.doadorPessoa.cadastrarDoador(doador);
 	}
 	
-	public DoadorPessoa buscarDoadorPessoa(int codigo){
-		return repDoadorP.buscarDoadorPessoa(codigo);
+	public DoadorPessoa buscarDoadorPessoa(int codigo) throws ErroDeNegocioExcecao {
+		return doadorPessoa.buscarDoadorPessoa(codigo);
 	}
 	
-	public boolean atualizarDoadorPessoa(DoadorPessoa novoDoador){
-		return repDoadorP.atualizarDoadorPessoa(novoDoador);
+	public void atualizarDoadorPessoa(DoadorPessoa novoDoador) throws ErroDeNegocioExcecao{
+		this.doadorPessoa.atualizarDoadorPessoa(novoDoador);
 	}
 	
-	public boolean removerDoadorPessoa(int codigo){
-		return repDoadorP.removerDoadorPessoa(codigo);
+	public void removerD(int codigo) throws ErroDeNegocioExcecao{
+		this.doadorPessoa.removerD(codigo);
 	}
 	
+	/*
 	public ArrayList<DoadorPessoa> listarDoadoresPessoa(){
-		return repDoadorP.listar();
-		
+		return doadorPessoa.listar();
+		TODO falta fazer esse método no controlador! Conferir se tem no repositorio tb
 	}
+	*/
 	
 	//Metodos da Classe DoadorEmpresa
 	
@@ -97,24 +123,24 @@ public class Fachada {
 	
 	
 	//Metodos da classe Instituicao
-	public boolean cadastrarI(Instituicao insti){
-		return repInstituicao.cadastrarI(insti);
+	public void cadastrarI(Instituicao insti) throws ErroDeNegocioExcecao{
+		this.instituicao.cadastrarI(insti);
 	}
 	
-	public Instituicao buscarI(int codInstituicao){
-		return repInstituicao.buscarI(codInstituicao);
+	public Instituicao buscarI(int codInstituicao) throws ErroDeNegocioExcecao{
+		return instituicao.buscarI(codInstituicao);
 	}
 	
-	public boolean removerI(int codInstituicao){
-		return repInstituicao.removerI(codInstituicao);
+	public void removerI(int codInstituicao) throws ErroDeNegocioExcecao{
+		this.instituicao.removerI(codInstituicao);
 	}
 	
-	public boolean atualizarInstituicao(Instituicao novaInsti){
-		return repInstituicao.atualizarInstituicao(novaInsti);
+	public void atualizarInstituicao(Instituicao novaInsti) throws ErroDeNegocioExcecao{
+		this.instituicao.atualizarInstituicao(novaInsti);
 	}
 	
-	public ArrayList<Instituicao> listarInstituicoes(){
-		return repInstituicao.listarInstituicoes();
+	public ArrayList<Instituicao> listarInstituicoes() throws ErroDeNegocioExcecao{
+		return instituicao.listarInstituicoes();
 	}
 	
 	
@@ -201,46 +227,46 @@ public class Fachada {
 	
 	//Metodos da Classe Vestimenta
 	
-	public boolean cadastrarV(Vestimenta roupa){
-		return repVestimenta.cadastrarV(roupa);
+	public void cadastrarV(Vestimenta vestimenta) throws ErroDeNegocioExcecao{
+		this.vestimenta.cadastrarV(vestimenta);
 	}
 	
-	public boolean atualizarV(Vestimenta roupa){
-		return repVestimenta.atualizarV(roupa);
+	public void atualizarV(Vestimenta vestimenta) throws ErroDeNegocioExcecao{
+		this.vestimenta.atualizarV(vestimenta);
 	}
 	
-	public Vestimenta buscarV(int codProduto){
-		return repVestimenta.buscarV(codProduto);
+	public Vestimenta buscarV(int codProduto) throws ErroDeNegocioExcecao{
+		return vestimenta.buscarV(codProduto);
 	}
 	
-	public boolean removerV(int codProduto){
-		return repVestimenta.removerV(codProduto);
+	public void removerV(int codProduto) throws ErroDeNegocioExcecao{
+		this.vestimenta.removerV(codProduto);
 	}
 	
-	public ArrayList<Vestimenta> listar(){
-		return repVestimenta.listar();
+	public ArrayList<Vestimenta> listarRoupas() throws ErroDeNegocioExcecao{
+		return vestimenta.listarRoupas();
 	}
 	
 	//Metodos da Classe Financeiro
 	
-	public boolean cadastrar(Financeiro doacaoDinheiro){
-		return repFinanceiro.cadastrar(doacaoDinheiro);
+	public void cadastrar(Financeiro doacaoDinheiro) throws ErroDeNegocioExcecao{
+		this.financeiro.cadastrar(doacaoDinheiro);
 	}
 	
-	public boolean atualizarF(Financeiro novaDoacao){
-		return repFinanceiro.atualizarF(novaDoacao);
+	public void atualizarF(Financeiro novaDoacao) throws ErroDeNegocioExcecao{
+		this.financeiro.atualizarF(novaDoacao);
 	}
 	
-	public Financeiro buscarDoacaoFinanceira(int codOperacao){
-		return repFinanceiro.buscarDoacaoFinanceira(codOperacao);
+	public Financeiro buscarDoacaoFinanceira(int codOperacao) throws ErroDeNegocioExcecao{
+		return financeiro.buscarDoacaoFinanceira(codOperacao);
 	}
 	
-	public boolean removerDoacaoDinheiro(int codOperacao){
-		return repFinanceiro.removerDoacaoDinheiro(codOperacao);
+	public void removerDoacaoFinanceira(int codOperacao) throws ErroDeNegocioExcecao{
+		this.financeiro.removerDoacaoFinanceira(codOperacao);
 	}
 	
-	public ArrayList<Financeiro> listarDoacoesFinanceiras(){
-		return repFinanceiro.listarDoacoesFinanceiras();
+	public ArrayList<Financeiro> listarDoacoesFinanceiras() throws ErroDeNegocioExcecao{
+		return financeiro.listarDoacoesFinanceiras();
 	}
 	
 }

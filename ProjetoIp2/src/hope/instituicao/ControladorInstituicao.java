@@ -61,4 +61,8 @@ public class ControladorInstituicao {
 		}
 	}
 	
+	public ArrayList<Instituicao> listarInstituicoes(){
+		return this.repositorioInsti.listarInstituicoes();
+	}
+	
 }

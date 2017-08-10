@@ -130,7 +130,7 @@ public boolean removerV(int codProduto){
 	return false;
 }
 	
-public ArrayList<Vestimenta> listar(){
+public ArrayList<Vestimenta> listarRoupas(){
 	return this.roupas;
 }	
 }

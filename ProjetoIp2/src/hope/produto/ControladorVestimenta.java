@@ -23,7 +23,7 @@ public class ControladorVestimenta {
 	}
 	
 	private boolean existe(int codProduto){
-		ArrayList<Vestimenta> resultado = this.repositorioV.listar();
+		ArrayList<Vestimenta> resultado = this.repositorioV.listarRoupas();
 		for(Vestimenta v : resultado){
 			if(v.getCodigoProduto() == codProduto){
 				return true;
@@ -40,7 +40,7 @@ public class ControladorVestimenta {
 		}
 	}
 	
-	public void atualizarVestimenta(Vestimenta vestimenta) throws ErroDeNegocioExcecao{
+	public void atualizarV(Vestimenta vestimenta) throws ErroDeNegocioExcecao{
 		if(vestimenta != null && !this.existe(vestimenta.getCodigoProduto())){
 			this.repositorioV.atualizarV(vestimenta);
 		} else{
@@ -53,12 +53,16 @@ public class ControladorVestimenta {
 		return result;
 	}
 	
-	public void remover(int codProduto) throws ErroDeNegocioExcecao{
+	public void removerV(int codProduto) throws ErroDeNegocioExcecao{
 		Vestimenta v = this.repositorioV.buscarV(codProduto);
 		if(v != null){
 			this.repositorioV.removerV(codProduto);
 		} else{
 			throw new ErroDeNegocioExcecao("Alimento não existente");
 		}
+	}
+	
+	public ArrayList<Vestimenta> listarRoupas() throws ErroDeNegocioExcecao{
+		return this.repositorioV.listarRoupas();
 	}
 }

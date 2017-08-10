@@ -58,6 +58,10 @@ public class ControladorFinanceiro {
 				throw new ErroDeNegocioExcecao("Codigo de operação financeira não existe!");
 			}
 		}
+		
+		public ArrayList<Financeiro> listarDoacoesFinanceiras(){
+			return this.repositorioF.listarDoacoesFinanceiras();
+		}
 }
 
 
