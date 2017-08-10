@@ -100,24 +100,24 @@ public class Fachada {
 	
 	//Metodos da Classe DoadorEmpresa
 	
-	public boolean cadastrarDoadorEmpresa(DoadorEmpresa doadorEmpresa){
-		return repDoadorE.cadastrarDoadorEmpresa(doadorEmpresa);
+	public void cadastrarDoadorEmpresa(DoadorEmpresa doadorEmpresa) throws ErroDeNegocioExcecao{
+		this.doadorEmpresa.cadastrarDoadorEmpresa(doadorEmpresa);
 	}
 	
-	public DoadorEmpresa buscarDoadorEmpresa(int codigo){
-		return repDoadorE.buscarDoadorEmpresa(codigo);
+	public DoadorEmpresa buscarDoadorEmpresa(int codigo) throws ErroDeNegocioExcecao{
+		return this.doadorEmpresa.buscarDoadorEmpresa(codigo);
 	}
 	
-	public boolean atualizarDoadorEmpresa(DoadorEmpresa novoDoador){
-		return repDoadorE.atualizarDoadorEmpresa(novoDoador); //TO DO
+	public void atualizarDoadorEmpresa(DoadorEmpresa novoDoador) throws ErroDeNegocioExcecao{
+		 this.doadorEmpresa.atualizarDoadorEmpresa(novoDoador);
 	}
 	
-	public boolean removerDoadorEmpresa(int codigo){
-		return repDoadorE.removerDoadorEmpresa(codigo);
+	public void removerDoadorEmpresa(int codigo) throws ErroDeNegocioExcecao{
+		this.doadorEmpresa.removerDoadorEmpresa(codigo);
 	}
 	
-	public ArrayList<DoadorEmpresa> listarDoadoresE(){
-		return repDoadorE.listar();
+	public ArrayList<DoadorEmpresa> listarDoadoresE() throws ErroDeNegocioExcecao{
+		return this.doadorEmpresa.listarEempresas();
 	}
 	
 	
@@ -147,38 +147,38 @@ public class Fachada {
 
 	 //Metodos da Classe Doação 
 	
-	public boolean cadastrarDoacao(Doacao doacao) {
-		return repDoacao.cadastrarDoacao(doacao);
+	public void cadastrarDoacao(Doacao doacao) throws ErroDeNegocioExcecao {
+		this.doacao.cadastrarD(doacao);
 	}
 
-	public Doacao buscarDoacao(int codigoDoacao) {
-		return repDoacao.buscarDoacao(codigoDoacao);
+	public Doacao buscarDoacao(int codigoDoacao) throws ErroDeNegocioExcecao {
+		return this.doacao.buscarD(codigoDoacao);
 	}
 
-	public boolean removerDoacao(int codigoDoacao) {
-		return repDoacao.removerDoacao(codigoDoacao);
+	public void removerDoacao(int codigoDoacao) throws ErroDeNegocioExcecao {
+		this.doacao.removerD(codigoDoacao);
 	}
 
-	public ArrayList<Doacao> listarDoacoes() {
-		return repDoacao.listarDoacoes();
+	public ArrayList<Doacao> listarDoacoes() throws ErroDeNegocioExcecao {
+		return this.doacao.listarDoacao();
 	}
 	
 	//Metodos da Classe Alimento
 	
-	public boolean cadastrarA(Alimento alimento){
-		return repAlimento.cadastrarA(alimento);
+	public void cadastrarH(Alimento alimento) throws ErroDeNegocioExcecao{
+		this.alimento.cadastrarH(alimento);
 	}
 	
-	public Alimento buscarAlimento(int codProduto){
-		return repAlimento.buscarAlimento(codProduto);
+	public Alimento buscarAlimento(int codProduto) throws ErroDeNegocioExcecao{
+		return alimento.buscarA(codProduto);
 	}
 	
-	public boolean removerAlimento(int codProduto){
-		return repAlimento.removerAlimento(codProduto);
+	public void removerAlimento(int codProduto) throws ErroDeNegocioExcecao{
+		 alimento.removerA(codProduto);
 	}
 	
-	public ArrayList<Alimento> listarAlimentos(){
-		return repAlimento.listarAlimentos();
+	public ArrayList<Alimento> listarAlimentos() throws ErroDeNegocioExcecao {
+		return alimento.listarAlimentos();
 	}
 	
 	//Metodos da Classe Diversos

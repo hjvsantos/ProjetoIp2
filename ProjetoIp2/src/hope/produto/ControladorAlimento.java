@@ -52,6 +52,11 @@ private static ControladorAlimento instance;
 		} else{
 			throw new ErroDeNegocioExcecao("Alimento inexistente");
 		}
+	
+	}
+	
+	public ArrayList<Alimento> listarAlimentos() throws ErroDeNegocioExcecao{
+		return this.repositorioA.listarAlimentos();
 	}
 
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import hope.excecao.ErroDeNegocioExcecao;
 import hope.instituicao.Instituicao;
+import hope.produto.Alimento;
 
 public class ControladorDoadorEmpresa {
 
@@ -55,6 +56,10 @@ public class ControladorDoadorEmpresa {
 		} else{
 			throw new ErroDeNegocioExcecao("Empresa/Instituição inexistente");
 		}
+	}
+	
+	public ArrayList<DoadorEmpresa> listarEempresas() throws ErroDeNegocioExcecao{
+		return this.repositorioDE.listar();
 	}
 	
 }

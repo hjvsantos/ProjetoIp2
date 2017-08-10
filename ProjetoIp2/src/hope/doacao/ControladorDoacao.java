@@ -3,6 +3,7 @@ package hope.doacao;
 import hope.categoria.Categoria;
 import hope.excecao.ErroDeNegocioExcecao;
 import hope.instituicao.Instituicao;
+import hope.produto.Alimento;
 import hope.produto.ControladorHigiene;
 import hope.produto.Higiene;
 import hope.produto.RepositorioHigiene;
@@ -58,6 +59,10 @@ public class ControladorDoacao {
 		} else{
 			throw new ErroDeNegocioExcecao("Doação inexistente");
 		}
+	}
+	
+	public ArrayList<Doacao> listarDoacao() throws ErroDeNegocioExcecao{
+		return this.repositorioD.listarDoacoes();
 	}
 
 }
