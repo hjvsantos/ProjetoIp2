@@ -7,17 +7,15 @@ public class Doador {
 	public String estado;
 	private double numeroCartao;
 	private double codigoCartao;
-	private int tipo;
 	private int codigoDoador;
 	
-	public Doador(String nome, String cidade, String estado, double numeroCartao, double codigoCartao, int codigoDoador, int tipo) {
+	public Doador(String nome, String cidade, String estado, double numeroCartao, double codigoCartao, int codigoDoador) {
 		super();
 		this.nome = nome;
 		this.cidade = cidade;
 		this.estado = estado;
 		this.numeroCartao = numeroCartao;
 		this.codigoCartao = codigoCartao;
-		this.tipo = tipo;
 		this.codigoDoador = codigoDoador;
 	}
 	
@@ -27,13 +25,13 @@ public class Doador {
 	return codigoDoador;
 	}
 
-	public int getTipo() {
+	/*public int getTipo() {
 		return tipo;
 	}
 
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
-	}
+	}*/
 
 	public String getNome() {
 		return nome;
@@ -79,7 +77,7 @@ public class Doador {
 	public String toString() {
 		return "Doador [nome=" + nome + ", cidade=" + cidade + ", estado="
 				+ estado + ", numeroCartao=" + numeroCartao + ", codigoCartao="
-				+ codigoCartao + ", tipo=" + tipo + "]";
+				+ codigoCartao + "]";
 	}
 
 	
