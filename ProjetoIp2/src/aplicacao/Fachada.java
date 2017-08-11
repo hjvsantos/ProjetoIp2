@@ -1,8 +1,7 @@
 package aplicacao;
-import java.util.ArrayList;
 
-import hope.doacao.RepositorioDoacao;
-import hope.doacao.IRepositorioDoacao;
+import java.util.ArrayList;
+import hope.administrador.Adm;
 import hope.administrador.ControladorAdm;
 import hope.doacao.ControladorDoacao;
 import hope.doacao.Doacao;
@@ -10,19 +9,11 @@ import hope.doador.ControladorDoadorEmpresa;
 import hope.doador.ControladorDoadorPessoa;
 import hope.doador.DoadorEmpresa;
 import hope.doador.DoadorPessoa;
-import hope.doador.IRepositorioDoadorEmpresa;
-import hope.doador.IRepositorioDoadorPessoa;
-import hope.doador.RepositorioDoadorEmpresa;
-import hope.doador.RepositorioDoadorPessoa;
 import hope.excecao.ErroDeNegocioExcecao;
 import hope.financeiro.ControladorFinanceiro;
 import hope.financeiro.Financeiro;
-import hope.financeiro.IRepositorioFinanceiro;
-import hope.financeiro.RepositorioFinanceiro;
 import hope.instituicao.ControladorInstituicao;
-import hope.instituicao.IRepositorioInstituicao;
 import hope.instituicao.Instituicao;
-import hope.instituicao.RepositorioInstituicao;
 import hope.produto.Alimento;
 import hope.produto.ControladorAlimento;
 import hope.produto.ControladorDiversos;
@@ -30,14 +21,6 @@ import hope.produto.ControladorHigiene;
 import hope.produto.ControladorVestimenta;
 import hope.produto.Diversos;
 import hope.produto.Higiene;
-import hope.produto.IRepositorioAlimento;
-import hope.produto.IRepositorioDiversos;
-import hope.produto.IRepositorioHigiene;
-import hope.produto.IRepositorioVestimenta;
-import hope.produto.RepositorioAlimento;
-import hope.produto.RepositorioDiversos;
-import hope.produto.RepositorioHigiene;
-import hope.produto.RepositorioVestimenta;
 import hope.produto.Vestimenta;
 
 public class Fachada {
@@ -73,6 +56,24 @@ public class Fachada {
 		}
 		return instance;
 	}
+	
+	//Metodos da classe Administrador
+	public void cadastrarAdm(Adm adm) throws ErroDeNegocioExcecao{
+		this.administrador.cadastrarAdm(adm);
+	}
+	
+	public void atualizarAdm(Adm adm) throws ErroDeNegocioExcecao{
+		this.administrador.atualizarAdm(adm);
+	}
+	
+	public Adm buscarAdm(String cpf) throws ErroDeNegocioExcecao{
+		return administrador.buscarAdm(cpf);
+	}
+	
+	public void removerAdm(String cpf) throws ErroDeNegocioExcecao{
+		this.administrador.removerAdm(cpf);
+	}
+	
 	
 	//Metodos da classe DoadorPessoa:
 	public void cadastrarDoador(DoadorPessoa doador) throws ErroDeNegocioExcecao{
