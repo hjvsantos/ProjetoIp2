@@ -2,7 +2,6 @@ package hope.doador.controller;
 
 import hope.doador.*;
 import javafx.scene.control.TextField;
-import view.controllers.Sistema;
 public class CadastrarDoadorController {
 
 	private ControladorDoadorPessoa cdp;
