@@ -10,7 +10,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="893.0" pickOnBounds="true" preserveRatio="true" opacity="0.59">
          <image>
-            <Image url="@../../../../../Desktop/9a57b338cfbc0d9110b92bdfbe8d0a2a--meeting-table-office-meeting.jpg" />
+            <Image url="@imagens/new_adm.jpg" />
          </image>
       </ImageView>
       <Pane layoutX="219.0" layoutY="117.0" prefHeight="367.0" prefWidth="409.0" style="-fx-background-color: #C0C0C0;">
