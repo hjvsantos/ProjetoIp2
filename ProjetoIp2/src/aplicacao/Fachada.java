@@ -91,12 +91,11 @@ public class Fachada {
 		this.doadorPessoa.removerD(codigo);
 	}
 	
-	/*
-	public ArrayList<DoadorPessoa> listarDoadoresPessoa(){
-		return doadorPessoa.listar();
-		TODO falta fazer esse método no controlador! Conferir se tem no repositorio tb
+	
+	public ArrayList<DoadorPessoa> listarDoadoresPessoa() throws ErroDeNegocioExcecao{
+		return doadorPessoa.listarDoadoresP();
+
 	}
-	*/
 	
 	//Metodos da Classe DoadorEmpresa
 	

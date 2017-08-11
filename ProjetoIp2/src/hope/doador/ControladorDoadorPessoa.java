@@ -64,6 +64,10 @@ public class ControladorDoadorPessoa {
 		}
 	}
 	
+	public ArrayList<DoadorPessoa> listarDoadoresP (){
+		return this.repositorioDoador.listar();
+	}
+	
 }
 	
 	
