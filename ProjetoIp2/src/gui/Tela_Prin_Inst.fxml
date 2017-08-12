@@ -12,7 +12,23 @@
          <image>
             <Image url="@imagens/background-color-hands.jpg" />
          </image></ImageView>
-      <Pane layoutX="151.0" layoutY="54.0" opacity="0.75" prefHeight="445.0" prefWidth="607.0" style="-fx-background-color: #dcdcdc;" />
+      <Pane layoutX="151.0" layoutY="54.0" opacity="0.75" prefHeight="445.0" prefWidth="607.0" style="-fx-background-color: #dcdcdc;">
+         <children>
+            <Button layoutX="253.0" layoutY="331.0" mnemonicParsing="false" text="Solicitar Doação" />
+            <Button layoutX="253.0" layoutY="375.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Atualizar Dados" />
+            <Label layoutX="72.0" layoutY="108.0" prefHeight="17.0" prefWidth="50.0" text="Nome:" />
+            <Label layoutX="72.0" layoutY="146.0" text="CNPJ:" />
+            <Label layoutX="73.0" layoutY="182.0" text="Cidade:" />
+            <Label layoutX="73.0" layoutY="223.0" text="Estado:" />
+            <Label layoutX="72.0" layoutY="261.0" text="Codigo:" />
+            <Label layoutX="68.0" layoutY="302.0" text="Nº da Conta:" />
+            <Label layoutX="171.0" layoutY="108.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
+            <Label layoutX="171.0" layoutY="146.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
+            <Label layoutX="171.0" layoutY="182.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" />
+            <Label layoutX="171.0" layoutY="223.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
+            <Label layoutX="171.0" layoutY="261.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
+            <Label layoutX="171.0" layoutY="302.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
+         </children></Pane>
       <Button layoutX="14.0" layoutY="521.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Sair" />
       <Button layoutX="763.0" layoutY="521.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Cancelar Conta" />
    </children>
