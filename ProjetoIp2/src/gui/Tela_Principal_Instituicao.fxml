@@ -15,8 +15,8 @@
          </image></ImageView>
       <Pane layoutX="151.0" layoutY="54.0" opacity="0.75" prefHeight="445.0" prefWidth="607.0" style="-fx-background-color: #dcdcdc;">
          <children>
-            <Button layoutX="253.0" layoutY="331.0" mnemonicParsing="false" text="Solicitar Doação" />
-            <Button layoutX="253.0" layoutY="375.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Atualizar Dados" />
+            <Button id="bt_solic_doacao" layoutX="253.0" layoutY="331.0" mnemonicParsing="false" text="Solicitar Doação" />
+            <Button id="bt_atualizar" layoutX="253.0" layoutY="375.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Atualizar Dados" />
             <Label layoutX="72.0" layoutY="108.0" prefHeight="17.0" prefWidth="50.0" text="Nome:" />
             <Label layoutX="72.0" layoutY="146.0" text="CNPJ:" />
             <Label layoutX="73.0" layoutY="182.0" text="Cidade:" />
@@ -35,7 +35,7 @@
                </font>
             </Text>
          </children></Pane>
-      <Button layoutX="14.0" layoutY="521.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Sair" />
-      <Button layoutX="763.0" layoutY="521.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Cancelar Conta" />
+      <Button id="bt_sair" layoutX="14.0" layoutY="521.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Sair" />
+      <Button id="bt_remover" layoutX="763.0" layoutY="521.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Cancelar Conta" />
    </children>
 </AnchorPane>
