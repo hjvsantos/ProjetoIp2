@@ -36,6 +36,10 @@
             <Button layoutX="104.0" layoutY="163.0" mnemonicParsing="false" text="Atualizar" />
          </children>
       </Pane>
-      <Text layoutX="110.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá, administrador! Bem vindo a central de controle H.O.P.E." />
+      <Text layoutX="11.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá, administrador! Bem vindo a central de controle H.O.P.E.">
+         <font>
+            <Font size="19.0" />
+         </font></Text>
+      <Button layoutX="496.0" layoutY="372.0" mnemonicParsing="false" text="Sair" />
    </children>
 </AnchorPane>
