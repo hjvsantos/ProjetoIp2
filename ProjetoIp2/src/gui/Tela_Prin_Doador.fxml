@@ -7,37 +7,41 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="429.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="429.0" fitWidth="600.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="600.0" fitWidth="884.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagens/tela_prin_doador.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="14.0" layoutY="390.0" mnemonicParsing="false" text="Sair" textAlignment="CENTER" />
-      <Button layoutX="119.0" layoutY="350.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="144.0" style="-fx-border-color: #C0C0C0;" text="Doar">
-         <cursor>
-            <Cursor fx:constant="CLOSED_HAND" />
-         </cursor>
-      </Button>
-      <Button layoutX="312.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" style="-fx-border-color: #C0C0C0;" text="Atualizar">
-         <cursor>
-            <Cursor fx:constant="CLOSED_HAND" />
-         </cursor>
-      </Button>
-      <Label layoutX="119.0" layoutY="99.0" prefHeight="25.0" prefWidth="45.0" text="Nome:" />
-      <Label layoutX="192.0" layoutY="103.0" prefHeight="17.0" prefWidth="259.0" style="-fx-background-color: #C0C0C0;" text=" " />
-      <Label layoutX="108.0" layoutY="140.0" text="CPF/CNPJ:" />
-      <Label layoutX="191.0" layoutY="140.0" prefHeight="17.0" prefWidth="259.0" style="-fx-background-color: #C0C0C0;" text=" " />
-      <Label layoutX="116.0" layoutY="176.0" text="Cidade:" />
-      <Label layoutX="116.0" layoutY="215.0" text="Estado:" />
-      <Label layoutX="114.0" layoutY="253.0" text="Código:" />
-      <Label layoutX="101.0" layoutY="288.0" text="Nº Cartao:" />
-      <Label layoutX="191.0" layoutY="176.0" prefHeight="17.0" prefWidth="259.0" style="-fx-background-color: #C0C0C0;" text=" " />
-      <Label layoutX="191.0" layoutY="215.0" prefHeight="17.0" prefWidth="259.0" style="-fx-background-color: #C0C0C0;" text=" " />
-      <Label layoutX="192.0" layoutY="253.0" prefHeight="17.0" prefWidth="259.0" style="-fx-background-color: #C0C0C0;" text=" " />
-      <Label layoutX="192.0" layoutY="288.0" prefHeight="17.0" prefWidth="121.0" style="-fx-background-color: #C0C0C0;" text=" " />
-      <Label layoutX="321.0" layoutY="288.0" text="Código Cartão:" />
-      <Label layoutX="408.0" layoutY="288.0" prefHeight="17.0" prefWidth="42.0" style="-fx-background-color: #c0c0c0;" text=" XXX" />
+      <Pane layoutX="223.0" layoutY="96.0" opacity="0.75" prefHeight="341.0" prefWidth="395.0" style="-fx-background-color: #DCDCDC;">
+         <children>
+            <Button layoutX="218.0" layoutY="275.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" style="-fx-border-color: #C0C0C0;" text="Atualizar">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="29.0" layoutY="275.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="144.0" style="-fx-border-color: #C0C0C0;" text="Doar">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="320.0" layoutY="226.0" prefHeight="17.0" prefWidth="42.0" style="-fx-background-color: #c0c0c0;" text=" XXX" />
+            <Label layoutX="227.0" layoutY="226.0" text="Código Cartão:" />
+            <Label layoutX="91.0" layoutY="226.0" prefHeight="17.0" prefWidth="121.0" style="-fx-background-color: #C0C0C0;" text=" " />
+            <Label layoutX="29.0" layoutY="226.0" text="Nº Cartao:" />
+            <Label layoutX="90.0" layoutY="196.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
+            <Label layoutX="29.0" layoutY="196.0" text="Código:" />
+            <Label layoutX="90.0" layoutY="167.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
+            <Label layoutX="29.0" layoutY="167.0" text="Estado:" />
+            <Label layoutX="90.0" layoutY="134.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
+            <Label layoutX="28.0" layoutY="134.0" text="Cidade:" />
+            <Label layoutX="90.0" layoutY="103.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
+            <Label layoutX="22.0" layoutY="103.0" text="CPF/CNPJ:" />
+            <Label layoutX="91.0" layoutY="68.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
+            <Label layoutX="26.0" layoutY="64.0" prefHeight="25.0" prefWidth="45.0" text="Nome:" />
+         </children></Pane>
+      <Button layoutX="14.0" layoutY="553.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Sair" textAlignment="CENTER" />
+      <Button layoutX="701.0" layoutY="553.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Cancelar Conta" />
    </children>
 </AnchorPane>
