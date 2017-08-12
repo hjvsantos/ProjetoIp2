@@ -19,13 +19,13 @@
             <Text layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" />
             <Text layoutX="14.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CNPJ:" />
             <Text layoutX="14.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade:" />
-            <Text layoutX="14.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado:" />
-            <Text layoutX="14.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número da conta:" />
-            <Text layoutX="14.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Código da Instituição:" />
+            <Text layoutX="15.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado:" />
+            <Text layoutX="15.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número da conta:" />
+            <Text layoutX="12.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Código da Instituição:" />
             <TextField layoutX="101.0" layoutY="34.0" />
             <TextField layoutX="101.0" layoutY="65.0" />
-            <TextField layoutX="111.0" layoutY="75.0" />
-            <TextField layoutX="111.0" layoutY="75.0" />
+            <TextField layoutX="100.0" layoutY="128.0" />
+            <TextField layoutX="101.0" layoutY="96.0" />
          </children>
       </Pane>
       <Text layoutX="246.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro">
