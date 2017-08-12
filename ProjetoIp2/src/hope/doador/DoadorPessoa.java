@@ -9,9 +9,9 @@ public class DoadorPessoa extends Doador{
 	public double rg;
 	public int codDoador;
 	public DoadorPessoa(String nome, int idade, String cpf, double rg, String cidade, String estado, double numeroCartao,
-			int codigoCartao, int codDoador){
+			int codigoCartao, int codDoador,String bandeira, String validade, String senha){
 		
-		super(nome, cidade,estado, numeroCartao, codigoCartao,codDoador);
+		super(nome, cidade,estado, numeroCartao, codigoCartao,codDoador,bandeira,validade,senha);
 		this.idade = idade;
 		this.cpf = cpf;
 		this.rg = rg;
@@ -47,7 +47,7 @@ public class DoadorPessoa extends Doador{
 	}
 
 	public String toString() {
-		return "DoadorPessoa [idade=" + idade + ", cpf=" + cpf + ", rg=" + rg + "]";
+		return "DoadorPessoa [idade=" + idade + ", cpf=" + cpf + ", rg=" + rg + ", codigo=" + codDoador + "]";
 	}
 		
 }

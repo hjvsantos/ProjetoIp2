@@ -1,6 +1,4 @@
 package hope.doador;
-//Commitando!
-import java.util.Arrays;
 
 public class DoadorEmpresa extends Doador{
 	
@@ -8,9 +6,9 @@ public class DoadorEmpresa extends Doador{
 	public String cnpj;
 	
 	public DoadorEmpresa(String nome, int anoFundacao, String cnpj,int type, int codigoDoador, String cidade, String estado, double numeroCartao,
-			double codigoCartao){
+			double codigoCartao, String bandeira, String validade, String senha){
 		
-		super(nome, cidade,estado, numeroCartao, codigoCartao, type, codigoDoador);
+		super(nome, cidade,estado, numeroCartao, codigoCartao, codigoDoador,bandeira,validade,senha);
 		this.anoFundacao = anoFundacao;
 		this.cnpj = cnpj;	
 	}

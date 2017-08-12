@@ -1,4 +1,4 @@
-package hope.doador.controller;
+/*package hope.doador.controller;
 
 import hope.doador.*;
 import javafx.scene.control.TextField;
@@ -62,3 +62,4 @@ public class CadastrarDoadorController {
 	
 	
 }
+*/
