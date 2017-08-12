@@ -14,14 +14,16 @@
             <Image url="@imagens/admPrincipal.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="293.0" layoutY="121.0" prefHeight="251.0" prefWidth="305.0">
+      <Pane layoutX="275.0" layoutY="94.0" prefHeight="281.0" prefWidth="323.0">
          <children>
-            <Button layoutX="8.0" layoutY="11.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" text="Excluir conta" />
-            <Button layoutX="143.0" layoutY="11.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="141.0" text="Novo cadastro" />
-            <Button layoutX="9.0" layoutY="79.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" text="Excluir doador" />
-            <Button layoutX="143.0" layoutY="79.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="141.0" text="Excluir instituição" />
-            <Button layoutX="9.0" layoutY="147.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="120.0" text="Listar doadores" />
-            <Button layoutX="144.0" layoutY="147.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="141.0" text="Listar instituições" />
+            <Button layoutX="8.0" layoutY="11.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="156.0" text="Excluir conta" />
+            <Button layoutX="174.0" layoutY="10.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="141.0" text="Novo cadastro" />
+            <Button layoutX="9.0" layoutY="79.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="156.0" text="Excluir doador" />
+            <Button layoutX="175.0" layoutY="79.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="141.0" text="Excluir instituição" />
+            <Button layoutX="9.0" layoutY="147.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="156.0" text="Listar doador físico" />
+            <Button layoutX="176.0" layoutY="147.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="141.0" text="Listar instituições" />
+            <Button layoutX="11.0" layoutY="215.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="156.0" text="Listar doador juridico" />
+            <Button layoutX="177.0" layoutY="215.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" text="Sair" />
          </children>
       </Pane>
       <Pane layoutX="13.0" layoutY="128.0" prefHeight="202.0" prefWidth="270.0">
@@ -40,6 +42,5 @@
          <font>
             <Font size="19.0" />
          </font></Text>
-      <Button layoutX="496.0" layoutY="372.0" mnemonicParsing="false" text="Sair" />
    </children>
 </AnchorPane>
