@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class Tela_Principal_Doador_FisicoController {
+public class Tela_Principal_Doador_JuridicoController {
 
 	@FXML
 	private Button bt_atualizar;
@@ -26,10 +26,10 @@ public class Tela_Principal_Doador_FisicoController {
 			if (event.getSource() == bt_atualizar) {
 				stage = (Stage) bt_atualizar.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Atualizar_Doador_Fisico.fxml"));
+						getClass().getResource("/ProjetoIp2/src/gui/Tela_Atualizar_Doador_Juridico.fxml"));
 			} else {
 				stage = (Stage) bt_atualizar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Fisico.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Juridico.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -49,7 +49,7 @@ public class Tela_Principal_Doador_FisicoController {
 						getClass().getResource("/ProjetoIp2/src/gui/Tela_Doacao_Financeira.fxml"));
 			} else {
 				stage = (Stage) bt_doacao_financeira.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Fisico.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Juridico.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -69,7 +69,7 @@ public class Tela_Principal_Doador_FisicoController {
 						getClass().getResource("/ProjetoIp2/src/gui/Tela_Doacao_Produto.fxml"));
 			} else {
 				stage = (Stage) bt_doacao_prod.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Fisico.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Juridico.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -89,7 +89,7 @@ public class Tela_Principal_Doador_FisicoController {
 						getClass().getResource("/ProjetoIp2/src/gui/Tela_Menu_Inicial.fxml"));
 			} else {
 				stage = (Stage) bt_sair.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Fisico.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Juridico.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
