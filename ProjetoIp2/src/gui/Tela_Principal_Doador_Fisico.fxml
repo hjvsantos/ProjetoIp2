@@ -17,12 +17,12 @@
       </ImageView>
       <Pane layoutX="229.0" layoutY="83.0" opacity="0.75" prefHeight="321.0" prefWidth="404.0" style="-fx-background-color: #DCDCDC;">
          <children>
-            <Button layoutX="273.0" layoutY="275.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="124.0" style="-fx-border-color: #C0C0C0;" text="Atualizar">
+            <Button id="bt_atualizar" layoutX="273.0" layoutY="275.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="124.0" style="-fx-border-color: #C0C0C0;" text="Atualizar">
                <cursor>
                   <Cursor fx:constant="CLOSED_HAND" />
                </cursor>
             </Button>
-            <Button layoutX="142.0" layoutY="275.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="124.0" style="-fx-border-color: #C0C0C0;" text="Doação Financeira">
+            <Button id="bt_doacao_financeira" layoutX="142.0" layoutY="275.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="124.0" style="-fx-border-color: #C0C0C0;" text="Doação Financeira">
                <cursor>
                   <Cursor fx:constant="CLOSED_HAND" />
                </cursor>
@@ -41,9 +41,9 @@
             <Label layoutX="22.0" layoutY="60.0" text="CPF/CNPJ:" />
             <Label layoutX="89.0" layoutY="30.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
             <Label layoutX="23.0" layoutY="25.0" prefHeight="25.0" prefWidth="45.0" text="Nome:" />
-            <Button layoutX="14.0" layoutY="276.0" mnemonicParsing="false" text="Doação de Produtos" />
+            <Button id="bt_doacao_prod" layoutX="14.0" layoutY="276.0" mnemonicParsing="false" text="Doação de Produtos" />
          </children></Pane>
-      <Button layoutX="14.0" layoutY="553.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Sair" textAlignment="CENTER" />
+      <Button id="bt_sair" layoutX="14.0" layoutY="553.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Sair" textAlignment="CENTER" />
       <Button layoutX="701.0" layoutY="553.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Cancelar Conta" />
       <Text layoutX="226.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá, doador! Bem vindo a sua Home Page:">
          <font>
