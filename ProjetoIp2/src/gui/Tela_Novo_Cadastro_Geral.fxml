@@ -6,17 +6,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="440.0" prefWidth="636.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="440.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="440.0" fitWidth="636.0" layoutY="3.0">
          <image>
             <Image url="@imagens/cadastro.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="120.0" layoutY="177.0" mnemonicParsing="false" text="Instituição" />
-      <Button layoutX="120.0" layoutY="234.0" mnemonicParsing="false" text="Doador físico" />
-      <Button layoutX="120.0" layoutY="290.0" mnemonicParsing="false" text="Doador jurídico" />
-      <Button layoutX="371.0" layoutY="387.0" mnemonicParsing="false" text="Sair" />
+      <Button id="bt_cadastro_inst" layoutX="120.0" layoutY="177.0" mnemonicParsing="false" text="Instituição" />
+      <Button id="bt_cadastro_doador_fisico" layoutX="120.0" layoutY="234.0" mnemonicParsing="false" text="Doador físico" />
+      <Button id="bt_cadastro_doador_juridico" layoutX="120.0" layoutY="290.0" mnemonicParsing="false" text="Doador jurídico" />
+      <Button id="bt_voltar" layoutX="371.0" layoutY="387.0" mnemonicParsing="false" text="Voltar" />
    </children>
 </AnchorPane>
