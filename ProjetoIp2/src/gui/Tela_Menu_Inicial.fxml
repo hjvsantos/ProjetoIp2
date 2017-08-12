@@ -21,9 +21,9 @@
             <Cursor fx:constant="NW_RESIZE" />
          </cursor>
       </Button>
-      <Button layoutX="307.0" layoutY="493.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="81.0" text="Logar" />
-      <Button layoutX="581.0" layoutY="493.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="66.0" text="Sair" />
-      <Text layoutX="278.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá, junte-se a nós!" wrappingWidth="413.99998474121094">
+      <Button fx:id="menuLogar" layoutX="307.0" layoutY="493.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="81.0" text="Logar" />
+      <Button fx:id="BT_SAIR" layoutX="581.0" layoutY="493.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="66.0" text="Sair" />
+      <Text fx:id="menuCadastrar" layoutX="278.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá, junte-se a nós!" wrappingWidth="413.99998474121094">
          <font>
             <Font name="FreeMono" size="27.0" />
          </font>

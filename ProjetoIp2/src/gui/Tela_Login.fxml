@@ -8,15 +8,15 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="893.0" style="-fx-background-color: #FFDEAD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="978.0" pickOnBounds="true" preserveRatio="true" opacity="0.59">
+      <ImageView fitHeight="600.0" fitWidth="978.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagens/donations.jpg" />
          </image>
       </ImageView>
       <Pane layoutX="259.0" layoutY="137.0" opacity="0.75" prefHeight="240.0" prefWidth="405.0" style="-fx-background-color: #C0C0C0;">
          <children>
-            <Button layoutX="157.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Entrar" />
-            <Button layoutX="157.0" layoutY="206.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cadastrar" />
+            <Button fx:id="bt_entrar" layoutX="157.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Entrar" />
+            <Button fx:id="bt_voltar" layoutX="157.0" layoutY="206.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Voltar" />
             <PasswordField layoutX="88.0" layoutY="114.0" prefHeight="25.0" prefWidth="263.0" />
             <Label layoutX="29.0" layoutY="119.0" text="Senha:" />
             <Label layoutX="28.0" layoutY="56.0" text="CPF/CNPJ:" />
