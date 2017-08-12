@@ -30,10 +30,10 @@
             <Label layoutX="14.0" layoutY="59.0" text="Nome:" />
             <Label layoutX="14.0" layoutY="93.0" text="CPF:" />
             <Label layoutX="14.0" layoutY="125.0" text="Cidade:" />
-            <TextField layoutX="64.0" layoutY="54.0" />
-            <TextField layoutX="64.0" layoutY="88.0" />
-            <TextField layoutX="64.0" layoutY="120.0" />
             <Button layoutX="104.0" layoutY="163.0" mnemonicParsing="false" text="Atualizar" />
+            <Label layoutX="69.0" layoutY="59.0" prefHeight="17.0" prefWidth="168.0" style="-fx-background-color: #c0c0c0;" text=" " />
+            <Label layoutX="69.0" layoutY="93.0" prefHeight="17.0" prefWidth="168.0" style="-fx-background-color: #c0c0c0;" text=" " />
+            <Label layoutX="69.0" layoutY="125.0" prefHeight="17.0" prefWidth="168.0" style="-fx-background-color: #c0c0c0;" />
          </children>
       </Pane>
       <Text layoutX="11.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá, administrador! Bem vindo a central de controle H.O.P.E.">
