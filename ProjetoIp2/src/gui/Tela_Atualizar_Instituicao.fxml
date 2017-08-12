@@ -19,7 +19,7 @@
             <Font size="19.0" />
          </font>
       </Text>
-      <Pane layoutX="90.0" layoutY="104.0" prefHeight="279.0" prefWidth="434.0">
+      <Pane layoutX="91.0" layoutY="81.0" opacity="0.75" prefHeight="316.0" prefWidth="434.0" style="-fx-background-color: #cdcdcd;">
          <children>
             <Text layoutX="17.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" />
             <Text layoutX="18.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CNPJ:" />
@@ -27,15 +27,15 @@
             <Text layoutX="22.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado:" />
             <Text layoutX="23.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número da conta:" />
             <Text layoutX="24.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Código da instituição:" />
-            <Label layoutX="217.0" layoutY="25.0" prefHeight="22.0" prefWidth="141.0" text="Label" />
-            <Label layoutX="217.0" layoutY="61.0" prefHeight="22.0" prefWidth="141.0" text="Label" />
-            <Label layoutX="217.0" layoutY="229.0" text="Label" />
+            <Label layoutX="217.0" layoutY="25.0" prefHeight="22.0" prefWidth="149.0" style="-fx-background-color: #c0c0c0;" text=" " />
+            <Label layoutX="217.0" layoutY="61.0" prefHeight="22.0" prefWidth="149.0" style="-fx-background-color: #c0c0c0;" text=" " />
+            <Label layoutX="217.0" layoutY="229.0" prefHeight="17.0" prefWidth="149.0" style="-fx-background-color: #c0c0c0;" />
             <TextField layoutX="217.0" layoutY="102.0" />
             <TextField layoutX="217.0" layoutY="143.0" />
             <TextField layoutX="217.0" layoutY="185.0" />
+            <Button layoutX="109.0" layoutY="270.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Atualizar" />
+            <Button layoutX="240.0" layoutY="270.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Cancelar" />
          </children>
       </Pane>
-      <Button layoutX="258.0" layoutY="383.0" mnemonicParsing="false" text="Finalizar" />
-      <Button layoutX="524.0" layoutY="383.0" mnemonicParsing="false" text="Sair" />
    </children>
 </AnchorPane>
