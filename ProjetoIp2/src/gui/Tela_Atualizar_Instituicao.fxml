@@ -33,8 +33,8 @@
             <TextField layoutX="217.0" layoutY="102.0" />
             <TextField layoutX="217.0" layoutY="143.0" />
             <TextField layoutX="217.0" layoutY="185.0" />
-            <Button layoutX="109.0" layoutY="270.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Atualizar" />
-            <Button layoutX="240.0" layoutY="270.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Cancelar" />
+            <Button id="bt_atualizar" layoutX="109.0" layoutY="270.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Atualizar" />
+            <Button id="bt_cancelar" layoutX="240.0" layoutY="270.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Cancelar" />
          </children>
       </Pane>
    </children>

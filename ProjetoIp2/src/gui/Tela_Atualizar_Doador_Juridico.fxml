@@ -15,8 +15,8 @@
       </ImageView>
       <Pane layoutX="265.0" layoutY="71.0" opacity="0.75" prefHeight="481.0" prefWidth="376.0" style="-fx-background-color: #DCDCDC;">
          <children>
-            <Button layoutX="218.0" layoutY="418.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cancelar" />
-            <Button layoutX="102.0" layoutY="418.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Atualizar" />
+            <Button id="bt_cancelar" layoutX="218.0" layoutY="418.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cancelar" />
+            <Button id="bt_atualizar" layoutX="102.0" layoutY="418.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Atualizar" />
             <PasswordField layoutX="102.0" layoutY="253.0" prefHeight="25.0" prefWidth="231.0" />
             <Label layoutX="48.0" layoutY="257.0" text="Senha:" />
             <TextField layoutX="102.0" layoutY="212.0" prefHeight="25.0" prefWidth="231.0" />
