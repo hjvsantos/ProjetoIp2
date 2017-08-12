@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -14,7 +15,7 @@
             <Image url="@imagens/tela_prin_doador.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="223.0" layoutY="96.0" opacity="0.75" prefHeight="341.0" prefWidth="395.0" style="-fx-background-color: #DCDCDC;">
+      <Pane layoutX="229.0" layoutY="83.0" opacity="0.75" prefHeight="321.0" prefWidth="404.0" style="-fx-background-color: #DCDCDC;">
          <children>
             <Button layoutX="218.0" layoutY="275.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" style="-fx-border-color: #C0C0C0;" text="Atualizar">
                <cursor>
@@ -26,22 +27,27 @@
                   <Cursor fx:constant="CLOSED_HAND" />
                </cursor>
             </Button>
-            <Label layoutX="320.0" layoutY="226.0" prefHeight="17.0" prefWidth="42.0" style="-fx-background-color: #c0c0c0;" text=" XXX" />
-            <Label layoutX="227.0" layoutY="226.0" text="Código Cartão:" />
-            <Label layoutX="91.0" layoutY="226.0" prefHeight="17.0" prefWidth="121.0" style="-fx-background-color: #C0C0C0;" text=" " />
-            <Label layoutX="29.0" layoutY="226.0" text="Nº Cartao:" />
-            <Label layoutX="90.0" layoutY="196.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
-            <Label layoutX="29.0" layoutY="196.0" text="Código:" />
-            <Label layoutX="90.0" layoutY="167.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
-            <Label layoutX="29.0" layoutY="167.0" text="Estado:" />
-            <Label layoutX="90.0" layoutY="134.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
-            <Label layoutX="28.0" layoutY="134.0" text="Cidade:" />
-            <Label layoutX="90.0" layoutY="103.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
-            <Label layoutX="22.0" layoutY="103.0" text="CPF/CNPJ:" />
-            <Label layoutX="91.0" layoutY="68.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
-            <Label layoutX="26.0" layoutY="64.0" prefHeight="25.0" prefWidth="45.0" text="Nome:" />
+            <Label layoutX="218.0" layoutY="218.0" prefHeight="17.0" prefWidth="42.0" style="-fx-background-color: #c0c0c0;" text=" XXX" />
+            <Label layoutX="95.0" layoutY="219.0" text="Código Cartão:" />
+            <Label layoutX="184.0" layoutY="189.0" prefHeight="17.0" prefWidth="97.0" style="-fx-background-color: #C0C0C0;" text=" " />
+            <Label layoutX="95.0" layoutY="189.0" text="Nº Cartao:" />
+            <Label layoutX="87.0" layoutY="148.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
+            <Label layoutX="22.0" layoutY="149.0" text="Código:" />
+            <Label layoutX="87.0" layoutY="119.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
+            <Label layoutX="23.0" layoutY="121.0" text="Estado:" />
+            <Label layoutX="88.0" layoutY="89.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
+            <Label layoutX="22.0" layoutY="91.0" text="Cidade:" />
+            <Label layoutX="89.0" layoutY="60.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
+            <Label layoutX="22.0" layoutY="60.0" text="CPF/CNPJ:" />
+            <Label layoutX="89.0" layoutY="30.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
+            <Label layoutX="23.0" layoutY="25.0" prefHeight="25.0" prefWidth="45.0" text="Nome:" />
          </children></Pane>
       <Button layoutX="14.0" layoutY="553.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Sair" textAlignment="CENTER" />
       <Button layoutX="701.0" layoutY="553.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Cancelar Conta" />
+      <Text layoutX="226.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá, doador! Bem vindo a sua Home Page:">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
