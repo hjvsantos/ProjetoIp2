@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="565.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TableView layoutX="136.0" layoutY="81.0" prefHeight="391.0" prefWidth="549.0">
@@ -15,7 +14,7 @@
           <TableColumn minWidth="0.0" prefWidth="129.0" text="Nome" />
         </columns>
       </TableView>
-      <Button layoutX="381.0" layoutY="489.0" mnemonicParsing="false" text="Voltar" />
+      <Button id="bt_voltar" layoutX="381.0" layoutY="489.0" mnemonicParsing="false" text="Voltar" />
       <Text layoutX="262.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de todos os doadores jurídicos cadastrados:" />
    </children>
 </AnchorPane>

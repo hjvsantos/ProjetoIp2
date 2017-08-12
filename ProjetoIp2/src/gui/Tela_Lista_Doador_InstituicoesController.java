@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class Tela_Lista_Doador_PessoaController {
+public class Tela_Lista_Doador_InstituicoesController {
 
 	@FXML
 	private Button bt_voltar;
@@ -23,7 +23,7 @@ public class Tela_Lista_Doador_PessoaController {
 						getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Adm.fxml"));
 			} else {
 				stage = (Stage) bt_voltar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Lista_Doador_Pessoa.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Lista_Doador_Instituicoes.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
