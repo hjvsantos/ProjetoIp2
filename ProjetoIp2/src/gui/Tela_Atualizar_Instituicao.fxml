@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="437.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="437.0" fitWidth="618.0" layoutX="-1.0" opacity="0.35">
+         <image>
+            <Image url="@imagens/background-color-hands.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="204.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atualize suas informações">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Pane layoutX="90.0" layoutY="104.0" prefHeight="279.0" prefWidth="434.0">
+         <children>
+            <Text layoutX="17.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" />
+            <Text layoutX="18.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CNPJ:" />
+            <Text layoutX="19.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade:" />
+            <Text layoutX="22.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado:" />
+            <Text layoutX="23.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número da conta:" />
+            <Text layoutX="24.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Código da instituição:" />
+            <Label layoutX="217.0" layoutY="25.0" prefHeight="22.0" prefWidth="141.0" text="Label" />
+            <Label layoutX="217.0" layoutY="61.0" prefHeight="22.0" prefWidth="141.0" text="Label" />
+            <Label layoutX="217.0" layoutY="229.0" text="Label" />
+            <TextField layoutX="217.0" layoutY="102.0" />
+            <TextField layoutX="217.0" layoutY="143.0" />
+            <TextField layoutX="217.0" layoutY="185.0" />
+         </children>
+      </Pane>
+      <Button layoutX="258.0" layoutY="383.0" mnemonicParsing="false" text="Finalizar" />
+      <Button layoutX="524.0" layoutY="383.0" mnemonicParsing="false" text="Sair" />
+   </children>
+</AnchorPane>
