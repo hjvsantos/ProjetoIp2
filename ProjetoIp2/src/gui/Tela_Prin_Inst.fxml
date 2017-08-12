@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -28,6 +29,11 @@
             <Label layoutX="171.0" layoutY="223.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
             <Label layoutX="171.0" layoutY="261.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
             <Label layoutX="171.0" layoutY="302.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
+            <Text layoutX="138.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá, parceiro! Bem vindo a sua Home Page:">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
          </children></Pane>
       <Button layoutX="14.0" layoutY="521.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Sair" />
       <Button layoutX="763.0" layoutY="521.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Cancelar Conta" />
