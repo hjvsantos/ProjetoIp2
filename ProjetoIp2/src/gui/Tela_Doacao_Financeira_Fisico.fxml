@@ -17,7 +17,7 @@
       </ImageView>
       <Pane layoutX="229.0" layoutY="83.0" opacity="0.75" prefHeight="321.0" prefWidth="404.0" style="-fx-background-color: #DCDCDC;">
          <children>
-            <Button layoutX="29.0" layoutY="275.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="144.0" style="-fx-border-color: #C0C0C0;" text="Doar">
+            <Button id="bt_doar" layoutX="29.0" layoutY="275.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="144.0" style="-fx-border-color: #C0C0C0;" text="Doar">
                <cursor>
                   <Cursor fx:constant="CLOSED_HAND" />
                </cursor>
@@ -33,7 +33,7 @@
             <Label layoutX="22.0" layoutY="60.0" text="Instituição:" />
             <Label layoutX="89.0" layoutY="30.0" prefHeight="17.0" prefWidth="272.0" style="-fx-background-color: #C0C0C0;" text=" " />
             <Label layoutX="23.0" layoutY="25.0" prefHeight="25.0" prefWidth="45.0" text="Doador:" />
-            <Button layoutX="233.0" layoutY="276.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" text="Cancelar" textAlignment="CENTER" />
+            <Button id="bt_cancelar" layoutX="233.0" layoutY="276.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" text="Cancelar" textAlignment="CENTER" />
             <TextField layoutX="199.0" layoutY="215.0" prefHeight="25.0" prefWidth="68.0" />
             <ChoiceBox layoutX="88.0" layoutY="56.0" prefHeight="17.0" prefWidth="272.0" />
             <Label layoutX="202.0" layoutY="89.0" text="Cidade:" />

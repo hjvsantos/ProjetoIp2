@@ -8,25 +8,24 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class Tela_Confirma_Remocao_UsuarioController {
-
+public class Tela_Doacao_Financeira_JuridicoController {
 	@FXML
-	private Button bt_sim;
+	private Button bt_doar;
 	
 	@FXML
-	private Button bt_nao;
+	private Button bt_cancelar;
 	
 	public void Cancelar(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
-			if (event.getSource() == bt_nao) {
-				stage = (Stage) bt_nao.getScene().getWindow();
+			if (event.getSource() == bt_cancelar) {
+				stage = (Stage) bt_cancelar.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Adm.fxml"));
+						getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Juridico.fxml"));
 			} else {
-				stage = (Stage) bt_nao.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Confirma_Remocao_Usuario.fxml"));
+				stage = (Stage) bt_cancelar.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Doacao_Financeira_Juridico.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
