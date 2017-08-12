@@ -13,7 +13,7 @@
             <Image url="@imagens/donations.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="259.0" layoutY="137.0" prefHeight="240.0" prefWidth="405.0" style="-fx-background-color: #C0C0C0;">
+      <Pane layoutX="259.0" layoutY="137.0" opacity="0.75" prefHeight="240.0" prefWidth="405.0" style="-fx-background-color: #C0C0C0;">
          <children>
             <Button layoutX="157.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Entrar" />
             <Button layoutX="157.0" layoutY="206.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cadastrar" />

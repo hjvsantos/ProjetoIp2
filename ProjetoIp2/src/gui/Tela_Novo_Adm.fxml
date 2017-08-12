@@ -13,7 +13,7 @@
             <Image url="@imagens/new_adm.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="219.0" layoutY="117.0" prefHeight="367.0" prefWidth="409.0" style="-fx-background-color: #C0C0C0;">
+      <Pane layoutX="219.0"  opacity="0.75" layoutY="117.0" prefHeight="367.0" prefWidth="409.0" style="-fx-background-color: #C0C0C0;">
          <children>
             <Button layoutX="169.0" layoutY="286.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cadastrar" />
             <Button layoutX="167.0" layoutY="328.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cancelar" />
