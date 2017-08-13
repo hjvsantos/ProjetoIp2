@@ -28,7 +28,7 @@
             <TextField layoutX="101.0" layoutY="96.0" />
             <TextField layoutX="172.0" layoutY="159.0" prefHeight="25.0" prefWidth="97.0" />
             <TextField layoutX="173.0" layoutY="195.0" prefHeight="25.0" prefWidth="97.0" />
-            <Button layoutX="95.0" layoutY="233.0" mnemonicParsing="false" text="Finalizar cadastro" />
+            <Button id="bt_cadastrar" layoutX="95.0" layoutY="233.0" mnemonicParsing="false" text="Finalizar cadastro" />
          </children>
       </Pane>
       <Text layoutX="246.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro">
@@ -36,6 +36,6 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Button layoutX="484.0" layoutY="347.0" mnemonicParsing="false" text="Sair" />
+      <Button id="bt_cancelar" layoutX="484.0" layoutY="347.0" mnemonicParsing="false" text="Sair" />
    </children>
 </AnchorPane>
