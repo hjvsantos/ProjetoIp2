@@ -15,8 +15,8 @@
       </ImageView>
       <Pane layoutX="264.0" layoutY="70.0" opacity="0.75" prefHeight="413.0" prefWidth="376.0" style="-fx-background-color: #DCDCDC;">
          <children>
-            <Button layoutX="244.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cancelar" />
-            <Button layoutX="102.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cadastrar" />
+            <Button id="bt_voltar" layoutX="244.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Voltar" />
+            <Button id="bt_cadastrar" layoutX="102.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cadastrar" />
             <TextField layoutX="138.0" layoutY="212.0" prefHeight="25.0" prefWidth="149.0" />
             <Label layoutX="29.0" layoutY="216.0" text="Validade:" />
             <TextField layoutX="138.0" layoutY="174.0" prefHeight="25.0" prefWidth="149.0" />
@@ -34,3 +34,4 @@
       </Pane>
    </children>
 </AnchorPane>
+

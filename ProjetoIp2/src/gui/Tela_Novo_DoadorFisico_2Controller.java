@@ -8,25 +8,25 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class Tela_Novo_Doador_JuridicoController {
+public class Tela_Novo_DoadorFisico_2Controller {
 	
 	@FXML
-	private Button bt_proximo;
+	private Button bt_cadastrar;
 	
 	@FXML
 	private Button bt_voltar;
-	
-	public void Proximo(ActionEvent event) {
+
+	public void Cadastrar(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
-			if (event.getSource() == bt_proximo) {
-				stage = (Stage) bt_proximo.getScene().getWindow();
+			if (event.getSource() == bt_cadastrar) {
+				stage = (Stage) bt_cadastrar.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Juridico.fxml"));
+						getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Fisico.fxml"));
 			} else {
-				stage = (Stage) bt_proximo.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Doador_Juridico.fxml"));
+				stage = (Stage) bt_cadastrar.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_DoadorFisico_2.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -43,10 +43,10 @@ public class Tela_Novo_Doador_JuridicoController {
 			if (event.getSource() == bt_voltar) {
 				stage = (Stage) bt_voltar.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Cadastro_Geral.fxml"));
+						getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Doador_Fisico.fxml"));
 			} else {
 				stage = (Stage) bt_voltar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Doador_Juridico.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_DoadorFisico_2.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -55,5 +55,6 @@ public class Tela_Novo_Doador_JuridicoController {
 			e.printStackTrace();
 		}
 	}
-
+	
+	
 }
