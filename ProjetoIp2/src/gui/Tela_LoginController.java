@@ -28,8 +28,8 @@ public class Tela_LoginController {
 	private Button bt_voltar;
 	
 	/*
-	public void setPrincipal(Principal principal){
-		this.principal = principal;
+	public void setMestre(Mestre mestre){
+		this.mestre = mestre;
 	}
 	
 	
