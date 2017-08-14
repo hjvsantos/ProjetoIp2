@@ -9,8 +9,8 @@
 
 <AnchorPane layoutX="-88.0" layoutY="-228.0" prefHeight="200.0" prefWidth="340.0" style="-fx-background-color: #dcdcdc;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
          <children>
-            <Button id="bt_sim" layoutX="209.0" layoutY="145.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="SIM" />
-            <Button id="bt_nao" layoutX="98.0" layoutY="145.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="NÃO" />
+            <Button id="bt_sim" layoutX="209.0" layoutY="145.0" mnemonicParsing="false" onAction="#Cancelar" prefHeight="25.0" prefWidth="50.0" text="SIM" />
+            <Button id="bt_nao" layoutX="98.0" layoutY="145.0" mnemonicParsing="false" onAction="#Cancelar" prefHeight="25.0" prefWidth="50.0" text="NÃO" />
             <ImageView fitHeight="63.0" fitWidth="91.0" layoutX="139.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@imagens/51850.png" />
