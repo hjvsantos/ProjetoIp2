@@ -65,6 +65,21 @@ public class Mestre extends Application {
 		}
 	}
 	
+	public void showLoginAdm(){
+		try{
+			FXMLLoader loader = new FXMLLoader();
+			//TODO conferir se o path ta correto!!
+			loader.setLocation(Mestre.class.getResource("/hope/gui/Tela_Login_Adm.fxml"));
+			AnchorPane Login = (AnchorPane) loader.load();
+
+			rootLayout.setCenter(Login);
+			Tela_LoginController controller = loader.getController();
+			controller.setMestre(this);
+		} catch (IOException e){
+			e.printStackTrace();
+		}
+	}
+	
 	public void Tela_Menu_Inicial(){
 		try{
 			FXMLLoader loader = new FXMLLoader();
@@ -85,6 +100,21 @@ public class Mestre extends Application {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Mestre.class.getResource("/hope/gui/Tela_Login.fxml"));
+			AnchorPane Login = (AnchorPane) loader.load();
+
+			rootLayout.setCenter(Login);
+			Tela_LoginController controller = loader.getController();
+			controller.setMestre(this);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void Tela_Login_Adm() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Mestre.class.getResource("/hope/gui/Tela_Login_Adm.fxml"));
 			AnchorPane Login = (AnchorPane) loader.load();
 
 			rootLayout.setCenter(Login);
