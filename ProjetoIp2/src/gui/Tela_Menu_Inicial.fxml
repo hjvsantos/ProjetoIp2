@@ -16,17 +16,18 @@
             <Image url="@imagens/hope.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="443.0" layoutY="494.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="88.0" text="Cadastrar" textAlignment="JUSTIFY">
+      <Button id="menuCadastrar" layoutX="443.0" layoutY="494.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="88.0" text="Cadastrar" textAlignment="JUSTIFY">
          <cursor>
             <Cursor fx:constant="NW_RESIZE" />
          </cursor>
       </Button>
-      <Button fx:id="menuLogar" layoutX="307.0" layoutY="493.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="81.0" text="Logar" />
-      <Button fx:id="BT_SAIR" layoutX="581.0" layoutY="493.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="66.0" text="Sair" />
+      <Button id="menuLogar" fx:id="menuLogar" layoutX="307.0" layoutY="493.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="81.0" text="Logar" />
+      <Button id="BT_SAIR" fx:id="BT_SAIR" layoutX="581.0" layoutY="493.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="66.0" text="Sair" />
       <Text fx:id="menuCadastrar" layoutX="278.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá, junte-se a nós!" wrappingWidth="413.99998474121094">
          <font>
             <Font name="FreeMono" size="27.0" />
          </font>
       </Text>
+      <Button id="bt_adm" layoutX="14.0" layoutY="568.0" mnemonicParsing="false" text="ADM" />
    </children>
 </AnchorPane>

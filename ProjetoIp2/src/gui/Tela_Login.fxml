@@ -15,12 +15,12 @@
       </ImageView>
       <Pane layoutX="259.0" layoutY="137.0" opacity="0.75" prefHeight="240.0" prefWidth="405.0" style="-fx-background-color: #C0C0C0;">
          <children>
-            <Button fx:id="bt_entrar" layoutX="157.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Entrar" />
-            <Button fx:id="bt_voltar" layoutX="157.0" layoutY="206.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Voltar" />
-            <PasswordField layoutX="88.0" layoutY="114.0" prefHeight="25.0" prefWidth="263.0" />
+            <Button id="bt_entrar" fx:id="bt_entrar" layoutX="157.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Entrar" />
+            <Button id="bt_voltar" fx:id="bt_voltar" layoutX="157.0" layoutY="206.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Voltar" />
+            <PasswordField id="ps_senha" layoutX="88.0" layoutY="114.0" prefHeight="25.0" prefWidth="263.0" />
             <Label layoutX="29.0" layoutY="119.0" text="Senha:" />
-            <Label layoutX="28.0" layoutY="56.0" text="CPF/CNPJ:" />
-            <TextField layoutX="88.0" layoutY="52.0" prefHeight="25.0" prefWidth="263.0" />
+            <Label layoutX="28.0" layoutY="56.0" text="Código:" />
+            <TextField id="tx_cod" layoutX="88.0" layoutY="52.0" prefHeight="25.0" prefWidth="263.0" />
          </children>
       </Pane>
       <Button layoutX="794.0" layoutY="561.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Sair" />

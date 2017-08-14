@@ -20,13 +20,15 @@ public class Tela_Menu_InicialController {
 	@FXML
 	private Button BT_SAIR;
 	
+	@FXML
+	private Button bt_adm;
 	
 	private void fecharTelaAction(){
 	    Stage stage = (Stage) BT_SAIR.getScene().getWindow(); 
 	    stage.close(); 
 	}
 	
-	public void AbrirLogin(ActionEvent event) {
+	public void AbrirLoginUsuarios(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
@@ -46,7 +48,27 @@ public class Tela_Menu_InicialController {
 		}
 	}
 	
-	public void AbrirCadastro(ActionEvent event) {
+	public void AbrirLoginAdm(ActionEvent event) {
+		Parent root;
+		Stage stage;
+		try {
+			if (event.getSource() == bt_adm) {
+				stage = (Stage) bt_adm.getScene().getWindow();
+				root = FXMLLoader.load(
+						getClass().getResource("/ProjetoIp2/src/gui/Tela_Login_Adm.fxml"));
+			} else {
+				stage = (Stage) menuLogar.getScene().getWindow();
+				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Menu_Inicial.fxml"));
+			}
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void AbrirCadastroUsuarios(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {

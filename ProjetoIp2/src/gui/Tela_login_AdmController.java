@@ -1,7 +1,5 @@
 package gui;
 
-
-import aplicacao.Fachada;
 import hope.excecao.ErroDeNegocioExcecao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,14 +10,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import aplicacao.Fachada;
 
-public class Tela_LoginController {
+public class Tela_login_AdmController {
 	
 	private Mestre mestre;
 	Fachada fachada = Fachada.getInstance();
 
 	@FXML
-	private TextField tx_cod;
+	private TextField tx_cpf;
 	@FXML
 	private PasswordField ps_senha;
 	@FXML
@@ -37,43 +36,22 @@ public class Tela_LoginController {
 		this.setMestre(mestre.getInstance());
 	}
 	
-	
 	@FXML
 	public void acessarLogin(ActionEvent event) throws ErroDeNegocioExcecao {
 
 		try {
-			 if (this.fachada.efetuarLoginUsuarios(tx_cod.getAnchor(), ps_senha.getText()) == 1) {
+			 if (this.fachada.efetuarLoginAdm(tx_cpf.getText(), ps_senha.getText()) == 1) {
 				Parent root;
 				Stage stage;
 
 				stage = (Stage) bt_entrar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Fisico.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Adm.fxml"));
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
-			}else if (this.fachada.efetuarLoginUsuarios(tx_cod.getAnchor(), ps_senha.getText()) == -1) {
-				Parent root;
-				Stage stage;
-
-				stage = (Stage) bt_entrar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Juridico.fxml"));
-				Scene scene = new Scene(root);
-				stage.setScene(scene);
-
-			} else if (this.fachada.efetuarLoginUsuarios(tx_cod.getAnchor(), ps_senha.getText()) == -2) {
-				Parent root;
-				Stage stage;
-
-				stage = (Stage) bt_entrar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Instituicao.fxml"));
-				Scene scene = new Scene(root);
-				stage.setScene(scene);
-
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
+			} 
+			}catch (Exception e) {
+				e.printStackTrace();
+			}	
 	}
 	
 	public void botaoVoltar(ActionEvent event) {
@@ -86,7 +64,7 @@ public class Tela_LoginController {
 						getClass().getResource("/ProjetoIp2/src/gui/Tela_Menu_Inicial.fxml"));
 			} else {
 				stage = (Stage) bt_voltar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Login.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Login_Adm.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -95,5 +73,4 @@ public class Tela_LoginController {
 			e.printStackTrace();
 		}
 	}
-	
 }
