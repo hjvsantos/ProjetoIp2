@@ -11,9 +11,10 @@ public class Instituicao implements Serializable {
 	private String estado;
 	private double numeroConta;
 	private int codInstituicao;
+	private String senha;
 	
 	public Instituicao(String nome, String cnpj, String cidade, String estado,
-			double numeroConta, int codInstituicao) {
+			double numeroConta, int codInstituicao, String senha) {
 		
 		this.setNome(nome);
 		this.setCnpj(cnpj);
@@ -21,8 +22,23 @@ public class Instituicao implements Serializable {
 		this.setEstado(estado);
 		this.setNumeroConta(numeroConta);
 		this.setCodInstituicao(codInstituicao);
+		this.setSenha(senha);
 	}
 	
+	
+	
+	public String getSenha() {
+		return senha;
+	}
+
+
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+
+
 	public Instituicao(){
 		
 	}
@@ -91,6 +107,7 @@ public class Instituicao implements Serializable {
 				+ "\n Cidade =" + cidade 
 				+ "\n Estado =" + estado
 				+ "\n Número da conta =" + numeroConta 
+				+ "\n Senha =" + senha
 				+ "\n Código ="+ codInstituicao;
 	}	
 		

@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 public class Tela_LoginController {
 	
-	//private Principal principal;
+	private Mestre mestre;
 	Fachada fachada = Fachada.getInstance();
 
 	@FXML
@@ -27,15 +27,16 @@ public class Tela_LoginController {
 	@FXML
 	private Button bt_voltar;
 	
-	/*
+	
 	public void setMestre(Mestre mestre){
 		this.mestre = mestre;
 	}
 	
-	
+	/*
 	public void acessarLogin() throws ErroDeNegocioExcecao{
-		this.setPrincipal(principal.getInstance());
+		this.setMestre(mestre.getInstance());
 	}
+	
 	
 	@FXML
 	public void acessarLogin(ActionEvent event) throws ErroDeNegocioExcecao {
