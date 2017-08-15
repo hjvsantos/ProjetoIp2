@@ -18,6 +18,10 @@ public class Adm {
 		this.estado = estado;
 	}
 
+	public Adm() {
+		
+	}
+
 	public String getNome() {
 		return nome;
 	}
