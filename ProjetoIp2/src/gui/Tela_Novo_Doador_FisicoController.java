@@ -46,7 +46,7 @@ public class Tela_Novo_Doador_FisicoController {
 	@FXML private TextField tf_Estado_DoadorFisico;
 	@FXML private TextField tf_NumeroCartao_DoadorFisico;
 	@FXML private TextField tf_CodigoCard_DoadorFisico;
-	@FXML private TextField tf_CodDoador_DoadorFisico;
+	@FXML private Integer tf_CodDoador_DoadorFisico;
 	@FXML private TextField tf_bandeiraCard_DoadorFisico;
 	@FXML private TextField tf_ValidadeCard_DoadorFisico;
 	@FXML private PasswordField ps_Senha_DoadorFisico;
@@ -61,7 +61,7 @@ public class Tela_Novo_Doador_FisicoController {
 		tf_Estado_DoadorFisico.setText(" ");
 		tf_NumeroCartao_DoadorFisico.setText(" ");
 		tf_CodigoCard_DoadorFisico.setText(" ");
-		tf_CodDoador_DoadorFisico.setText(" ");
+		tf_CodDoador_DoadorFisico.intValue();
 		tf_bandeiraCard_DoadorFisico.setText(" ");
 		tf_ValidadeCard_DoadorFisico.setText(" ");
 		ps_Senha_DoadorFisico.setText(" ");
@@ -79,7 +79,7 @@ public class Tela_Novo_Doador_FisicoController {
 		String estado = tf_Estado_DoadorFisico.getText();
 		String numCard = tf_NumeroCartao_DoadorFisico.getText();
 		String codCard = tf_CodigoCard_DoadorFisico.getText();
-		String codDoador = tf_CodDoador_DoadorFisico.getText();
+		Integer codDoador = tf_CodDoador_DoadorFisico.getInteger(nome, tf_CodDoador_DoadorFisico);
 		String bandeira = tf_bandeiraCard_DoadorFisico.getText();
 		String validade = tf_ValidadeCard_DoadorFisico.getText();
 		String senha = ps_Senha_DoadorFisico.getText();
@@ -89,7 +89,7 @@ public class Tela_Novo_Doador_FisicoController {
 				&& (estado != null && estado != " ")
 				&& (numCard != null && numCard != " ")
 				&& (codCard != null && codCard != " ")
-				&& (codDoador != null)
+				&& (codDoador != 0)
 				&& (bandeira != null && bandeira != " ")
 				&& (validade != null && validade != " ")
 				&& (senha != null && senha != " ")) {
