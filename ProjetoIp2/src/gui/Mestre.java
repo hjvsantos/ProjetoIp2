@@ -54,7 +54,7 @@ public class Mestre extends Application {
 		try{
 			FXMLLoader loader = new FXMLLoader();
 			//TODO conferir se o path ta correto!!
-			loader.setLocation(Mestre.class.getResource("/hope/gui/Tela_Login.fxml"));
+			loader.setLocation(Mestre.class.getResource("/ProjetoIp2/src/gui/Tela_Login.fxml"));
 			AnchorPane Login = (AnchorPane) loader.load();
 
 			rootLayout.setCenter(Login);
@@ -69,7 +69,7 @@ public class Mestre extends Application {
 		try{
 			FXMLLoader loader = new FXMLLoader();
 			//TODO conferir se o path ta correto!!
-			loader.setLocation(Mestre.class.getResource("/hope/gui/Tela_Login_Adm.fxml"));
+			loader.setLocation(Mestre.class.getResource("/ProjetoIp2/src/gui/Tela_Login_Adm.fxml"));
 			AnchorPane Login = (AnchorPane) loader.load();
 
 			rootLayout.setCenter(Login);
@@ -83,7 +83,7 @@ public class Mestre extends Application {
 	public void Tela_Menu_Inicial(){
 		try{
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Mestre.class.getResource("/hope/gui/Tela_Menu_Inicial.fxml"));
+			loader.setLocation(Mestre.class.getResource("/ProjetoIp2/src/gui/Tela_Menu_Inicial.fxml"));
 			AnchorPane Login = (AnchorPane) loader.load();
 			//TODO tem que ver se o da gnt ta no anchorPane tb
 			
@@ -99,7 +99,7 @@ public class Mestre extends Application {
 	public void Tela_Login() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Mestre.class.getResource("/hope/gui/Tela_Login.fxml"));
+			loader.setLocation(Mestre.class.getResource("/ProjetoIp2/src/gui/Tela_Login.fxml"));
 			AnchorPane Login = (AnchorPane) loader.load();
 
 			rootLayout.setCenter(Login);
@@ -114,7 +114,7 @@ public class Mestre extends Application {
 	public void Tela_Login_Adm() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Mestre.class.getResource("/hope/gui/Tela_Login_Adm.fxml"));
+			loader.setLocation(Mestre.class.getResource("/ProjetoIp2/src/gui/Tela_Login_Adm.fxml"));
 			AnchorPane Login = (AnchorPane) loader.load();
 
 			rootLayout.setCenter(Login);
@@ -129,7 +129,7 @@ public class Mestre extends Application {
 	public void cadastroAdministrador() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Mestre.class.getResource("/hope/gui/Tela_Novo_Adm.fxml"));
+			loader.setLocation(Mestre.class.getResource("/ProjetoIp2/src/gui/Tela_Novo_Adm.fxml"));
 			AnchorPane Login = (AnchorPane) loader.load();
 
 			rootLayout.setCenter(Login);
