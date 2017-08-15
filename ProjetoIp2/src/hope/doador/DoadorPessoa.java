@@ -8,10 +8,10 @@ public class DoadorPessoa extends Doador{
 	public String cpf;
 	public double rg;
 	public String codDoador;
-	public DoadorPessoa(String nome, int idade, String cpf, double rg, String cidade, String estado, double numeroCartao,
-			int codigoCartao, String codDoador,String bandeira, String validade, String senha){
+	public DoadorPessoa(String nome, int idade, String cpf, double rg, String cidade, String estado, String numeroCartao,
+			String cod_cartao, String codDoador,String bandeira, String validade, String senha){
 		
-		super(nome, cidade,estado, numeroCartao, codigoCartao,codDoador,bandeira,validade,senha);
+		super(nome, cidade,estado, numeroCartao, cod_cartao,codDoador,bandeira,validade,senha);
 		this.idade = idade;
 		this.cpf = cpf;
 		this.rg = rg;

@@ -5,19 +5,19 @@ public class Doador {
 	public String nome;
 	public String cidade;
 	public String estado;
-	private double numeroCartao;
-	private double codigoCartao;
+	private String numeroCartao;
+	private String codigoCartao;
 	private String codigoDoador;
 	private String bandeira;
 	private String validade;
 	private String senha;
 	
-	public Doador(String nome, String cidade, String estado, double numeroCartao, double codigoCartao, String codDoador, String bandeira, String validade, String senha) {
+	public Doador(String nome, String cidade, String estado, String numeroCartao, String cod_cartao, String codDoador, String bandeira, String validade, String senha) {
 		this.nome = nome;
 		this.cidade = cidade;
 		this.estado = estado;
 		this.numeroCartao = numeroCartao;
-		this.codigoCartao = codigoCartao;
+		this.codigoCartao = cod_cartao;
 		this.codigoDoador = codDoador;
 		this.bandeira = bandeira;
 		this.validade = validade;
@@ -84,19 +84,19 @@ public class Doador {
 		this.estado = estado;
 	}
 
-	public double getNumeroCartao() {
+	public String getNumeroCartao() {
 		return numeroCartao;
 	}
 
-	public void setNumeroCartao(double numeroCartao) {
+	public void setNumeroCartao(String numeroCartao) {
 		this.numeroCartao = numeroCartao;
 	}
 
-	public double getCodigoCartao() {
+	public String getCodigoCartao() {
 		return codigoCartao;
 	}
 
-	public void setCodigoCartao(double codigoCartao) {
+	public void setCodigoCartao(String codigoCartao) {
 		this.codigoCartao = codigoCartao;
 	}
 
