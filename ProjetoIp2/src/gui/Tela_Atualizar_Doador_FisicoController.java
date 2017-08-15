@@ -31,7 +31,7 @@ public class Tela_Atualizar_Doador_FisicoController {
 	
 	private Fachada fachada;
 		@FXML
-		public void AtualizarDoadorFisico() {
+		public void atualizarDoadorFisico() {
 			try {
 				this.fachada = Fachada.getInstance();
 				String cpf = this.tf_CPF_DoadorFisico.getText();
