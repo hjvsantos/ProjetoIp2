@@ -93,9 +93,9 @@ public boolean cadastrarDoadorEmpresa(DoadorEmpresa doador){
 }	
 	
 	
-public DoadorEmpresa buscarDoadorEmpresa(String codigo){
+public DoadorEmpresa buscarDoadorEmpresa(int codigo){
 	for(DoadorEmpresa d : this.arrayDoadorEmpresa){
-		if(d.getCodigoDoador().equals(codigo)){
+		if(d.getCodigoDoador() == (codigo)){
 			return d;
 		}
 	}
@@ -116,10 +116,10 @@ public boolean atualizarDoadorEmpresa(DoadorEmpresa novoDoador){
 	return false;
 }
 
-public boolean removerDoadorEmpresa(String codigo){
+public boolean removerDoadorEmpresa(int codigo){
 	int count = 0;
 	for(DoadorEmpresa d : this.arrayDoadorEmpresa){
-		if(d.getCodigoDoador().equals(codigo)){
+		if(d.getCodigoDoador() == (codigo)){
 			this.arrayDoadorEmpresa.remove(d);
 			salvarArquivo();
 			return true;
@@ -132,18 +132,5 @@ public boolean removerDoadorEmpresa(String codigo){
 public ArrayList<DoadorEmpresa> listar(){
 	return this.arrayDoadorEmpresa;
 }
-
-@Override
-public DoadorEmpresa buscarDoadorEmpresa(int codigo) {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-@Override
-public boolean removerDoadorEmpresa(int codigo) {
-	// TODO Auto-generated method stub
-	return false;
-}
-
 
 }
