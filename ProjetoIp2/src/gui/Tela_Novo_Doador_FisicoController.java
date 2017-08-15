@@ -3,7 +3,6 @@ package gui;
 import java.awt.TextField;
 
 import aplicacao.Fachada;
-import hope.doador.ControladorDoadorPessoa;
 import hope.doador.DoadorPessoa;
 import hope.excecao.ErroDeNegocioExcecao;
 import javafx.event.ActionEvent;
