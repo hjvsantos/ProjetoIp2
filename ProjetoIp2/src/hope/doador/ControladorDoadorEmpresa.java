@@ -1,5 +1,5 @@
 package hope.doador;
-//Commitando!
+
 import java.util.ArrayList;
 
 import hope.excecao.ErroDeNegocioExcecao;
@@ -18,10 +18,10 @@ public class ControladorDoadorEmpresa {
 		return instance;
 	}
 	
-	private boolean existe(String codigo) {
+	private boolean existe(int codigo) {
 		ArrayList<DoadorEmpresa> resultado = this.repositorioDE.listar();
 		for(DoadorEmpresa d : resultado){
-			if(d.getCodigoDoador().equals(codigo)){
+			if(d.getCodigoDoador() == codigo){
 				return true;
 			}
 		}
@@ -36,8 +36,8 @@ public class ControladorDoadorEmpresa {
 		}
 	}
 	
-	public DoadorEmpresa buscarDoadorEmpresa(int codigo) throws ErroDeNegocioExcecao{
-		DoadorEmpresa resultado = this.repositorioDE.buscarDoadorEmpresa(codigo);
+	public DoadorEmpresa buscarDoadorEmpresa(int cod) throws ErroDeNegocioExcecao{
+		DoadorEmpresa resultado = this.repositorioDE.buscarDoadorEmpresa(cod);
 		return resultado;
 	}
 	

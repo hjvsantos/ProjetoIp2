@@ -91,9 +91,9 @@ public class RepositorioDoadorPessoa implements IRepositorioDoadorPessoa, Serial
 	    return true;
 	}
 
-	public DoadorPessoa buscarDoadorPessoa (String codigo) {
+	public DoadorPessoa buscarDoadorPessoa (int codigo) {
 		for(DoadorPessoa d : this.arrayDoadorPessoa){
-			if(d.getCodigoDoador().equals(codigo)){
+			if(d.getCodigoDoador() == codigo){
 				return d;
 			}
 		}
@@ -115,10 +115,10 @@ public class RepositorioDoadorPessoa implements IRepositorioDoadorPessoa, Serial
 		return false;
 	}
 	
-	public boolean removerDoadorPessoa(String codigo){
+	public boolean removerDoadorPessoa(int codigo){
 		int count = 0;
 		for(DoadorPessoa d : this.arrayDoadorPessoa){
-			if(d.getCodigoDoador().equals(codigo)){
+			if(d.getCodigoDoador() == (codigo)){
 				this.arrayDoadorPessoa.remove(d);
 				salvarArquivo();
 				return true;
@@ -130,17 +130,5 @@ public class RepositorioDoadorPessoa implements IRepositorioDoadorPessoa, Serial
 	
 	public ArrayList<DoadorPessoa> listar(){
 		return this.arrayDoadorPessoa;
-	}
-
-	@Override
-	public DoadorPessoa buscarDoadorPessoa(int codigo) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean removerDoadorPessoa(int codigo) {
-		// TODO Auto-generated method stub
-		return false;
 	}
 }

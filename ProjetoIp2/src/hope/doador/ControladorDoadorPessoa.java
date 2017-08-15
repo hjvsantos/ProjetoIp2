@@ -24,10 +24,10 @@ public class ControladorDoadorPessoa {
 		return instance;
 	}
 	
-	private boolean existe(String codigo) {
+	private boolean existe(int i) {
 		ArrayList<DoadorPessoa> resultado = this.repositorioDoador.listar();
 		for(DoadorPessoa d : resultado){
-			if(d.getCodDoador().equals(codigo)){
+			if(d.getCodDoador() == i){
 				return true;
 			}
 		}
@@ -42,8 +42,8 @@ public class ControladorDoadorPessoa {
 		}
 	}
 	
-	public DoadorPessoa buscarDoadorPessoa(int codigo) throws ErroDeNegocioExcecao{
-		DoadorPessoa resultado = this.repositorioDoador.buscarDoadorPessoa(codigo);
+	public DoadorPessoa buscarDoadorPessoa(int cod) throws ErroDeNegocioExcecao{
+		DoadorPessoa resultado = this.repositorioDoador.buscarDoadorPessoa(cod);
 		return resultado;
 	}
 	
