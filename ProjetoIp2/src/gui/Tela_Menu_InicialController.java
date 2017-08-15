@@ -1,7 +1,5 @@
 package gui;
 
-import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,16 +14,15 @@ public class Tela_Menu_InicialController {
 	private Button menuLogar;
 	@FXML
 	private Button menuCadastrar;
-	
 	@FXML
-	private Button BT_SAIR;
-	
+	private Button bt_sair;
 	@FXML
 	private Button bt_adm;
 	
-	private void fecharTelaAction(){
-	    Stage stage = (Stage) BT_SAIR.getScene().getWindow(); 
-	    stage.close(); 
+	private Mestre mestre;
+	
+	public void setMestre(Mestre mestre){
+		this.mestre = mestre;
 	}
 	
 	public void AbrirLoginUsuarios(ActionEvent event) {
@@ -86,6 +83,11 @@ public class Tela_Menu_InicialController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void fecharTelaAction(){
+	    Stage stage = (Stage) bt_sair.getScene().getWindow(); 
+	    stage.close(); 
 	}
 
 }
