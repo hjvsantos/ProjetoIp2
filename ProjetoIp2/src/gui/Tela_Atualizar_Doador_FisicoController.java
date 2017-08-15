@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 //import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -71,7 +73,7 @@ public class Tela_Atualizar_Doador_FisicoController {
 		    		 this.tf_codCard_DoadorFisico.setEditable(false);
 		    		 Alert alerta = new Alert(AlertType.ERROR);
 		    		 alerta.setTitle("ERRO!");
-		    		 alerta.setHeaderText("Erro Usuário");
+		    		 alerta.setHeaderText("Erro Usuï¿½rio");
 		    		 alerta.setContentText("Usuario nao encontrado!");
 		    		 alerta.showAndWait();
 		    	 }
