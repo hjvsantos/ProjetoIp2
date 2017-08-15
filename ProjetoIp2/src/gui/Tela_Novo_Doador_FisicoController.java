@@ -113,7 +113,7 @@ private ControladorDoadorPessoa cdp;
 		}
 	}
 	
-	public void Voltar(ActionEvent event) {
+	public void voltarDF(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
