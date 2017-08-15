@@ -49,11 +49,11 @@ public class Tela_Atualizar_InstituicaoController {
 	@FXML
 	private Label lb_senha;
 	
-	/*Instituicao inst = new Instituicao(lb_nome.toString(), lb_cpnj.toString(), tx_cidade.getText(), tx_estado.getText(), Double.valueOf(tx_numero.getText()), Integer.valueOf( lb_codigo.toString()), lb_senha.toString());
+	Instituicao inst = new Instituicao(lb_nome.toString(), lb_cpnj.toString(), tx_cidade.getText(), tx_estado.getText(), Double.valueOf(tx_numero.getText()), Integer.valueOf( lb_codigo.toString()), lb_senha.toString());
 	
 	public void editar(Action event){
 		try{
-			if (this.fachada.atualizarInstituicao(inst) == true) {
+				this.fachada.atualizarInstituicao(inst); 
 				Parent root;
 				Stage stage;
 
@@ -61,12 +61,12 @@ public class Tela_Atualizar_InstituicaoController {
 				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Institução.fxml"));
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
-				}
+				
 			}catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-	}*/
+	}
 	
 	public void Cancelar(ActionEvent event) {
 		Parent root;

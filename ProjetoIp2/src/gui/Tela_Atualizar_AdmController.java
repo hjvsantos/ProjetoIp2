@@ -7,8 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -51,18 +49,6 @@ public class Tela_Atualizar_AdmController {
 	    		 this.tf_Estado_Adm.setText(admin.getEstado());
 	    		 this.tf_Senha_Adm.setText(admin.getSenha());
 	    	 }
-	    	 else
-	    	 {
-	    		 this.tf_Nome_Adm.setEditable(false);
-	    		 this.tf_Cidade_Adm.setEditable(false);
-	    		 this.tf_Estado_Adm.setEditable(false);
-	    		 this.tf_Senha_Adm.setEditable(false);
-	    		 Alert alerta = new Alert(AlertType.ERROR);
-	    		 alerta.setTitle("ERRO!");
-	    		 alerta.setHeaderText("Erro Usuário");
-	    		 alerta.setContentText("Usuario nao encontrado!");
-	    		 alerta.showAndWait();
-	    	 }
 	     }
 	     catch(Exception e) {
 	    	 e.printStackTrace();
@@ -72,24 +58,20 @@ public class Tela_Atualizar_AdmController {
 	
 	@FXML
 	public void AtualizarAdm() {
-		try {
-			this.fachada = Fachada.getInstance();
-			String cpf = this.tf_CPF_Adm.getText();
-			String nome = this.tf_Nome_Adm.getText();
-			String cidade = this.tf_Cidade_Adm.getText();
-			String estado = this.tf_Estado_Adm.getText();
-			String senha = this.tf_Senha_Adm.getText();
-			Adm admin = new Adm(cpf, nome, cidade, estado, senha);
-			admin.setCpf(cpf);
-			admin.setNome(nome);
-			admin.setCidade(cidade);
-			admin.setEstado(estado);
-			admin.setSenha(senha);
-			this.fachada.atualizarAdm(admin);
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
+		try{
+			Adm adm = new Adm(tf_Nome_Adm.getText(), tf_CPF_Adm.getText(), tf_Senha_Adm.getText(), tf_Cidade_Adm.getText(), tf_Estado_Adm.getText());
+			this.fachada.atualizarAdm(adm); 
+			Parent root;
+			Stage stage;
+
+			stage = (Stage) bt_atualizar.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Adm.fxml"));
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			
+		}catch (Exception e) {
+		e.printStackTrace();
+	}
 	}
 		
 		
