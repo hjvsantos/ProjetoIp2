@@ -67,7 +67,7 @@ public class Tela_Nova_InstituicaoController {
 		} catch (Exception e){
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Error");
-			alert.setHeaderText("InformaÃ§Ãµes invÃ¡lidas");
+			alert.setHeaderText("Informações inválidas");
 			alert.setContentText(e.getMessage());
 			alert.showAndWait();
 		}
@@ -82,7 +82,7 @@ public class Tela_Nova_InstituicaoController {
 					|| tf_num_conta.getText().isEmpty()) {
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("Error");
-				alert.setHeaderText("InformaÃ§Ãµes invÃ¡lidas");
+				alert.setHeaderText("Informações inválidas");
 				alert.setContentText("Verifique os campos digitados!");
 				alert.showAndWait();
 
@@ -92,7 +92,7 @@ public class Tela_Nova_InstituicaoController {
 		} catch (NumberFormatException e) {
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Error");
-			alert.setHeaderText("InformaÃ§Ãµes invÃ¡lidas");
+			alert.setHeaderText("Informações inválidas");
 			alert.setContentText("Verifique os campos digitados!");
 			alert.showAndWait();
 		}
