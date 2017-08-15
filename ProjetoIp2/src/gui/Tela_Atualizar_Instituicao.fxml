@@ -27,12 +27,12 @@
             <Text layoutX="22.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado:" />
             <Text layoutX="23.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número da conta:" />
             <Text layoutX="24.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Código da instituição:" />
-            <Label layoutX="217.0" layoutY="25.0" prefHeight="22.0" prefWidth="149.0" style="-fx-background-color: #c0c0c0;" text=" " />
-            <Label layoutX="217.0" layoutY="61.0" prefHeight="22.0" prefWidth="149.0" style="-fx-background-color: #c0c0c0;" text=" " />
-            <Label layoutX="217.0" layoutY="229.0" prefHeight="17.0" prefWidth="149.0" style="-fx-background-color: #c0c0c0;" />
-            <TextField layoutX="217.0" layoutY="102.0" />
-            <TextField layoutX="217.0" layoutY="143.0" />
-            <TextField layoutX="217.0" layoutY="185.0" />
+            <Label id="lb_nome" layoutX="217.0" layoutY="25.0" prefHeight="22.0" prefWidth="149.0" style="-fx-background-color: #c0c0c0;" text=" " />
+            <Label id="lb_cnpj" layoutX="217.0" layoutY="61.0" prefHeight="22.0" prefWidth="149.0" style="-fx-background-color: #c0c0c0;" text=" " />
+            <Label id="lb_codigo" layoutX="217.0" layoutY="229.0" prefHeight="17.0" prefWidth="149.0" style="-fx-background-color: #c0c0c0;" />
+            <TextField id="tx_cidade" layoutX="217.0" layoutY="102.0" />
+            <TextField id="tx_estado" layoutX="217.0" layoutY="143.0" />
+            <TextField id="tx_numero" layoutX="217.0" layoutY="185.0" />
             <Button id="bt_atualizar" layoutX="109.0" layoutY="270.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Atualizar" />
             <Button id="bt_cancelar" layoutX="240.0" layoutY="270.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Cancelar" />
          </children>
