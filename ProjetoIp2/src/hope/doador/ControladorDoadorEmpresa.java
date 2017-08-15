@@ -18,10 +18,10 @@ public class ControladorDoadorEmpresa {
 		return instance;
 	}
 	
-	private boolean existe(int codigo) {
+	private boolean existe(String codigo) {
 		ArrayList<DoadorEmpresa> resultado = this.repositorioDE.listar();
 		for(DoadorEmpresa d : resultado){
-			if(d.getCodigoDoador() == codigo){
+			if(d.getCodigoDoador().equals(codigo)){
 				return true;
 			}
 		}

@@ -7,9 +7,9 @@ public class DoadorPessoa extends Doador{
 	public int idade;
 	public String cpf;
 	public double rg;
-	public int codDoador;
+	public String codDoador;
 	public DoadorPessoa(String nome, int idade, String cpf, double rg, String cidade, String estado, double numeroCartao,
-			int codigoCartao, int codDoador,String bandeira, String validade, String senha){
+			int codigoCartao, String codDoador,String bandeira, String validade, String senha){
 		
 		super(nome, cidade,estado, numeroCartao, codigoCartao,codDoador,bandeira,validade,senha);
 		this.idade = idade;
@@ -18,7 +18,7 @@ public class DoadorPessoa extends Doador{
 		this.codDoador = codDoador;
 	}
 
-	public int getCodDoador() {
+	public String getCodDoador() {
 		return codDoador;
 	}
 

@@ -24,10 +24,10 @@ public class ControladorDoadorPessoa {
 		return instance;
 	}
 	
-	private boolean existe(int codigo) {
+	private boolean existe(String codigo) {
 		ArrayList<DoadorPessoa> resultado = this.repositorioDoador.listar();
 		for(DoadorPessoa d : resultado){
-			if(d.getCodDoador() == codigo){
+			if(d.getCodDoador().equals(codigo)){
 				return true;
 			}
 		}

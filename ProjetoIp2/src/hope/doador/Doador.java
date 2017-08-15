@@ -7,18 +7,18 @@ public class Doador {
 	public String estado;
 	private double numeroCartao;
 	private double codigoCartao;
-	private int codigoDoador;
+	private String codigoDoador;
 	private String bandeira;
 	private String validade;
 	private String senha;
 	
-	public Doador(String nome, String cidade, String estado, double numeroCartao, double codigoCartao, int codigoDoador, String bandeira, String validade, String senha) {
+	public Doador(String nome, String cidade, String estado, double numeroCartao, double codigoCartao, String codDoador, String bandeira, String validade, String senha) {
 		this.nome = nome;
 		this.cidade = cidade;
 		this.estado = estado;
 		this.numeroCartao = numeroCartao;
 		this.codigoCartao = codigoCartao;
-		this.codigoDoador = codigoDoador;
+		this.codigoDoador = codDoador;
 		this.bandeira = bandeira;
 		this.validade = validade;
 		this.senha = senha;
@@ -48,7 +48,7 @@ public class Doador {
 		this.senha = senha;
 	}
 
-	public int getCodigoDoador() {
+	public String getCodigoDoador() {
 	return codigoDoador;
 	}
 

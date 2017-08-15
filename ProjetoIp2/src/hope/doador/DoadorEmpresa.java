@@ -5,7 +5,7 @@ public class DoadorEmpresa extends Doador{
 	public int anoFundacao;
 	public String cnpj;
 	
-	public DoadorEmpresa(String nome, int anoFundacao, String cnpj,int type, int codigoDoador, String cidade, String estado, double numeroCartao,
+	public DoadorEmpresa(String nome, int anoFundacao, String cnpj,int type, String codigoDoador, String cidade, String estado, double numeroCartao,
 			double codigoCartao, String bandeira, String validade, String senha){
 		
 		super(nome, cidade,estado, numeroCartao, codigoCartao, codigoDoador,bandeira,validade,senha);
