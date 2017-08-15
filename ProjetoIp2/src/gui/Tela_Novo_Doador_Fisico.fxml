@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="893.0" style="-fx-background-color: #FFDEAD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="893.0" style="-fx-background-color: #FFDEAD;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="600.0" fitWidth="893.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagens/hands.jpeg" />
          </image>
       </ImageView>
-      <Pane layoutX="264.0" layoutY="70.0" opacity="0.75" prefHeight="413.0" prefWidth="376.0" style="-fx-background-color: #DCDCDC;">
+      <Pane layoutX="264.0" layoutY="70.0" opacity="0.75" prefHeight="476.0" prefWidth="376.0" style="-fx-background-color: #DCDCDC;">
          <children>
-            <Button id="bt_voltar" layoutX="244.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Voltar" />
-            <Button id="bt_proximo" layoutX="102.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Próximo" />
+            <Button id="bt_voltar" layoutX="224.0" layoutY="411.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Voltar" />
+            <Button id="bt_proximo" layoutX="86.0" layoutY="411.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cadastre-se" />
             <PasswordField id="ps_senha" layoutX="102.0" layoutY="253.0" prefHeight="25.0" prefWidth="231.0" />
             <Label layoutX="48.0" layoutY="257.0" text="Senha:" />
             <TextField id="tx_estado" layoutX="102.0" layoutY="212.0" prefHeight="25.0" prefWidth="231.0" />
@@ -32,6 +35,14 @@
                   <Image url="@imagens/users.png" />
                </image>
             </ImageView>
+            <Label layoutX="48.0" layoutY="295.0" prefHeight="17.0" prefWidth="76.0" text="Nº do cartão:" />
+            <Label layoutX="48.0" layoutY="338.0" prefHeight="17.0" prefWidth="96.0" text="Codigo do cartao:" />
+            <Label layoutX="233.0" layoutY="338.0" prefHeight="17.0" prefWidth="55.0" text="Validade:" />
+            <Label layoutX="49.0" layoutY="372.0" text="Bandeira:" />
+            <TextField layoutX="128.0" layoutY="291.0" prefHeight="25.0" prefWidth="204.0" />
+            <TextField layoutX="150.0" layoutY="334.0" prefHeight="25.0" prefWidth="76.0" />
+            <TextField layoutX="288.0" layoutY="334.0" prefHeight="25.0" prefWidth="76.0" />
+            <TextField layoutX="114.0" layoutY="368.0" prefHeight="25.0" prefWidth="216.0" />
          </children>
       </Pane>
    </children>
