@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.TextField;
 
+import aplicacao.Fachada;
 import hope.doador.ControladorDoadorPessoa;
 import hope.doador.DoadorPessoa;
 import hope.excecao.ErroDeNegocioExcecao;
@@ -36,7 +37,7 @@ public class Tela_Novo_Doador_FisicoController {
 	@FXML
 	private TextField tx_estado;
 	
-	private ControladorDoadorPessoa cdp;
+	private Fachada cdp;
 	
 	@FXML private TextField tf_Nome_DoadorFisico;
 	@FXML private Integer tf_Idade_DoadorFisico;
@@ -70,7 +71,7 @@ public class Tela_Novo_Doador_FisicoController {
 	
 	@FXML 
 	private void cadastrarDoadorFisico() {
-		cdp = ControladorDoadorPessoa.getInstance();
+		cdp = Fachada.getInstance();
 		String nome = tf_Nome_DoadorFisico.getText();
 		String cpf = tf_CPF_DoadorFisico.getText();
 		Integer idade = tf_Idade_DoadorFisico.getInteger(nome, tf_Idade_DoadorFisico); 
