@@ -19,9 +19,6 @@ import javafx.stage.Stage;
 public class Tela_Novo_Doador_FisicoController {
 	
 	@FXML
-	private Button bt_;
-	
-	@FXML
 	private Button bt_voltar;
 	
 	@FXML
@@ -39,7 +36,7 @@ public class Tela_Novo_Doador_FisicoController {
 	@FXML
 	private TextField tx_estado;
 	
-private ControladorDoadorPessoa cdp;
+	private ControladorDoadorPessoa cdp;
 	
 	@FXML private TextField tf_Nome_DoadorFisico;
 	@FXML private Integer tf_Idade_DoadorFisico;
@@ -47,8 +44,8 @@ private ControladorDoadorPessoa cdp;
 	@FXML private Double tf_RG_DoadorFisico;
 	@FXML private TextField tf_Cidade_DoadorFisico;
 	@FXML private TextField tf_Estado_DoadorFisico;
-	@FXML private Double tf_NumeroCartao_DoadorFisico;
-	@FXML private Integer tf_CodigoCard_DoadorFisico;
+	@FXML private TextField tf_NumeroCartao_DoadorFisico;
+	@FXML private TextField tf_CodigoCard_DoadorFisico;
 	@FXML private TextField tf_CodDoador_DoadorFisico;
 	@FXML private TextField tf_bandeiraCard_DoadorFisico;
 	@FXML private TextField tf_ValidadeCard_DoadorFisico;
@@ -62,8 +59,8 @@ private ControladorDoadorPessoa cdp;
 		tf_RG_DoadorFisico.doubleValue();
 		tf_Cidade_DoadorFisico.setText(" ");
 		tf_Estado_DoadorFisico.setText(" ");
-		tf_NumeroCartao_DoadorFisico.doubleValue();
-		tf_CodigoCard_DoadorFisico.intValue();
+		tf_NumeroCartao_DoadorFisico.setText(" ");
+		tf_CodigoCard_DoadorFisico.setText(" ");
 		tf_CodDoador_DoadorFisico.setText(" ");
 		tf_bandeiraCard_DoadorFisico.setText(" ");
 		tf_ValidadeCard_DoadorFisico.setText(" ");
@@ -80,8 +77,8 @@ private ControladorDoadorPessoa cdp;
 		Double RG = tf_RG_DoadorFisico.doubleValue(); 
 		String cidade = tf_Cidade_DoadorFisico.getText();
 		String estado = tf_Estado_DoadorFisico.getText();
-		Double numCard = tf_NumeroCartao_DoadorFisico.doubleValue();
-		Integer codCard = tf_CodigoCard_DoadorFisico.getInteger(cpf, tf_CodigoCard_DoadorFisico);
+		String numCard = tf_NumeroCartao_DoadorFisico.getText();
+		String codCard = tf_CodigoCard_DoadorFisico.getText();
 		String codDoador = tf_CodDoador_DoadorFisico.getText();
 		String bandeira = tf_bandeiraCard_DoadorFisico.getText();
 		String validade = tf_ValidadeCard_DoadorFisico.getText();
@@ -90,8 +87,8 @@ private ControladorDoadorPessoa cdp;
 				&& (idade != null) && (RG != null)
 				&& (cidade != null && cidade != " ")
 				&& (estado != null && estado != " ")
-				&& (numCard != null)
-				&& (codCard != null)
+				&& (numCard != null && numCard != " ")
+				&& (codCard != null && codCard != " ")
 				&& (codDoador != null)
 				&& (bandeira != null && bandeira != " ")
 				&& (validade != null && validade != " ")
