@@ -17,16 +17,16 @@
          <children>
             <Button id="bt_voltar" layoutX="244.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Voltar" />
             <Button id="bt_proximo" layoutX="102.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Próximo" />
-            <PasswordField layoutX="102.0" layoutY="253.0" prefHeight="25.0" prefWidth="231.0" />
+            <PasswordField id="ps_senha" layoutX="102.0" layoutY="253.0" prefHeight="25.0" prefWidth="231.0" />
             <Label layoutX="48.0" layoutY="257.0" text="Senha:" />
-            <TextField layoutX="102.0" layoutY="212.0" prefHeight="25.0" prefWidth="231.0" />
+            <TextField id="tx_estado" layoutX="102.0" layoutY="212.0" prefHeight="25.0" prefWidth="231.0" />
             <Label layoutX="44.0" layoutY="216.0" text="Estado:" />
-            <TextField layoutX="102.0" layoutY="174.0" prefHeight="25.0" prefWidth="231.0" />
+            <TextField id="tx_cidade" layoutX="102.0" layoutY="174.0" prefHeight="25.0" prefWidth="231.0" />
             <Label layoutX="43.0" layoutY="178.0" text="Cidade:" />
-            <TextField layoutX="102.0" layoutY="139.0" prefHeight="25.0" prefWidth="231.0" />
+            <TextField id="tx_cpf" layoutX="102.0" layoutY="139.0" prefHeight="25.0" prefWidth="231.0" />
             <Label layoutX="46.0" layoutY="143.0" prefHeight="17.0" prefWidth="39.0" text="CPF:" />
             <Label layoutX="48.0" layoutY="105.0" text="Nome:" />
-            <TextField layoutX="102.0" layoutY="101.0" prefHeight="25.0" prefWidth="231.0" />
+            <TextField id="tx_nome" layoutX="102.0" layoutY="101.0" prefHeight="25.0" prefWidth="231.0" />
             <ImageView fitHeight="62.0" fitWidth="78.0" layoutX="171.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@imagens/users.png" />

@@ -69,6 +69,7 @@ public class Tela_Atualizar_AdmController {
 	     }
 	}
 	
+	
 	@FXML
 	public void AtualizarAdm() {
 		try {
