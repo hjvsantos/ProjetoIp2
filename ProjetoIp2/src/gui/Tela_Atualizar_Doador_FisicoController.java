@@ -69,11 +69,11 @@ public class Tela_Atualizar_Doador_FisicoController {
 		    		 this.tf_validadeCard_DoadorFisico.setEditable(false);
 		    		 this.tf_cardNnumber_DoadorFisico.setEditable(false);
 		    		 this.tf_codCard_DoadorFisico.setEditable(false);
-		    		/* Alert alerta = new Alert(AlertType.ERROR);
+		    		 Alert alerta = new Alert(AlertType.ERROR);
 		    		 alerta.setTitle("ERRO!");
 		    		 alerta.setHeaderText("Erro Usuário");
 		    		 alerta.setContentText("Usuario nao encontrado!");
-		    		 alerta.showAndWait();*/
+		    		 alerta.showAndWait();
 		    	 }
 		     }
 		     catch(Exception e) {
