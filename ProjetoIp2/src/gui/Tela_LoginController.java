@@ -32,11 +32,11 @@ public class Tela_LoginController {
 		this.mestre = mestre;
 	}
 	
-	
+	/*
 	public void acessarLogin() throws ErroDeNegocioExcecao{
 		this.setMestre(mestre.getInstance());
 	}
-	
+	*/
 	
 	@FXML
 	public void acessarLogin(ActionEvent event) throws ErroDeNegocioExcecao {
