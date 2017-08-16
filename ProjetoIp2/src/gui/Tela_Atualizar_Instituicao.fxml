@@ -40,7 +40,7 @@
             <Button id="bt_atualizar" layoutX="110.0" layoutY="295.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Atualizar" />
             <Button id="bt_cancelar" layoutX="237.0" layoutY="295.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Cancelar" />
             <Label layoutX="24.0" layoutY="260.0" text="Senha:" />
-            <PasswordField fx:id="ps_senha_Instituicao" layoutX="74.0" layoutY="256.0" />
+            <PasswordField fx:id="ps_senha_Instituicao" layoutX="73.0" layoutY="256.0" />
          </children>
       </Pane>
    </children>
