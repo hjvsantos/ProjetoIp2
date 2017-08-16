@@ -126,7 +126,7 @@ public class Mestre extends Application {
 		}
 	}
 	
-	public void cadastroAdministrador() {
+/*	public void cadastroAdministrador() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Mestre.class.getResource("/ProjetoIp2/src/gui/Tela_Novo_Adm.fxml"));
@@ -246,7 +246,7 @@ public class Mestre extends Application {
 		}
 	}
 	
-	
+	*/
 	
 	public static void main(String[] args) {
 		launch(args);
