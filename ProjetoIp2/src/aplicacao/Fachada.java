@@ -134,7 +134,7 @@ public class Fachada {
 		return instituicao.buscarI(codInstituicao);
 	}
 	
-	public void removerI(int codInstituicao) throws ErroDeNegocioExcecao{
+	public void removerI(String codInstituicao) throws ErroDeNegocioExcecao{
 		this.instituicao.removerI(codInstituicao);
 	}
 	
