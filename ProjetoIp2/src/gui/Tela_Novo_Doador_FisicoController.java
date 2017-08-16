@@ -37,7 +37,14 @@ public class Tela_Novo_Doador_FisicoController {
 	private TextField tx_estado;
 	
 	private Fachada cdp;
+	private Mestre mestre;
 	
+	
+	
+	public void setMestre(Mestre mestre) {
+		this.mestre = mestre;
+	}
+
 	@FXML private TextField tf_Nome_DoadorFisico;
 	@FXML private Integer tf_Idade_DoadorFisico;
 	@FXML private TextField tf_CPF_DoadorFisico;

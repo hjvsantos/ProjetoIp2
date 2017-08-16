@@ -61,7 +61,13 @@ public class Tela_Novo_Doador_JuridicoController {
 	
 	
 	Fachada fachada;
+	private Mestre mestre;
 	
+	
+	public void setMestre(Mestre mestre) {
+		this.mestre = mestre;
+	}
+
 	public void initialize(){
 		fachada = fachada.getInstance();
 	}

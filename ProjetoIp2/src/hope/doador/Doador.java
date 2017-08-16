@@ -51,6 +51,10 @@ public class Doador {
 	public int getCodigoDoador() {
 	return codigoDoador;
 	}
+	
+	public void setCodigoDoador(int i){
+		this.codigoDoador = i;
+	}
 
 	/*public int getTipo() {
 		return tipo;

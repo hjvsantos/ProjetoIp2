@@ -1,19 +1,18 @@
 package gui;
 //teste para Joao
+import hope.instituicao.Instituicao;
+
 import java.io.IOException;
 
-import aplicacao.Fachada;
-import hope.instituicao.Instituicao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import aplicacao.Fachada;
 
 public class Tela_Nova_InstituicaoController {
 
@@ -34,10 +33,15 @@ public class Tela_Nova_InstituicaoController {
 	private Button bt_cancelar;
 	
 	Fachada fachada;
+	private Mestre mestre;
 	
 	@FXML
 	public void initialize(){
 		fachada = fachada.getInstance();
+	}
+	
+	public void setMestre(Mestre mestre){
+		this.mestre = mestre;
 	}
 	
 	public void CadastrarInstituicao(ActionEvent event) throws IOException {
