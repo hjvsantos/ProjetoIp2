@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="437.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="437.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="437.0" fitWidth="618.0" layoutX="-1.0" opacity="0.35">
          <image>
@@ -19,7 +23,7 @@
             <Font size="19.0" />
          </font>
       </Text>
-      <Pane layoutX="91.0" layoutY="81.0" opacity="0.75" prefHeight="316.0" prefWidth="434.0" style="-fx-background-color: #cdcdcd;">
+      <Pane layoutX="91.0" layoutY="53.0" opacity="0.75" prefHeight="344.0" prefWidth="434.0" style="-fx-background-color: #cdcdcd;">
          <children>
             <Text layoutX="17.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" />
             <Text layoutX="18.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CNPJ:" />
@@ -33,8 +37,10 @@
             <TextField id="tx_cidade" layoutX="217.0" layoutY="102.0" />
             <TextField id="tx_estado" layoutX="217.0" layoutY="143.0" />
             <TextField id="tx_numero" layoutX="217.0" layoutY="185.0" />
-            <Button id="bt_atualizar" layoutX="109.0" layoutY="270.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Atualizar" />
-            <Button id="bt_cancelar" layoutX="240.0" layoutY="270.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Cancelar" />
+            <Button id="bt_atualizar" layoutX="110.0" layoutY="295.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Atualizar" />
+            <Button id="bt_cancelar" layoutX="237.0" layoutY="295.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Cancelar" />
+            <Label layoutX="24.0" layoutY="260.0" text="Senha:" />
+            <PasswordField fx:id="ps_senha_Instituicao" layoutX="74.0" layoutY="256.0" />
          </children>
       </Pane>
    </children>
