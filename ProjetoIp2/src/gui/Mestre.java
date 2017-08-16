@@ -130,9 +130,9 @@ public class Mestre extends Application {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Mestre.class.getResource("/ProjetoIp2/src/gui/Tela_Novo_Adm.fxml"));
-			AnchorPane Login = (AnchorPane) loader.load();
+			AnchorPane cadastro = (AnchorPane) loader.load();
 
-			rootLayout.setCenter(Login);
+			rootLayout.setCenter(cadastro);
 			Tela_LoginController controller = loader.getController();
 			controller.setMestre(this);
 
@@ -145,9 +145,9 @@ public class Mestre extends Application {
 		try{
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Mestre.class.getResource("/ProjetoIp2/src/gui/Tela_Nova_Instituicao.fxml"));
-		AnchorPane Login = (AnchorPane) loader.load();
+		AnchorPane cadastro = (AnchorPane) loader.load();
 
-		rootLayout.setCenter(Login);
+		rootLayout.setCenter(cadastro);
 		Tela_Nova_InstituicaoController controller = loader.getController();
 		controller.setMestre(this);
 
@@ -160,9 +160,9 @@ public class Mestre extends Application {
 		try{
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Mestre.class.getResource("/ProjetoIp2/src/gui/Tela_Novo_Doador_Fisico.fxml"));
-		AnchorPane Login = (AnchorPane) loader.load();
+		AnchorPane cadastro = (AnchorPane) loader.load();
 
-		rootLayout.setCenter(Login);
+		rootLayout.setCenter(cadastro);
 		Tela_Novo_Doador_FisicoController controller = loader.getController();
 		controller.setMestre(this);
 
@@ -175,9 +175,9 @@ public class Mestre extends Application {
 		try{
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Mestre.class.getResource("/ProjetoIp2/src/gui/Tela_Novo_Doador_Juridico.fxml"));
-		AnchorPane Login = (AnchorPane) loader.load();
+		AnchorPane cadastro = (AnchorPane) loader.load();
 
-		rootLayout.setCenter(Login);
+		rootLayout.setCenter(cadastro);
 		Tela_Novo_Doador_JuridicoController controller = loader.getController();
 		controller.setMestre(this);
 
@@ -190,6 +190,8 @@ public class Mestre extends Application {
 		launch(args);
 	
 	}
+	
+	
 	
 }
 
