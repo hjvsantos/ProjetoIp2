@@ -13,8 +13,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class Tela_Atualizar_InstituicaoController {
@@ -29,13 +32,13 @@ public class Tela_Atualizar_InstituicaoController {
 	private Button bt_cancelar;
 	
 	@FXML
-	private TextField tx_cidade;
+	private TextField tx_cidade_Instituicao;
 	
 	@FXML
-	private TextField tx_estado;
+	private TextField tx_estado_Instituicao;
 	
 	@FXML
-	private TextField tx_numero;
+	private TextField tx_numeroConta_Instituicao;
 	
 	@FXML
 	private Label lb_nome;
@@ -47,27 +50,69 @@ public class Tela_Atualizar_InstituicaoController {
 	private Label lb_codigo;
 	
 	@FXML
-	private Label lb_senha;
+	private PasswordField ps_senha_Instituicao;
 	
-	/*Instituicao inst = new Instituicao(lb_nome.toString(), lb_cpnj.toString(), tx_cidade.getText(), tx_estado.getText(), Double.valueOf(tx_numero.getText()), Integer.valueOf( lb_codigo.toString()), lb_senha.toString());
+	public void initialize() {
+		 this.tx_cidade_Instituicao.setEditable(false);
+		 this.tx_estado_Instituicao.setEditable(false);
+		 this.tx_numeroConta_Instituicao.setEditable(false);
+	}
 	
-	public void editar(Action event){
-		try{
-			if (this.fachada.atualizarInstituicao(inst) == true) {
-				Parent root;
-				Stage stage;
-
-				stage = (Stage) bt_atualizar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Institução.fxml"));
-				Scene scene = new Scene(root);
-				stage.setScene(scene);
-				}
-			}catch (Exception e) {
+	@FXML
+	public void buscar_Instituicao(){
+	     try {
+	    	 this.fachada = Fachada.getInstance();
+	    	 int codInstituicao = this.lb_codigo.getOffset();
+	    	 Instituicao insti = this.fachada.buscarI(codInstituicao);
+	    	 if(insti != null) {
+	    		 this.tx_cidade_Instituicao.setText(insti.getCidade());
+	    		 this.tx_estado_Instituicao.setText(insti.getEstado());
+	    		 this.tx_numeroConta_Instituicao.setText(insti.getNumeroConta());
+	    		 this.ps_senha_Instituicao.setText(insti.getSenha());
+	    	 }
+	    	 else
+	    	 {
+	    		 this.tx_cidade_Instituicao.setEditable(false);
+	    		 this.tx_estado_Instituicao.setEditable(false);
+	    		 this.tx_numeroConta_Instituicao.setEditable(false);
+	    		 this.ps_senha_Instituicao.setEditable(false);
+	    		 Alert alerta = new Alert(AlertType.ERROR);
+	    		 alerta.setTitle("ERRO!");
+	    		 alerta.setHeaderText("Erro Usuário");
+	    		 alerta.setContentText("Usuario nao encontrado!");
+	    		 alerta.showAndWait();
+	    	 }
+	     }
+	     catch(Exception e) {
+	    	 e.printStackTrace();
+	     }
+	}
+	
+	
+	@FXML
+	public void AtualizarAdm() {
+		try {
+			this.fachada = Fachada.getInstance();
+			String codInsti = this.lb_codigo.toString();
+			buscar_Instituicao();
+			String cnpj = this.lb_cpnj.toString();
+			String nome = this.lb_nome.toString();
+			String cidade = this.tx_cidade_Instituicao.getText();
+			String estado = this.tx_estado_Instituicao.getText();
+			String numeroConta = this.tx_numeroConta_Instituicao.getText();
+			String senha = this.ps_senha_Instituicao.getText();
+			Instituicao novaInsti = new Instituicao(cnpj, nome, cidade, estado, numeroConta, codInsti, senha);
+			novaInsti.setCidade(cidade);
+			novaInsti.setEstado(estado);
+			novaInsti.setNumeroConta(numeroConta);
+			novaInsti.setSenha(senha);
+			this.fachada.atualizarInstituicao(novaInsti);
+		}
+		catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-	}*/
-	
+	}
+
 	public void Cancelar(ActionEvent event) {
 		Parent root;
 		Stage stage;
