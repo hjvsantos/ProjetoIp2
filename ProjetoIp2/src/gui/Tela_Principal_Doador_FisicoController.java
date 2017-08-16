@@ -19,6 +19,12 @@ public class Tela_Principal_Doador_FisicoController {
 	@FXML
 	private Button bt_doacao_prod;
 	
+	private Mestre mestre;
+	
+	public void setMestre(Mestre mestre) {
+		this.mestre = mestre;
+	}
+
 	public void AbrirAtulizar(ActionEvent event) {
 		Parent root;
 		Stage stage;

@@ -186,12 +186,70 @@ public class Mestre extends Application {
 		}
 	}
 	
+	public void homeDoadorFis(){
+		try{
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Mestre.class.getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Fisico.fxml"));
+		AnchorPane home = (AnchorPane) loader.load();
+
+		rootLayout.setCenter(home);
+		Tela_Principal_Doador_FisicoController controller = loader.getController();
+		controller.setMestre(this);
+
+	} catch (IOException e) {
+		e.printStackTrace();
+		}
+	}
+	
+	public void homeDoadorJur(){
+		try{
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Mestre.class.getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Juridico.fxml"));
+		AnchorPane home = (AnchorPane) loader.load();
+
+		rootLayout.setCenter(home);
+		Tela_Principal_Doador_JuridicoController controller = loader.getController();
+		controller.setMestre(this);
+
+	} catch (IOException e) {
+		e.printStackTrace();
+		}
+	}
+	
+	public void homeAdm(){
+		try{
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Mestre.class.getResource("/ProjetoIp2/src/gui/Tela_Principal_Adm.fxml"));
+		AnchorPane home = (AnchorPane) loader.load();
+
+		rootLayout.setCenter(home);
+		Tela_Principal_AdmController controller = loader.getController();
+		controller.setMestre(this);
+
+	} catch (IOException e) {
+		e.printStackTrace();
+		}
+	}
+	
+	public void homeInst(){
+		try{
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Mestre.class.getResource("/ProjetoIp2/src/gui/Tela_Principal_Instituicao.fxml"));
+		AnchorPane home = (AnchorPane) loader.load();
+
+		rootLayout.setCenter(home);
+		Tela_Principal_InstituicaoController controller = loader.getController();
+		controller.setMestre(this);
+
+	} catch (IOException e) {
+		e.printStackTrace();
+		}
+	}
+	
 	public static void main(String[] args) {
 		launch(args);
 	
 	}
-	
-	
 	
 }
 

@@ -37,6 +37,12 @@ public class Tela_Principal_AdmController {
 	@FXML
 	private Button bt_sair;
 	
+	private Mestre mestre;
+	
+	public void setMestre(Mestre mestre){
+		this.mestre = mestre;
+	}
+	
 	private void fecharTelaAction(){
 	    Stage stage = (Stage) bt_sair.getScene().getWindow(); 
 	    stage.close(); 
