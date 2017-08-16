@@ -87,8 +87,7 @@ public class Tela_Atualizar_InstituicaoController {
 	    	 e.printStackTrace();
 	     }
 	}
-	
-	
+
 	@FXML
 	public void AtualizarAdm() {
 		try {
