@@ -51,7 +51,7 @@ public class Tela_Atualizar_InstituicaoController {
 	
 	@FXML
 	private PasswordField ps_senha_Instituicao;
-	
+
 	public void initialize() {
 		 this.tx_cidade_Instituicao.setEditable(false);
 		 this.tx_estado_Instituicao.setEditable(false);
@@ -90,7 +90,7 @@ public class Tela_Atualizar_InstituicaoController {
 
 	
 	@FXML
-	public void AtualizarAdm() {
+	public void atualizar_Instituicao() {
 		try {
 			this.fachada = Fachada.getInstance();
 			String codInsti = this.lb_codigo.toString();
@@ -113,7 +113,7 @@ public class Tela_Atualizar_InstituicaoController {
 		}
 	}
 
-	public void Cancelar(ActionEvent event) {
+	public void cancelar_Instituicao(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
