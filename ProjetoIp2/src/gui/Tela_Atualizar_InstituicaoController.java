@@ -88,6 +88,7 @@ public class Tela_Atualizar_InstituicaoController {
 	     }
 	}
 
+	
 	@FXML
 	public void AtualizarAdm() {
 		try {
