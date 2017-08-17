@@ -125,7 +125,7 @@ public class Tela_Nova_InstituicaoController {
 						getClass().getResource("/gui/Tela_Novo_Cadastro_Geral.fxml"));
 			} else {
 				stage = (Stage) bt_voltar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("//gui/Tela_Nova_Instituicao.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Nova_Instituicao.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
