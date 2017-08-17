@@ -37,6 +37,7 @@ public class Tela_login_AdmController {
 	}
 	*/
 	
+	
 	@FXML
 	public void acessarLogin(ActionEvent event) throws ErroDeNegocioExcecao {
 
@@ -46,7 +47,7 @@ public class Tela_login_AdmController {
 				Stage stage;
 
 				stage = (Stage) bt_entrar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Adm.fxml"));
+				root = FXMLLoader.load(getClass().getResource("gui/Tela_Principal_Adm.fxml"));
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
 			} 
@@ -62,10 +63,10 @@ public class Tela_login_AdmController {
 			if (event.getSource() == bt_voltar) {
 				stage = (Stage) bt_voltar.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Menu_Inicial.fxml"));
+						getClass().getResource("gui/Tela_Menu_Inicial.fxml"));
 			} else {
 				stage = (Stage) bt_voltar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Login_Adm.fxml"));
+				root = FXMLLoader.load(getClass().getResource("gui/Tela_Login_Adm.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
