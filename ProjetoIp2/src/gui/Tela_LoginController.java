@@ -31,6 +31,8 @@ public class Tela_LoginController {
 	private Button bt_entrar;
 	@FXML
 	private Button bt_voltar;
+	@FXML
+	private Button bt_sair;
 	
 	
 	public void setMestre(Mestre mestre){
