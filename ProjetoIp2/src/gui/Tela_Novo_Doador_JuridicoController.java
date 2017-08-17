@@ -94,7 +94,7 @@ public class Tela_Novo_Doador_JuridicoController {
 				validade = tx_validade.getText();
 				
 				
-				DoadorEmpresa doador = new DoadorEmpresa(nome, 0, cnpj, 0, 0, cidade, estado, numerocartao, codigo, bandeira, validade, senha);
+				DoadorEmpresa doador = new DoadorEmpresa(nome, 0, cnpj, 0, cidade, estado, numerocartao, codigo, bandeira, validade, senha);
 				fachada.cadastrarDoadorEmpresa(doador);
 								
 				
