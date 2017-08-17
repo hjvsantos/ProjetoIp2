@@ -22,15 +22,43 @@ public class Doacao {
 	private String valorDoacao;
 	private String numeroCartao;
 	private String codigoCartao;
+	private String tipoDoacao;
+	private String observacao;
 	
 	public Doacao(Categoria categoria){
 		this.categoria = categoria;
 	}
 	
-	/*public Doacao(String Instituicao, ) {
-		
-	}*/
+	public Doacao(String tipo, int quantidade, String obs ) {
+		this.tipoDoacao = tipo;
+		this.quantidade = quantidade;
+		this.observacao = obs;
+	}
 	
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	public String getTipoDoacao() {
+		return tipoDoacao;
+	}
+
+	public void setTipoDoacao(String tipoDoacao) {
+		this.tipoDoacao = tipoDoacao;
+	}
+
+	public String getObservacao() {
+		return observacao;
+	}
+
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
+	}
+
 	public Doacao(){
 		
 	}
@@ -44,7 +72,6 @@ public class Doacao {
 		this.doador = doador;
 		this.codigo = codigo;
 		this.quantidade = quantidade;
-		//this.produto = new Produto[100];
 		this.doacaoDinheiro = doacaoDinheiro;
 	}
 	
