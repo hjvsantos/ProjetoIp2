@@ -20,26 +20,10 @@ public class Tela_Novo_Doador_FisicoController {
 	
 	@FXML
 	private Button bt_voltar;
-	
-	@FXML
-	private PasswordField ps_senha;
-	
-	@FXML
-	private TextField tx_nome;
-	
-	@FXML
-	private TextField tx_cpf;
-	
-	@FXML
-	private TextField tx_cidade;
-	
-	@FXML
-	private TextField tx_estado;
-	
-	private Fachada cdp;
+
 	private Mestre mestre;
 	
-	
+	Fachada fachada = Fachada.getInstance();
 	
 	public void setMestre(Mestre mestre) {
 		this.mestre = mestre;
@@ -77,7 +61,7 @@ public class Tela_Novo_Doador_FisicoController {
 	
 	@FXML 
 	private void cadastrarDoadorFisico() {
-		cdp = Fachada.getInstance();
+		fachada = Fachada.getInstance();
 		String nome = tf_Nome_DoadorFisico.getText();
 		String cpf = tf_CPF_DoadorFisico.getText();
 		Integer idade = tf_Idade_DoadorFisico.getInteger(nome, tf_Idade_DoadorFisico); 
@@ -102,7 +86,7 @@ public class Tela_Novo_Doador_FisicoController {
 				&& (senha != null && senha != " ")) {
 			DoadorPessoa p = new DoadorPessoa(nome,idade,cpf,RG,cidade,estado,numCard,codCard,codDoador, bandeira, validade, senha);
 			try {
-				cdp.cadastrarDoador(p);
+				fachada.cadastrarDoador(p);
 			} catch (ErroDeNegocioExcecao e) {
 				e.printStackTrace();
 			}

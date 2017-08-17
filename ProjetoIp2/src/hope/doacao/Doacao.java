@@ -61,6 +61,58 @@ public class Doacao {
 		
 	}
 
+	public String getNomeDoador() {
+		return nomeDoador;
+	}
+
+	public void setNomeDoador(String nomeDoador) {
+		this.nomeDoador = nomeDoador;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public String getValorDoacao() {
+		return valorDoacao;
+	}
+
+	public void setValorDoacao(String valorDoacao) {
+		this.valorDoacao = valorDoacao;
+	}
+
+	public String getNumeroCartao() {
+		return numeroCartao;
+	}
+
+	public void setNumeroCartao(String numeroCartao) {
+		this.numeroCartao = numeroCartao;
+	}
+
+	public String getCodigoCartao() {
+		return codigoCartao;
+	}
+
+	public void setCodigoCartao(String codigoCartao) {
+		this.codigoCartao = codigoCartao;
+	}
+
+	public void setInstituicao(String instituicao) {
+		Instituicao = instituicao;
+	}
+
 	public int getCodigo() {
 		return codigo;
 	}
@@ -73,7 +125,7 @@ public class Doacao {
 		return Instituicao;
 	}
 
-	public void setCodInstituicao(String codInstituicao) {
+	public void setCodInstituicao(String Instituicao) {
 		this.Instituicao = Instituicao;
 	}
 

@@ -68,9 +68,6 @@ public class Tela_Doacao_Financeira_FisicoController {
 	public void start(Stage primaryStage) throws Exception{
 		window = primaryStage;
 		window.setTitle("Escolha a Instituicao que deseja doar: ");
-		
-		
-		//TODO Add o botão ok na tela
 		button = new Button("OK");
 		
 		ChoiceBox<String> choiceBox = new ChoiceBox<>();
@@ -88,14 +85,15 @@ public class Tela_Doacao_Financeira_FisicoController {
 		window.show();
 	}
 	
-	private void getChoice(ChoiceBox<String> choiceBox){
+	private String getChoice(ChoiceBox<String> choiceBox){
 		String escolha = choiceBox.getValue();
+		return escolha;
 	}
 	
 	public void salvarDoacaoFinanceira() {
 		fachada = Fachada.getInstance();
 		String nome = lb_Doador.getText();
-		String instituicao = this.instituicaoEscolhida.toString();
+		String instituicao = this.getChoice(instituicaoEscolhida);
 		Categoria categoria = Categoria.financeiro;
 		String valor = tf_valorDoacaoFinanceira.getText(); 
 		String cidade = lb_cidadeDoacao.getText();
@@ -126,7 +124,7 @@ public class Tela_Doacao_Financeira_FisicoController {
 		}
 	}
 	
-	public void Cancelar(ActionEvent event) {
+	public void cancelarDoacaoFinanceira(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
