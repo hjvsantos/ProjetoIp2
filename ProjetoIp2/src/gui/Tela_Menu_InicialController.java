@@ -32,10 +32,10 @@ public class Tela_Menu_InicialController {
 			if (event.getSource() == menuLogar) {
 				stage = (Stage) menuLogar.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Login.fxml"));
+						getClass().getResource("/gui/Tela_Login.fxml"));
 			} else {
 				stage = (Stage) menuLogar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Menu_Inicial.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Menu_Inicial.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -52,10 +52,10 @@ public class Tela_Menu_InicialController {
 			if (event.getSource() == bt_adm) {
 				stage = (Stage) bt_adm.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Login_Adm.fxml"));
+						getClass().getResource("/gui/Tela_Login_Adm.fxml"));
 			} else {
 				stage = (Stage) menuLogar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Menu_Inicial.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Menu_Inicial.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -72,10 +72,10 @@ public class Tela_Menu_InicialController {
 			if (event.getSource() == menuCadastrar) {
 				stage = (Stage) menuCadastrar.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Cadastro_Geral.fxml"));
+						getClass().getResource("/gui/Tela_Novo_Cadastro_Geral.fxml"));
 			} else {
 				stage = (Stage) menuCadastrar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Menu_Inicial.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Menu_Inicial.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -83,6 +83,10 @@ public class Tela_Menu_InicialController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void setApp(Mestre mestre){
+		this.mestre = mestre;
 	}
 	
 	private void fecharTelaAction(){
