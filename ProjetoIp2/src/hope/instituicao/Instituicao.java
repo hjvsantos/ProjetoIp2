@@ -25,11 +25,6 @@ public class Instituicao implements Serializable {
 		this.setSenha(senha);
 	}
 	
-	public Instituicao(String nome, String cnpj, String cidade, String estado,
-			double numeroConta){
-		
-	}
-	
 	
 	public String getSenha() {
 		return senha;
