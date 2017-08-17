@@ -43,11 +43,6 @@ public class Tela_Principal_AdmController {
 		this.mestre = mestre;
 	}
 	
-	private void fecharTelaAction(){
-	    Stage stage = (Stage) bt_sair.getScene().getWindow(); 
-	    stage.close(); 
-	}
-	
 	public void AtualizarAdm(ActionEvent event) {
 		Parent root;
 		Stage stage;
@@ -55,10 +50,10 @@ public class Tela_Principal_AdmController {
 			if (event.getSource() == bt_atualizar) {
 				stage = (Stage) bt_atualizar.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Atualizar_Adm.fxml"));
+						getClass().getResource("/gui/Tela_Atualizar_Adm.fxml"));
 			} else {
 				stage = (Stage) bt_atualizar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Adm.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Adm.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -75,10 +70,10 @@ public class Tela_Principal_AdmController {
 			if (event.getSource() == bt_excluirConta) {
 				stage = (Stage) bt_excluirConta.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Confirma_Remocao_Usuario.fxml"));
+						getClass().getResource("/gui/Tela_Confirma_Remocao_Usuario.fxml"));
 			} else {
 				stage = (Stage) bt_excluirConta.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Adm.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Adm.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -95,10 +90,10 @@ public class Tela_Principal_AdmController {
 			if (event.getSource() == bt_excluirDoador) {
 				stage = (Stage) bt_excluirDoador.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Remover_Usuarios.fxml"));
+						getClass().getResource("/gui/Tela_Remover_Usuarios.fxml"));
 			} else {
 				stage = (Stage) bt_excluirDoador.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Adm.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Adm.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -115,10 +110,10 @@ public class Tela_Principal_AdmController {
 			if (event.getSource() == bt_excluirInstituicao) {
 				stage = (Stage) bt_excluirInstituicao.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Remover_Usuarios.fxml"));
+						getClass().getResource("/gui/Tela_Remover_Usuarios.fxml"));
 			} else {
 				stage = (Stage) bt_excluirInstituicao.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Adm.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Adm.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -135,10 +130,10 @@ public class Tela_Principal_AdmController {
 			if (event.getSource() == bt_listarDoadorFisico) {
 				stage = (Stage) bt_listarDoadorFisico.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Lista_Doador_Pessoa.fxml"));
+						getClass().getResource("/gui/Tela_Lista_Doador_Pessoa.fxml"));
 			} else {
 				stage = (Stage) bt_listarDoadorFisico.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Adm.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Adm.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -155,10 +150,10 @@ public class Tela_Principal_AdmController {
 			if (event.getSource() == bt_listarDoadorJuridico) {
 				stage = (Stage) bt_listarDoadorJuridico.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Lista_Doador_Empresa.fxml"));
+						getClass().getResource("/gui/Tela_Lista_Doador_Empresa.fxml"));
 			} else {
 				stage = (Stage) bt_listarDoadorJuridico.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Adm.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Adm.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -175,10 +170,10 @@ public class Tela_Principal_AdmController {
 			if (event.getSource() == bt_listarInstituicoes) {
 				stage = (Stage) bt_listarInstituicoes.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Lista_Instituicoes.fxml"));
+						getClass().getResource("/gui/Tela_Lista_Instituicoes.fxml"));
 			} else {
 				stage = (Stage) bt_listarInstituicoes.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Adm.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Adm.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -195,10 +190,10 @@ public class Tela_Principal_AdmController {
 			if (event.getSource() == bt_novoCadastro) {
 				stage = (Stage) bt_novoCadastro.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Adm.fxml"));
+						getClass().getResource("/gui/Tela_Novo_Adm.fxml"));
 			} else {
 				stage = (Stage) bt_novoCadastro.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Adm.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Adm.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -206,6 +201,11 @@ public class Tela_Principal_AdmController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void fecharTelaAction(){
+	    Stage stage = (Stage) bt_sair.getScene().getWindow(); 
+	    stage.close(); 
 	}
 
 }
