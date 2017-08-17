@@ -1,11 +1,20 @@
 package gui;
 
+import aplicacao.Fachada;
+import hope.doacao.Doacao;
+import hope.excecao.ErroDeNegocioExcecao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Tela_Doacao_Produto_JuridicoController {
