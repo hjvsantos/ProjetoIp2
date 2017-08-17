@@ -75,6 +75,7 @@ public class Doacao {
 		this.doacaoDinheiro = doacaoDinheiro;
 	}
 	
+	
 	public Doacao(String nome, String instituicao, Categoria categoria, String valor, String cidade, String estado,
 			String numCard, String codCard) {
 		this.nomeDoador = nome;
