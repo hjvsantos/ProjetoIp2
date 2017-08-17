@@ -10,11 +10,11 @@ public class Instituicao implements Serializable {
 	private String cidade;
 	private String estado;
 	private String numeroConta;
-	private String codInstituicao;
+	private int codInstituicao;
 	private String senha;
 	
 	public Instituicao(String nome, String cnpj, String cidade, String estado,
-			String numeroConta, String codInstituicao, String senha) {
+			String numeroConta, int codInstituicao, String senha) {
 		
 		this.setNome(nome);
 		this.setCnpj(cnpj);
@@ -47,11 +47,11 @@ public class Instituicao implements Serializable {
 		
 	}
 
-	public String getCodInstituicao() {
+	public int getCodInstituicao() {
 		return codInstituicao;
 	}
 
-	public void setCodInstituicao(String codInstituicao) {
+	public void setCodInstituicao(int codInstituicao) {
 		this.codInstituicao = codInstituicao;
 	}
 

@@ -93,7 +93,7 @@ public class Tela_Atualizar_InstituicaoController {
 	public void atualizar_Instituicao() {
 		try {
 			this.fachada = Fachada.getInstance();
-			String codInsti = this.lb_codigo.toString();
+			int codInsti = Integer.valueOf(this.lb_codigo.toString());
 			buscar_Instituicao();
 			String cnpj = this.lb_cpnj.toString();
 			String nome = this.lb_nome.toString();

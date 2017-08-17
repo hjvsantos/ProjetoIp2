@@ -115,7 +115,7 @@ public class RepositorioInstituicao implements IRepositorioInstituicao, Serializ
 	@Override
 	public Instituicao buscarI(int cod){
 		for(Instituicao i : this.instituicoesArray){
-			if(i.getCodInstituicao().equals(cod)){
+			if(i.getCodInstituicao() == (cod)){
 				return i;
 			}
 		}
@@ -128,10 +128,10 @@ public class RepositorioInstituicao implements IRepositorioInstituicao, Serializ
 	}
 	
 	@Override
-	public boolean removerI(String codInstituicao){
+	public boolean removerI(int codInstituicao){
 		int count = 0;
 		for(Instituicao i : this.instituicoesArray){
-			if(i.getCodInstituicao().equals(codInstituicao)){
+			if(i.getCodInstituicao() == (codInstituicao)){
 				this.instituicoesArray.remove(i);
 				salvarArquivo();
 				return true;
@@ -141,9 +141,4 @@ public class RepositorioInstituicao implements IRepositorioInstituicao, Serializ
 		return false;
 	}
 
-	@Override
-	public Instituicao buscarI(String codInstituicao) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

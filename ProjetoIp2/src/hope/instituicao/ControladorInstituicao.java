@@ -20,10 +20,10 @@ public class ControladorInstituicao {
 		return instance;
 	}
 	
-	private boolean existe(String codInstituicao){
+	private boolean existe(int codInstituicao){
 		ArrayList<Instituicao> resultado = this.repositorioInsti.listarInstituicoes();
 		for(Instituicao teste : resultado){
-			if(teste.getCodInstituicao().equals(codInstituicao)){
+			if(teste.getCodInstituicao() == (codInstituicao)){
 				return true;
 			}
 		}
@@ -52,7 +52,7 @@ public class ControladorInstituicao {
 		return result;
 	}
 	
-	public void removerI(String codInstituicao) throws ErroDeNegocioExcecao{
+	public void removerI(int codInstituicao) throws ErroDeNegocioExcecao{
 		Instituicao insti = this.repositorioInsti.buscarI(codInstituicao);
 		if(insti != null){
 			this.repositorioInsti.removerI(codInstituicao);

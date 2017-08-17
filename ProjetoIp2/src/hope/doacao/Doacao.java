@@ -9,29 +9,37 @@ import hope.instituicao.Instituicao;
 import hope.produto.Produto;
 
 public class Doacao {
-    private String codInstituicao;
+	private String nomeDoador;
+    private String Instituicao;
     private Categoria categoria;
-    // Esses dois atributos embaixo, n seria melhor por cada um na sua respectiva classe n?
     private DoadorEmpresa empresadoadora;
     private DoadorPessoa doador;
+    private String cidade;
+    private String estado;
 	private int quantidade;
-	//Produto[] produto;
 	private double doacaoDinheiro;
 	private int codigo;
+	private String valorDoacao;
+	private String numeroCartao;
+	private String codigoCartao;
 	
 	public Doacao(Categoria categoria){
 		this.categoria = categoria;
 	}
 	
+	/*public Doacao(String Instituicao, ) {
+		
+	}*/
+	
 	public Doacao(){
 		
 	}
 	
-	public Doacao(String codInstituicao, DoadorEmpresa empresadoadora,
+	public Doacao(String Instituicao, DoadorEmpresa empresadoadora,
 			DoadorPessoa doador, int quantidade,
 			double doacaoDinheiro, int codigo) {
 		
-		this.codInstituicao = codInstituicao;
+		this.Instituicao = Instituicao;
 		this.empresadoadora = empresadoadora;
 		this.doador = doador;
 		this.codigo = codigo;
@@ -40,6 +48,19 @@ public class Doacao {
 		this.doacaoDinheiro = doacaoDinheiro;
 	}
 	
+	public Doacao(String nome, String instituicao, Categoria categoria, String valor, String cidade, String estado,
+			String numCard, String codCard) {
+		this.nomeDoador = nome;
+		this.Instituicao = instituicao;
+		this.categoria = categoria;
+		this.valorDoacao =  valor;
+		this.cidade = cidade;
+		this.estado = estado;
+		this.numeroCartao = numCard;
+		this.codigoCartao = codCard;
+		
+	}
+
 	public int getCodigo() {
 		return codigo;
 	}
@@ -48,12 +69,12 @@ public class Doacao {
 		this.codigo = codigo;
 	}
 
-	public String getCodInstituicao() {
-		return codInstituicao;
+	public String getInstituicao() {
+		return Instituicao;
 	}
 
 	public void setCodInstituicao(String codInstituicao) {
-		this.codInstituicao = codInstituicao;
+		this.Instituicao = Instituicao;
 	}
 
 	public DoadorEmpresa getEmpresadoadora() {
@@ -99,7 +120,7 @@ public class Doacao {
 
 	@Override
 	public String toString() {
-		return "Doacao [beneficiado=" + codInstituicao + ", empresadoadora="
+		return "Doacao [beneficiado=" + Instituicao + ", empresadoadora="
 				+ empresadoadora + ", doador=" + doador + ", quantidade="
 				+ quantidade + ", doacaoDinheiro=" + doacaoDinheiro + ", codigo=" + codigo
 				+ "]";

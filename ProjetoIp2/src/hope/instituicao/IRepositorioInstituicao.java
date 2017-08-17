@@ -7,12 +7,10 @@ public interface IRepositorioInstituicao {
 	
 	public boolean atualizarInstituicao(Instituicao novaInsti);
 	
-	public Instituicao buscarI(String codInstituicao);
+	public Instituicao buscarI(int codInstituicao);
 	
 	public ArrayList<Instituicao> listarInstituicoes();
 	
-	public boolean removerI(String codInstituicao);
-
-	Instituicao buscarI(int cod);
+	public boolean removerI(int codInstituicao);
 	
 }

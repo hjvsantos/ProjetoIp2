@@ -34,11 +34,11 @@
             <Label id="lb_nome" layoutX="217.0" layoutY="25.0" prefHeight="22.0" prefWidth="149.0" style="-fx-background-color: #c0c0c0;" text=" " />
             <Label id="lb_cnpj" layoutX="217.0" layoutY="61.0" prefHeight="22.0" prefWidth="149.0" style="-fx-background-color: #c0c0c0;" text=" " />
             <Label id="lb_codigo" layoutX="217.0" layoutY="229.0" prefHeight="17.0" prefWidth="149.0" style="-fx-background-color: #c0c0c0;" />
-            <TextField id="tx_cidade" layoutX="217.0" layoutY="102.0" />
-            <TextField id="tx_estado" layoutX="217.0" layoutY="143.0" />
-            <TextField id="tx_numero" layoutX="217.0" layoutY="185.0" />
-            <Button id="bt_atualizar" layoutX="110.0" layoutY="295.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Atualizar" />
-            <Button id="bt_cancelar" layoutX="237.0" layoutY="295.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Cancelar" />
+            <TextField id="tx_cidade" fx:id="tx_cidade_Instituicao" layoutX="217.0" layoutY="102.0" />
+            <TextField id="tx_estado" fx:id="tx_estado_Insituicao" layoutX="217.0" layoutY="143.0" />
+            <TextField id="tx_numero" fx:id="tx_numeroConta_Instituicao" layoutX="217.0" layoutY="185.0" />
+            <Button id="bt_atualizar" layoutX="110.0" layoutY="295.0" mnemonicParsing="false" onAction="#atualizar_Instituicao" prefHeight="25.0" prefWidth="77.0" text="Atualizar" />
+            <Button id="bt_cancelar" layoutX="237.0" layoutY="295.0" mnemonicParsing="false" onAction="#cancelar_Instituicao" prefHeight="25.0" prefWidth="77.0" text="Cancelar" />
             <Label layoutX="24.0" layoutY="260.0" text="Senha:" />
             <PasswordField fx:id="ps_senha_Instituicao" layoutX="73.0" layoutY="256.0" />
          </children>
