@@ -26,10 +26,10 @@ public class Tela_Novo_Cadastro_GeralController {
 			if (event.getSource() == bt_cadastro_doador_juridico) {
 				stage = (Stage) bt_cadastro_doador_juridico.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Doador_Juridico.fxml"));
+						getClass().getResource("/gui/Tela_Novo_Doador_Juridico.fxml"));
 			} else {
 				stage = (Stage) bt_cadastro_doador_juridico.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Cadastro_Geral.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Novo_Cadastro_Geral.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -46,10 +46,10 @@ public class Tela_Novo_Cadastro_GeralController {
 			if (event.getSource() == bt_cadastro_doador_fisico) {
 				stage = (Stage) bt_cadastro_doador_fisico.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Doador_fisico.fxml"));
+						getClass().getResource("/gui/Tela_Novo_Doador_fisico.fxml"));
 			} else {
 				stage = (Stage) bt_cadastro_doador_fisico.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Cadastro_Geral.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Novo_Cadastro_Geral.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -66,10 +66,10 @@ public class Tela_Novo_Cadastro_GeralController {
 			if (event.getSource() == bt_cadastro_inst) {
 				stage = (Stage) bt_cadastro_inst.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Nova_Instituicao.fxml"));
+						getClass().getResource("/gui/Tela_Nova_Instituicao.fxml"));
 			} else {
 				stage = (Stage) bt_cadastro_inst.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Cadastro_Geral.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Novo_Cadastro_Geral.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
@@ -86,10 +86,10 @@ public class Tela_Novo_Cadastro_GeralController {
 			if (event.getSource() == bt_voltar) {
 				stage = (Stage) bt_voltar.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Cadastro_Geral.fxml"));
+						getClass().getResource("/gui/Tela_Menu_Inicial.fxml"));
 			} else {
 				stage = (Stage) bt_voltar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Cadastro_Geral.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Novo_Cadastro_Geral.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
