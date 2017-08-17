@@ -1,5 +1,5 @@
 package gui;
-//teste para Joao
+
 import hope.instituicao.Instituicao;
 
 import java.io.IOException;
@@ -32,7 +32,7 @@ public class Tela_Nova_InstituicaoController {
 	@FXML
 	private Button bt_cadastrar;
 	@FXML
-	private Button bt_cancelar;
+	private Button bt_voltar;
 	
 	Fachada fachada;
 	private Mestre mestre;
@@ -73,7 +73,7 @@ public class Tela_Nova_InstituicaoController {
 		} catch (Exception e){
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Error");
-			alert.setHeaderText("Informações inválidas");
+			alert.setHeaderText("Informaï¿½ï¿½es invï¿½lidas");
 			alert.setContentText(e.getMessage());
 			alert.showAndWait();
 		}
@@ -88,7 +88,7 @@ public class Tela_Nova_InstituicaoController {
 					|| tf_num_conta.getText().isEmpty()) {
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("Error");
-				alert.setHeaderText("Informações inválidas");
+				alert.setHeaderText("Informaï¿½ï¿½es invï¿½lidas");
 				alert.setContentText("Verifique os campos digitados!");
 				alert.showAndWait();
 
@@ -98,7 +98,7 @@ public class Tela_Nova_InstituicaoController {
 		} catch (NumberFormatException e) {
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Error");
-			alert.setHeaderText("Informações inválidas");
+			alert.setHeaderText("Informaï¿½ï¿½es invï¿½lidas");
 			alert.setContentText("Verifique os campos digitados!");
 			alert.showAndWait();
 		}
@@ -106,16 +106,16 @@ public class Tela_Nova_InstituicaoController {
 	}
 	
 	
-	public void Cancelar(ActionEvent event) {
+	public void Voltar(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
-			if (event.getSource() == bt_cancelar) {
-				stage = (Stage) bt_cancelar.getScene().getWindow();
+			if (event.getSource() == bt_voltar) {
+				stage = (Stage) bt_voltar.getScene().getWindow();
 				root = FXMLLoader.load(
 						getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Cadastro_Geral.fxml"));
 			} else {
-				stage = (Stage) bt_cancelar.getScene().getWindow();
+				stage = (Stage) bt_voltar.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Nova_Instituicao.fxml"));
 			}
 			Scene scene = new Scene(root);
