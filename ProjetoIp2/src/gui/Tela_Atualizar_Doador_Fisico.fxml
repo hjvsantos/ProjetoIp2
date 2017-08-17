@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="893.0" style="-fx-background-color: #FFDEAD;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="893.0" style="-fx-background-color: #FFDEAD;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Tela_Atualizar_Doador_FisicoController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="893.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -18,8 +18,8 @@
       </ImageView>
       <Pane layoutX="265.0" layoutY="22.0" opacity="0.75" prefHeight="563.0" prefWidth="376.0" style="-fx-background-color: #DCDCDC;">
          <children>
-            <Button id="bt_cancelar" layoutX="219.0" layoutY="504.0" mnemonicParsing="false" onAction="#CancelarUpdateDF" prefHeight="25.0" prefWidth="89.0" text="Cancelar" />
-            <Button id="bt_atualizar" layoutX="99.0" layoutY="504.0" mnemonicParsing="false" onAction="#atualizarDoadorFisico" prefHeight="25.0" prefWidth="89.0" text="Atualizar" />
+            <Button fx:id="bt_cancelar" layoutX="219.0" layoutY="504.0" mnemonicParsing="false" onAction="#CancelarUpdateDF" prefHeight="25.0" prefWidth="89.0" text="Cancelar" />
+            <Button fx:id="bt_atualizar" layoutX="99.0" layoutY="504.0" mnemonicParsing="false" onAction="#atualizarDoadorFisico" prefHeight="25.0" prefWidth="89.0" text="Atualizar" />
             <PasswordField fx:id="tf_Senha_DoadorFisico" layoutX="100.0" layoutY="333.0" prefHeight="25.0" prefWidth="231.0" />
             <Label layoutX="48.0" layoutY="337.0" text="Senha:" />
             <TextField fx:id="tf_Estado_DoadorFisico" layoutX="100.0" layoutY="299.0" prefHeight="25.0" prefWidth="231.0" />
@@ -43,7 +43,6 @@
             <TextField fx:id="tf_cardNumber_DoadorFisico" layoutX="132.0" layoutY="372.0" prefHeight="25.0" prefWidth="203.0" />
             <TextField fx:id="tf_validadeCard_DoadorFisico" layoutX="277.0" layoutY="410.0" prefHeight="25.0" prefWidth="62.0" />
             <TextField fx:id="tf_CPF_DoadorFisico" layoutX="101.0" layoutY="189.0" prefHeight="25.0" prefWidth="141.0" />
-            <Button layoutX="266.0" layoutY="147.0" mnemonicParsing="false" onAction="#buscar_DoadorFisico" text="buscar" />
             <Label layoutX="48.0" layoutY="151.0" text="Codigo do Doador:" />
             <TextField fx:id="codDoador_DoadorFisico" layoutX="159.0" layoutY="147.0" prefHeight="25.0" prefWidth="97.0" />
          </children>

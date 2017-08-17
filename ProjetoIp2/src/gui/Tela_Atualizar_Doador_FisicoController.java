@@ -35,13 +35,11 @@ public class Tela_Atualizar_Doador_FisicoController {
 	@FXML
 	private Button bt_cancelar;
 	
-	@FXML
-	private Button bt_buscar_DoadorFisico;
 	
 	private Fachada fachada;
 		
 		
-		@FXML
+		/*@FXML
 		public void buscar_DoadorFisico() {
 			try {
 		    	 this.fachada = Fachada.getInstance();
@@ -81,7 +79,7 @@ public class Tela_Atualizar_Doador_FisicoController {
 		     catch(Exception e) {
 		    	 e.printStackTrace();
 		     }
-		}
+		}*/
 	
 	
 		@FXML
@@ -124,10 +122,10 @@ public class Tela_Atualizar_Doador_FisicoController {
 			if (event.getSource() == bt_cancelar) {
 				stage = (Stage) bt_cancelar.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Fisico.fxml"));
+						getClass().getResource("gui/Tela_Principal_Doador_Fisico.fxml"));
 			} else {
 				stage = (Stage) bt_cancelar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Atualizar_Doador_Fisico.fxml"));
+				root = FXMLLoader.load(getClass().getResource("gui/Tela_Atualizar_Doador_Fisico.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
