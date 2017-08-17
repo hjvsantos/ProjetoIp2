@@ -24,11 +24,17 @@ public class Tela_Doacao_Produto_FisicoController {
 	@FXML
 	private Button bt_doar;
 	
-	@FXML ChoiceBox cb_tipoDoacao;
+	@FXML 
+	private ChoiceBox cb_tipoDoacao;
 	
-	@FXML Integer tf_quantidade;
+	@FXML 
+	private Integer tf_quantidade;
 	
-	@FXML TextField tf_observacao; 
+	@FXML 
+	private TextField tf_observacao;
+	
+	@FXML
+	private Button bt_cancelar;
 	
 	private Fachada fachada;
 	
@@ -100,8 +106,6 @@ public class Tela_Doacao_Produto_FisicoController {
 		}
 	}
 	
-	@FXML
-	private Button bt_cancelar;
 	
 	public void cancelarDoacaoProduto(ActionEvent event) {
 		Parent root;
@@ -110,10 +114,10 @@ public class Tela_Doacao_Produto_FisicoController {
 			if (event.getSource() == bt_cancelar) {
 				stage = (Stage) bt_cancelar.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Fisico.fxml"));
+						getClass().getResource("gui/Tela_Principal_Doador_Fisico.fxml"));
 			} else {
 				stage = (Stage) bt_cancelar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Doacao_Produto_Fisico.fxml"));
+				root = FXMLLoader.load(getClass().getResource("gui/Tela_Doacao_Produto_Fisico.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
