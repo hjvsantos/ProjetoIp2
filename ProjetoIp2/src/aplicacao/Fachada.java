@@ -1,7 +1,6 @@
 package aplicacao;
 
 import java.util.ArrayList;
-
 import hope.administrador.Adm;
 import hope.administrador.ControladorAdm;
 import hope.doacao.ControladorDoacao;

@@ -10,7 +10,6 @@ import hope.instituicao.ControladorInstituicao;
 import hope.instituicao.Instituicao;
 
 
-
 public class LoginController {
 	
 	private ControladorDoadorPessoa doadorFisico;
