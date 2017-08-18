@@ -1,8 +1,9 @@
 package hope.doador;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class DoadorPessoa extends Doador{
+public class DoadorPessoa extends Doador implements Serializable{
 	
 	public int idade;
 	public String cpf;

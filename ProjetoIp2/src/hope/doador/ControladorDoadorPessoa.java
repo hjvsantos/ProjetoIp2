@@ -37,8 +37,9 @@ public class ControladorDoadorPessoa {
 	public void cadastrarDoador(DoadorPessoa doador) throws ErroDeNegocioExcecao{
 		if(doador != null && !this.existe(doador.getCodDoador())){
 			this.repositorioDoador.cadastrarDoadorPessoa(doador);
+			System.out.println(this.repositorioDoador.listar());
 		} else{
-			throw new ErroDeNegocioExcecao("Doador cadastrado com sucesso");
+			throw new ErroDeNegocioExcecao("Erro ao cadastrar Doador");
 		}
 	}
 	
@@ -51,7 +52,7 @@ public class ControladorDoadorPessoa {
 		if(novoDoador != null && this.existe(novoDoador.getCodigoDoador())){
 			this.repositorioDoador.atualizarDoadorPessoa(novoDoador);
 		} else{
-			throw new ErroDeNegocioExcecao("Doador não encontrada!");
+			throw new ErroDeNegocioExcecao("Doador nï¿½o encontrada!");
 		}
 	}
 	

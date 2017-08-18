@@ -1,6 +1,8 @@
 package hope.produto;
 
-public class Diversos extends Produto{
+import java.io.Serializable;
+
+public class Diversos extends Produto implements Serializable{
 
 	private String descricao;
 

@@ -29,28 +29,27 @@ public class Tela_Novo_Doador_FisicoController {
 
 	private Mestre mestre;
 	
-	Fachada fachada;
+	Fachada fachada = Fachada.getInstance();;
 	
 	public void initialize(){
-		 fachada = Fachada.getInstance();
+		
 	}
 	
 	public void setMestre(Mestre mestre) {
 		this.mestre = mestre;
 	}
 
-	@FXML private TextField tf_Nome_DoadorFisico;
-	@FXML private TextField tf_Idade_DoadorFisico;
-	@FXML private TextField tf_CPF_DoadorFisico;
-	@FXML private TextField tf_RG_DoadorFisico;
-	@FXML private TextField tf_Cidade_DoadorFisico;
-	@FXML private TextField tf_Estado_DoadorFisico;
-	@FXML private TextField tf_NumeroCartao_DoadorFisico;
-	@FXML private TextField tf_CodigoCard_DoadorFisico;
-	@FXML private TextField tf_CodDoador_DoadorFisico;
-	@FXML private TextField tf_bandeiraCard_DoadorFisico;
-	@FXML private TextField tf_ValidadeCard_DoadorFisico;
-	@FXML private PasswordField ps_Senha_DoadorFisico;
+	@FXML TextField tf_Nome_DoadorFisico;
+	@FXML TextField tf_Idade_DoadorFisico;
+	@FXML TextField tf_CPF_DoadorFisico;
+	@FXML TextField tf_RG_DoadorFisico;
+	@FXML TextField tf_Cidade_DoadorFisico;
+	@FXML TextField tf_Estado_DoadorFisico;
+	@FXML TextField tf_NumeroCartao_DoadorFisico;
+	@FXML TextField tf_CodigoCard_DoadorFisico;
+	@FXML TextField tf_bandeiraCard_DoadorFisico;
+	@FXML TextField tf_ValidadeCard_DoadorFisico;
+	@FXML PasswordField ps_Senha_DoadorFisico;
 	
 	@FXML 
 	private void cadastrarDoadorFisico() throws IOException {
@@ -67,19 +66,20 @@ public class Tela_Novo_Doador_FisicoController {
 				String estado = tf_Estado_DoadorFisico.getText();
 				String numCard = tf_NumeroCartao_DoadorFisico.getText();
 				String codCard = tf_CodigoCard_DoadorFisico.getText();
-				Integer codDoador = Integer.parseInt(tf_CodDoador_DoadorFisico.getText());
 				String bandeira = tf_bandeiraCard_DoadorFisico.getText();
 				String validade = tf_ValidadeCard_DoadorFisico.getText();
 				String senha = ps_Senha_DoadorFisico.getText();
 		
+				int codDoador;
 				Random random = new Random();
 				codDoador = random.nextInt(100);
 		
 				DoadorPessoa doador = new DoadorPessoa(nome, idade,cpf, RG,cidade,estado,numCard,codCard,codDoador,bandeira,validade,senha);
 				fachada.cadastrarDoador(doador);
+				System.out.println("Teste");
 		
 				stage = (Stage) bt_cadastro_doador_fisico.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Novo_Doador_Fisico.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Doador_Fisico.fxml"));
 		
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
@@ -99,7 +99,7 @@ public class Tela_Novo_Doador_FisicoController {
 			if (tf_Nome_DoadorFisico.getText().isEmpty() || tf_CPF_DoadorFisico.getText().isEmpty()
 					|| tf_Idade_DoadorFisico.getText().isEmpty() ||tf_RG_DoadorFisico.getText().isEmpty() ||tf_Cidade_DoadorFisico.getText().isEmpty()
 					|| tf_Estado_DoadorFisico.getText().isEmpty() || tf_NumeroCartao_DoadorFisico.getText().isEmpty()
-					|| tf_NumeroCartao_DoadorFisico.getText().isEmpty() || tf_CodigoCard_DoadorFisico.getText().isEmpty() || tf_CodDoador_DoadorFisico.getText().isEmpty() 
+					|| tf_NumeroCartao_DoadorFisico.getText().isEmpty() || tf_CodigoCard_DoadorFisico.getText().isEmpty() 
 					|| tf_bandeiraCard_DoadorFisico.getText().isEmpty() || tf_ValidadeCard_DoadorFisico.getText().isEmpty() || ps_Senha_DoadorFisico.getText().isEmpty()) {
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("Error");

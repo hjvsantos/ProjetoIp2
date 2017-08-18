@@ -1,6 +1,8 @@
 package hope.doador;
 
-public class DoadorEmpresa extends Doador{
+import java.io.Serializable;
+
+public class DoadorEmpresa extends Doador implements Serializable{
 	
 	public int anoFundacao;
 	public String cnpj;

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -10,7 +15,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="893.0" style="-fx-background-color: #FFDEAD;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Tela_Novo_Doador_JuridicoController">
+<AnchorPane prefHeight="600.0" prefWidth="893.0" style="-fx-background-color: #FFDEAD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Tela_Novo_Doador_JuridicoController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="893.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,17 +24,17 @@
       </ImageView>
       <Pane layoutX="114.0" layoutY="62.0" opacity="0.75" prefHeight="476.0" prefWidth="666.0" style="-fx-background-color: #DCDCDC;">
          <children>
-            <Button id="bt_voltar" layoutX="404.0" layoutY="424.0" mnemonicParsing="false" onAction="#VoltarDJ" prefHeight="25.0" prefWidth="89.0" text="Voltar" />
-            <Button id="bt_proximo" layoutX="207.0" layoutY="424.0" mnemonicParsing="false" onAction="#cadastrarDoadorJuridico" prefHeight="25.0" prefWidth="89.0" text="Cadastre-se" />
+            <Button  fx:id="bt_voltar" layoutX="404.0" layoutY="424.0" mnemonicParsing="false" onAction="#VoltarDJ" prefHeight="25.0" prefWidth="89.0" text="Voltar" />
+            <Button  fx:id="bt_proximo" layoutX="207.0" layoutY="424.0" mnemonicParsing="false" onAction="#cadastrarDoadorJuridico" prefHeight="25.0" prefWidth="89.0" text="Cadastre-se" />
             <Label layoutX="210.0" layoutY="230.0" text="Senha do login:" />
-            <TextField id="tx_estado" layoutX="459.0" layoutY="139.0" prefHeight="25.0" prefWidth="149.0" />
+            <TextField  fx:id="tx_estado" layoutX="459.0" layoutY="139.0" prefHeight="25.0" prefWidth="149.0" />
             <Label layoutX="375.0" layoutY="143.0" text="Estado:" />
-            <TextField id="tx_cidade" layoutX="102.0" layoutY="174.0" prefHeight="25.0" prefWidth="259.0" />
+            <TextField  fx:id="tx_cidade" layoutX="102.0" layoutY="174.0" prefHeight="25.0" prefWidth="259.0" />
             <Label layoutX="43.0" layoutY="178.0" text="Cidade:" />
-            <TextField id="tx_cnpj" layoutX="102.0" layoutY="139.0" prefHeight="25.0" prefWidth="259.0" />
+            <TextField fx:id="tx_cnpj" layoutX="102.0" layoutY="139.0" prefHeight="25.0" prefWidth="259.0" />
             <Label layoutX="46.0" layoutY="143.0" prefHeight="17.0" prefWidth="39.0" text="CNPJ:" />
             <Label layoutX="48.0" layoutY="105.0" text="Nome:" />
-            <TextField id="tx_nome" layoutX="102.0" layoutY="101.0" prefHeight="25.0" prefWidth="259.0" />
+            <TextField fx:id="tx_nome" layoutX="102.0" layoutY="101.0" prefHeight="25.0" prefWidth="259.0" />
             <ImageView fitHeight="62.0" fitWidth="78.0" layoutX="295.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@imagens/users.png" />
@@ -39,13 +44,13 @@
             <Label layoutX="365.0" layoutY="308.0" prefHeight="17.0" prefWidth="96.0" text="Codigo do cartao:" />
             <Label layoutX="46.0" layoutY="351.0" prefHeight="17.0" prefWidth="55.0" text="Validade:" />
             <Label layoutX="304.0" layoutY="351.0" text="Bandeira:" />
-            <TextField id="tx_ncartao" layoutX="124.0" layoutY="304.0" prefHeight="25.0" prefWidth="204.0" />
-            <TextField id="tx_codcartao" layoutX="467.0" layoutY="304.0" prefHeight="25.0" prefWidth="76.0" />
-            <TextField id="tx_validade" layoutX="124.0" layoutY="347.0" prefHeight="25.0" prefWidth="135.0" />
-            <TextField id="tx_bandeira" layoutX="359.0" layoutY="347.0" prefHeight="25.0" prefWidth="216.0" />
-            <PasswordField id="ps_senha" layoutX="301.0" layoutY="226.0" />
+            <TextField  fx:id="tx_ncartao" layoutX="124.0" layoutY="304.0" prefHeight="25.0" prefWidth="204.0" />
+            <TextField fx:id="tx_codcartao" layoutX="467.0" layoutY="304.0" prefHeight="25.0" prefWidth="76.0" />
+            <TextField fx:id="tx_validade" layoutX="124.0" layoutY="347.0" prefHeight="25.0" prefWidth="135.0" />
+            <TextField  fx:id="tx_bandeira" layoutX="359.0" layoutY="347.0" prefHeight="25.0" prefWidth="216.0" />
+            <PasswordField fx:id="ps_senha" layoutX="301.0" layoutY="226.0" />
             <Label layoutX="370.0" layoutY="105.0" prefHeight="17.0" prefWidth="89.0" text="Ano Fundação:" />
-            <TextField id="tx_ano_fundacao" layoutX="459.0" layoutY="101.0" />
+            <TextField  fx:id="tx_ano_fundacao" layoutX="459.0" layoutY="101.0" />
             <Label layoutX="244.0" layoutY="266.0" text="Dados Financeiros">
                <font>
                   <Font size="21.0" />
@@ -55,4 +60,3 @@
       </Pane>
    </children>
 </AnchorPane>
-

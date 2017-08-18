@@ -18,6 +18,10 @@ public class ControladorDoadorEmpresa {
 		return instance;
 	}
 	
+	private ControladorDoadorEmpresa(){
+		this.repositorioDE = RepositorioDoadorEmpresa.getInstance();
+	}
+	
 	private boolean existe(int codigo) {
 		ArrayList<DoadorEmpresa> resultado = this.repositorioDE.listar();
 		for(DoadorEmpresa d : resultado){
@@ -45,7 +49,7 @@ public class ControladorDoadorEmpresa {
 		if(novoDoador != null && this.existe(novoDoador.getCodigoDoador())){
 			this.repositorioDE.atualizarDoadorEmpresa(novoDoador);
 		} else{
-			throw new ErroDeNegocioExcecao("Empresa/Instituicao Doadora não encontrada!");
+			throw new ErroDeNegocioExcecao("Empresa/Instituicao Doadora nï¿½o encontrada!");
 		}
 	}
 	

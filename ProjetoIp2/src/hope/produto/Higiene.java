@@ -1,6 +1,8 @@
 package hope.produto;
 
-public class Higiene extends Produto {
+import java.io.Serializable;
+
+public class Higiene extends Produto implements Serializable{
 	private String descricao;
 
 	public Higiene(String tipo, int quantidade, String nome, int codigo,

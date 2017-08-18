@@ -23,31 +23,30 @@ import aplicacao.Fachada;
 public class Tela_Nova_InstituicaoController {
 
 	@FXML
-	private TextField tf_nome;
+	TextField tf_nome;
 	@FXML
-	private TextField tf_cnpj;
+	 TextField tf_cnpj;
 	@FXML
-	private TextField tf_cidade;
+	 TextField tf_cidade;
 	@FXML
-	private TextField tf_estado;
+	 TextField tf_estado;
 	@FXML
-	private TextField tf_num_conta;
+	 TextField tf_num_conta;
 	@FXML
-	private PasswordField ps_senha;
+	 PasswordField ps_senha;
 	
 	@FXML
-	private Button bt_cadastrar;
+	 Button bt_cadastrar;
 	@FXML
-	private Button bt_voltar;
+	 Button bt_voltar;
 	
-	Fachada fachada;
+	Fachada fachada  = Fachada.getInstance();
 	//private ControladorInstituicao rep;
 	private Mestre mestre;
 	
 	
 	@FXML
 	public void initialize(){
-		fachada = fachada.getInstance();
 	}
 	
 	public void setMestre(Mestre mestre){
@@ -123,7 +122,7 @@ public class Tela_Nova_InstituicaoController {
 				fachada.cadastrarI(insti);
 				
 				stage = (Stage) bt_cadastrar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("gui/Tela_Principal_Instituicao.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Instituicao.fxml"));
 				
 				Scene scene = new Scene(root);
 				stage.setScene(scene);

@@ -1,6 +1,8 @@
 package hope.produto;
 
-public class Alimento extends Produto{
+import java.io.Serializable;
+
+public class Alimento extends Produto implements Serializable{
 	
 	int validade;
 
