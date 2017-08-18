@@ -21,14 +21,14 @@
             <Text layoutX="14.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade:" />
             <Text layoutX="14.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado:" />
             <Text layoutX="15.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número da conta:" />
+           	<Text layoutX="17.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha:" />
+            <PasswordField layoutX="101.0" layoutY="192.0" />
             <TextField layoutX="101.0" layoutY="34.0" />
             <TextField layoutX="101.0" layoutY="65.0" />
             <TextField layoutX="100.0" layoutY="128.0" />
             <TextField layoutX="101.0" layoutY="96.0" />
             <TextField layoutX="172.0" layoutY="159.0" prefHeight="25.0" prefWidth="97.0" />
             <Button fx:id="bt_cadastrar" layoutX="95.0" layoutY="233.0" mnemonicParsing="false" onAction="#CadastrarInstituicao" text="Finalizar cadastro" />
-            <Text layoutX="17.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha:" />
-            <PasswordField layoutX="101.0" layoutY="192.0" />
          </children>
       </Pane>
       <Text layoutX="246.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro">

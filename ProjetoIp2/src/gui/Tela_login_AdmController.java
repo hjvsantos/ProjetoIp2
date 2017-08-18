@@ -1,5 +1,6 @@
 package gui;
 
+import hope.administrador.Adm;
 import hope.excecao.ErroDeNegocioExcecao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,6 +32,10 @@ public class Tela_login_AdmController {
 		this.mestre = mestre;
 	}
 	
+	public void initialize(){
+		this.mestre = Mestre.getInstance();
+		Adm adm = new Adm("tassia", "023494", "123456", "Recife", "Pernambuco");
+	}
 	
 	@FXML
 	public void acessarLogin(ActionEvent event) throws ErroDeNegocioExcecao {
