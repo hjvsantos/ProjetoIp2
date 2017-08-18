@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class Tela_Novo_Cadastro_GeralController {
@@ -43,10 +44,11 @@ public class Tela_Novo_Cadastro_GeralController {
 		Parent root;
 		Stage stage;
 		try {
+			
 			if (event.getSource() == bt_cadastro_doador_fisico) {
 				stage = (Stage) bt_cadastro_doador_fisico.getScene().getWindow();
-				root = FXMLLoader.load(
-						getClass().getResource("/gui/Tela_Novo_Doador_fisico.fxml"));
+						root = FXMLLoader.load(
+						getClass().getResource("/gui/Tela_Novo_Doador_Fisico.fxml"));
 			} else {
 				stage = (Stage) bt_cadastro_doador_fisico.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Novo_Cadastro_Geral.fxml"));

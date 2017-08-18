@@ -72,7 +72,7 @@ public class Tela_Novo_Doador_JuridicoController {
 		fachada = fachada.getInstance();
 	}
 	
-	public void Cadastro(ActionEvent event) throws IOException {
+	public void cadastrarDoadorJuridico(ActionEvent event) throws IOException {
 		Parent root;
 		Stage stage;
 		
@@ -140,7 +140,7 @@ public class Tela_Novo_Doador_JuridicoController {
 		return validade;
 	}
 	
-	public void Voltar(ActionEvent event) {
+	public void voltarDJ(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {

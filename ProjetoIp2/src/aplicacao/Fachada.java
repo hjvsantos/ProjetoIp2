@@ -10,7 +10,6 @@ import hope.doador.ControladorDoadorEmpresa;
 import hope.doador.ControladorDoadorPessoa;
 import hope.doador.DoadorEmpresa;
 import hope.doador.DoadorPessoa;
-import hope.doador.controller.LoginController;
 import hope.excecao.ErroDeNegocioExcecao;
 import hope.financeiro.ControladorFinanceiro;
 import hope.financeiro.Financeiro;
@@ -38,7 +37,7 @@ public class Fachada {
 	private ControladorHigiene higiene;
 	private ControladorVestimenta vestimenta;
 	private ControladorFinanceiro financeiro;
-	private LoginController login;
+	private gui.LoginController login;
 	
 	private Fachada(){
 		this.administrador = ControladorAdm.getInstance();
