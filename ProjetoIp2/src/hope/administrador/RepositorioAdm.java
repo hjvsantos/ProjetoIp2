@@ -19,7 +19,7 @@ public class RepositorioAdm implements IRepositorioAdm, Serializable{
 	public static RepositorioAdm instancia;
 
 	private RepositorioAdm(){
-		this.admArray = new ArrayList<>();
+		admArray = new ArrayList<>();
 	}
 	
 	public static RepositorioAdm getInstance(){

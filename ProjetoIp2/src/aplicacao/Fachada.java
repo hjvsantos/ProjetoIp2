@@ -1,6 +1,8 @@
 package aplicacao;
 
 import java.util.ArrayList;
+
+import gui.LoginController;
 import hope.administrador.Adm;
 import hope.administrador.ControladorAdm;
 import hope.doacao.ControladorDoacao;
@@ -49,6 +51,7 @@ public class Fachada {
 		this.higiene = ControladorHigiene.getInstance();
 		this.vestimenta = ControladorVestimenta.getInstance();
 		this.financeiro = ControladorFinanceiro.getInstance();
+		this.login = LoginController.getInstance();
 	}
 	
 	public static Fachada getInstance() {
@@ -272,7 +275,7 @@ public class Fachada {
 	
 	
 	public int efetuarLoginAdm(String cpf, String senha) throws ErroDeNegocioExcecao{
-		return login.efetuarLoginAdm(cpf, senha); 
+		return this.login.efetuarLoginAdm(cpf, senha); 
 	}
 	
 	public int efetuarLoginUsuarios(int cod, String senha) throws ErroDeNegocioExcecao{

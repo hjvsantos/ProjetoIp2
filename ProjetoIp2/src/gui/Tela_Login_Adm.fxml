@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane prefHeight="592.0" prefWidth="848.0" style="-fx-background-color: #FFDEAD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Tela_Login_AdmController">
+<AnchorPane prefHeight="592.0" prefWidth="848.0" style="-fx-background-color: #FFDEAD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Tela_login_AdmController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="893.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
          <image>

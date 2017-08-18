@@ -1,6 +1,6 @@
 package gui;
 
-import hope.administrador.Adm;
+import aplicacao.Fachada;
 import hope.excecao.ErroDeNegocioExcecao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import aplicacao.Fachada;
 
 public class Tela_login_AdmController {
 	
@@ -34,14 +33,18 @@ public class Tela_login_AdmController {
 	
 	public void initialize(){
 		this.mestre = Mestre.getInstance();
-		Adm adm = new Adm("tassia", "023494", "123456", "Recife", "Pernambuco");
+//		Adm adm = new Adm("tassia", "023494", "123456", "Recife", "Pernambuco");
 	}
+	
 	
 	@FXML
 	public void acessarLogin(ActionEvent event) throws ErroDeNegocioExcecao {
 
+		String cpf = tx_cpf.getText();
+		String senha = ps_senha.getText();
+				
 		try {
-			 if (this.fachada.efetuarLoginAdm(tx_cpf.getText(), ps_senha.getText()) == 1) {
+			 if (this.fachada.efetuarLoginAdm(cpf, senha) == 1) {
 				Parent root;
 				Stage stage;
 
@@ -51,7 +54,7 @@ public class Tela_login_AdmController {
 				stage.setScene(scene);
 			} 
 			}catch (Exception e) {
-				e.printStackTrace();
+				System.out.println(e.getMessage());
 			}	
 	}
 	

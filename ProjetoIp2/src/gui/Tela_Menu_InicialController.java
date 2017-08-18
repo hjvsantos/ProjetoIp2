@@ -73,7 +73,7 @@ public class Tela_Menu_InicialController {
 		try {
 			if (event.getSource() == bt_adm) {
 				stage = (Stage) bt_adm.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Adm.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Login_Adm.fxml"));
 			} else {
 				stage = (Stage) bt_adm.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Menu_Inicial.fxml"));

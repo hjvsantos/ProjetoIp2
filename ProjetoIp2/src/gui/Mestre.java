@@ -2,6 +2,7 @@ package gui;
 
 import java.io.IOException;
 
+import hope.instituicao.Instituicao;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,6 +20,7 @@ public class Mestre extends Application {
 		}
 		return instance;
 	}
+	
 	
 	private Stage primaryStage;
 	private Pane rootScene;

@@ -47,37 +47,45 @@ public class Tela_LoginController {
 		/*Random random = new Random();
 		int x = ran.nextInt(200);*/
 		int x = 22;
-		DoadorPessoa doador = new DoadorPessoa("Joao", 21, "023923019", 213123 ,"Recife", "Pernambuco", "0292039200",
-				"233", x, "visa", "02/2022", "123456");
+//		DoadorPessoa doador = new DoadorPessoa("Joao", 21, "023923019", 213123 ,"Recife", "Pernambuco", "0292039200",
+//				"233", x, "visa", "02/2022", "123456");
+//		try {
+//			this.fachada.cadastrarDoador(doador);
+//		} catch (ErroDeNegocioExcecao e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 	
 	@FXML
 	public void acessarLogin(ActionEvent event) throws ErroDeNegocioExcecao {
 
 		try {
-			 if (this.fachada.efetuarLoginUsuarios(tx_cod.getAnchor(), ps_senha.getText()) == 1) {
+			
+			int cod = Integer.parseInt(tx_cod.getText());
+			 if (this.fachada.efetuarLoginUsuarios(cod, ps_senha.getText()) == 1) {
 				Parent root;
 				Stage stage;
 
 				stage = (Stage) bt_entrar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Fisico.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Doador_Fisico.fxml"));
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
-			}else if (this.fachada.efetuarLoginUsuarios(tx_cod.getAnchor(), ps_senha.getText()) == -1) {
+			}else if (this.fachada.efetuarLoginUsuarios(cod, ps_senha.getText()) == -1) {
 				Parent root;
 				Stage stage;
 
 				stage = (Stage) bt_entrar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Doador_Juridico.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Doador_Juridico.fxml"));
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
 
-			} else if (this.fachada.efetuarLoginUsuarios(tx_cod.getAnchor(), ps_senha.getText()) == -2) {
+			} else if (this.fachada.efetuarLoginUsuarios(cod, ps_senha.getText()) == -2) {
 				Parent root;
 				Stage stage;
 
 				stage = (Stage) bt_entrar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Instituicao.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Instituicao.fxml"));
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
 
@@ -96,10 +104,10 @@ public class Tela_LoginController {
 			if (event.getSource() == bt_voltar) {
 				stage = (Stage) bt_voltar.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Menu_Inicial.fxml"));
+						getClass().getResource("/gui/Tela_Menu_Inicial.fxml"));
 			} else {
 				stage = (Stage) bt_voltar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Login.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Login.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);

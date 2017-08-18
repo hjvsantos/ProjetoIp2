@@ -39,7 +39,7 @@ public class LoginController {
 		Adm administrador = this.administrador.buscarAdm(cpf);
 
 		if(administrador == null){
-			throw new ErroDeNegocioExcecao(" Adm não existe! ");
+			throw new ErroDeNegocioExcecao(" Adm nï¿½o existe! ");
 		}else if (administrador != null && administrador.getSenha().equals(senha)) {
 			igual = 1;
 		} else {
@@ -57,7 +57,7 @@ public class LoginController {
 		Instituicao instituicao = this.instituicao.buscarI(cod);
 
 		if(doadorFisico == null && doadorJuridico == null && instituicao == null){
-			throw new ErroDeNegocioExcecao(" Usuario não existe! ");
+			throw new ErroDeNegocioExcecao(" Usuario nï¿½o existe! ");
 		}else if (doadorFisico != null && doadorFisico.getSenha().equals(senha)) {
 			igual = 1;
 		} else if (doadorJuridico != null && doadorJuridico.getSenha().equals(senha)) {
