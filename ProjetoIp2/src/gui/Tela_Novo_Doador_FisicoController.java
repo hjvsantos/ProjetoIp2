@@ -22,8 +22,8 @@ import javafx.stage.Stage;
 public class Tela_Novo_Doador_FisicoController {
 	
 	@FXML
-	//private Button bt_cadastrarDoadorFisico;
 	private Button bt_cadastro_doador_fisico;
+	
 	@FXML
 	private Button bt_voltar;
 
@@ -141,3 +141,4 @@ public class Tela_Novo_Doador_FisicoController {
 	}
 
 }
+

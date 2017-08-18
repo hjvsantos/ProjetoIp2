@@ -109,5 +109,9 @@ public class Tela_LoginController {
 		}
 	}
 	
+	private void botaoSair(){
+	    Stage stage = (Stage) bt_sair.getScene().getWindow(); 
+	    stage.close(); 
+	}
 }
 
