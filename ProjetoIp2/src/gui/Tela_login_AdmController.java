@@ -1,6 +1,7 @@
 package gui;
 
 import aplicacao.Fachada;
+import hope.administrador.Adm;
 import hope.excecao.ErroDeNegocioExcecao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,6 +35,12 @@ public class Tela_login_AdmController {
 	public void initialize(){
 		this.mestre = Mestre.getInstance();
 //		Adm adm = new Adm("tassia", "023494", "123456", "Recife", "Pernambuco");
+//		try {
+//			this.fachada.cadastrarAdm(adm);
+//		} catch (ErroDeNegocioExcecao e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 	
 	
@@ -49,12 +56,13 @@ public class Tela_login_AdmController {
 				Stage stage;
 
 				stage = (Stage) bt_entrar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("gui/Tela_Principal_Adm.fxml"));
+				root = FXMLLoader.load(getClass().getClassLoader().getResource("gui/Tela_Principal_Adm.fxml"));
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
 			} 
 			}catch (Exception e) {
-				System.out.println(e.getMessage());
+//				System.out.println(e.getMessage());
+				e.printStackTrace();
 			}	
 	}
 	

@@ -130,7 +130,7 @@ public class Tela_Novo_Doador_FisicoController {
 						getClass().getResource("/gui/Tela_Novo_Cadastro_Geral.fxml"));
 			} else {
 				stage = (Stage) bt_voltar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Doador_Fisico.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Novo_Doador_Fisico.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);

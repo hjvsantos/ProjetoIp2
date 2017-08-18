@@ -140,17 +140,17 @@ public class Tela_Novo_Doador_JuridicoController {
 		return validade;
 	}
 	
-	public void voltarDJ(ActionEvent event) {
+	public void VoltarDJ(ActionEvent event) {
 		Parent root;
 		Stage stage;
 		try {
 			if (event.getSource() == bt_voltar) {
 				stage = (Stage) bt_voltar.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Cadastro_Geral.fxml"));
+						getClass().getClassLoader().getResource("/gui/Tela_Novo_Cadastro_Geral.fxml"));
 			} else {
 				stage = (Stage) bt_voltar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Novo_Doador_Juridico.fxml"));
+				root = FXMLLoader.load(getClass().getClassLoader().getResource("/gui/Tela_Novo_Doador_Juridico.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);

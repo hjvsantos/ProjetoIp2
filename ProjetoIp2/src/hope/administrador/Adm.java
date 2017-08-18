@@ -1,6 +1,8 @@
 package hope.administrador;
 
-public class Adm {
+import java.io.Serializable;
+
+public class Adm implements Serializable{
 
 	private String nome;
 	private String cpf;
