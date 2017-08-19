@@ -28,7 +28,6 @@
             <TextField fx:id="tf_estado" layoutX="100.0" layoutY="128.0" />
             <TextField fx:id="tf_cidade" layoutX="101.0" layoutY="96.0" />
             <TextField fx:id="tf_num_conta" layoutX="172.0" layoutY="159.0" prefHeight="25.0" prefWidth="97.0" />
-            <Button fx:id="bt_cadastrar" layoutX="95.0" layoutY="233.0" mnemonicParsing="false" onAction="#CadastrarInstituicao" text="Finalizar cadastro" />
          </children>
       </Pane>
       <Text layoutX="246.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro">
@@ -37,5 +36,6 @@
          </font>
       </Text>
       <Button fx:id="bt_voltar" layoutX="484.0" layoutY="347.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
+      <Button fx:id="bt_cadastrar" layoutX="254.0" layoutY="348.0" mnemonicParsing="false" onAction="#CadastrarInstituicao" text="Finalizar cadastro" />
    </children>
 </AnchorPane>

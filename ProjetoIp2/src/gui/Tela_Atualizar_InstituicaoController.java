@@ -32,30 +32,28 @@ public class Tela_Atualizar_InstituicaoController {
 	private Button bt_cancelar;
 	
 	@FXML
-	private TextField tx_cidade_Instituicao;
+	 TextField tx_cidade_Instituicao;
 	
 	@FXML
-	private TextField tx_estado_Instituicao;
+	 TextField tx_estado_Instituicao;
 	
 	@FXML
-	private TextField tx_numeroConta_Instituicao;
+	 TextField tx_numeroConta_Instituicao;
 	
 	@FXML
-	private Label lb_nome;
+	 Label lb_nome;
 	
 	@FXML
-	private Label lb_cpnj;
+	 Label lb_cpnj;
 	
 	@FXML
-	private Label lb_codigo;
+	 Label lb_codigo;
 	
 	@FXML
-	private PasswordField ps_senha_Instituicao;
+	 PasswordField ps_senha_Instituicao;
 
 	public void initialize() {
-		 this.tx_cidade_Instituicao.setEditable(false);
-		 this.tx_estado_Instituicao.setEditable(false);
-		 this.tx_numeroConta_Instituicao.setEditable(false);
+		
 	}
 	
 	@FXML
@@ -78,7 +76,7 @@ public class Tela_Atualizar_InstituicaoController {
 	    		 this.ps_senha_Instituicao.setEditable(false);
 	    		 Alert alerta = new Alert(AlertType.ERROR);
 	    		 alerta.setTitle("ERRO!");
-	    		 alerta.setHeaderText("Erro Usuário");
+	    		 alerta.setHeaderText("Erro Usuï¿½rio");
 	    		 alerta.setContentText("Usuario nao encontrado!");
 	    		 alerta.showAndWait();
 	    	 }

@@ -13,11 +13,11 @@ import javafx.stage.Stage;
 
 public class Tela_Atualizar_AdmController {
 
-	@FXML private TextField tf_Nome_Adm;
-	@FXML private TextField tf_CPF_Adm;
-	@FXML private TextField tf_Cidade_Adm;
-	@FXML private TextField tf_Estado_Adm;
-	@FXML private TextField tf_Senha_Adm;
+	@FXML TextField tf_Nome_Adm;
+	@FXML TextField tf_CPF_Adm;
+	@FXML TextField tf_Cidade_Adm;
+	@FXML TextField tf_Estado_Adm;
+	@FXML TextField tf_Senha_Adm;
 	
 	@FXML
 	private Button bt_atualizar;
@@ -30,7 +30,7 @@ public class Tela_Atualizar_AdmController {
 	private Fachada fachada;
 	
 	public void initialize() {
-		this.tf_Nome_Adm.setEditable(false);
+		 this.tf_Nome_Adm.setEditable(false);
 		 this.tf_Cidade_Adm.setEditable(false);
 		 this.tf_Estado_Adm.setEditable(false);
 		 this.tf_Senha_Adm.setEditable(false);
@@ -65,7 +65,7 @@ public class Tela_Atualizar_AdmController {
 			Stage stage;
 
 			stage = (Stage) bt_atualizar.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Adm.fxml"));
+			root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Adm.fxml"));
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			

@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 public class Tela_Principal_AdmController {
 	
 	@FXML
-	private Button bt_atualizar;
+	Button bt_atualizar;
 	
 	@FXML
 	private Button bt_excluirConta;
@@ -169,8 +169,7 @@ public class Tela_Principal_AdmController {
 		try {
 			if (event.getSource() == bt_listarInstituicoes) {
 				stage = (Stage) bt_listarInstituicoes.getScene().getWindow();
-				root = FXMLLoader.load(
-						getClass().getResource("/gui/Tela_Lista_Instituicoes.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Lista_Doador_Instituicoes.fxml"));
 			} else {
 				stage = (Stage) bt_listarInstituicoes.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Adm.fxml"));

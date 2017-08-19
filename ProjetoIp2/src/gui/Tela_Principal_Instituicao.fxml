@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="560.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="560.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Tela_Principal_InstituicaoController">
    <children>
       <ImageView fitHeight="594.0" fitWidth="893.0" layoutX="-1.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -15,27 +15,26 @@
          </image></ImageView>
       <Pane layoutX="151.0" layoutY="54.0" opacity="0.75" prefHeight="445.0" prefWidth="607.0" style="-fx-background-color: #dcdcdc;">
          <children>
-            <Button id="bt_solic_doacao" layoutX="253.0" layoutY="331.0" mnemonicParsing="false" text="Solicitar Doação" />
-            <Button id="bt_atualizar" layoutX="253.0" layoutY="375.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Atualizar Dados" />
+            <Button fx:id="bt_solic_doacao" layoutX="253.0" layoutY="331.0" mnemonicParsing="false" onAction="#AbrirSolicitarDoacao" text="Solicitar Doação" />
+            <Button fx:id="bt_atualizar" layoutX="253.0" layoutY="375.0" mnemonicParsing="false" onAction="#AbrirAtulizar" prefHeight="25.0" prefWidth="102.0" text="Atualizar Dados" />
             <Label layoutX="72.0" layoutY="108.0" prefHeight="17.0" prefWidth="50.0" text="Nome:" />
             <Label layoutX="72.0" layoutY="146.0" text="CNPJ:" />
             <Label layoutX="73.0" layoutY="182.0" text="Cidade:" />
             <Label layoutX="73.0" layoutY="223.0" text="Estado:" />
             <Label layoutX="72.0" layoutY="261.0" text="Codigo:" />
             <Label layoutX="68.0" layoutY="302.0" text="Nº da Conta:" />
-            <Label layoutX="171.0" layoutY="108.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
-            <Label layoutX="171.0" layoutY="146.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
-            <Label layoutX="171.0" layoutY="182.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" />
-            <Label layoutX="171.0" layoutY="223.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
-            <Label layoutX="171.0" layoutY="261.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
-            <Label layoutX="171.0" layoutY="302.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
+            <Label fx:id="lb_nome" layoutX="171.0" layoutY="108.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
+            <Label fx:id="lb_cnpj" layoutX="171.0" layoutY="146.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
+            <Label fx:id="lb_cidade" layoutX="171.0" layoutY="182.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" />
+            <Label fx:id="lb_estado" layoutX="171.0" layoutY="223.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
+            <Label fx:id="lb_codigo" layoutX="171.0" layoutY="261.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
+            <Label fx:id="lb_num_conta" layoutX="171.0" layoutY="302.0" prefHeight="17.0" prefWidth="323.0" style="-fx-background-color: #cdcdcd;" text=" " />
             <Text layoutX="138.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá, parceiro! Bem vindo a sua Home Page:">
                <font>
                   <Font size="17.0" />
                </font>
             </Text>
          </children></Pane>
-      <Button id="bt_sair" layoutX="14.0" layoutY="521.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Sair" />
-      <Button id="bt_remover" layoutX="763.0" layoutY="521.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Cancelar Conta" />
+      <Button fx:id="bt_sair" layoutX="14.0" layoutY="521.0" mnemonicParsing="false" onAction="#Sair" prefHeight="25.0" prefWidth="105.0" text="Sair" />
    </children>
 </AnchorPane>

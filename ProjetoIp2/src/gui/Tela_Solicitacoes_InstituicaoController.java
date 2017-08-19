@@ -23,9 +23,9 @@ public class Tela_Solicitacoes_InstituicaoController extends Application{
 	@FXML
 	private ChoiceBox cb_tipoDoacao;
 	@FXML
-	private TextField tf_quantidade;
+	TextField tf_quantidade;
 	@FXML
-	private TextField tf_observacao;
+	TextField tf_observacao;
 	
 	@FXML
 	private Button bt_cadastrar;
@@ -86,10 +86,10 @@ public class Tela_Solicitacoes_InstituicaoController extends Application{
 			if (event.getSource() == bt_cancelar) {
 				stage = (Stage) bt_cancelar.getScene().getWindow();
 				root = FXMLLoader.load(
-						getClass().getResource("/ProjetoIp2/src/gui/Tela_Principal_Instituicao.fxml"));
+						getClass().getResource("/gui/Tela_Principal_Instituicao.fxml"));
 			} else {
 				stage = (Stage) bt_cancelar.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("/ProjetoIp2/src/gui/Tela_Solicitacoes_Instituicao.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Solicitacoes_Instituicao.fxml"));
 			}
 			Scene scene = new Scene(root);
 			stage.setScene(scene);

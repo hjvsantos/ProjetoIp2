@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -33,16 +34,16 @@ public class Tela_Nova_InstituicaoController {
 	@FXML
 	 TextField tf_num_conta;
 	@FXML
-	 PasswordField ps_senha;
-	
+	 PasswordField ps_senha;	
 	@FXML
 	 Button bt_cadastrar;
 	@FXML
 	 Button bt_voltar;
 	
 	Fachada fachada  = Fachada.getInstance();
-	//private ControladorInstituicao rep;
 	private Mestre mestre;
+	Instituicao insti;
+	
 	
 	
 	@FXML
@@ -53,50 +54,7 @@ public class Tela_Nova_InstituicaoController {
 		this.mestre = mestre;
 	}
 	
-	/*
-	private void CadastrarInstituicao() throws ErroDeNegocioExcecao{
-		rep = ControladorInstituicao.getInstance();
-		String nome = tf_nome.getText();
-		String cnpj = tf_cnpj.getText();
-		String cidade = tf_cidade.getText();
-		String estado = tf_estado.getText();
-		String numeroConta = tf_num_conta.getText();
-		String senha = tf_senha.getText();
 		
-		if(nome != null && nome != "" && cnpj != null && cnpj != ""
-				&& cidade != null && cidade != "" && estado != null
-				&& estado != "" && numeroConta != null && numeroConta != ""
-				&& senha != null && senha != ""){
-		
-		Random rand = new Random();
-		int x = rand.nextInt(100);
-		
-		Instituicao i = new Instituicao(nome, cnpj, cidade, estado, numeroConta, x, senha);
-		rep.cadastrarI(i);
-		tf_nome.setText("");
-		tf_cnpj.setText("");
-		tf_cidade.setText("");
-		tf_estado.setText("");
-		tf_num_conta.setText("");
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("Sucesso");
-		alert.setHeaderText("Cadastro Instituicao");
-		alert.setContentText("Instituicao cadastrada com sucesso");
-		alert.showAndWait();
-	}else{
-		Alert alert = new Alert(AlertType.ERROR);
-		alert.setTitle("Error");
-		alert.setHeaderText("Informações inválidas");
-		alert.setContentText("Informações fornecidas são inválidas");
-		alert.showAndWait();
-	}	
-}
-	
-	private void setApp(Mestre app){
-		this.mestre = app;
-	}
-	*/
-	
 	public void CadastrarInstituicao(ActionEvent event) throws IOException {
 		Parent root;
 		Stage stage;
@@ -118,14 +76,26 @@ public class Tela_Nova_InstituicaoController {
 				
 				//senha = ps_senha.getText(); aqui vai ser a senha 
 				
-				Instituicao insti = new Instituicao(nome, cnpj, cidade, estado, numeroConta, x, senha);
+				insti = new Instituicao(nome, cnpj, cidade, estado, numeroConta, x, senha);
 				fachada.cadastrarI(insti);
 				
-				stage = (Stage) bt_cadastrar.getScene().getWindow();
+				
+				Tela_Principal_InstituicaoController tela = new Tela_Principal_InstituicaoController();
+				tela.lb_cidade.setText(cidade);
+				tela.lb_cnpj.setText(cnpj);
+				tela.lb_estado.setText(estado);
+				tela.lb_nome.setText(nome);
+				tela.lb_num_conta.setText(numeroConta);
+				tela.lb_codigo.setText(Integer.toString(x));
+				
+				
+				tela.start(new Stage());
+				
+				/*stage = (Stage) bt_cadastrar.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("/gui/Tela_Principal_Instituicao.fxml"));
 				
 				Scene scene = new Scene(root);
-				stage.setScene(scene);
+				stage.setScene(scene);*/
 				
 		} catch (Exception e){
 			Alert alert = new Alert(AlertType.WARNING);
@@ -137,6 +107,8 @@ public class Tela_Nova_InstituicaoController {
 	}
 }
 	
+
+	
 	private boolean validarCampos() throws IOException {
 		boolean validade = false;
 		try {
@@ -145,14 +117,14 @@ public class Tela_Nova_InstituicaoController {
 					|| tf_num_conta.getText().isEmpty() || ps_senha.getText().isEmpty())) {
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("Error");
-				alert.setHeaderText("Informacoes invalidas");
+				alert.setHeaderText("teste");
 				alert.setContentText("Verifique os campos digitados!");
 				alert.showAndWait();
 
 			} else {
 				validade = true;
 			}
-		} catch (NumberFormatException e) {
+		} catch (Exception e) {
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Error");
 			alert.setHeaderText("Informacoes invalidas");
@@ -162,6 +134,32 @@ public class Tela_Nova_InstituicaoController {
 		return validade;
 	}
 	
+	@FXML
+	public void buscar_Instituicao(){
+	     try {
+	    	 this.fachada = Fachada.getInstance();
+	    	 this.fachada.buscarI(insti.getCodInstituicao());
+	    	 if(insti != null) {
+	    		 this.tf_nome.setText(insti.getNome());
+	    		 this.tf_cnpj.setText(insti.getCnpj());
+	    		 this.tf_cidade.setText(insti.getCidade());
+	    		 this.tf_estado.setText(insti.getEstado());
+	    		 this.tf_num_conta.setText(insti.getNumeroConta());
+	    		 this.ps_senha.setText(insti.getSenha());
+	    	 }
+	    	 else
+	    	 {
+	    		 Alert alerta = new Alert(AlertType.ERROR);
+	    		 alerta.setTitle("ERRO!");
+	    		 alerta.setHeaderText("Erro Usu�rio");
+	    		 alerta.setContentText("Usuario nao encontrado!");
+	    		 alerta.showAndWait();
+	    	 }
+	     }
+	     catch(Exception e) {
+	    	 e.printStackTrace();
+	     }
+	}
 	
 	public void Voltar(ActionEvent event) {
 		Parent root;

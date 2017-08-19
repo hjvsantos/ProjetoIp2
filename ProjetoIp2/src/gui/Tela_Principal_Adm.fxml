@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Tela_Principal_AdmController">
    <children>
       <ImageView fitHeight="432.0" fitWidth="607.0" layoutX="-5.0" layoutY="-5.0" opacity="0.59">
          <image>
@@ -16,14 +16,14 @@
       </ImageView>
       <Pane layoutX="275.0" layoutY="94.0" prefHeight="281.0" prefWidth="323.0">
          <children>
-            <Button id="bt_excluirConta" layoutX="8.0" layoutY="11.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="156.0" text="Excluir conta" />
-            <Button id="bt_novoCadastro" layoutX="174.0" layoutY="10.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="141.0" text="Novo cadastro" />
-            <Button id="bt_excluirDoador" layoutX="9.0" layoutY="79.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="156.0" text="Excluir doador" />
-            <Button id="bt_excluirInstituicao" layoutX="175.0" layoutY="79.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="141.0" text="Excluir instituição" />
-            <Button id="bt_listarDoadorFisico" layoutX="9.0" layoutY="147.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="156.0" text="Listar doador físico" />
-            <Button id="bt_listarInstituicoes" layoutX="176.0" layoutY="147.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="141.0" text="Listar instituições" />
-            <Button id="bt_listarDoadorJuridico" layoutX="11.0" layoutY="215.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="156.0" text="Listar doador juridico" />
-            <Button id="bt_sair" layoutX="177.0" layoutY="215.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" text="Sair" />
+            <Button id="bt_excluirConta" fx:id="bt_excluirConta" layoutX="8.0" layoutY="11.0" mnemonicParsing="false" onAction="#ExcluirContaAdm" prefHeight="55.0" prefWidth="156.0" text="Excluir conta" />
+            <Button id="bt_novoCadastro" fx:id="bt_novoCadastro" layoutX="174.0" layoutY="10.0" mnemonicParsing="false" onAction="#NovoCadastroAdm" prefHeight="55.0" prefWidth="141.0" text="Novo cadastro" />
+            <Button id="bt_excluirDoador" fx:id="bt_excluirDoador" layoutX="9.0" layoutY="79.0" mnemonicParsing="false" onAction="#ExcluirContaDoador" prefHeight="55.0" prefWidth="156.0" text="Excluir doador" />
+            <Button id="bt_excluirInstituicao" fx:id="bt_excluirInstituicao" layoutX="175.0" layoutY="79.0" mnemonicParsing="false" onAction="#ExcluirContaInstituicao" prefHeight="55.0" prefWidth="141.0" text="Excluir instituição" />
+            <Button id="bt_listarDoadorFisico" fx:id="bt_listarDoadorFisico" layoutX="9.0" layoutY="147.0" mnemonicParsing="false" onAction="#ListarDoadorFisico" prefHeight="55.0" prefWidth="156.0" text="Listar doador físico" />
+            <Button id="bt_listarInstituicoes" fx:id="bt_listarInstituicoes" layoutX="176.0" layoutY="147.0" mnemonicParsing="false" onAction="#ListarInstituicoes" prefHeight="55.0" prefWidth="141.0" text="Listar instituições" />
+            <Button id="bt_listarDoadorJuridico" fx:id="bt_listarDoadorJuridico" layoutX="11.0" layoutY="215.0" mnemonicParsing="false" onAction="#ListarDoadorJuridico" prefHeight="55.0" prefWidth="156.0" text="Listar doador juridico" />
+            <Button id="bt_sair" fx:id="bt_sair" layoutX="177.0" layoutY="215.0" mnemonicParsing="false"  prefHeight="55.0" prefWidth="137.0" text="Sair" />
          </children>
       </Pane>
       <Pane layoutX="13.0" layoutY="128.0" prefHeight="202.0" prefWidth="270.0">
@@ -32,7 +32,7 @@
             <Label layoutX="14.0" layoutY="59.0" text="Nome:" />
             <Label layoutX="14.0" layoutY="93.0" text="CPF:" />
             <Label layoutX="14.0" layoutY="125.0" text="Cidade:" />
-            <Button id="bt_atualizar" layoutX="104.0" layoutY="163.0" mnemonicParsing="false" text="Atualizar" />
+            <Button id="bt_atualizar" layoutX="104.0" layoutY="163.0" mnemonicParsing="false" onAction="#AtualizarAdm" text="Atualizar" />
             <Label layoutX="69.0" layoutY="59.0" prefHeight="17.0" prefWidth="168.0" style="-fx-background-color: #c0c0c0;" text=" " />
             <Label layoutX="69.0" layoutY="93.0" prefHeight="17.0" prefWidth="168.0" style="-fx-background-color: #c0c0c0;" text=" " />
             <Label layoutX="69.0" layoutY="125.0" prefHeight="17.0" prefWidth="168.0" style="-fx-background-color: #c0c0c0;" />
