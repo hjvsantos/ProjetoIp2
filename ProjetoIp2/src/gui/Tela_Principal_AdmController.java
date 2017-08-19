@@ -182,6 +182,8 @@ public class Tela_Principal_AdmController {
 		}
 	}
 	
+	//teste
+	
 	public void NovoCadastroAdm(ActionEvent event) {
 		Parent root;
 		Stage stage;
